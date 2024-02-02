@@ -1,0 +1,3 @@
+import dokuwiki
+
+d
