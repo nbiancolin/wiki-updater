@@ -1,30 +1,35 @@
-import git
 import paramiko
 import commit
 import math
 
+
+# *** GLOBALS ***
 global client
+#Server - which ug machine you want to use
+server = 'ug144.eecg.utoronto.ca'
 
 def connectToSSH():
     global client
-
+    print("Connecting to SSH at " + server)
     client = paramiko.SSHClient()
     #client.load_system_host_keys()
     client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-    client.connect('ug144.eecg.utoronto.ca', username='biancol6', password='')
+    client.connect(server, username='biancol6', password='EngineeringIsFunIThink')
+    if client:
+        print("Connected to SSH")
+    else:
+        print("Error connecting to SSH")
 
 def closeSSH():
     global client
+    print("Disconnecting SSH")
     client.close()
+    print("SSH successfully disconnected")
 
 
 def getGitLog(hours = 300):
+    print("Querying Git Log")
     stdin, stdout, stderr = client.exec_command(f'cd ece297/work/mapper ; git log --since="{hours} hours ago"')
-
-    print(stdin)
-    print(stdout)
-    print(stderr)
-
     res = []
     for line in stdout:
         res.append(line)
@@ -50,8 +55,8 @@ def parseGitLog(hours = 300):
         clean.append(elem.removesuffix('\n'))
     #print(clean)
         
-    #for elem in clean:
-    #    print("a " + elem + "b")
+#    for elem in clean:
+#        print("a " + elem + "b")
         #print('\n')
 
     ''' FORMAT IDEA
@@ -61,28 +66,28 @@ def parseGitLog(hours = 300):
 
     status, notes, completed by?
     '''
-
+    i = 0
     res = [] #array of 'commit' objects
-    for i in range(1, len(clean), 4):
-        #i += 1 #skips commit message
-        if clean[i+1].startswith("Merge"): #+1 to skip merge
-            continue 
-        #otherwise a valid commit
+
+    while(i < len(clean)):
+        if clean[i +1].startswith("Merge:"): #check if 1th or 2th element
+            i += 5
+            continue
         author = clean[i +1].removeprefix("Author: ").split(" ", 1) #TODO: make these proper strings
-        date = clean[i +2]
-        taskID, progress, message = clean[i+3].split(' ', 2)
+        date = clean[i +2].removeprefix("Date:").strip()
+        taskID, progress, message = clean[i +3].split(' ', 2) #parses git commit message
         #message = clean[i +3]
         #taskID = 0
         #progress = 0
-        temp = commit.Commit(taskID, progress, author, date, message)
+        temp = commit.Commit(taskID, progress, author[0], date, message)
         print(temp)
         res.append(temp)
+        i += 4
 
     return temp
 
 if __name__ == "__main__":
     connectToSSH()
-    log = getGitLog()
-    log = parseGitLog(log)
+    log = parseGitLog()
 
     closeSSH()
