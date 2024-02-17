@@ -1,0 +1,37 @@
+taskID,progress,author,date,message
+-1,-1,biancol6,Sat Feb 10 20:39:09 2024 -0500,    cleaned up m1_helper.cpp
+1.cpp;,add,Jason,Sat Feb 10 20:09:21 2024 -0500,comments, reorder to match spec document, rmv unused code
+-1,-1,biancol6,Sat Feb 10 19:36:07 2024 -0500,    cleaned up street.h
+-1,-1,Eric,Sat Feb 10 18:56:43 2024 -0500,    optimizing unordered_map so it doesnt build a new element when key does not exist, and added some comments
+-1,-1,Jason,Sat Feb 10 18:01:20 2024 -0500,    rework StreetsMap to use vector instead of unordered_map; change load fns accordingly
+-1,-1,Jason,Sat Feb 10 17:38:35 2024 -0500,    rework load_street_segments to use a vector instead of an unordered_map; as in last commit by Nick
+-1,-1,biancol6,Sat Feb 10 17:06:25 2024 -0500,    updated intersectionstoSegments to use a vector instead of a map to increase performance
+-1,-1,Eric,Sat Feb 10 16:51:43 2024 -0500,    code clean up and removing old code
+-1,-1,biancol6,Sat Feb 10 15:30:29 2024 -0500,    changed unordered map to vector in street.h, fixed intersectionofTwoStreets
+-1,-1,Eric,Fri Feb 9 20:30:49 2024 -0500,    fix functionality and optimize runtime for find feature area function
+-1,-1,biancol6,Fri Feb 9 15:35:37 2024 -0500,    re-wrote intersectionofTwoStreets to be more efficient
+-1,-1,Jason,Fri Feb 9 14:50:34 2024 -0500,    closeMap++
+-1,-1,Eric,Fri Feb 9 14:42:10 2024 -0500,    fixed findStreetIdsFromPartialStreetNames loaded first
+-1,-1,Jason,Fri Feb 9 14:31:16 2024 -0500,    fix determinant fn
+-1,-1,Eric,Fri Feb 9 13:17:56 2024 -0500,    optimized intersections are directly connected function using merge sort for comparisons
+-1,-1,Eric,Fri Feb 9 12:50:32 2024 -0500,    Debug findStreetIdFromPartialStreetName
+-1,-1,biancol6,Fri Feb 9 12:51:34 2024 -0500,    fixed find angle
+-1,-1,biancol6,Fri Feb 9 12:44:39 2024 -0500,    re-wrote findANgle but still failing :(
+-1,-1,biancol6,Fri Feb 9 11:56:33 2024 -0500,    add comments
+-1,-1,biancol6,Fri Feb 9 11:33:01 2024 -0500,    fixed intersectionsOfTwoStreets
+-1,-1,Jason,Fri Feb 9 00:38:07 2024 -0500,    fix bug with load_map_nodes fn; pass by reference now
+-1,-1,biancol6,Fri Feb 9 00:16:04 2024 -0500,    mostly fixed loadmap
+-1,-1,biancol6,Thu Feb 8 23:38:34 2024 -0500,    implement findIntersectionsOfTwoStreets
+-1,-1,biancol6,Thu Feb 8 23:25:43 2024 -0500,    fix typo
+-1,-1,biancol6,Thu Feb 8 23:20:44 2024 -0500,    cleaned up loadMap
+-1,-1,biancol6,Thu Feb 8 23:13:45 2024 -0500,    fixed findIntersectionsOfStreet and updates street class to hold all intersections
+-1,-1,Jason,Thu Feb 8 22:52:26 2024 -0500,    move one fn to helper file
+-1,-1,Jason,Thu Feb 8 22:47:36 2024 -0500,    reimplement waylength fn; clean up helper files and amend comments
+-1,-1,Eric,Thu Feb 8 20:19:24 2024 -0500,    fixed .sm.bin calling for location flexiility
+-1,-1,Jason,Thu Feb 8 20:08:01 2024 -0500,    full path .h include
+-1,-1,Eric,Thu Feb 8 19:40:49 2024 -0500,    fixed loading osm.bin
+-1,-1,biancol6,Thu Feb 8 19:31:54 2024 -0500,    pushing so that eric can take a look
+-1,-1,Jason,Thu Feb 8 18:23:52 2024 -0500,    refactor + move around code for organisation, compile bug fixes
+1_helper.cpp,code,biancol6,Thu Feb 8 17:56:11 2024 -0500,into m1.cpp
+-1,-1,biancol6,Thu Feb 8 13:29:17 2024 -0500,    Implemented findWayLength, and fixed bug in Street.h
+-1,-1,biancol6,Thu Feb 8 12:56:44 2024 -0500,    Clean up LoadMap by implementing Street Class and unordered map of StreetIds and Street Objects

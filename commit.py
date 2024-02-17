@@ -10,13 +10,14 @@ class Commit:
         return f"id:{self.taskID}, prog:{self.progress}, author:{self.author}, date:{self.date}: message:{self.message}"
     
 class Task:
-    def __init__(self, taskID, name, progress, assignee, dueDate, recentCommit):
+    def __init__(self, taskID, name, progress, assignee, dueDate, lastUpdate, statusMsg):
         self.taskID = taskID
         self.name = name
         self.progress = progress
         self.assignee = assignee
         self.dueDate = dueDate
-        self.recentCommit = recentCommit
+        self.lastUpdate = lastUpdate
+        self.statusMsg = statusMsg
 
     def __str__(self):
-        return f"id:{self.taskID}, name:{self.name}, prog:{self.progress}, assignee:{self.assignee}, dueDate:{self.dueDate}, recentCommit:{self.recentCommit}"
+        return f"id:{self.taskID}, name:{self.name}, prog:{self.progress}, assignee:{self.assignee}, dueDate:{self.dueDate}, lastUpdate:{self.lastUpdate} recentCommit:{self.statusMsg}"
