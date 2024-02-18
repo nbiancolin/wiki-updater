@@ -2,6 +2,7 @@ import paramiko
 import commit
 import re
 import passwords
+import datetime
 
 
 # *** GLOBALS ***
@@ -69,13 +70,13 @@ def parseGitLog(hours = 300, testMode = False):
         if clean[i +1].startswith("Merge:"): #check if 1th or 2th element
             i += 5
             continue
-        author = clean[i +1].removeprefix("Author: ").split(" ", 1) #TODO: make these proper strings
-        date = clean[i +2].removeprefix("Date:").strip()
+        author = clean[i +1].removeprefix("Author: ").split(" ", 1) 
+        date = clean[i +2].removeprefix("Date:").strip() #TODO: make date a litle nicer
 
         match = re.search(r'\d', clean[i+3])
         if match:
             try:
-                taskID, progress, message = clean[i +3][match.start():].split(" ", 2) #parses git commit message
+                taskID, progress, message = clean[i +3][match.start():].split(",", 2) #parses git commit message
             except ValueError:
                 message = clean[i +3] #could not parse message
                 taskID = -1
@@ -103,48 +104,66 @@ def writeLogToFile(log, fileName): #write log dictionary to csv file
             file.write(f'{elem.taskID},{elem.progress},{elem.author},{elem.date},{elem.message}\n')
 
 def loadTasksFromFile(fileName):
-    with open(fileName, 'r') as file:
-        lines = file.readlines()
-        tasks = {}
-        for line in lines:
-            if line.startswith('taskID'):
-                continue
-            taskID, name, progress, assignee, dueDate, recentCommit = line.split(',')
-            temp = commit.Task(taskID, name, progress, assignee, dueDate, recentCommit)
-            tasks[taskID] = temp
-        return tasks
+    try:
+        with open(fileName, 'r') as file:
+            lines = file.readlines()
+            tasks = {}
+            for line in lines:
+                if line.startswith('taskID'):
+                    continue
+                taskID, name, progress, assignee, dueDate, lastUpdate, statusMsg = line.split(',')
+                temp = commit.Task(taskID, name, progress, assignee, dueDate, lastUpdate, statusMsg)
+                tasks[int(taskID)] = temp
+            file.close()
+            return tasks
+    except:
+        return {}
 
 def updateTasks(tasks, commits):
     #For each commit in commtis
     #   find taskId in tasks
+    #       if cannot find taskid (and taskID is not -1), create new
     #   update progress with progress from most recent commit  
     #   update status with most recent commit message
     #
     #Need to keep track of if a task has been updated already
     updatedTasks = []
+    #print(tasks)
     for elem in commits:
         if elem.taskID not in updatedTasks:
-            #find task and update it
             updatedTasks.append(elem.taskID)
+            if elem.taskID == -1: #commit was not parsed properly, add to end of dict
+                tasks[64 + len(tasks)] = commit.Task(64 + len(tasks), "", elem.progress ,elem.author , "", elem.date, elem.message)
+                continue
+            if elem.taskID not in tasks:
+                tasks[elem.taskID] = commit.Task(elem.taskID, "", elem.progress ,elem.author , "", elem.date, elem.message)
+                continue
+
             tasks[elem.taskID].progress = elem.progress
             tasks[elem.taskID].statusMsg = elem.message
             tasks[elem.taskID].lastUpdate = elem.date
 
     return tasks
 
-def writeTasksToFile(tasks, fileName):
+def writeTasksToFile(tasks, fileName): #csv file is a good backup, + easily readable by computers & humans
     with open(fileName, 'w') as file:
-        file.write('taskID,name,progress,assignee,dueDate,recentCommit\n')
-        for elem in tasks:
-            file.write(f'{elem.taskID},{elem.name},{elem.progress},{elem.assignee},{elem.dueDate},{elem.recentCommit}\n')
+        file.write('taskID,name,progress,assignee,dueDate,lastUpdate,statusMsg\n')
+        for key in tasks:
+            file.write(f'{tasks[key].taskID},{tasks[key].name},{tasks[key].progress},{tasks[key].assignee},{tasks[key].dueDate},{tasks[key].lastUpdate},{tasks[key].statusMsg}')
+            file.write('\n')
 
-if __name__ == "__main__":
+if __name__ == "__main__": #for testing purposes
+    #For some reason, running the file twice works. Don't ask me why
     connectToSSH()
-    commits = parseGitLog(testMode=False)
+    #load commits data structure
+    commits = parseGitLog(testMode=True)
 
-    #tasks = loadTasksFromFile('tasks.csv')
-    #tasks = updateTasks(tasks, commits)
+    #load tasks data structure
+    tasks = loadTasksFromFile('tasks.csv')
+
+    #process updates from commits & tasks
+    tasks = updateTasks(tasks, commits)
 
     writeLogToFile(commits, 'commits.csv')
-    #writeTasksToFile(tasks, 'tasks.csv')
+    writeTasksToFile(tasks, 'tasks.csv')
     closeSSH()
