@@ -23,4 +23,17 @@ class Task:
         return f"id:{self.taskID}, name:{self.name}, prog:{self.progress}, assignee:{self.assignee}, dueDate:{self.dueDate}, lastUpdate:{self.lastUpdate} recentCommit:{self.statusMsg}"
     
     def tablify(self):
-        return f"|{self.taskID} |{self.name} |{self.progress} |{self.assignee} |{self.dueDate} |{self.lastUpdate} |{self.statusMsg} |"
+        #need to process todos
+        #since progress is an int from 1 to 10
+        if(int(self.progress) < 1):
+            prog = ":!!:"
+        elif(int(self.progress) < 3):
+            prog = "🍎"
+        elif(int(self.progress) < 7):
+            prog = "🍊"
+        elif(int(self.progress) < 10):
+            prog = "🍋"
+        else:
+            prog = "🍏"
+            #prog = "green"
+        return f"|{self.taskID} |{self.name} |{prog} ({self.progress}) |{self.assignee} |{self.dueDate} |{self.lastUpdate} |{self.statusMsg} |"

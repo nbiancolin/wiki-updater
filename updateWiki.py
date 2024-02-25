@@ -3,16 +3,17 @@ from requests.auth import HTTPBasicAuth
 from datetime import date
 import passwords
 
-def updatePageContent(new_content, teamNum = "100", username = passwords.uname, password = passwords.dokupword, pageName = "start", url = "https://ug251.eecg.utoronto.ca/wiki297s"):
+def updatePageContent(new_content, teamNum = "100", username = passwords.uname, password = passwords.dokupword, pageName = "testing", url = "https://ug251.eecg.utoronto.ca/wiki297s"):
     today = date.today()
-    edit_url = f"{url}/doku.php?id=cd{teamNum}:{pageName}&do=edit"
+    edit_url = f"{url}/doku.php?id=cd{teamNum}:{pageName}&do="
     try:
         # Retrieve the edit token
-        response = requests.get(edit_url, auth=HTTPBasicAuth(username, password))
+        print("Attempting to send content to url: " + edit_url)
+        response = requests.get(edit_url + "edit", auth=HTTPBasicAuth(username, password))
         if response.status_code == 200:
             edit_token = response.text.split('name="sectok" value="', 1)[1].split('"', 1)[0]
             # Prepare data for the POST request
-            print(edit_url)
+            #print(edit_url)
             data = {
                 "do": "save",
                 "sectok": edit_token,
@@ -22,7 +23,7 @@ def updatePageContent(new_content, teamNum = "100", username = passwords.uname, 
                 "summary": "Updated via Nick's Wiki-Updater @ " + today.strftime('%y/%m/%d/%H/%M')
             }
             # Send POST request to update the page
-            response = requests.post(edit_url, data=data, auth=HTTPBasicAuth(username, password))
+            response = requests.post(edit_url + "save", data=data, auth=HTTPBasicAuth(username, password))
             if response.status_code == 200:
                 return True
             else:

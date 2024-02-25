@@ -18,7 +18,7 @@ def connectToSSH():
     client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     client.connect(server, username=passwords.uname, password=passwords.pword)
     if client:
-        print("Connected to SSH")
+        print("Connected to SSH!")
     else:
         print("Error connecting to SSH")
 
@@ -96,14 +96,15 @@ def parseGitLog(hours = 300, testMode = False):
 
     return res
 
-def writeLogToFile(log, fileName): #write log dictionary to csv file
+def writeLogToFile(log, fileName = "commits.csv"): #write log dictionary to csv file
     print("Writing to file")
     with open(fileName, 'w') as file:
         file.write('taskID,progress,author,date,message\n')
         for elem in log:
             file.write(f'{elem.taskID},{elem.progress},{elem.author},{elem.date},{elem.message}\n')
 
-def loadTasksFromFile(fileName):
+def loadTasksFromFile(fileName = "tasks.csv"):
+    print("Loading tasks from saved csv file")
     try:
         with open(fileName, 'r') as file:
             lines = file.readlines()
@@ -117,6 +118,7 @@ def loadTasksFromFile(fileName):
             file.close()
             return tasks
     except:
+        print("No tasks.csv file found, will create one with info found")
         return {}
 
 def updateTasks(tasks, commits):
@@ -145,12 +147,13 @@ def updateTasks(tasks, commits):
 
     return tasks
 
-def writeTasksToFile(tasks, fileName): #csv file is a good backup, + easily readable by computers & humans
+def writeTasksToFile(tasks, fileName = "tasks.csv"): #csv file is a good backup, + easily readable by computers & humans
     with open(fileName, 'w') as file:
         file.write('taskID,name,progress,assignee,dueDate,lastUpdate,statusMsg\n')
         for key in tasks:
             file.write(f'{tasks[key].taskID},{tasks[key].name},{tasks[key].progress},{tasks[key].assignee},{tasks[key].dueDate},{tasks[key].lastUpdate},{tasks[key].statusMsg}')
             file.write('\n')
+    print("Tasks.csv file successfully updated")
 
 if __name__ == "__main__": #for testing purposes
     #For some reason, running the file twice works. Don't ask me why
@@ -164,6 +167,6 @@ if __name__ == "__main__": #for testing purposes
     #process updates from commits & tasks
     tasks = updateTasks(tasks, commits)
 
-    writeLogToFile(commits, 'commits.csv')
+    writeLogToFile(commits, 'commits.csv') #backup just in case, don't think this is ever used
     writeTasksToFile(tasks, 'tasks.csv')
     closeSSH()
