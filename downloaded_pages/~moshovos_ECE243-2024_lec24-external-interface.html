@@ -1,0 +1,1428 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="lec24-external-interface_files/filelist.xml">
+<link rel=Edit-Time-Data href="lec24-external-interface_files/editdata.mso">
+<link rel=OLE-Object-Data href="lec24-external-interface_files/oledata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>The Processor’s Interface to Memory and Devices</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="place"/>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="City"/>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>owner</o:Author>
+  <o:LastAuthor>Owner</o:LastAuthor>
+  <o:Revision>35</o:Revision>
+  <o:TotalTime>165</o:TotalTime>
+  <o:Created>2008-03-15T23:25:00Z</o:Created>
+  <o:LastSaved>2009-04-06T18:43:00Z</o:LastSaved>
+  <o:Pages>2</o:Pages>
+  <o:Words>1872</o:Words>
+  <o:Characters>10677</o:Characters>
+  <o:Lines>88</o:Lines>
+  <o:Paragraphs>25</o:Paragraphs>
+  <o:CharactersWithSpaces>12524</o:CharactersWithSpaces>
+  <o:Version>11.9999</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>91</w:Zoom>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Batang;
+	panose-1:2 3 6 0 0 1 1 1 1 1;
+	mso-font-alt:\BC14\D0D5;
+	mso-font-charset:129;
+	mso-generic-font-family:auto;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:1 151388160 16 0 524288 0;}
+@font-face
+	{font-family:"\@Batang";
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:129;
+	mso-generic-font-family:auto;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:1 151388160 16 0 524288 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+@page Section1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 65.95pt 72.0pt 65.95pt;
+	mso-header-margin:36.0pt;
+	mso-footer-margin:36.0pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:1677533670;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-215422866 -100481046 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l0:level1
+	{mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level3
+	{mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level4
+	{mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level5
+	{mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level6
+	{mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level7
+	{mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level8
+	{mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level9
+	{mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+ol
+	{margin-bottom:0pt;}
+ul
+	{margin-bottom:0pt;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0pt 5.4pt 0pt 5.4pt;
+	mso-para-margin:0pt;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableGrid
+	{mso-style-name:"Table Grid";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0pt 5.4pt 0pt 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0pt;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="4098"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US style='tab-interval:36.0pt'>
+
+<div class=Section1>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>The Processor’s
+Interface to Memory and Devices<o:p></o:p></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>Spring 2008<o:p></o:p></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>Andreas <span
+class=SpellE>Moshovos</span><o:p></o:p></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText>In this <span class=GramE>lecture</span> we will discuss
+the physical interface of the processor to memory and devices. In previous <span
+class=GramE>lectures</span> we have seen the programmer’s view of memory and
+devices. Here <span class=GramE>we’ll</span> see an example of how the
+necessary support is implemented in hardware. We will then explain how memory
+and other devices <span class=GramE>can be connected</span> to this interface.
+Typically, <span class=GramE>you’ll</span> see the term “external bus” used to
+refer to the processor’s interface. This is appropriate most of the time since
+most systems do indeed use a bus for the external interface. A bus is
+physically a set of wires that <span class=GramE>is connected</span> to all
+devices directly. Modern high-performance systems may use a different physical
+interface that relies on point-to-point connections instead, however,
+conceptually, these interfaces are similar.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>We will describe an interface for the NIOS II processor.
+NIOS II is a soft processor so this is not the only possible <span class=GramE>interface,</span>
+however, what we describe is representative of other interfaces and of that
+provided by the NIOS II vendor. Since devices are memory mapped, <span
+class=GramE>the same physical interface is used by both</span>. The interface
+needs to support loads and <span class=GramE>stores, that</span> is memory
+reads and writes. The interface we are describing also supports different <span
+class=SpellE>datatypes</span>: it supports reads and writes of a byte, two
+bytes or four bytes (corresponding to the byte, half-word and word <span
+class=SpellE>datatypes</span> of NIOS II). Recall that the interface is that of
+memory. <span class=GramE>Hence</span> it needs to support LOADS and STORES.</p>
+
+<p class=MsoPlainText><span style='mso-spacerun:yes'> </span></p>
+
+<p class=MsoPlainText><span class=GramE>Here’s</span> the physical interface:</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" style='width:359.25pt;
+ height:269.25pt' o:ole="">
+ <v:imagedata src="lec24-external-interface_files/image001.emz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=479 height=359
+src="lec24-external-interface_files/image002.gif" v:shapes="_x0000_i1025"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PowerPoint.Slide.8" ShapeID="_x0000_i1025"
+  DrawAspect="Content" ObjectID="_1300534153">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class=MsoPlainText><span class=GramE>Here’s</span> what the various signals
+do:</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:480;mso-padding-alt:0pt 5.4pt 0pt 5.4pt;mso-border-insideh:
+ .5pt solid windowtext;mso-border-insidev:.5pt solid windowtext'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=164 valign=top style='width:122.7pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>Signal<o:p></o:p></b></p>
+  </td>
+  <td width=164 valign=top style='width:122.7pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>Acronym<o:p></o:p></b></p>
+  </td>
+  <td width=164 valign=top style='width:122.75pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>Width<o:p></o:p></b></p>
+  </td>
+  <td width=97 valign=top style='width:72.45pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>Type<o:p></o:p></b></p>
+  </td>
+  <td width=649 valign=top style='width:486.45pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>Function<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=164 valign=top style='width:122.7pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Address</p>
+  </td>
+  <td width=164 valign=top style='width:122.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>A31-A2</p>
+  </td>
+  <td width=164 valign=top style='width:122.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>30</p>
+  </td>
+  <td width=97 valign=top style='width:72.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Output</p>
+  </td>
+  <td width=649 valign=top style='width:486.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Specifies a word address to access</p>
+  <p class=MsoPlainText>Using the <span class=SpellE>ByteEnable</span> <span
+  class=GramE>signals</span> we can access any combination of the four bytes
+  within the word. <span class=GramE>More on this later.</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=164 valign=top style='width:122.7pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText><span class=SpellE>DataOut</span></p>
+  </td>
+  <td width=164 valign=top style='width:122.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Do31-Do0</p>
+  </td>
+  <td width=164 valign=top style='width:122.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>32</p>
+  </td>
+  <td width=97 valign=top style='width:72.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Output</p>
+  </td>
+  <td width=649 valign=top style='width:486.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Contain the data when performing a write, only those
+  bytes that are enabled via <span class=SpellE>ByteEnable</span> are valid</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=164 valign=top style='width:122.7pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText><span class=SpellE>DataIn</span></p>
+  </td>
+  <td width=164 valign=top style='width:122.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Di31-Di0</p>
+  </td>
+  <td width=164 valign=top style='width:122.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>32</p>
+  </td>
+  <td width=97 valign=top style='width:72.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Input</p>
+  </td>
+  <td width=649 valign=top style='width:486.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Contain the data when performing a read, only those
+  bytes that are enabled via <span class=SpellE>ByteEnable</span> are expected
+  to be valid</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td width=164 valign=top style='width:122.7pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText><span class=SpellE>ByteEnable</span></p>
+  </td>
+  <td width=164 valign=top style='width:122.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>BE0-BE3</p>
+  </td>
+  <td width=164 valign=top style='width:122.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>4</p>
+  </td>
+  <td width=97 valign=top style='width:72.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Output</p>
+  </td>
+  <td width=649 valign=top style='width:486.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Specify which bytes within the word are to <span
+  class=GramE>be accessed</span>. <span class=GramE>More on this later.</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td width=164 valign=top style='width:122.7pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Read/!Write</p>
+  </td>
+  <td width=164 valign=top style='width:122.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>R/!W</p>
+  </td>
+  <td width=164 valign=top style='width:122.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>1</p>
+  </td>
+  <td width=97 valign=top style='width:72.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Output</p>
+  </td>
+  <td width=649 valign=top style='width:486.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>1 means do a read, 0 means do a write</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6'>
+  <td width=164 valign=top style='width:122.7pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Master Enable</p>
+  </td>
+  <td width=164 valign=top style='width:122.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>ME</p>
+  </td>
+  <td width=164 valign=top style='width:122.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>1</p>
+  </td>
+  <td width=97 valign=top style='width:72.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Output</p>
+  </td>
+  <td width=649 valign=top style='width:486.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>1 means all other outputs are valid, 0 means ignore all
+  other signals</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7'>
+  <td width=164 valign=top style='width:122.7pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Acknowledge</p>
+  </td>
+  <td width=164 valign=top style='width:122.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>ACK</p>
+  </td>
+  <td width=164 valign=top style='width:122.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>1</p>
+  </td>
+  <td width=97 valign=top style='width:72.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Input</p>
+  </td>
+  <td width=649 valign=top style='width:486.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Normally this is 0. The device/memory that is accessed
+  is supposed to set this to 1 once it has completed the request. That is, once
+  it has written the data for writes, or once it has placed the right data on
+  Di for reads.</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8;mso-yfti-lastrow:yes'>
+  <td width=164 valign=top style='width:122.7pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Interrupt Request</p>
+  </td>
+  <td width=164 valign=top style='width:122.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>IRQ31-IRQ0</p>
+  </td>
+  <td width=164 valign=top style='width:122.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>32</p>
+  </td>
+  <td width=97 valign=top style='width:72.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Input</p>
+  </td>
+  <td width=649 valign=top style='width:486.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Interrupt Request signals. A device sets this to 1 to
+  request an interrupt.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span class=GramE>Here’s</span> the sequence of actions that
+take place to perform a read (load). Initially, <span class=SpellE>MasterEnable</span>
+is <span class=GramE>0</span> indicating that no action is taking place. At
+this point ACK is also <span class=GramE>0</span>. Then the following happens
+in order:</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>READ/LOAD
+SEQUENCE:<o:p></o:p></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText>Processor:</p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l0 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Prepare
+all necessary by setting them to the appropriate values. The signals that must
+be set are:</p>
+
+<p class=MsoPlainText style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:
+l0 level2 lfo2;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>a.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Address</p>
+
+<p class=MsoPlainText style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:
+l0 level2 lfo2;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>b.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+class=SpellE>ByteEnable</span> (for the time being please ignore how these are
+set, we will discuss this shortly).</p>
+
+<p class=MsoPlainText style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:
+l0 level2 lfo2;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>c.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>R/!W
+</p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l0 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Set
+ME to 1</p>
+
+<p class=MsoPlainText>Device or Memory</p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l0 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Access
+the specified bytes and place them on the <span class=SpellE>DataIn</span>
+lines</p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l0 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Set
+ACK to 1</p>
+
+<p class=MsoPlainText>Processor</p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l0 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>5.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Read
+data of the <span class=SpellE>DataIn</span> lines</p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l0 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>6.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Set
+ME 0 (note that the NIOS II interface de-asserts this <span class=SpellE>ealier</span>
+– more on this later)</p>
+
+<p class=MsoPlainText>Device or Memory</p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l0 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>7.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Set
+ACK to 0</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>WRITE/STORE
+SEQUENCE:<o:p></o:p></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText>Processor:</p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l0 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>8.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Prepare
+all necessary by setting them to the appropriate values. The signals that must
+be set are:</p>
+
+<p class=MsoPlainText style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:
+l0 level2 lfo2;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>a.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Address</p>
+
+<p class=MsoPlainText style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:
+l0 level2 lfo2;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>b.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+class=SpellE>DataOut</span></p>
+
+<p class=MsoPlainText style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:
+l0 level2 lfo2;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>c.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+class=SpellE>ByteEnable</span> (for the time being please ignore how these are
+set, we will discuss this shortly).</p>
+
+<p class=MsoPlainText style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:
+l0 level2 lfo2;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>d.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>R/!W
+</p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l0 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>9.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Set
+ME to 1</p>
+
+<p class=MsoPlainText>Device or Memory</p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l0 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>10.</span></span><![endif]>Update
+the specified memory locations with the values given on <span class=SpellE>DataOut</span></p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l0 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>11.</span></span><![endif]>Set
+ACK to 1</p>
+
+<p class=MsoPlainText>Processor</p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l0 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>12.</span></span><![endif]>Set
+ME 0 (note that the NIOS II interface de-asserts this <span class=SpellE>ealier</span>
+– more on this later)</p>
+
+<p class=MsoPlainText>Device or Memory</p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l0 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>13.</span></span><![endif]>Set
+ACK to 0</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>Notice that at the end, as with reads, we are back to the
+initial state of ME = <span class=GramE>0</span> and ACK = 0. </p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>The <span
+class=SpellE>ByteEnable</span> Signals and the Use of 30-bit Addresses<o:p></o:p></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText>Our interface is capable of transferring up to 32 bits
+per access. However, not all NIOS II accesses are 32-bit wide. In particular,
+Because NIOS II supports byte and half-word accesses in addition to word
+accesses. To support these we use the <span class=SpellE>ByteEnable</span>
+signals and only the upper 30 bits of the address accessed. All addresses on
+our interface are word-aligned. That is, the two least-significant bits that
+are omitted are implied to be <span class=GramE>0</span>. There are four bytes
+within each word. Each <span class=SpellE>ByteEnable</span> line corresponds to
+one of these bytes. BE0 corresponds to the byte that is at the same address the
+word starts, while BE3 is 3 bytes after that. Here are a couple of examples to
+clarify things. All numbers are in binary</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:480;mso-padding-alt:0pt 5.4pt 0pt 5.4pt;mso-border-insideh:
+ .5pt solid windowtext;mso-border-insidev:.5pt solid windowtext'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=199 valign=top style='width:149.5pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>Operation<o:p></o:p></b></p>
+  </td>
+  <td width=112 valign=top style='width:84.1pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>A31-A2 <o:p></o:p></b></p>
+  </td>
+  <td width=81 valign=top style='width:60.9pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>BE3-BE0<o:p></o:p></b></p>
+  </td>
+  <td width=303 valign=top style='width:227.1pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>Di31-Di0<o:p></o:p></b></p>
+  </td>
+  <td width=456 valign=top style='width:342.0pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>Explanation<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=199 valign=top style='width:149.5pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>LOAD.WORD 10000</p>
+  </td>
+  <td width=112 valign=top style='width:84.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>0…0100</p>
+  </td>
+  <td width=81 valign=top style='width:60.9pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>1111</p>
+  </td>
+  <td width=303 valign=top style='width:227.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>All must be set by memory</p>
+  </td>
+  <td width=456 valign=top style='width:342.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Access four bytes starting from address 10000</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=199 valign=top style='width:149.5pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>LOAD.HWORD 10000</p>
+  </td>
+  <td width=112 valign=top style='width:84.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>0…0100</p>
+  </td>
+  <td width=81 valign=top style='width:60.9pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>0011</p>
+  </td>
+  <td width=303 valign=top style='width:227.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Di0-Di15 must be set by memory</p>
+  </td>
+  <td width=456 valign=top style='width:342.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Access two bytes starting from address 10000</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=199 valign=top style='width:149.5pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>LOAD.HWORD 10010</p>
+  </td>
+  <td width=112 valign=top style='width:84.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>0…0100</p>
+  </td>
+  <td width=81 valign=top style='width:60.9pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>1100</p>
+  </td>
+  <td width=303 valign=top style='width:227.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Di31-Di16 must be set by memory</p>
+  </td>
+  <td width=456 valign=top style='width:342.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Access two bytes starting from address 10010</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td width=199 valign=top style='width:149.5pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>LOAD.BYTE 10000</p>
+  </td>
+  <td width=112 valign=top style='width:84.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>0…0100</p>
+  </td>
+  <td width=81 valign=top style='width:60.9pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>0001</p>
+  </td>
+  <td width=303 valign=top style='width:227.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Di0-Di7 must be set by memory</p>
+  </td>
+  <td width=456 valign=top style='width:342.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Access the byte at address 10000</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td width=199 valign=top style='width:149.5pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>LOAD.BYTE 10001</p>
+  </td>
+  <td width=112 valign=top style='width:84.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>0…0100</p>
+  </td>
+  <td width=81 valign=top style='width:60.9pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>0010</p>
+  </td>
+  <td width=303 valign=top style='width:227.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Di15-Di8 must be set by memory</p>
+  </td>
+  <td width=456 valign=top style='width:342.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Access the byte at address 10001</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6'>
+  <td width=199 valign=top style='width:149.5pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>LOAD.BYTE 10010</p>
+  </td>
+  <td width=112 valign=top style='width:84.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>0…0100</p>
+  </td>
+  <td width=81 valign=top style='width:60.9pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>0100</p>
+  </td>
+  <td width=303 valign=top style='width:227.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Di23-Di16 must be set by memory</p>
+  </td>
+  <td width=456 valign=top style='width:342.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Access the byte at address 10010</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7'>
+  <td width=199 valign=top style='width:149.5pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>LOAD.BYTE 10011</p>
+  </td>
+  <td width=112 valign=top style='width:84.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>0…0100</p>
+  </td>
+  <td width=81 valign=top style='width:60.9pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><span
+  style='color:red'>1000<o:p></o:p></span></b></p>
+  </td>
+  <td width=303 valign=top style='width:227.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Di31-Di24 must be set by memory</p>
+  </td>
+  <td width=456 valign=top style='width:342.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Access the byte at address 10001</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8'>
+  <td width=199 valign=top style='width:149.5pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>LOAD.BYTE 11010</p>
+  </td>
+  <td width=112 valign=top style='width:84.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>0…0110</p>
+  </td>
+  <td width=81 valign=top style='width:60.9pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>0100</p>
+  </td>
+  <td width=303 valign=top style='width:227.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Di23-Di16 must be set by memory</p>
+  </td>
+  <td width=456 valign=top style='width:342.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Access the byte at address 11010</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9;mso-yfti-lastrow:yes'>
+  <td width=199 valign=top style='width:149.5pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>LOAD.BYTE 11101</p>
+  </td>
+  <td width=112 valign=top style='width:84.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>0…0111</p>
+  </td>
+  <td width=81 valign=top style='width:60.9pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>0010</p>
+  </td>
+  <td width=303 valign=top style='width:227.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Di15-Di8 must be set by memory</p>
+  </td>
+  <td width=456 valign=top style='width:342.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0pt 5.4pt 0pt 5.4pt'>
+  <p class=MsoPlainText>Access the byte at address 11101</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>The Role of the
+Master Enable Signal<o:p></o:p></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText>Besides being able to say to memory “do <span
+class=GramE>noting”</span> ME plays another important role. In the physical <span
+class=GramE>world</span> it takes time for us to setup coherent values on all
+signals. For example, assume we want to perform in sequence a STORE.BYTE 0x10,
+0X000000 and a STORE.BYTE 0x01, 0xffffff. It is practically impossible to
+change all signals instantaneously. <span class=GramE>So</span>, in going from
+address 0x000000 to 0xffffff all possible binary numbers may temporarily appear
+(because different signals may change at different rates). Without the ME, the
+memory could get confused and misinterpret the second store. With ME, we can se
+ME to zero in between the two stores, wait sufficient time for the second store
+values to appear on the data and address signals and then set ME=1. This way
+memory remains oblivious to temporarily inconsistent values. </p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>The Role of the
+Acknowledge Signal<o:p></o:p></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText>Memory devices and I/O devices can have different
+latencies. To allow <span class=GramE>an</span> device to delay the processor
+as long as it is necessary the NIOS II designers included the ACK signal. A
+device keeps ACK to <span class=GramE>0</span> while it is performing the
+requested operation. It then sets ACK to <span class=GramE>1</span> to notify
+the processor that the request was completed. Because this is a <span
+class=GramE>device</span> generated signal different devices can delay the
+processor by a different amounts of time. For example, if all devices are as
+fast as the processor’s interface is, <span class=GramE>then</span> we can
+simply connect ACK to ME. This way all requests <span class=GramE>are
+acknowledged</span> immediately. </p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>Synchronous vs.
+Asynchronous Interfaces<o:p></o:p></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText>The NIOS II interface is <b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'>synchronous</i></b>. That is, in
+addition to the signals shown, <span class=GramE>an extra clock signal is
+provided by the processor</span>. All signals <span class=GramE>are sampled</span>
+on the rising edge of this clock. Here are timing diagrams for memory reads and
+writes (note that in this diagram <span class=SpellE>BusEnable</span> = <span
+class=SpellE>MasterEnable</span>, <span class=SpellE>WriteData</span>=<span
+class=GramE>Do,</span> and <span class=SpellE>ReadData</span>=Di):</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><!--[if gte vml 1]><v:shape id="_x0000_i1026" type="#_x0000_t75"
+ style='width:581.25pt;height:303.75pt'>
+ <v:imagedata src="lec24-external-interface_files/image003.emz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=775 height=405
+src="lec24-external-interface_files/image004.gif" v:shapes="_x0000_i1026"><![endif]></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='color:maroon'>This is not true:</span><s>
+The NIOS II designers optimized for speed by asserting <span class=SpellE>MasterEnable</span>
+only at the beginning of each request and only for one cycle. This way, the
+processor does not need to de-assert <span class=SpellE>MasterEnable</span> <i
+style='mso-bidi-font-style:normal'>after </i>the device responds with an ACK.<o:p></o:p></s></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>So, here are the actual read and write sequences:</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>READ/LOAD
+SEQUENCE:<o:p></o:p></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText>Processor:</p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l0 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Prepare
+all necessary by setting them to the appropriate values. The signals that must
+be set are:</p>
+
+<p class=MsoPlainText style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:
+l0 level2 lfo2;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>a.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Address</p>
+
+<p class=MsoPlainText style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:
+l0 level2 lfo2;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>b.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+class=SpellE>ByteEnable</span> (for the time being please ignore how these are
+set, we will discuss this shortly).</p>
+
+<p class=MsoPlainText style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:
+l0 level2 lfo2;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>c.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>R/!W
+</p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l0 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New";color:maroon'><span
+style='mso-list:Ignore'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='color:maroon'>Set ME to 1<o:p></o:p></span></p>
+
+<p class=MsoPlainText>Device or Memory</p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l0 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Access
+the specified bytes and place them on the <span class=SpellE>DataIn</span>
+lines</p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l0 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Set
+ACK to 1 for one cycle</p>
+
+<p class=MsoPlainText>Processor</p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l0 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>5.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Read
+data of the <span class=SpellE>DataIn</span> lines. This happens on the rising
+edge when ACK is 1</p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l0 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New";color:maroon'><span
+style='mso-list:Ignore'>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='color:maroon'>Set ME to 0<o:p></o:p></span></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>WRITE/STORE
+SEQUENCE:<o:p></o:p></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText>Processor:</p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l0 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>7.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Prepare
+all necessary by setting them to the appropriate values. The signals that must
+be set are:</p>
+
+<p class=MsoPlainText style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:
+l0 level2 lfo2;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>a.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Address</p>
+
+<p class=MsoPlainText style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:
+l0 level2 lfo2;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>b.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+class=SpellE>DataOut</span></p>
+
+<p class=MsoPlainText style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:
+l0 level2 lfo2;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>c.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+class=SpellE>ByteEnable</span> (for the time being please ignore how these are
+set, we will discuss this shortly).</p>
+
+<p class=MsoPlainText style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:
+l0 level2 lfo2;tab-stops:list 72.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>d.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>R/!W
+</p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l0 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New";color:maroon'><span
+style='mso-list:Ignore'>8.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='color:maroon'>Set ME to 1<o:p></o:p></span></p>
+
+<p class=MsoPlainText>Device or Memory</p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l0 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>9.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Update
+the specified memory locations with the values given on <span class=SpellE>DataOut</span></p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l0 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>10.</span></span><![endif]>Set
+ACK to 1</p>
+
+<p class=MsoPlainText style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:
+l0 level1 lfo2;tab-stops:list 36.0pt'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New";color:maroon'><span
+style='mso-list:Ignore'>11.</span></span><![endif]><span style='color:maroon'>Set
+ME to 0<o:p></o:p></span></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>The original sequences we described <span class=GramE>can
+be used</span> without a clock. Such an interface is <span class=GramE><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>asynchronous</i></b></span><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'> </i></b>as
+it does not use a clock. </p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><st1:place w:st="on"><st1:City w:st="on"><b
+  style='mso-bidi-font-weight:normal'>Split</b></st1:City></st1:place><b
+style='mso-bidi-font-weight:normal'> Transaction Interfaces<o:p></o:p></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText>The NIOS II interface can support only one outstanding
+request at any given point in time. This is appropriate for the target
+application since NIOS II is not a high-performance design. In modern
+high-performance systems, however, memory and devices are typically a lot slower
+than the processor and its interface (the interface typically runs only at a
+fraction of the CPU’s clock). <span class=GramE>Reserving the interface for the
+duration of a single request results in low utilization.</span> If the
+processor is capable of performing multiple operations, we can instead use a <i
+style='mso-bidi-font-style:normal'>split-transaction </i>interface. There, the
+processor initiates a request by providing the appropriate information (e.g.,
+address, <span class=SpellE>byteenable</span>, r/w and data if necessary) and
+the devices copies this information locally. The <span class=GramE>interfaces is</span>
+then used to initiate other requests. Eventually, when the device is ready to
+respond, it sends the response back to the processor. Each request <span
+class=GramE>is tagged</span> so that it can be matched with its response.
+Further details on this concept are beyond the scope of this course.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><span
+style='mso-fareast-font-family:Batang'>Multiplexing <span class=SpellE>data_in</span>
+and <span class=SpellE>data_out</span><o:p></o:p></span></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:Batang'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New";
+mso-fareast-font-family:Batang'>In our preceding <span class=GramE>design</span>
+two separate sets of 32 wires each were used for reading and for writing data
+from and to memory respectively. Often times, the number of pins available per
+chip is limited by cost (<span class=GramE>a</span> integrated circuit becomes
+increasingly and significantly more expensive the more pins it uses).
+Accordingly, designers often try to find ways to reduce the number of external
+connections (pins). In our <span class=GramE>memory</span> we could “multiplex”
+the <span class=SpellE>data_in</span> and <span class=SpellE>data_out</span>
+signals. This does not violate the behavioral model as it does not support
+simultaneous reads and writes. We can only read or write but not both at the
+same time. <o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New";
+mso-fareast-font-family:Batang'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New";
+mso-fareast-font-family:Batang'>One way of multiplexing these wires is via the
+use of tri-state buffers. The symbol/connections for a tri-state buffer and its
+truth table are as follows:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New";
+mso-fareast-font-family:Batang'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New";
+mso-fareast-font-family:Batang'><!--[if gte vml 1]><v:shape id="_x0000_i1027"
+ type="#_x0000_t75" style='width:435pt;height:180.75pt'>
+ <v:imagedata src="lec24-external-interface_files/image005.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=580 height=241
+src="lec24-external-interface_files/image006.jpg" v:shapes="_x0000_i1027"><![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New";
+mso-fareast-font-family:Batang'>When the e input is zero the in and out
+terminals are as if they are completely disconnected. Using 32 tri-state
+buffers one per data bit we can multiplex the <span class=SpellE>data_in</span>
+and <span class=SpellE>data_out</span> signals as follows:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New";
+mso-fareast-font-family:Batang'><!--[if gte vml 1]><v:shape id="_x0000_i1028"
+ type="#_x0000_t75" style='width:336pt;height:241.5pt'>
+ <v:imagedata src="lec24-external-interface_files/image007.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=448 height=322
+src="lec24-external-interface_files/image008.jpg" v:shapes="_x0000_i1028"><![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New";
+mso-fareast-font-family:Batang'>Only when we do a read (R/W’ = <span
+class=GramE>1</span> and ME = 1), the tri-state buffers are enabled and memory
+“drives” (i.e., places a value) on the data wires. In all other cases, the data
+wires behave as inputs so they can be freely set to any value desired (i.e.,
+when doing a write).<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New";
+mso-fareast-font-family:Batang'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New";
+mso-fareast-font-family:Batang'>Using this methodology we can build a bus where
+multiple devices are connected to the same set of wires and by appropriately
+enabling their outputs we can make sure that only one device is “driving”
+(i.e., placing a value) on the bus and others (one or many) are reading it. As
+a side-note, please keep in mind that these busses do not scale very well
+primarily <span class=GramE>as a result</span> of increased parasitic
+capacitance on the wires.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>Multiple Master
+Interfaces<o:p></o:p></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText>The NIOS II interface has only one “master<span
+class=GramE>”, that</span> is a party that can initiate requests. That is the
+processor. For higher performance, most modern systems implement an interface
+that can support multiple masters. In such an <span class=GramE>interface</span>
+additional signals are provided so that some other party (e.g., an I/O device
+such as a disk controller) can temporarily become the bus master. This allows
+devices to communicate amongst them and with memory without processor
+intervention. In such an interface the <span class=GramE>address and <span
+class=SpellE>DataOut</span> lines are not always driven by the processor</span>.
+The processor uses tri-state connections to them so that other devices can
+drive values on them as needed. Extra signals <span class=GramE>are provided</span>
+so that a device can request to become a master, and to relinquish control back
+to the processor.</p>
+
+</div>
+
+</body>
+
+</html>

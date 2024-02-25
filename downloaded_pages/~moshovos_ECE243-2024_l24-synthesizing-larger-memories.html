@@ -1,0 +1,634 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1253">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="l24-synthesizing-larger-memories_files/filelist.xml">
+<link rel=Edit-Time-Data
+href="l24-synthesizing-larger-memories_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Lecture 2</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Name</o:Author>
+  <o:LastAuthor>Owner</o:LastAuthor>
+  <o:Revision>66</o:Revision>
+  <o:TotalTime>208</o:TotalTime>
+  <o:Created>2005-01-01T01:34:00Z</o:Created>
+  <o:LastSaved>2008-03-26T17:48:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1622</o:Words>
+  <o:Characters>9251</o:Characters>
+  <o:Company>Organization</o:Company>
+  <o:Lines>77</o:Lines>
+  <o:Paragraphs>21</o:Paragraphs>
+  <o:CharactersWithSpaces>10852</o:CharactersWithSpaces>
+  <o:Version>11.6408</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Batang;
+	panose-1:2 3 6 0 0 1 1 1 1 1;
+	mso-font-alt:Batang;
+	mso-font-charset:129;
+	mso-generic-font-family:auto;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:1 151388160 16 0 524288 0;}
+@font-face
+	{font-family:"\@Batang";
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:129;
+	mso-generic-font-family:auto;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:1 151388160 16 0 524288 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:Batang;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:Batang;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 65.95pt 1.0in 65.95pt;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:103428550;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-384550648 67698705 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l0:level1
+	{mso-level-text:"%1\)";
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableGrid
+	{mso-style-name:"Table Grid";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="6146"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=MsoPlainText>Lecture 23</p>
+
+<p class=MsoPlainText>Andreas <span class=SpellE>Moshovos</span></p>
+
+<p class=MsoPlainText>“Spring” 2005</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>Building larger
+memories using smaller ones<o:p></o:p></b></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>During the lectures we have discussed how memories are organized
+internally (please read through chapter 5). In this lecture we will explain how
+we can use smaller memory devices to build larger ones. For example, what if we
+want to have 4Gbytes of main memory in our system? Turns out that we do not
+necessarily need to find a 4Gbyte memory chip (I don’t think that one exists
+today anyhow). Instead, what we can do is get a lot of smaller memory devices
+(say eight 512Mbyte devices) and organize them in a way that they behave like
+the larger chip would.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>Capacity and
+Geometry (internal and external)<o:p></o:p></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText>Before we proceed with the methodology let’s first take a
+closer look at the relevant attributes of a memory device. There are two
+interrelated attributes:</p>
+
+<p class=MsoPlainText><span class=GramE>(1) Capacity and (2) Geometry.</span></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>Capacity = total amount of information (bits) that the
+memory device can store. Example: 16Kbits or 2Kbytes (these two are the same).</p>
+
+<p class=MsoPlainText>Geometry = how information is organized (this is the
+external view of memory). A memory device has two dimensions: rows and columns:</p>
+
+<table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;mso-yfti-tbllook:480;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=327 colspan=2 valign=top style='width:245.45pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=153 valign=top style='width:114.55pt;border:none;border-bottom:
+  solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText>&lt;--- columns ---&gt;</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes;height:111.1pt;mso-row-margin-left:
+  2.75in'>
+  <td style='mso-cell-special:placeholder;border:none;padding:0in 0in 0in 0in'
+  width=264><p class='MsoNormal'>&nbsp;</td>
+  <td width=63 valign=top style='width:47.45pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;
+  height:111.1pt'>
+  <p class=MsoPlainText align=center style='text-align:center'>^</p>
+  <p class=MsoPlainText align=center style='text-align:center'>|</p>
+  <p class=MsoPlainText align=center style='text-align:center'>|</p>
+  <p class=MsoPlainText align=center style='text-align:center'><o:p>&nbsp;</o:p></p>
+  <p class=MsoPlainText align=center style='text-align:center'>rows</p>
+  <p class=MsoPlainText align=center style='text-align:center'><o:p>&nbsp;</o:p></p>
+  <p class=MsoPlainText align=center style='text-align:center'>|</p>
+  <p class=MsoPlainText align=center style='text-align:center'>|</p>
+  <p class=MsoPlainText align=center style='text-align:center'>V</p>
+  </td>
+  <td width=153 valign=top style='width:114.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:111.1pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+ </tr>
+ <![if !supportMisalignedColumns]>
+ <tr height=0>
+  <td width=264 style='border:none'></td>
+  <td width=63 style='border:none'></td>
+  <td width=153 style='border:none'></td>
+ </tr>
+ <![endif]>
+</table>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>Geometry and capacity are directly related: capacity =
+rows x cols.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>As an example, consider a memory device that has a
+capacity of 32Kbits and is organized in 8K rows where each row contains 4 bits.
+Often the name “8K x 4bit” will be used to refer to such a device. It is
+important to note that the geometry of 8K rows and 4 bits per row refers to the
+external interface of the device. Internally, the memory will be as square as
+possible to minimize latency. The external interface is different as the goal
+there is to minimize the number of external connections (pins). For example, a
+1Mbit memory device could be organized internally as an array of 1K rows where
+each row has 1K bits. If we were to expose this organization externally we
+would need 10 address bits (for the row) plus 1K bits for the data bits of each
+row. That’s a lot of pins and while one could probably build a package that has
+1000+ pins, the package will be very expensive (and definitely much more
+expensive than the memory device it will hold).</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>The externally exposed geometry of a memory device
+determines the number of address and data lines required. For example, <span
+class=GramE>a</span> 8Kbyte chip organized externally as 4K rows of 16 bits
+each has the following wires:</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>A11-A0 : row address</p>
+
+<p class=MsoPlainText>D15-<span class=GramE>D0 :</span> data lines</p>
+
+<p class=MsoPlainText>R/<span class=GramE>W :</span> whether we want to read or
+write</p>
+
+<p class=MsoPlainText>E: whether we want to access this device</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>If E = 0 the device sits silent and ignores all other
+signals. If E = 1 then it looks at R/W and if it is 1 it does a read or a
+write. In either case the address accessed must be given on the address lines. </p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>External Data
+Connections: Why we can share them across multiple memory devices<o:p></o:p></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText>The connection for the data lines is similar to the
+connection used for the external connections of the PIT:</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" style='width:256.5pt;
+ height:261.75pt'>
+ <v:imagedata src="l24-synthesizing-larger-memories_files/image001.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=342 height=349
+src="l24-synthesizing-larger-memories_files/image002.jpg" v:shapes="_x0000_i1025"><![endif]></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>There is a tri-state buffer and a direct connection to
+the external data pin. If we are reading from the device (E AND R/W) then the
+tri-state buffer is enabled and the value read from the internal memory array is
+placed on the data pin. If we are not reading from the device, then the
+tri-state buffer is de-activated and the data pin is left floating. For writes,
+the internal memory core has a direct connection so that it can use the value
+placed there by someone else (typically the CPU). <span class=GramE>This
+arrangement allow</span> us to connect multiple memory devices onto the same
+data pins. So long as we make sure that only one of them is driving the data
+line (i.e., we read from only one device) there is no short-circuit and everything
+works fine. </p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>Synthesizing a
+Wider Memory using Narrower Ones: Having More Columns<o:p></o:p></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText>As we have seen a memory device has two dimensions: rows
+and columns. Let’s first see how using smaller devices (narrower) we can
+synthesize a wider one. That is, let’s see how we can increase the column
+dimension. This is best understood by means of an example. Assume that we are
+given memory devices that are 8Kbits (capacity) organized as 2K rows of 4 bits
+each. What we want to have is a memory device of 16Kbits capacity organized as
+2K rows of 8 bits per row.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>HAVE: 2K rows x 4 bits/row</p>
+
+<p class=MsoPlainText>WANT: 2K rows x 8 bits/row</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><!--[if gte vml 1]><v:shape id="_x0000_i1026" type="#_x0000_t75"
+ style='width:338.25pt;height:181.5pt'>
+ <v:imagedata src="l24-synthesizing-larger-memories_files/image003.gif"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=451 height=242
+src="l24-synthesizing-larger-memories_files/image003.gif" v:shapes="_x0000_i1026"><![endif]></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>One of the things we need to determine is how many of the
+smaller devices we need to build the larger one. We could look at the capacity.
+The smaller ones are 8Kbits each and the one we want is 16Kbits. So, if we
+consider only capacity two of the smaller chips should be sufficient (in our
+example, we will be using 100% of all memory devices, however, as we will
+explain later it may be necessary to only partially use some of the smaller
+chips depending on the geometry of the “want” device).</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>Having two of the smaller devices we must now connect
+them so that they collectively behave like the larger device. The idea here is
+to place the two small devices conceptually next to each other, access the same
+row in both devices and use the four bits from one of the devices as the four
+most significant bits of the output and the four bits from the second device
+and the lower four least significant bits of the output. The connections are as
+follows:</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><!--[if gte vml 1]><v:shape id="_x0000_i1027" type="#_x0000_t75"
+ style='width:408.75pt;height:3in'>
+ <v:imagedata src="l24-synthesizing-larger-memories_files/image004.gif"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=545 height=288
+src="l24-synthesizing-larger-memories_files/image004.gif" v:shapes="_x0000_i1027"><![endif]><span
+style='mso-spacerun:yes'> </span></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>The 11 address lines are connected to both devices. The
+four bits of one of the devices are used as the upper four data bits whereas
+the four bits of the second device are used as the four lower data bits. The E
+and R/W signals are connected to both devices because at every access we do
+access both devices in parallel performing the same type of access.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>Synthesizing a
+Taller Memory using Shorter Ones: Having More Rows<o:p></o:p></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText>Let’s us now use smaller memories to synthesize one that
+has more rows. As before let us assume that we are given chips of 2K rows with
+4 bits/row. Now we want to build a device that has 4K rows with 4 bits/row. So:</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><!--[if gte vml 1]><v:shape id="_x0000_i1028" type="#_x0000_t75"
+ style='width:286.5pt;height:166.5pt'>
+ <v:imagedata src="l24-synthesizing-larger-memories_files/image005.gif"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=382 height=222
+src="l24-synthesizing-larger-memories_files/image005.gif" v:shapes="_x0000_i1028"><![endif]></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>Again, looking at capacity alone we can see that we need
+at least two of the devices. The idea here is to map half of the addresses of
+the larger device to one of the smaller ones and the other half to the other
+smaller device. For example, in the diagram that follows we have mapped
+addresses of the form 0X...X onto the first device (top) and addresses of the
+form 1X...X to the second device (bottom). The way we achieve this mapping is
+by selectively activating one of the two using a 1-to-2 decoder and two AND
+gates. The AND gates drive the E signals. The top device will see an activated E
+only if the external E is 1 and A11 is 0. This is the case when an address of
+the form 0X...X is being accessed. Similarly, the lower device will see an
+active E signal only if the external E is 1 and A11 is 1 (hence when an address
+of the form 1X...X is accessed):</p>
+
+<p class=MsoPlainText><!--[if gte vml 1]><v:shape id="_x0000_i1029" type="#_x0000_t75"
+ style='width:473.25pt;height:385.5pt'>
+ <v:imagedata src="l24-synthesizing-larger-memories_files/image006.gif"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=631 height=514
+src="l24-synthesizing-larger-memories_files/image006.gif" v:shapes="_x0000_i1029"><![endif]></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>The corresponding data lines are tied together. At any
+given point of time only one of the devices reads these lines or drives them
+(on a memory write or read respectively).</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>Putting it all
+together: Building a Wider and Taller Memory<o:p></o:p></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText>As the last example let’s see how we can build a device
+that has more rows and columns. Assume that we are given devices that are 16k
+rows x 4 bits (8Kbytes capacity) and we want to synthesize a device that has
+64K rows with 16 bits per row. Capacity-wise we can calculate that we need
+eight of the smaller devices. They will be organized in a tiled fashion as
+follows:</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><!--[if gte vml 1]><v:shape id="_x0000_i1030" type="#_x0000_t75"
+ style='width:265.5pt;height:237pt'>
+ <v:imagedata src="l24-synthesizing-larger-memories_files/image007.gif"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=354 height=316
+src="l24-synthesizing-larger-memories_files/image007.gif" v:shapes="_x0000_i1030"><![endif]></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>To decode the external addresses and map them to the row
+device rows we will need a 2-to-4 decoder. We will use address bits a15 and a14
+for selecting one of the four rows. Here’s the complete diagram:</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><!--[if gte vml 1]><v:shape id="_x0000_i1031" type="#_x0000_t75"
+ style='width:465pt;height:526.5pt'>
+ <v:imagedata src="l24-synthesizing-larger-memories_files/image008.gif"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=620 height=702
+src="l24-synthesizing-larger-memories_files/image008.gif" v:shapes="_x0000_i1031"><![endif]></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>Which address bits
+to use for address decoding? <span class=GramE>Necessity of Choice?</span><o:p></o:p></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText>In the previous examples, we have used the most
+significant bit(s) of the incoming address to select a row of devices. In the
+previous example, 1/4 of the addresses were mapped to the top four devices, the
+next 1/4 to the next four devices and so on. This was by choice. We could have
+picked any pair of address bits to do the mapping. For example, we could have
+used the lower two address bits a0 and a1. In this case bits a15 through a13
+(external) would have to be connected to the a13-a0 bits of the smaller devices
+and bits a0 and a1 (external) would drive the 2-to-4 decoder. </p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>Interleaving:<o:p></o:p></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText>The mapping of external addresses to internal devices is
+called <b style='mso-bidi-font-weight:normal'>interleaving. </b>In the second
+scheme we described, addresses that are divisible by four <span class=GramE>map</span>
+to the top devices, addresses that produce a remainder of 1 when divided by
+four would map to the second four devices and so on. This form of interleaving
+is often used in high-performance memory systems. There are two issues that
+must be explained to understand why this choice is made:</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]><span style='mso-fareast-font-family:
+"Courier New"'><span style='mso-list:Ignore'>1)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Memory devices are characterized by latency and
+cycle times. Latency is the amount of time it takes for memory to respond to a
+request. Cycle time is the total time necessary before another request can be
+made. Because reads are destructive operations the memory needs to rewrite the
+value read internally and that takes time (there are other considerations such
+as <span class=SpellE>precharging</span> the <span class=SpellE>bitlines</span>
+that contribute to cycle time). Think of this as asking someone to go fetch
+something. The time it takes for them to come back with what you asked is the
+latency. However, assuming that they were really nice and wanted to please you
+they ran, so now they are tired and need to catch a breath before being ready
+to serve another of your requests. This is the cycle time.</p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]><span style='mso-fareast-font-family:
+"Courier New"'><span style='mso-list:Ignore'>2)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Often programs access memory addresses
+sequentially. That is if they access address 1, then the next access would
+probably be at address 2 and so on (think of sequential sequencing for
+instructions and of arrays for data).</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>With the interleaved mapping we just described, an access
+to address 0 will be serviced by row 00. After responding to the request, the
+row 00 devices will have to spent additional time (as explained for cycle
+time). If the next request is at address 1, then it would map to row 01 devices
+and hence the access can start immediately. With the first mapping (that used
+the upper bits for decoding) addresses 0 and 1 would map both onto row 00 hence
+the second access would need to observe the full cycle time of memory.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>This is an example of a class of performance enhancing
+techniques. The principle here is the following: Study programs and determine a
+behavior that appears to be common (e.g., often accessing addresses
+sequentially). Build/organize devices that exploit this behavior to improve
+performance (e.g., interleave). These techniques are probabilistic in nature in
+that they *may* improve performance. They success lies in the assumption of a
+specific behavior. If the application that runs on the computer exhibits this
+behavior, then the technique is useful otherwise it may not be. Caches are
+another example of such a technique. They will be the topic of a set of
+upcoming lectures.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>

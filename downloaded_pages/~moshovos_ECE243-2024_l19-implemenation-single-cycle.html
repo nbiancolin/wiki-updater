@@ -1,0 +1,3255 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1253">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="l19-implemenation-single-cycle_files/filelist.xml">
+<link rel=Edit-Time-Data
+href="l19-implemenation-single-cycle_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Lecture 2</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="place"/>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Name</o:Author>
+  <o:LastAuthor>owner</o:LastAuthor>
+  <o:Revision>216</o:Revision>
+  <o:TotalTime>563</o:TotalTime>
+  <o:LastPrinted>2005-02-27T00:13:00Z</o:LastPrinted>
+  <o:Created>2005-01-01T01:34:00Z</o:Created>
+  <o:LastSaved>2008-02-26T04:06:00Z</o:LastSaved>
+  <o:Pages>2</o:Pages>
+  <o:Words>3946</o:Words>
+  <o:Characters>22498</o:Characters>
+  <o:Company>Organization</o:Company>
+  <o:Lines>187</o:Lines>
+  <o:Paragraphs>52</o:Paragraphs>
+  <o:CharactersWithSpaces>26392</o:CharactersWithSpaces>
+  <o:Version>11.9999</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>FullPage</w:Zoom>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Batang;
+	panose-1:2 3 6 0 0 1 1 1 1 1;
+	mso-font-alt:Batang;
+	mso-font-charset:129;
+	mso-generic-font-family:auto;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:1 151388160 16 0 524288 0;}
+@font-face
+	{font-family:"\@Batang";
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:129;
+	mso-generic-font-family:auto;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:1 151388160 16 0 524288 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:Batang;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:Batang;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 65.95pt 1.0in 65.95pt;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableGrid
+	{mso-style-name:"Table Grid";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="16386"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=MsoNormal>Lecture 19</p>
+
+<p class=MsoNormal>Andreas <span class=SpellE>Moshovos</span></p>
+
+<p class=MsoNormal>Spring 2007</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Implementing a Simple
+CPU<o:p></o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal>We now switch topics. We assume that there is an
+understanding of how CPUs behave which is sufficient for programming them. This
+is the role of the computer user/programmer. In what follows we switch roles
+and assume the role of the computer designer. This is the person that designs a
+piece of hardware, the CPU that behaves exactly the way the programmer expects
+it will. Recall, that the behavior model of the CPU is the contract between the
+designer and the programmer. Thus it allows the two parties to proceed
+independently.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>We will three different methodologies for implementing CPUs.
+The textbook presents one of these styles. This will be the last one that we
+will present during our lectures. For clarity, we will restrict our attention
+to a hypothetical, simple CPU.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Instruction Set
+Definition<o:p></o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal>We will use the following instruction set/behavior model for
+our examples. Assume a hypothetical architecture where there are just 256
+memory locations. Our CPU has four general purpose registers called K0 through
+K3 each capable of storing just 8 bits. The CPU also has a PC register which is
+also 8 bits. Upon resetting the CPU (e.g., power up), the PC takes the value
+$80. Our CPU does not support interrupts. In addition, there are two condition
+code bits Z = zero and N = negative. </p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Our CPU is capable of executing the following 10
+instructions:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'>LOAD R1 (R2):<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; TMP = MEM [R2]<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman"'>R1 = TMP<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman"'>PC = PC + 1<o:p></o:p></span></p>
+
+<p class=MsoNormal><b><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'>STORE R1 (R2):<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; MEM [R2] = R1<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman"'>PC = PC + 1<o:p></o:p></span></p>
+
+<p class=MsoNormal><b><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'>ADD R1 R2<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><b><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></b><span style='font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman"'>TMP = R1 + R2<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; R1 = TMP<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman"'>IF (TMP == 0) ZERO = 1; ELSE ZERO =
+0;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman"'>IF (TMP &lt; 0) NEGATIVE = 1; ELSE
+NEGATIVE = 0;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; PC = PC + 1<o:p></o:p></span></p>
+
+<p class=MsoNormal><b><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'>SUB R1 R2<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><b><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></b><span style='font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman"'>TMP = R1 - R2<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; R1 = TMP<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman"'>IF (TMP == 0) ZERO = 1; ELSE ZERO =
+0;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman"'>IF (TMP &lt; 0) NEGATIVE = 1; ELSE
+NEGATIVE = 0;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman"'>PC = PC + 1<o:p></o:p></span></p>
+
+<p class=MsoNormal><b><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'>NAND R1 R2<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><b><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></b><span style='font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman"'>TMP = R1 bitwise NAND
+R2<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; R1 = TMP<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman"'>IF (TMP == 0) ZERO = 1; ELSE ZERO =
+0;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman"'>IF (TMP &lt; 0) NEGATIVE = 1; ELSE
+NEGATIVE = 0;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; PC = PC + 1<o:p></o:p></span></p>
+
+<p class=MsoNormal><b><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'>ORI IMM5<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman"'>TMP = Κ1 bitwise OR IMM5, where IMM5
+is a 5 bit constant<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman"'>Κ1 = TMP<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman"'>IF (TMP == 0) ZERO = 1; ELSE ZERO =
+0;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman"'>IF (TMP &lt; 0) NEGATIVE = 1; ELSE
+NEGATIVE = 0;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman"'>PC = PC + 1<o:p></o:p></span></p>
+
+<p class=MsoNormal><b><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'>SHIFT L/R R1 </span></b><b><span lang=EL style='font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";mso-ansi-language:EL'>ΙΜΜ</span></b><b><span
+style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman"'>2<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b><span style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman"'>&nbsp;</span></b><span
+style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;
+IF (L) </span><span lang=EL style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";mso-ansi-language:EL'>ΤΗΕΝ</span><span lang=EL
+style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman"'> </span><span
+style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman"'>TMP
+= R1 &lt;&lt; IMM2<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;<span
+style='mso-spacerun:yes'>        </span>ELSE TMP = R1 &gt;&gt; IMM2<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; R1 = TMP<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:.5in'><span
+style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman"'>IF
+(TMP == 0) ZERO = 1; ELSE ZERO = 0;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:.5in'><span
+style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman"'>IF
+(TMP &lt; 0) NEGATIVE = 1; ELSE NEGATIVE = 0;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:.5in'><span
+style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman"'>PC
+= PC + 1<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:.5in'><b><span
+style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman"'>Alternative
+definition </span></b><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";mso-bidi-font-weight:bold'>(equivalent to the previous one):<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><b><span style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; <span
+style='mso-tab-count:1'>     </span></span></b><span lang=EL style='font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";mso-ansi-language:EL'>ΙΜΜ</span><span
+style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman"'>3
+is a 3 bit immediate in the sign – magnitude representation, i.e., <span
+class=GramE>bit</span> 2 = sign, value = bits 1 and 0<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; <span
+style='mso-tab-count:1'>     </span>IF (IMM3 &gt; 0) </span><span lang=EL
+style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:EL'>ΤΗΕΝ</span><span lang=EL style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman"'> </span><span style='font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman"'>TMP = R1 &lt;&lt; IMM3<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; <span
+style='mso-tab-count:3'>              </span><span
+style='mso-spacerun:yes'>    </span>ELSE TMP = R1 &gt;&gt; (-IMM3)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; <span
+style='mso-tab-count:1'>     </span>R1 = TMP<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-indent:.5in'><span
+style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman"'>IF
+(TMP == 0) ZERO = 1; ELSE ZERO = 0;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-indent:.5in'><span
+style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman"'>IF
+(TMP &lt; 0) NEGATIVE = 1; ELSE NEGATIVE = 0;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-indent:.5in'><span
+style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman"'>PC
+= PC + 1<o:p></o:p></span></p>
+
+<p class=MsoNormal><b><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal><b><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'>BZ IMM4<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><b><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></b><span class=GramE><span
+style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman"'>where</span></span><span
+style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman"'> </span><span
+lang=EL style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:EL'>ΙΜΜ</span><span style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman"'>4 is a 2’s complement 4-bit
+immediate<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; IF (ZERO == 1) PC = PC + 1 + (SIGN-<span
+class=GramE>EXTEND8(</span>IMM4))<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; ELSE PC = PC + 1<o:p></o:p></span></p>
+
+<p class=MsoNormal><b><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'>BNZ IMM4<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'><span style='mso-tab-count:1'>     </span>IMM4 as in BZ<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; IF (ZERO == 0) PC = PC + 1 + (SIGN-<span
+class=GramE>EXTEND8(</span>IMM4))<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; ELSE PC = PC + 1<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><b><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'>BPZ IMM4<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><b><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'><span style='mso-tab-count:1'>     </span></span></b><span
+style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-weight:bold'>IMM4 as in BZ<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; IF (NEGATIVE == 0) PC = PC + 1 +
+(SIGN-<span class=GramE>EXTEND8(</span>IMM4))<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; ELSE PC = PC + 1<o:p></o:p></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Each instruction is encoded in one byte as follows:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'>LOAD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=1 cellpadding=0 width="50%"
+ style='width:50.0%;mso-cellspacing:1.5pt;mso-padding-alt:1.5pt 1.5pt 1.5pt 1.5pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>7</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>6</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>5</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>4</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>3</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>2</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td valign=top style='background:#CC0000;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>R1</p>
+  </td>
+  <td valign=top style='background:#CC0000;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>R1</p>
+  </td>
+  <td valign=top style='background:#66FF99;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>R2</p>
+  </td>
+  <td valign=top style='background:#66FF99;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>R2</p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'><br>
+STORE&nbsp;&nbsp;&nbsp;&nbsp; <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=1 cellpadding=0 width="50%"
+ style='width:50.0%;mso-cellspacing:1.5pt;mso-padding-alt:1.5pt 1.5pt 1.5pt 1.5pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>7</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>6</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>5</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>4</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>3</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>2</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td valign=top style='background:#CC0000;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>R1</p>
+  </td>
+  <td valign=top style='background:#CC0000;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>R1</p>
+  </td>
+  <td valign=top style='background:#66FF99;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>R2</p>
+  </td>
+  <td valign=top style='background:#66FF99;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>R2</p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'><br>
+</span><span style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman"'>ADD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=1 cellpadding=0 width="50%"
+ style='width:50.0%;mso-cellspacing:1.5pt;mso-padding-alt:1.5pt 1.5pt 1.5pt 1.5pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>7</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>6</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>5</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>4</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>3</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>2</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td valign=top style='background:#CC0000;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>R1</p>
+  </td>
+  <td valign=top style='background:#CC0000;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>R1</p>
+  </td>
+  <td valign=top style='background:#66FF99;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>R2</p>
+  </td>
+  <td valign=top style='background:#66FF99;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>R2</p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'><br>
+</span><span style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman"'>SUB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=1 cellpadding=0 width="50%"
+ style='width:50.0%;mso-cellspacing:1.5pt;mso-padding-alt:1.5pt 1.5pt 1.5pt 1.5pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>7</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>6</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>5</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>4</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>3</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>2</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td valign=top style='background:#CC0000;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>R1</p>
+  </td>
+  <td valign=top style='background:#CC0000;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>R1</p>
+  </td>
+  <td valign=top style='background:#66FF99;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>R2</p>
+  </td>
+  <td valign=top style='background:#66FF99;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>R2</p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'><br>
+NAND&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style='mso-fareast-font-family:
+"Times New Roman"'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=1 cellpadding=0 width="50%"
+ style='width:50.0%;mso-cellspacing:1.5pt;mso-padding-alt:1.5pt 1.5pt 1.5pt 1.5pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>7</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>6</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>5</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>4</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>3</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>2</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td valign=top style='background:#CC0000;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>R1</p>
+  </td>
+  <td valign=top style='background:#CC0000;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>R1</p>
+  </td>
+  <td valign=top style='background:#66FF99;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>R2</p>
+  </td>
+  <td valign=top style='background:#66FF99;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>R2</p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'><br>
+ORI</span><span lang=EL style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";mso-ansi-language:EL'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=1 cellpadding=0 width="50%"
+ style='width:50.0%;mso-cellspacing:1.5pt;mso-padding-alt:1.5pt 1.5pt 1.5pt 1.5pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>7</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>6</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>5</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>4</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>3</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>2</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td valign=top style='background:#339999;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>IMM5_4</p>
+  </td>
+  <td valign=top style='background:#339999;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>IMM5_3</p>
+  </td>
+  <td valign=top style='background:#339999;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>IMM5_2</p>
+  </td>
+  <td valign=top style='background:#339999;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>IMM5_1</p>
+  </td>
+  <td valign=top style='background:#339999;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>IMM5_0</p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'><br>
+SHIFT&nbsp;&nbsp;&nbsp;&nbsp; <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=1 cellpadding=0 width="50%"
+ style='width:50.0%;mso-cellspacing:1.5pt;mso-padding-alt:1.5pt 1.5pt 1.5pt 1.5pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>7</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>6</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>5</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>4</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>3</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>2</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td valign=top style='background:#CC0000;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>R1</p>
+  </td>
+  <td valign=top style='background:#CC0000;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>R1</p>
+  </td>
+  <td valign=top style='background:#339999;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>L/!R</p>
+  </td>
+  <td valign=top style='background:#339999;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>IMM2_1</p>
+  </td>
+  <td valign=top style='background:#339999;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>IMM2_0</p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'><br>
+<br>
+BZ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=1 cellpadding=0 width="50%"
+ style='width:50.0%;mso-cellspacing:1.5pt;mso-padding-alt:1.5pt 1.5pt 1.5pt 1.5pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>7</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>6</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>5</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>4</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>3</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>2</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td valign=top style='background:#339999;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>IMM4_3</p>
+  </td>
+  <td valign=top style='background:#339999;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>IMM4_2</p>
+  </td>
+  <td valign=top style='background:#339999;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>IMM4_1</p>
+  </td>
+  <td valign=top style='background:#339999;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>IMM4_0</p>
+  </td>
+  <td valign=top style='background:yellow;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><br>
+BNZ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=1 cellpadding=0 width="50%"
+ style='width:50.0%;mso-cellspacing:1.5pt;mso-padding-alt:1.5pt 1.5pt 1.5pt 1.5pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>7</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>6</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>5</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>4</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>3</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>2</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td valign=top style='background:#339999;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>IMM4_3</p>
+  </td>
+  <td valign=top style='background:#339999;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>IMM4_2</p>
+  </td>
+  <td valign=top style='background:#339999;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>IMM4_1</p>
+  </td>
+  <td valign=top style='background:#339999;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>IMM4_0</p>
+  </td>
+  <td valign=top style='background:yellow;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'>BPZ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=1 cellpadding=0 width="50%"
+ style='width:50.0%;mso-cellspacing:1.5pt;mso-padding-alt:1.5pt 1.5pt 1.5pt 1.5pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>7</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>6</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>5</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>4</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>3</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>2</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td valign=top style='background:#339999;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>IMM4_3</p>
+  </td>
+  <td valign=top style='background:#339999;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>IMM4_2</p>
+  </td>
+  <td valign=top style='background:#339999;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>IMM4_1</p>
+  </td>
+  <td valign=top style='background:#339999;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>IMM4_0</p>
+  </td>
+  <td valign=top style='background:yellow;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>A few examples:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>“Add k2 k1” is encoded as %10 01 0100 (we’ll use %number for
+binary), where the first 10 refers to register <st1:place w:st="on">K2</st1:place>,
+the 01 that follows refer to register K1, and the last 0100 refer to ADD. This instruction
+computes [k2] = [k2] + [k1]</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>“Load k3 (k1)” is encoded as %11 01 0000, 11 for k3, 01 for
+k1 and 0000 for load. This reads from the memory location given by the value of
+k1 and writes the value read into k3.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>%10100111 decodes to “ORI 0x14”, since the last three bits
+are 111 which corresponds to ORI and the rest are 1 0100 which is the number
+$14.</p>
+
+<p class=MsoNormal>%10010110 decodes to “SUB K2, K1” since the last four bits
+are 0110 which corresponds to SUB and then the upper two bits mean K2 and the
+next two bits mean K1.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span class=SpellE><b style='mso-bidi-font-weight:normal'>Datapath</b></span><b
+style='mso-bidi-font-weight:normal'> and Control<o:p></o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal>Generally speaking an implementation of a CPU can be broken
+into the implementation of two cooperating units: the <span class=SpellE>datapath</span>
+and the control. </p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>The <span class=SpellE>datapath</span> is the unit that contains
+all the registers and the functional units. It is where all data computations
+take place. <i style='mso-bidi-font-style:normal'>The <span class=SpellE>datapath</span>
+should be constructed in a way such that it is possible to perform all actions
+necessary to compute the data results of instruction execution.</i> For
+example, to implement the add instruction the <span class=SpellE>datapath</span>
+should provide us with the capability of reading the two registers that we want
+to add, it should have a functional unit that performs the addition and then
+allow us to write the result back into the appropriate register. We will
+shortly present a methodology for designing the <span class=SpellE>datapth</span>.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>The control orchestrates the actions that take place in the <span
+class=SpellE>datapath</span>. We will eventually explain that the control is a
+“giant” finite-state machine that implements the fundamental execution loop:
+(1) fetch instruction, (2) decode, (3) read source operands, (4) perform
+operation, (5) store result, (6) determine which instruction to execute next.
+It does so by instructing the <span class=SpellE>datapath</span> to perform all
+appropriate actions.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>But both concepts are best understood by means of an
+example.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>We will focus on explaining how to design the <span
+class=SpellE>datapath</span> and then the control.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Single-Cycle
+Implementation – General Observations<o:p></o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal>Our CPU will be implemented as a sequential circuit. That
+is, it is going to use a clock reference. A clock is a periodic signal that
+alternates between 0 and 1. This is what they refer to as the clock frequency
+of the CPU. For example, at the time of this writing the maximum clock
+frequency for a P4 CPU is 3.8Ghz. This is how the clock signal typically looks
+like in time (the diagram defines “cycle”, “falling” and “rising” “edges”):</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;mso-yfti-tbllook:480;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=655 colspan=9 valign=top style='width:490.9pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>TIME ---------------&gt;</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=73 valign=top style='width:54.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=73 valign=top style='width:54.55pt;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=73 valign=top style='width:54.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=73 valign=top style='width:54.55pt;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=73 valign=top style='width:54.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=73 valign=top style='width:54.55pt;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=73 valign=top style='width:54.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=73 valign=top style='width:54.55pt;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=73 valign=top style='width:54.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=73 valign=top style='width:54.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=73 valign=top style='width:54.55pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=73 valign=top style='width:54.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-left-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=73 valign=top style='width:54.55pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=73 valign=top style='width:54.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-left-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=73 valign=top style='width:54.55pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=73 valign=top style='width:54.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-left-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=73 valign=top style='width:54.55pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=73 valign=top style='width:54.55pt;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-left-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=73 valign=top style='width:54.5pt;border:none;mso-border-top-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=73 valign=top style='width:54.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=73 valign=top style='width:54.55pt;border:none;mso-border-top-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=73 valign=top style='width:54.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=73 valign=top style='width:54.55pt;border:none;mso-border-top-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=73 valign=top style='width:54.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=73 valign=top style='width:54.55pt;border:none;mso-border-top-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=73 valign=top style='width:54.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=73 valign=top style='width:54.55pt;border:none;mso-border-top-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;mso-yfti-lastrow:yes'>
+  <td width=145 colspan=2 valign=top style='width:109.05pt;border:none;
+  border-right:solid windowtext 1.0pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=right style='text-align:right'>Falling edge -&gt;</p>
+  </td>
+  <td width=145 colspan=2 valign=top style='width:109.1pt;border:none;
+  border-right:solid windowtext 1.0pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>&lt;------- cycle -------&gt;</p>
+  </td>
+  <td width=73 valign=top style='width:54.55pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-left-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=145 colspan=2 valign=top style='width:109.1pt;border:none;
+  mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>&lt;---- rising edge</p>
+  </td>
+  <td width=73 valign=top style='width:54.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=73 valign=top style='width:54.55pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>For the first implementation we will present it is important
+to explain our clocking strategy. <b style='mso-bidi-font-weight:normal'>In our
+implementation each instruction will be executed in its entirety within a single
+cycle.</b> This is why we will refer to this implementation as a <i
+style='mso-bidi-font-style:normal'>single-cycle implementation. </i></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>For all storage elements inside and outside our CPU we will
+assume that reads are done using combinatorial logic (i.e., we can read at any
+time we wish) but changes happen only at the falling edge of the clock. Our
+implementation will be such that instruction execution will commence
+immediately after the falling edge of the clock, during the clock cycle using
+combinatorial logic we will compute all necessary values and final state
+changes (in registers or memory) will happen at the very end just when the next
+falling edge occurs. Our clock cycle will be determined by the delay of the
+slowest to compute instruction. More on this later on.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Single-Cycle
+Implementation – The <span class=SpellE>Datapath</span><o:p></o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal>As we mentioned before our goal here is to design a digital
+circuit that is capable of performing all possible calculations that may be
+required by any instruction. The methodology that we will follow here is to
+design a <span class=SpellE>datapath</span> for each instruction separately and
+then we will combine all circuits together by reusing as much as possible.
+Before we start designing our <span class=SpellE>datapath</span> let us first
+present our building blocks. These are supposed to be digital circuits that we
+know how to build.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Registers<o:p></o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal>The first building block is a register. A register is a
+collection of D flip-flops that we can either read or write. In our case, since
+all registers inside our machine are 8-bit wide, we will be using 8-bit
+registers. Schematically, a register will be represented as follows:</p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:shapetype id="_x0000_t75" coordsize="21600,21600"
+ o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f"
+ stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" style='width:220.5pt;
+ height:163.5pt'>
+ <v:imagedata src="l19-implemenation-single-cycle_files/image001.gif" o:title="image001"/>
+</v:shape><![endif]--><![if !vml]><img width=294 height=218
+src="l19-implemenation-single-cycle_files/image001.gif" v:shapes="_x0000_i1025"><![endif]></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>The <span class=SpellE>dataout</span> wires give us the
+value inside the register. If we want to change this value we need to provide
+the new value on the <span class=SpellE>datain</span> wires and set the “write”
+signal to 1. The change will happen on the next falling edge of the clock
+signal. For clarity we will not draw the clock signal and connections in our
+diagrams.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Multiplexers<o:p></o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal>We are also going to use multiplexers. The following figure
+illustrates an 8-bit 2-to-1 multiplexer. This is a circuit that accepts two
+8-bit inputs, in0 and in1 and produces a single 8-bit output “out”. “out” takes
+the value of “in0” if the select signal is 0, otherwise it takes the value of
+“in1”. In general, there could be 2^N input connections in which case the select
+will be N-wires wide. Depending on what is the value formed on the select
+input, one of the 2^N inputs will be propagated to the output.</p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:shape id="_x0000_i1026" type="#_x0000_t75"
+ style='width:165.75pt;height:120.75pt'>
+ <v:imagedata src="l19-implemenation-single-cycle_files/image002.gif" o:title="image002"/>
+</v:shape><![endif]--><![if !vml]><img width=221 height=161
+src="l19-implemenation-single-cycle_files/image002.gif" v:shapes="_x0000_i1026"><![endif]></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Register File<o:p></o:p></b></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>The register file is where registers K0 through K3 are
+implemented. Internally, it has four 8 bit registers. Its external interface is
+illustrated below. It accepts two 2-bit input signals reg1 and reg2. These are
+used to read two registers simultaneously. We use 2 bit signals since there are
+four registers. Thus with 2 bits we can uniquely identify each one. The values
+read are placed on the output signals data0 and data1. These are 8-bit wide
+since our registers are 8-bit wide.</p>
+
+<p class=MsoNormal>Our register file also supports a write operation. To write
+a register we need to specify its name on the <span class=SpellE>regw</span>
+input, the value we want to write on the <span class=SpellE>dataw</span> 8-bit
+input and set the “write” signal to 1. The actual write will happen on the next
+falling edge. For this reason there is a clock connection, however, for clarity
+we will not draw the clock signal in our diagrams.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1027" type="#_x0000_t75" style='width:357.75pt;height:207pt'>
+ <v:imagedata src="l19-implemenation-single-cycle_files/image003.gif" o:title="image003"/>
+</v:shape><![endif]--><![if !vml]><img width=477 height=276
+src="l19-implemenation-single-cycle_files/image003.gif" v:shapes="_x0000_i1027"><![endif]><o:p></o:p></b></p>
+
+<p class=MsoNormal>The following figure shows one possible implementation of
+the register file that uses registers, multiplexers and a decoder:</p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:shape id="_x0000_i1028" type="#_x0000_t75"
+ style='width:468pt;height:523.5pt'>
+ <v:imagedata src="l19-implemenation-single-cycle_files/image004.gif" o:title="image004"/>
+</v:shape><![endif]--><![if !vml]><img width=624 height=698
+src="l19-implemenation-single-cycle_files/image004.gif" v:shapes="_x0000_i1028"><![endif]></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>ALU = Arithmetic
+Logic Unit<o:p></o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal>Most calculations will take place in the ALU. The ALU has
+the following interface. It accepts two 8-bit inputs in0 and in1 and performs
+the calculation specified by the <span class=SpellE>ALUop</span> signal. For
+our architecture we need to do addition, subtraction, OR, NAND, and Shift. Thus
+we need to be able to specify one of these five operations, It is for this
+reason that the <span class=SpellE>ALUop</span> signal is 3-bits wide. We will
+use the following mapping of operations to <span class=SpellE>ALUop</span>
+encoding: 000 = addition, 001 = subtraction, 010 = OR, 011 = NAND, and 100 =
+Shift. The other three combinations will be reserved for future expansion. The
+result is placed on the “out” signals. Two additional single bit results are
+produced N and Z. Z is set to 1 if the value on out is zero. N is set to 1 if
+out7 (the 8<sup>th</sup> bit of the out signal) is 1, that is if the result
+would be negative if it were interpreted as a 2’s complement number.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>At some places we may use simpler <span class=SpellE>ALUs</span>
+that do for example addition. We will clarify these whenever necessary.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1029" type="#_x0000_t75" style='width:180.75pt;height:159pt'>
+ <v:imagedata src="l19-implemenation-single-cycle_files/image005.gif" o:title="image006"/>
+</v:shape><![endif]--><![if !vml]><img width=241 height=212
+src="l19-implemenation-single-cycle_files/image005.gif" v:shapes="_x0000_i1029"><![endif]></b></p>
+
+<p class=MsoNormal>There are many different ways of implementing the ALU. A
+simple to describe implementation uses a collection of functional units. Each
+functional unit computes independently one of the 5 different operations and a
+MUX at the output selects the one we want. Here’s the diagram:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:shape id="_x0000_i1030" type="#_x0000_t75"
+ style='width:481.5pt;height:414.75pt'>
+ <v:imagedata src="l19-implemenation-single-cycle_files/image006.jpg" o:title="ALU-internal"/>
+</v:shape><![endif]--><![if !vml]><img width=642 height=553
+src="l19-implemenation-single-cycle_files/image006.jpg" v:shapes="_x0000_i1030"><![endif]></p>
+
+<p class=MsoNormal>You have seen how to build an 8-bit adder and <span
+class=SpellE>subtractor</span> in digital design. The OR and NAND boxes contain
+just eight OR and NAND gates respectively. The SHIFT box is bit more
+interesting. Here’s one implementation. We break it into two subunits, one for
+shifting left and another for shifting right. Bits 1..0 of in1 specify by how
+many bits, whereas bit 2 selects the direction of the shift:</p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:shape id="_x0000_i1031" type="#_x0000_t75"
+ style='width:306.75pt;height:142.5pt'>
+ <v:imagedata src="l19-implemenation-single-cycle_files/image007.gif" o:title="shifter-level-one"/>
+</v:shape><![endif]--><![if !vml]><img width=409 height=190
+src="l19-implemenation-single-cycle_files/image008.gif" v:shapes="_x0000_i1031"><![endif]></p>
+
+<p class=MsoNormal>Here’s the diagram for the Shift Left box (&lt;&lt; in the
+previous figure):</p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:shape id="_x0000_i1032" type="#_x0000_t75"
+ style='width:378pt;height:489pt'>
+ <v:imagedata src="l19-implemenation-single-cycle_files/image009.gif" o:title="shifter-level-two"/>
+</v:shape><![endif]--><![if !vml]><img width=504 height=652
+src="l19-implemenation-single-cycle_files/image010.gif" v:shapes="_x0000_i1032"><![endif]></p>
+
+<p class=MsoNormal>The shift right box is similar. We could have used 8-to-1
+multiplexers and implemented both boxes together. Another implementation of shifters
+is the BARREL SHIFTER. This implementation exploits the observation that a
+shift by N can be implemented as a series of shifts each by a different power
+of two. For example, if N is 5 in decimal or 101 in binary, then shifting by 5
+bit positions can be achieved by first shifting by 1 bit and then by another 4.
+Here’s the diagram for a 8-bit left barrel shifter that can shift by 0, 1, 2,
+or 3 bit positions:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:shape id="_x0000_i1033" type="#_x0000_t75"
+ style='width:211.5pt;height:552pt'>
+ <v:imagedata src="l19-implemenation-single-cycle_files/image011.gif" o:title="barrel"/>
+</v:shape><![endif]--><![if !vml]><img width=282 height=736
+src="l19-implemenation-single-cycle_files/image012.gif" v:shapes="_x0000_i1033"><![endif]></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>There are two layers of 2-to-1 <span class=SpellE>muxes</span>.
+The first layer shown in grey uses the least significant bit of the “shift by #
+of bits” number to either pass the inputs directly or to shift them by 1 bit.
+The second layer takes the input from the first layer and either passes it
+as-is or shifts it by 2 bit positions. Hopefully, you will be able to extend
+this diagram to cope with shifting by larger amounts.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Instruction Memory<o:p></o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal>We will also need memory. In this implementation we will use
+two separate memories. One for instructions and one for data. This is commonly
+referred to as a <i style='mso-bidi-font-style:normal'>Harvard Architecture. </i>Most
+processors that exist today have one memory. However, this implementation is
+still valid since as we will later see, by using caches it is possible to
+provide the illusion of separate data and instruction memories. We will later
+see different implementation methodologies that use just a single memory
+device. However, these implementation will require multiple cycles to execute a
+single instruction. </p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Here’s the interface for instruction memory. It accepts a
+8-bit address and after a while it produces the contents of that memory
+location on the out wires (8 bits too). There is a single control signal, Read,
+if it is 1 then we are performing a read. Note that in our architecture it is
+impossible to write to instruction memory.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1034" type="#_x0000_t75" style='width:181.5pt;height:119.25pt'>
+ <v:imagedata src="l19-implemenation-single-cycle_files/image013.gif" o:title="image007"/>
+</v:shape><![endif]--><![if !vml]><img width=242 height=159
+src="l19-implemenation-single-cycle_files/image013.gif" v:shapes="_x0000_i1034"><![endif]></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Data Memory<o:p></o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal>Our data memory is capable of both reads and writes. It
+presents the following interface. There are two control signals <span
+class=SpellE>MemRead</span> and <span class=SpellE>MemWrite</span>. If the
+corresponding signal is set to 1 then we read and write respectively. Only one
+of them can be activated at any given point in time. Writes happen on the
+falling edge. In both cases the address we are accessing is given on the <span
+class=SpellE>addr</span> lines. If we read, memory is going to return the
+referenced value on the <span class=SpellE>Dout</span> lines. If we write we
+need to place the value we want on the Din lines.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1035" type="#_x0000_t75" style='width:237.75pt;height:173.25pt'>
+ <v:imagedata src="l19-implemenation-single-cycle_files/image014.gif" o:title="image008"/>
+</v:shape><![endif]--><![if !vml]><img width=317 height=231
+src="l19-implemenation-single-cycle_files/image014.gif" v:shapes="_x0000_i1035"><![endif]><o:p></o:p></b></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Other components<o:p></o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal>We will also need single flip-flops for the N and Z bits. </p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Designing the <span
+class=SpellE>Datapath</span><o:p></o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal>We are now ready to explain how we can design the <span
+class=SpellE>datapath</span>. Recall our goal is to produce a circuit that is capable
+of performing all actions necessary to perform any instruction. Thus one way of
+doing this is to design a “<span class=SpellE>datapath</span>” for each
+instruction separately and then combine these together with appropriate glue
+logic. Let’s start with the add instruction.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span class=SpellE><b style='mso-bidi-font-weight:normal'>Datapath</b></span><b
+style='mso-bidi-font-weight:normal'> for ADD:<o:p></o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal>No matter the instruction we need to first fetch its
+representation from instruction memory. This part is actually common for any
+instruction. Here’s the circuit for doing this:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:shape id="_x0000_i1036" type="#_x0000_t75"
+ style='width:231.75pt;height:147.75pt'>
+ <v:imagedata src="l19-implemenation-single-cycle_files/image015.gif" o:title="image009"/>
+</v:shape><![endif]--><![if !vml]><img width=309 height=197
+src="l19-implemenation-single-cycle_files/image015.gif" v:shapes="_x0000_i1036"><![endif]></p>
+
+<p class=MsoNormal>We just connect the output of the PC register to the address
+lines of instruction memory. Thus, after a while on the INST wires (8-bits) we
+will get the value stored at the memory location pointed to by PC. This is the
+next instruction to execute. Assuming that this is an ADD then it will have the
+following form:</p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman"'>ADD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=1 cellpadding=0 width="50%"
+ style='width:50.0%;mso-cellspacing:1.5pt;mso-padding-alt:1.5pt 1.5pt 1.5pt 1.5pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt'>7<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt'>6<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt'>5<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt'>4<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt'>3<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt'>2<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt'>1<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt'>0<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td valign=top style='background:#CC0000;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt'>R1<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='background:#CC0000;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt'>R1<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='background:#66FF99;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt'>R2<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='background:#66FF99;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt'>R2<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt'>0<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt'>1<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt'>0<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='background:#FFFF33;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt'>0<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'>Bit
+0 will appear on wire INST0 and so on. So bits INST3 through INST0 will form
+the value 0100 if this is indeed an ADD (the control will look at this as we
+will later see). Once we read the instruction representation its time to
+execute the instruction. What needs to take place is clearly defined by the
+behavior model of the add instruction:<o:p></o:p></span></p>
+
+<p class=MsoNormal><b><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></b><span style='font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman"'>TMP = R1 + R2<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; R1 = TMP<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman"'>IF (TMP == 0) ZERO = 1; ELSE ZERO =
+0;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman"'>IF (TMP &lt; 0) NEGATIVE = 1; ELSE
+NEGATIVE = 0;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; PC = PC + 1<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'>We
+will need to read the two registers add them together and write the result back
+into the register file. Here’s the circuit:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'><br>
+<!--[if gte vml 1]><v:shape id="_x0000_i1037" type="#_x0000_t75" style='width:538.5pt;
+ height:218.25pt'>
+ <v:imagedata src="l19-implemenation-single-cycle_files/image016.gif" o:title="image010"/>
+</v:shape><![endif]--><![if !vml]><img width=718 height=291
+src="l19-implemenation-single-cycle_files/image016.gif" v:shapes="_x0000_i1037"><![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'>Note
+that we use the 7<sup>th</sup> and 6<sup>th</sup> bit of INST to drive the reg1
+and <span class=SpellE>regw</span> register selection signals. This way we are
+reading the register R1 as specified in the instruction encoding. This is both
+a source and a destination for us. We use bits 5 and 6 of INST to drive the
+second register selection signal reg2. This way we read the second register. We
+drive the two register value to the ALU where we have to make sure that we set
+the <span class=SpellE>ALUop</span> signal for performing addition. After a
+while, the ALU out will have the sum of the two register values. By setting the
+<span class=SpellE>RFwrite</span> signal this sum will be written into R1
+(since the R1 bits from INST are connected to <span class=SpellE>regw</span>)
+on the next falling edge.<span style='mso-spacerun:yes'>  </span>We assume that
+the Z and N flags are also set accordingly by the ALU and will change also on
+the next falling edge.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'>We are
+not done. We also need to increment the PC since in the next cycle we need to
+execute the next in memory instruction. This is done by using a dedicated
+adder. Thus the complete <span class=SpellE>datapath</span> for add looks as
+follows:<o:p></o:p></span></p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:shape id="_x0000_i1038" type="#_x0000_t75"
+ style='width:542.25pt;height:234.75pt'>
+ <v:imagedata src="l19-implemenation-single-cycle_files/image017.gif" o:title="image011"/>
+</v:shape><![endif]--><![if !vml]><img width=723 height=313
+src="l19-implemenation-single-cycle_files/image017.gif" v:shapes="_x0000_i1038"><![endif]></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span class=SpellE><b style='mso-bidi-font-weight:normal'>Datapath</b></span><b
+style='mso-bidi-font-weight:normal'> for SUB and NAND:<o:p></o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal>The <span class=SpellE>datapath</span> for SUB and NAND is
+identical to that for ADD. The only difference is that the <span class=SpellE>ALUop</span>
+signal needs to be set to different values so that the appropriate calculation
+takes place (subtraction or bitwise NAND).</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span class=SpellE><b style='mso-bidi-font-weight:normal'>Datapath</b></span><b
+style='mso-bidi-font-weight:normal'> for ORI:<o:p></o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal>This is very similar to ADD, SUB and NAND. The major
+difference is that the ORI instruction uses an immediate field as its second
+operand (i.e., it does not read two registers). So, we can augment our <span
+class=SpellE>datapath</span> to also support the ORI instruction by placing a <span
+class=SpellE>mux</span> in front of the second ALU input. This way we can
+select either the output from the register file or the Imm5 field from the
+instruction (wires INST7 through INST3):</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:shape id="_x0000_i1039" type="#_x0000_t75"
+ style='width:540.75pt;height:231.75pt'>
+ <v:imagedata src="l19-implemenation-single-cycle_files/image018.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=721 height=309
+src="l19-implemenation-single-cycle_files/image019.jpg" v:shapes="_x0000_i1039"><![endif]></p>
+
+<p class=MsoNormal>Notice that we introduced a MUX and a control signal ALU2.
+This way by setting ALU2 to 0 we can implement the <span class=SpellE>datapath</span>
+for ADD, SUB and NAND. If we set it to 1 we get the <span class=SpellE>datapath</span>
+for ORI. We directly connect the Imm5 field from the INST wires since it is
+there that it will appear. Finally, notice that we still read two registers
+from the register file. However, we only care for one of them (reg0). This is
+OK as reads are not destructive. If we wanted to avoid this we would need
+additional control signals in the register file to inhibit reads.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>The ORI instruction uses *implied* source and destination registers. <o:p></o:p></i></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>Accordingly we need to augment the previous <span class=SpellE>datapath</span>
+providing the capability of directly specifying K1 as a source (R1 at port
+reg1) and as destination (R1 at port <span class=SpellE>regw</span>). For this
+a <span class=SpellE>mux</span> is sufficient as shown in the diagram that
+follows:<o:p></o:p></i></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'><o:p>&nbsp;</o:p></i></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'><o:p>&nbsp;</o:p></i></b></p>
+
+<p class=MsoNormal><span class=SpellE><b style='mso-bidi-font-weight:normal'>Datapath</b></span><b
+style='mso-bidi-font-weight:normal'> for Branch Instructions:<o:p></o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal>To implement branches we need to set PC to either PC+1 or to
+PC + sign-extend(Imm4). The Imm4 comes embedded into the instruction. We need
+to first sign extend this immediate to 8 bits. Here’s the “circuit”:</p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:shape id="_x0000_i1040" type="#_x0000_t75"
+ style='width:372.75pt;height:227.25pt'>
+ <v:imagedata src="l19-implemenation-single-cycle_files/image020.gif" o:title="image014"/>
+</v:shape><![endif]--><![if !vml]><img width=497 height=303
+src="l19-implemenation-single-cycle_files/image020.gif" v:shapes="_x0000_i1040"><![endif]></p>
+
+<p class=MsoNormal>We will the symbol on the right. It turns out that all we
+need is just wires. We are replicating the sign bit.</p>
+
+<p class=MsoNormal>To support branch instruction we need to augment the <span
+class=SpellE>datapath</span> portion that drives the PC register. To do so, we
+calculate PC+1 as before but in addition we also calculate PC +
+sign-extend(Imm4). We introduce a multiplexer to allow the PC to be written
+into with one of these two results as follows:</p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:shape id="_x0000_i1041" type="#_x0000_t75"
+ style='width:433.5pt;height:297.75pt'>
+ <v:imagedata src="l19-implemenation-single-cycle_files/image021.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=578 height=397
+src="l19-implemenation-single-cycle_files/image022.jpg" v:shapes="_x0000_i1041"><![endif]>(Corrected:
+Calculates PC + Imm4 + 1 as opposed to PC + Imm4)</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>By setting the <span class=SpellE>PCsel</span> signal the
+control can now either assign PC to PC+1 or to PC+Imm4. When we design the
+control we will see how this decision can be made based on the Z and N flag
+values. Note that we only showed the PC <span class=SpellE>datapth</span> the
+rest is still there and remains unchanged.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span class=SpellE><b style='mso-bidi-font-weight:normal'>Datapath</b></span><b
+style='mso-bidi-font-weight:normal'> for STORE and LOAD:<o:p></o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal>To perform memory stores and loads we need to introduce the
+data memory component. For stores we need to activate the <span class=SpellE>MemWrite</span>
+signal and drive the value of R1 (output 0 from the register file) onto the
+address lines and the value of R2 onto the data input lines of the data memory.
+For loads we need to active the <span class=SpellE>MemRead</span> signal, drive
+R1’s value onto the address lines (as we did for stores) and then grab the
+value that memory provides onto its data out lines and write it into R1. For
+the latter we need to drive R1’s name onto <span class=SpellE>regw</span>
+(something we already done for ADD and the rest) and drive the value from<span
+style='mso-spacerun:yes'>  </span>onto the data in lines of the register file.
+But because these lines are already driven by ALU out we also need to introduce
+a multiplexer to either pass <span class=SpellE>ALUout</span> or the memory
+out. Here’s the complete data path:</p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:shape id="_x0000_i1042" type="#_x0000_t75"
+ style='width:583.5pt;height:416.25pt'>
+ <v:imagedata src="l19-implemenation-single-cycle_files/image023.gif" o:title="image017"/>
+</v:shape><![endif]--><![if !vml]><img width=778 height=555
+src="l19-implemenation-single-cycle_files/image023.gif" v:shapes="_x0000_i1042"><![endif]><i
+style='mso-bidi-font-style:normal'><o:p></o:p></i></p>
+
+<p class=MsoNormal>Where we also introduced a third option for the second
+operand of the ALU, Imm3 from the instruction and is needed for SHIFT. </p>
+
+<p class=MsoNormal>All control signals are shown underlined.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal>We now how a complete <span class=SpellE>datapath</span> for
+our architecture. We thus proceed to design the CONTROL.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Designing the CONTROL
+unit:<o:p></o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal>The control unit is responsible for setting all control
+signals of the <span class=SpellE>datapath</span>, so that all appropriate
+actions take place per instruction. It accepts several inputs from the <span
+class=SpellE>datapath</span> and produces values for the <span class=SpellE>datapath’s</span>
+control signals. In our architecture and for the single cycle implementation
+the control will be a combinatorial circuit that accepts as inputs the
+following signals:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>INST0 through INST3 --&gt; these are needed because these
+bits determine the operation of the current instruction.</p>
+
+<p class=MsoNormal>N and Z --&gt; these are needed by branch instructions to
+determine whether the branch is taken or not, i.e., what value should the PC be
+loaded with.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal>In turn, the control will produce the following control
+signals:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span class=SpellE>PCSel</span> --&gt; if the PC is loaded
+with a new value which it is going to be: 0 for PC + 1, 1 for PC +
+sign-extend(Imm4)</p>
+
+<p class=MsoNormal><span class=SpellE>PCWrite</span> -&gt; 1 if we want the PC
+to be loaded with a new value (we will always want this)</p>
+
+<p class=MsoNormal><span class=SpellE>RegWrite</span> -&gt; 1 if the
+instruction writes a register</p>
+
+<p class=MsoNormal><span class=SpellE>MemRead</span> and <span class=SpellE>MemWrite</span>
+-&gt; 1 if the instruction is a load or a store respectively</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>R1Sel -&gt; 1 if we
+want to explicitly set K1 as the source and destination for ORI, setting this 0
+passes the R1 field from the instruction <span class=SpellE>opcode</span>
+(drives reg0 and <span class=SpellE>regw</span>).<o:p></o:p></b></p>
+
+<p class=MsoNormal><span class=SpellE>ALUop</span> -&gt; what operation should
+the ALU perform (we assigned values for this signal in the description of the
+ADD instruction)</p>
+
+<p class=MsoNormal>ALU2 -&gt; what will drive the second input of the ALU -&gt;
+00<span style='mso-spacerun:yes'>  </span>= second output from the register file,
+01 = Imm5 field from the instruction (for ORI), 10 = Imm3 from the instruction
+(for SHIFT). 11 = reserved for future expansion.</p>
+
+<p class=MsoNormal><span class=SpellE>RFin</span> -&gt; if this instruction
+writes a value into the register file where this value should come from: 0 =
+From the ALU, 1 = from the Data Memory.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Since the control unit is a combinatorial circuit we start
+by deriving a truth table for it:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=907
+ style='width:9.45in;border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:480;mso-padding-alt:0in 5.4pt 0in 5.4pt;mso-border-insideh:
+ .5pt solid windowtext;mso-border-insidev:.5pt solid windowtext'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=124 valign=top style='width:93.3pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i
+  style='mso-bidi-font-style:normal'><span style='font-family:"Courier New"'>INSTRUCTION<o:p></o:p></span></i></b></p>
+  </td>
+  <td width=123 colspan=3 valign=top style='width:92.4pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i
+  style='mso-bidi-font-style:normal'><span style='font-family:"Courier New"'>Inputs<o:p></o:p></span></i></b></p>
+  </td>
+  <td width=660 colspan=9 valign=top style='width:494.7pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i
+  style='mso-bidi-font-style:normal'><span style='font-family:"Courier New"'>Outputs<o:p></o:p></span></i></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=124 valign=top style='width:93.3pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=74 valign=top style='width:55.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:"Courier New"'>INST0-3<o:p></o:p></span></b></p>
+  </td>
+  <td width=24 valign=top style='width:18.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:"Courier New"'>N<o:p></o:p></span></b></p>
+  </td>
+  <td width=24 valign=top style='width:18.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:"Courier New"'>Z<o:p></o:p></span></b></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span class=SpellE><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:"Courier New"'>PCSel</span></b></span><b style='mso-bidi-font-weight:
+  normal'><span style='font-family:"Courier New"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=84 valign=top style='width:63.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span class=SpellE><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:"Courier New"'>PCWrite</span></b></span><b
+  style='mso-bidi-font-weight:normal'><span style='font-family:"Courier New"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=94 valign=top style='width:70.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span class=SpellE><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:"Courier New"'>RegWrite</span></b></span><b
+  style='mso-bidi-font-weight:normal'><span style='font-family:"Courier New"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=84 valign=top style='width:63.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span class=SpellE><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:"Courier New"'>MemRead</span></b></span><b
+  style='mso-bidi-font-weight:normal'><span style='font-family:"Courier New"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:"Courier New"'>R1Sel<o:p></o:p></span></b></p>
+  </td>
+  <td width=94 valign=top style='width:70.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span class=SpellE><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:"Courier New"'>MemWrite</span></b></span><b
+  style='mso-bidi-font-weight:normal'><span style='font-family:"Courier New"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=54 valign=top style='width:40.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:"Courier New"'>ALU2<o:p></o:p></span></b></p>
+  </td>
+  <td width=54 valign=top style='width:40.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span class=SpellE><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:"Courier New"'>RFin</span></b></span><b style='mso-bidi-font-weight:
+  normal'><span style='font-family:"Courier New"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span class=SpellE><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:"Courier New"'>ALUop</span></b></span><b style='mso-bidi-font-weight:
+  normal'><span style='font-family:"Courier New"'><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=124 valign=top style='width:93.3pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:"Courier New"'>LOAD<o:p></o:p></span></b></p>
+  </td>
+  <td width=74 valign=top style='width:55.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0000<o:p></o:p></span></p>
+  </td>
+  <td width=24 valign=top style='width:18.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=24 valign=top style='width:18.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=84 valign=top style='width:63.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=94 valign=top style='width:70.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=84 valign=top style='width:63.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=94 valign=top style='width:70.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=54 valign=top style='width:40.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=54 valign=top style='width:40.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>XXX<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=124 valign=top style='width:93.3pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:"Courier New"'>STORE<o:p></o:p></span></b></p>
+  </td>
+  <td width=74 valign=top style='width:55.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0010<o:p></o:p></span></p>
+  </td>
+  <td width=24 valign=top style='width:18.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=24 valign=top style='width:18.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=84 valign=top style='width:63.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=94 valign=top style='width:70.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=84 valign=top style='width:63.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=94 valign=top style='width:70.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=54 valign=top style='width:40.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=54 valign=top style='width:40.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>XXX<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td width=124 valign=top style='width:93.3pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:"Courier New"'>ADD<o:p></o:p></span></b></p>
+  </td>
+  <td width=74 valign=top style='width:55.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0100<o:p></o:p></span></p>
+  </td>
+  <td width=24 valign=top style='width:18.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=24 valign=top style='width:18.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=84 valign=top style='width:63.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=94 valign=top style='width:70.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=84 valign=top style='width:63.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=94 valign=top style='width:70.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=54 valign=top style='width:40.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>00<o:p></o:p></span></p>
+  </td>
+  <td width=54 valign=top style='width:40.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>000<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td width=124 valign=top style='width:93.3pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:"Courier New"'>SUB<o:p></o:p></span></b></p>
+  </td>
+  <td width=74 valign=top style='width:55.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0110<o:p></o:p></span></p>
+  </td>
+  <td width=24 valign=top style='width:18.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=24 valign=top style='width:18.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=84 valign=top style='width:63.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=94 valign=top style='width:70.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=84 valign=top style='width:63.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=94 valign=top style='width:70.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=54 valign=top style='width:40.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>00<o:p></o:p></span></p>
+  </td>
+  <td width=54 valign=top style='width:40.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>001<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6'>
+  <td width=124 valign=top style='width:93.3pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:"Courier New"'>NAND<o:p></o:p></span></b></p>
+  </td>
+  <td width=74 valign=top style='width:55.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>1000<o:p></o:p></span></p>
+  </td>
+  <td width=24 valign=top style='width:18.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=24 valign=top style='width:18.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=84 valign=top style='width:63.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=94 valign=top style='width:70.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=84 valign=top style='width:63.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=94 valign=top style='width:70.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=54 valign=top style='width:40.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>00<o:p></o:p></span></p>
+  </td>
+  <td width=54 valign=top style='width:40.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>011<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7'>
+  <td width=124 valign=top style='width:93.3pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:"Courier New"'>ORI<o:p></o:p></span></b></p>
+  </td>
+  <td width=74 valign=top style='width:55.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X111<o:p></o:p></span></p>
+  </td>
+  <td width=24 valign=top style='width:18.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=24 valign=top style='width:18.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=84 valign=top style='width:63.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=94 valign=top style='width:70.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=84 valign=top style='width:63.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=94 valign=top style='width:70.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=54 valign=top style='width:40.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>01<o:p></o:p></span></p>
+  </td>
+  <td width=54 valign=top style='width:40.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>010<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8'>
+  <td width=124 valign=top style='width:93.3pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:"Courier New"'>SHIFT<o:p></o:p></span></b></p>
+  </td>
+  <td width=74 valign=top style='width:55.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X011<o:p></o:p></span></p>
+  </td>
+  <td width=24 valign=top style='width:18.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=24 valign=top style='width:18.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=84 valign=top style='width:63.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=94 valign=top style='width:70.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=84 valign=top style='width:63.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=94 valign=top style='width:70.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=54 valign=top style='width:40.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>10<o:p></o:p></span></p>
+  </td>
+  <td width=54 valign=top style='width:40.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>100<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9'>
+  <td width=124 valign=top style='width:93.3pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:"Courier New"'>BZ<o:p></o:p></span></b></p>
+  </td>
+  <td width=74 valign=top style='width:55.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0101<o:p></o:p></span></p>
+  </td>
+  <td width=24 valign=top style='width:18.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New";color:red'>X<o:p></o:p></span></p>
+  </td>
+  <td width=24 valign=top style='width:18.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New";color:red'>0<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=84 valign=top style='width:63.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=94 valign=top style='width:70.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=84 valign=top style='width:63.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=94 valign=top style='width:70.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=54 valign=top style='width:40.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=54 valign=top style='width:40.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>XXX<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:10'>
+  <td width=124 valign=top style='width:93.3pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+  <td width=74 valign=top style='width:55.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0101<o:p></o:p></span></p>
+  </td>
+  <td width=24 valign=top style='width:18.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New";color:red'>X<o:p></o:p></span></p>
+  </td>
+  <td width=24 valign=top style='width:18.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New";color:red'>1<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=84 valign=top style='width:63.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=94 valign=top style='width:70.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=84 valign=top style='width:63.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=94 valign=top style='width:70.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=54 valign=top style='width:40.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=54 valign=top style='width:40.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>XXX<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:11'>
+  <td width=124 valign=top style='width:93.3pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:"Courier New"'>BNZ<o:p></o:p></span></b></p>
+  </td>
+  <td width=74 valign=top style='width:55.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>1001<o:p></o:p></span></p>
+  </td>
+  <td width=24 valign=top style='width:18.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New";color:red'>X<o:p></o:p></span></p>
+  </td>
+  <td width=24 valign=top style='width:18.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New";color:red'>0<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=84 valign=top style='width:63.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=94 valign=top style='width:70.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=84 valign=top style='width:63.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=94 valign=top style='width:70.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=54 valign=top style='width:40.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=54 valign=top style='width:40.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>XXX<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:12'>
+  <td width=124 valign=top style='width:93.3pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+  <td width=74 valign=top style='width:55.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>1001<o:p></o:p></span></p>
+  </td>
+  <td width=24 valign=top style='width:18.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New";color:red'>X<o:p></o:p></span></p>
+  </td>
+  <td width=24 valign=top style='width:18.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New";color:red'>1<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=84 valign=top style='width:63.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=94 valign=top style='width:70.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=84 valign=top style='width:63.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=94 valign=top style='width:70.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=54 valign=top style='width:40.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=54 valign=top style='width:40.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>XXX<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:13'>
+  <td width=124 valign=top style='width:93.3pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:"Courier New"'>BPZ<o:p></o:p></span></b></p>
+  </td>
+  <td width=74 valign=top style='width:55.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>1101<o:p></o:p></span></p>
+  </td>
+  <td width=24 valign=top style='width:18.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=24 valign=top style='width:18.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=84 valign=top style='width:63.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=94 valign=top style='width:70.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=84 valign=top style='width:63.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=94 valign=top style='width:70.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=54 valign=top style='width:40.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=54 valign=top style='width:40.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>XXX<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:14;mso-yfti-lastrow:yes'>
+  <td width=124 valign=top style='width:93.3pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+  <td width=74 valign=top style='width:55.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>1101<o:p></o:p></span></p>
+  </td>
+  <td width=24 valign=top style='width:18.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=24 valign=top style='width:18.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=84 valign=top style='width:63.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>1<o:p></o:p></span></p>
+  </td>
+  <td width=94 valign=top style='width:70.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=84 valign=top style='width:63.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=94 valign=top style='width:70.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>0<o:p></o:p></span></p>
+  </td>
+  <td width=54 valign=top style='width:40.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=54 valign=top style='width:40.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>X<o:p></o:p></span></p>
+  </td>
+  <td width=64 valign=top style='width:48.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>XXX<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Here’s the rationale behind some of the lines:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>For LOAD: The INST0-3 bits should form the pattern 0000. It
+doesn’t matter what N and Z are since LOADS always read from memory. The PC should
+be changed to PC+1 thus <span class=SpellE>PCSel</span> = <b style='mso-bidi-font-weight:
+normal'>0</b>. We do change the PC thus <span class=SpellE><b style='mso-bidi-font-weight:
+normal'>PCWrite</b></span><b style='mso-bidi-font-weight:normal'>= 1</b> (turns
+outs that <span class=SpellE><b style='mso-bidi-font-weight:normal'>PCWrite</b></span>
+should always be 1). We do write into the register file thus <span
+class=SpellE>RegWrite</span> = 1. We read from memory thus <span class=SpellE>MemRead</span>
+= 1. We do not write to memory thus <span class=SpellE>MemWrite</span> = 0. We
+do not use the ALU so, it doesn’t really matter what inputs we provide to it
+and what calculation it performs. Also, R1Sel = 0 as we will write into the R1
+specified by the instruction <span class=SpellE>opcode</span> (and not K1 which
+is used only for ORI).</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>For NAND: The INST0-3 bits should form the pattern 1000. It
+doesn’t matter what N and Z are. <span class=SpellE>PCSel</span> = 0 and <span
+class=SpellE>PCWrite</span> = 1 since we want to simply increment the PC.<span
+style='mso-spacerun:yes'>  </span><span class=SpellE>MemRead</span> and <span
+class=SpellE>MemWrite</span> should both be 0 since with do not read or write
+from/to data memory. ALU2 should be 00 since we want the second register value
+from the register file. <span class=SpellE>RegWrite</span> =<span
+style='mso-spacerun:yes'>  </span>1 since we do write to the register file. <span
+class=SpellE>RFin</span> = 0 since we will write the value produced by the ALU.
+Finally <span class=SpellE>ALUop</span> = 011 since earlier we assumed that
+this is the way we ask of the ALU to perform an NAND.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>For BZ: The INST0-3 bits should form the pattern 1001. It
+does matter what the Z flag is. So there are two lines one for when Z is zero
+hence we do PC = PC +1 and one for when Z = 1 in which case we do PC<span
+style='mso-spacerun:yes'>  </span>= PC + Sign-extend(Imm4).</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Double-check all values and try to understand why they are
+set the way they are.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Now that we have the truth table we can implement each of
+the outputs of the control unit using any of the methodologies learned during
+digital design. Here are a few trivial implementations:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span class=SpellE>MemWrite</span> = Inst3’ * Inst2’ * Inst1
+* Inst0’</p>
+
+<p class=MsoNormal><span class=SpellE>MemRead</span> = Inst3’ * Inst2’ * Inst1’
+* Inst0’</p>
+
+<p class=MsoNormal><span class=SpellE>RegWrite</span> = Inst3’*Inst2*Inst1 +
+Inst0’*Inst1+Inst2’*Inst1’*Inst0’+Inst3’*Inst1’*Inst0’</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Timing – Putting it
+all together<o:p></o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal>While we have mentioned how the timing works it is best if
+we revisit this issue now that everything has been put into place.</p>
+
+<p class=MsoNormal>So execution of an instruction commences immediately after
+the falling edge of the clock. </p>
+
+<p class=MsoNormal>Notice that at this point in time the signals of the <span
+class=SpellE>datapath</span> and the control will have values which may be
+incorrect (they me correct only incidentally). So, because the PC is connected
+to the instruction memory the latter will start reading the contents of the
+memory location pointed to by the PC. <i style='mso-bidi-font-style:normal'>After
+a while </i>these contents will appear on the INST lines. After a while the
+control will produce the appropriate control signal values In the meantime, the
+register file may have been reading arbitrary registers, the ALU may have been
+producing arbitrary results. This is OK as it does not change any storage
+elements (registers or memory). Eventually, once the INST signals are set
+correctly by the instruction memory, the register file will see the right
+register names on its inputs and will after a while produce the appropriate
+values on its outputs. Because the control will eventually produce the
+appropriate values for all control signals we will eventually see the
+appropriate results out of the ALU, or from or to memory. Key to making the
+whole thing work correctly is that no storage element will change prior to the
+next falling edge of the clock. Thus if we make the clock slow enough there
+will be sufficient time to produce all appropriate values and then make the
+right changes instantaneously.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>

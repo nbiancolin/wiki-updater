@@ -1,0 +1,2181 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 15">
+<meta name=Originator content="Microsoft Word 15">
+<link rel=File-List href="lec_7_2_bitwise_instructions_files/filelist.xml">
+<link rel=Edit-Time-Data href="lec_7_2_bitwise_instructions_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Andreas Moshovos</o:Author>
+  <o:LastAuthor>Andreas Moshovos</o:LastAuthor>
+  <o:Revision>7</o:Revision>
+  <o:TotalTime>1435</o:TotalTime>
+  <o:Created>2024-01-21T15:04:00Z</o:Created>
+  <o:LastSaved>2024-01-24T22:42:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>2642</o:Words>
+  <o:Characters>15063</o:Characters>
+  <o:Lines>125</o:Lines>
+  <o:Paragraphs>35</o:Paragraphs>
+  <o:CharactersWithSpaces>17670</o:CharactersWithSpaces>
+  <o:Version>16.00</o:Version>
+ </o:DocumentProperties>
+ <o:CustomDocumentProperties>
+  <o:ContentTypeId dt:dt="string">0x010100145FF6D4F5BCEA4F8DB5948B395DD3D2</o:ContentTypeId>
+  <o:_activity dt:dt="string"></o:_activity>
+ </o:CustomDocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+<link rel=dataStoreItem href="lec_7_2_bitwise_instructions_files/item0026.xml"
+target="lec_7_2_bitwise_instructions_files/props027.xml">
+<link rel=dataStoreItem href="lec_7_2_bitwise_instructions_files/item0028.xml"
+target="lec_7_2_bitwise_instructions_files/props029.xml">
+<link rel=themeData href="lec_7_2_bitwise_instructions_files/themedata.thmx">
+<link rel=colorSchemeMapping
+href="lec_7_2_bitwise_instructions_files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:EnableOpenTypeKerning/>
+   <w:DontFlipMirrorIndents/>
+   <w:OverrideTableStyleHps/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="376">
+  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 9"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="header"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footer"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index heading"/>
+  <w:LsdException Locked="false" Priority="35" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of figures"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope return"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="line number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="page number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of authorities"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="macro"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toa heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 5"/>
+  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Closing"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Signature"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Message Header"/>
+  <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Salutation"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Date"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Note Heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Block Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="FollowedHyperlink"/>
+  <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Document Map"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Plain Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="E-mail Signature"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Top of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Bottom of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal (Web)"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Acronym"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Cite"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Code"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Definition"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Keyboard"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Preformatted"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Sample"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Typewriter"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Variable"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Table"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation subject"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="No List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Contemporary"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Elegant"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Professional"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Balloon Text"/>
+  <w:LsdException Locked="false" Priority="39" Name="Table Grid"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Theme"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>
+  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>
+  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>
+  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>
+  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>
+  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>
+  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hashtag"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Unresolved Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Link"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-536869121 1107305727 33554432 0 415 0;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-469750017 -1040178053 9 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:105%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-font-kerning:1.0pt;
+	mso-ligatures:standardcontextual;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	mso-add-space:auto;
+	line-height:105%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-font-kerning:1.0pt;
+	mso-ligatures:standardcontextual;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	mso-add-space:auto;
+	line-height:105%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-font-kerning:1.0pt;
+	mso-ligatures:standardcontextual;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	mso-add-space:auto;
+	line-height:105%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-font-kerning:1.0pt;
+	mso-ligatures:standardcontextual;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	mso-add-space:auto;
+	line-height:105%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-font-kerning:1.0pt;
+	mso-ligatures:standardcontextual;}
+p.msonormal0, li.msonormal0, div.msonormal0
+	{mso-style-name:msonormal;
+	mso-style-unhide:no;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:10.0pt;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-font-kerning:0pt;
+	mso-ligatures:none;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:1806972692;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-2050597000 -424490724 -524153092 1094454388 936420854 1465562170 -1458150942 1891238870 2007265992 -346157958;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial",sans-serif;
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial",sans-serif;
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial",sans-serif;
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial",sans-serif;
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial",sans-serif;
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial",sans-serif;
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial",sans-serif;
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial",sans-serif;
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:•;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial",sans-serif;
+	mso-bidi-font-family:"Times New Roman";}
+@list l1
+	{mso-list-id:2040620740;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-171248438 -584970862 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l1:level1
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l1:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l1:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l1:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l1:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l1:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l1:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l1:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+table.MsoTableGrid
+	{mso-style-name:"Table Grid";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-priority:39;
+	mso-style-unhide:no;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0in;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US style='tab-interval:.5in;word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:105%'>Bitwise
+Instructions (shifts, AND, rotates, etc.)<o:p></o:p></span></b></p>
+
+<p class=MsoNormal>Andreas Moshovos, Jan 2024</p>
+
+<p class=MsoNormal>So far, we have mostly used instructions that move data
+around or treat the contents as values. Some examples below:</p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:10.0pt;
+line-height:105%;font-family:"Courier New"'>movi r9, 10 # write the number 10
+into register r9. 10 is represented in binary form and in 32b eventually. It
+comes as a 16b constant in the instruction and is sign-extended into r9<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:10.0pt;
+line-height:105%;font-family:"Courier New"'>add r9, r8, r0 # effectively copy
+the value from r8 into r9<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:10.0pt;
+line-height:105%;font-family:"Courier New"'>add r9, r8, r10 # add the values in
+r8 and r10 and write their sum into r9<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:10.0pt;
+line-height:105%;font-family:"Courier New"'>stw r9, 16(r8) # store the value in
+r9 into memory starting at the address calculated by taking the value in r8 and
+adding 16 to it. Four bytes are written in little-endian order<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:10.0pt;
+line-height:105%;font-family:"Courier New"'>ldw r9, 32(r8) # read for bytes
+from memory starting from the address calculated by taking the value in r8 and
+adding 32 to it. The bytes go in little-endian order into r9.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:10.0pt;
+line-height:105%;font-family:"Courier New"'>movhi r8, 0x1234 # write the 16b
+number 0x1234 into the upper 16b of register r8 while zeroing out the 16 least
+significant bits of r8<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:10.0pt;
+line-height:105%;font-family:"Courier New"'>beq r9, r8, somewhere # compare r9
+and r8 (their values) if there are equal PC becomes the address corresponding
+to the label somewhere, otherwise PC =PC+4 <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:10.0pt;
+line-height:105%;font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal>Here we will be discussing another set of instructions that
+tread the values in registers as a collection of 32 individual bits. These
+include instructions that perform bitwise logical operations such as AND, OR,
+EOR (exclusive OR) and shifts and rotates.</p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:105%'>Bitwise
+logical operations<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><b><i>The AND instruction:<o:p></o:p></i></b></p>
+
+<p class=MsoNormal>Let’s use the <b>and </b>instruction as a representative
+example of what these instructions do:</p>
+
+<p class=MsoNormal style='text-indent:.5in'>and r8, r9, r10</p>
+
+<p class=MsoNormal>You can probably guess what this instruction does. Let’s
+look at a few example inputs (writing the values in binary form will help):</p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:1184;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=416 colspan=2 valign=top style='width:311.65pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b>INPUTS<o:p></o:p></b></p>
+  </td>
+  <td width=208 valign=top style='width:155.85pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b>OUTPUT<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=208 valign=top style='width:155.8pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b>R9<o:p></o:p></b></p>
+  </td>
+  <td width=208 valign=top style='width:155.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b>R10<o:p></o:p></b></p>
+  </td>
+  <td width=208 valign=top style='width:155.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b>R8<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=208 valign=top style='width:155.8pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>0xFFFFFFFF (all ones)</p>
+  </td>
+  <td width=208 valign=top style='width:155.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>0x12345678</p>
+  </td>
+  <td width=208 valign=top style='width:155.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>0x12345678</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=208 valign=top style='width:155.8pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>0xF0F0F0F0 (every other 4b is all ones)</p>
+  </td>
+  <td width=208 valign=top style='width:155.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>0xfedcba98</p>
+  </td>
+  <td width=208 valign=top style='width:155.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>0xf0d0b090</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;mso-yfti-lastrow:yes'>
+  <td width=208 valign=top style='width:155.8pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>0x11337777</p>
+  </td>
+  <td width=208 valign=top style='width:155.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>0x2345678</p>
+  </td>
+  <td width=208 valign=top style='width:155.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>0x00305670</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>This instruction treats the register values as 32 element
+vectors where every element is a bit. The rightmost is bit #0 whereas the
+leftmost is bit #31. So, there are 32 such bits in the first source operand r9,
+and 32 in the second source operand r10. It then performs a the logical AND
+operation across the corresponding bits of these two operands. That is, bit #0
+of the output register r8 will be the result of ANDing bit #0 of register r9
+and bit #0 or register r10, bit #1 of r8 will be the AND of bit #1 of r9 and
+bit #1 of r10, and so on, up to bit #31:</p>
+
+<p class=MsoNormal><span style='mso-ligatures:none;mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1033" type="#_x0000_t75" alt="A diagram of a number and a number"
+ style='width:565.5pt;height:151.15pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="lec_7_2_bitwise_instructions_files/image003.png" o:title="A diagram of a number and a number"/>
+</v:shape><![endif]--><![if !vml]><img width=754 height=202
+src="lec_7_2_bitwise_instructions_files/image002.png"
+alt="A diagram of a number and a number" v:shapes="_x0000_i1033"><![endif]></span></p>
+
+<p class=MsoNormal>Here’s another example showing example values for r9 and r10
+and the result in r8:</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b>and</b> r8, r9, r10 </p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:"Courier New"'>R9<span
+style='mso-spacerun:yes'>  </span>= 0001 0001 0010 0010 0000 0111 0000 1111<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:"Courier New"'>R10 =
+0111 0110 0010 1000 0011 0011 0100 0100<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]><span style='font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:"Courier New"'>R8<span
+style='mso-spacerun:yes'>  </span>= 0001 0000 0010 0000 0000 0011 0000 0100<o:p></o:p></span></p>
+
+<p class=MsoNormal><b><i>The OR, XOR, and NOR Instructions:<o:p></o:p></i></b></p>
+
+<p class=MsoNormal>Besides AND, NIOS II also has OR, XOR, and NOR instructions
+all performing the corresponding bit-wise functions. AND, OR, XOR and NOR, as
+you might recall from Boolean algebra/digital design are two input Boolean
+functions producing a single bit output. The following table reviews them:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:1184;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=249 colspan=2 valign=top style='width:187.0pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>INPUTS</p>
+  </td>
+  <td width=125 valign=top style='width:93.5pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>AND</p>
+  </td>
+  <td width=125 valign=top style='width:93.5pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>OR</p>
+  </td>
+  <td width=125 valign=top style='width:93.5pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>XOR</p>
+  </td>
+  <td width=125 valign=top style='width:93.5pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>NOR</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=125 valign=top style='width:93.5pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+  <td width=125 valign=top style='width:93.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+  <td width=125 valign=top style='width:93.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+  <td width=125 valign=top style='width:93.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+  <td width=125 valign=top style='width:93.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+  <td width=125 valign=top style='width:93.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=125 valign=top style='width:93.5pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+  <td width=125 valign=top style='width:93.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td width=125 valign=top style='width:93.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+  <td width=125 valign=top style='width:93.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td width=125 valign=top style='width:93.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td width=125 valign=top style='width:93.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=125 valign=top style='width:93.5pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td width=125 valign=top style='width:93.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+  <td width=125 valign=top style='width:93.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+  <td width=125 valign=top style='width:93.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td width=125 valign=top style='width:93.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td width=125 valign=top style='width:93.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;mso-yfti-lastrow:yes'>
+  <td width=125 valign=top style='width:93.5pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td width=125 valign=top style='width:93.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td width=125 valign=top style='width:93.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td width=125 valign=top style='width:93.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td width=125 valign=top style='width:93.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+  <td width=125 valign=top style='width:93.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b><i>Immediate Variants<o:p></o:p></i></b></p>
+
+<p class=MsoNormal>In addition to the aforementioned instructions that accept
+two registers as input, there are variants where the second<span
+style='mso-spacerun:yes'>  </span>input operand is a 16b immediate. This is
+similar to the ADD vs. ADDI we have already seen. Natively, NIOS II implements
+ANDI, XORI and ORI. Both zero-extend the immediate argument. For example, is
+r9=0xffffff then we have the following:</p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in;mso-list:l1 level1 lfo4'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:"Courier New"'>andi r8,
+r9, 0x5555 </span><span style='font-family:Wingdings;mso-ascii-font-family:
+"Courier New";mso-hansi-font-family:"Courier New";mso-bidi-font-family:"Courier New";
+mso-char-type:symbol;mso-symbol-font-family:Wingdings'><span style='mso-char-type:
+symbol;mso-symbol-font-family:Wingdings'>à</span></span><span style='font-family:
+"Courier New"'> r8=0x00005555<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l1 level1 lfo4'><![if !supportLists]><span
+lang=FR style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-ansi-language:FR'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+lang=FR style='font-family:"Courier New";mso-ansi-language:FR'>xori r8, r9,
+0x5432 </span><span style='font-family:Wingdings;mso-ascii-font-family:"Courier New";
+mso-hansi-font-family:"Courier New";mso-bidi-font-family:"Courier New";
+mso-char-type:symbol;mso-symbol-font-family:Wingdings'><span style='mso-char-type:
+symbol;mso-symbol-font-family:Wingdings'>à</span></span><span lang=FR
+style='font-family:"Courier New";mso-ansi-language:FR'> r8=0xffffabcd<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in;mso-list:l1 level1 lfo4'><![if !supportLists]><span
+lang=FR style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-ansi-language:FR'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+lang=FR style='font-family:"Courier New";mso-ansi-language:FR'>ori r8, r9,
+0x5432 </span><span lang=FR style='font-family:Wingdings;mso-ascii-font-family:
+"Courier New";mso-hansi-font-family:"Courier New";mso-bidi-font-family:"Courier New";
+mso-ansi-language:FR;mso-char-type:symbol;mso-symbol-font-family:Wingdings'><span
+style='mso-char-type:symbol;mso-symbol-font-family:Wingdings'>à</span></span><span
+lang=FR style='font-family:"Courier New";mso-ansi-language:FR'> r8=0xfffffff<o:p></o:p></span></p>
+
+<p class=MsoNormal>Finally, there are also ANDHI, XORHI, and ORHI where the
+immediate argument corresponds to bits 31 to 16 (instead of bits 15 to 0). For
+example, lets’ assume r9=0xF0F00F0F:</p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in;mso-list:l1 level1 lfo4'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:"Courier New"'>andhi
+r8, r9, 0xFFFF </span><span style='font-family:Wingdings;mso-ascii-font-family:
+"Courier New";mso-hansi-font-family:"Courier New";mso-bidi-font-family:"Courier New";
+mso-char-type:symbol;mso-symbol-font-family:Wingdings'><span style='mso-char-type:
+symbol;mso-symbol-font-family:Wingdings'>à</span></span><span style='font-family:
+"Courier New"'> r8=0xF0F00000<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l1 level1 lfo4'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:"Courier New"'>xorhi
+r8, r9, 0xFFFF </span><span style='font-family:Wingdings;mso-ascii-font-family:
+"Courier New";mso-hansi-font-family:"Courier New";mso-bidi-font-family:"Courier New";
+mso-char-type:symbol;mso-symbol-font-family:Wingdings'><span style='mso-char-type:
+symbol;mso-symbol-font-family:Wingdings'>à</span></span><span style='font-family:
+"Courier New"'> r8=0x0F0F0F0F<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in;mso-list:l1 level1 lfo4'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:"Courier New"'>orhi r8,
+r9, 0xFFFF </span><span style='font-family:Wingdings;mso-ascii-font-family:
+"Courier New";mso-hansi-font-family:"Courier New";mso-bidi-font-family:"Courier New";
+mso-char-type:symbol;mso-symbol-font-family:Wingdings'><span style='mso-char-type:
+symbol;mso-symbol-font-family:Wingdings'>à</span></span><span style='font-family:
+"Courier New"'> r8=0xFFFF0F0F<o:p></o:p></span></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:105%'>Shift and
+Rotate Instructions<o:p></o:p></span></b></p>
+
+<p class=MsoNormal>The next set of instructions treat the bits of a register as
+being in a chain, one connected to its two neighbors. That is bit #3 is chained
+to bit #4 on its left, and bit #2 on its right:</p>
+
+<p class=MsoNormal><span style='mso-ligatures:none;mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1032" type="#_x0000_t75" alt="A close-up of a computer screen"
+ style='width:567.75pt;height:102.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="lec_7_2_bitwise_instructions_files/image004.png" o:title="A close-up of a computer screen"/>
+</v:shape><![endif]--><![if !vml]><img width=757 height=137
+src="lec_7_2_bitwise_instructions_files/image005.png"
+alt="A close-up of a computer screen" v:shapes="_x0000_i1032"><![endif]></span></p>
+
+<p class=MsoNormal>The instructions “push” the bits either to the left or to
+the right changing their position within the “chain”. Shifts treat the register
+as having open ends: bits that are shifted out are discarded and vacant
+positions are filled in with proper values (more on this shortly). Rorates
+assume there is a chain connection between bits #31 and #0 so, no bit is pushed
+out.</p>
+
+<p class=MsoNormal>All instructions take the following form:</p>
+
+<p class=MsoNormal>OPERATION Rdest, Rsource, X</p>
+
+<p class=MsoNormal>Where X can be either a register or an immediate.</p>
+
+<p class=MsoNormal>They take the value in Rsource (e.g., r8) and move it left
+or right (counter-clockwise, or clockwise) by as many bit positions as given by
+the value or argument X.</p>
+
+<p class=MsoNormal>Let’s first look at rotates.</p>
+
+<p class=MsoNormal><b><i>Rotate Instructions<o:p></o:p></i></b></p>
+
+<p class=MsoNormal>NIOS II implements the rotate left instructions ROL and
+ROLI. For example, assume that r9=0x12345678 and that r10=0x4 then we have:</p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in;mso-list:l1 level1 lfo4'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>rol r8, r9, r10 <span style='font-family:Wingdings;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin;mso-char-type:symbol;mso-symbol-font-family:
+Wingdings'><span style='mso-char-type:symbol;mso-symbol-font-family:Wingdings'>à</span></span>
+r8 – 0x23456781</p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in;mso-list:l1 level1 lfo4'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>roli r8, r9, 8 <span style='font-family:Wingdings;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin;mso-char-type:symbol;mso-symbol-font-family:
+Wingdings'><span style='mso-char-type:symbol;mso-symbol-font-family:Wingdings'>à</span></span>
+r8 = 0x34567812</p>
+
+<p class=MsoNormal style='margin-left:.25in'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Both instructions rotate the value taken from the first
+input operand (r9 in our examples) by as many bits indicated by the second
+source operand (either a register or an immediate) clockwise, meaning towards
+the left. They rotate because these instructions treat the register a cycle
+with bits #31 and #0 being next to each other (red line in the above diagram).
+Only the last 5 bits of the second operand are relevant. Why? Because there are
+only 32 bits in the cycle. So, rotating by 33 is the same as rotating by 1.</p>
+
+<p class=MsoNormal>For rotate right, NIOS II implements on the register
+version, ror:</p>
+
+<p class=MsoListParagraph style='text-indent:-.25in;mso-list:l1 level1 lfo4'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>ror r8, r9, r10 <span style='font-family:Wingdings;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin;mso-char-type:symbol;mso-symbol-font-family:
+Wingdings'><span style='mso-char-type:symbol;mso-symbol-font-family:Wingdings'>à</span></span>
+r8= 0x81234567</p>
+
+<p class=MsoNormal>Why no rori? Think whether we can get the same effect with
+roli instead? If we wanted to shift right say by 6 bits, can we get the same
+effect by shifting left instead by some other number of bits?</p>
+
+<p class=MsoNormal><b><i>Shift Instructions<o:p></o:p></i></b></p>
+
+<p class=MsoNormal>These tread the value as one having a chain with open ends
+left of bit #31 and right of bit #0. All are of the form:</p>
+
+<p class=MsoNormal>OPERATION Rdest, Rsource, X</p>
+
+<p class=MsoNormal>Where Rdest and Rsource are registers and X can be a
+register or an immediate.</p>
+
+<p class=MsoNormal>The shift left instructions take a value from a register and
+shift it by N bit positions to the left as specified by the third argument X.
+Since shifting left will leave N vacant positions on the left side of the
+register (least significant N bits) those are filled with 0s. For example,
+assume r9=0x12345678 and r10=0x12, then:</p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in;mso-list:l1 level1 lfo4'><![if !supportLists]><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.0pt;line-height:105%;
+font-family:"Courier New"'>sll r8, r9, r10 </span><span style='font-size:10.0pt;
+line-height:105%;font-family:Wingdings;mso-ascii-font-family:"Courier New";
+mso-hansi-font-family:"Courier New";mso-bidi-font-family:"Courier New";
+mso-char-type:symbol;mso-symbol-font-family:Wingdings'><span style='mso-char-type:
+symbol;mso-symbol-font-family:Wingdings'>à</span></span><span style='font-size:
+10.0pt;line-height:105%;font-family:"Courier New"'> r8 = 0x45678000<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in;mso-list:l1 level1 lfo4'><![if !supportLists]><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.0pt;line-height:105%;
+font-family:"Courier New"'>slli r8, r9, 4 </span><span style='font-size:10.0pt;
+line-height:105%;font-family:Wingdings;mso-ascii-font-family:"Courier New";
+mso-hansi-font-family:"Courier New";mso-bidi-font-family:"Courier New";
+mso-char-type:symbol;mso-symbol-font-family:Wingdings'><span style='mso-char-type:
+symbol;mso-symbol-font-family:Wingdings'>à</span></span><span style='font-size:
+10.0pt;line-height:105%;font-family:"Courier New"'> r8 = 0x23456780<o:p></o:p></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>SLL stands for Shift Logical Left. I am not sure I like the
+name “logical” here as it may create confusion later one when we refer to the
+shift right operations. In any case, that’s what they are called and as long as
+we understand what they do we can use them.</p>
+
+<p class=MsoNormal>Please note that shift left by 1 bit is equivalent to
+multiplying the input value by 2. This applies to all bit patterns whether we
+intend to interpret them as signed or unsigned. For example, consider
+0000..11(2) (meaning binary). Shifting left by 1 this becomes 00..0110(2). The
+original number was 3 and the shifted one is 3x2=6. Similarly, 11…1(2) is -1 in
+2’s complement and shifted left by 1 becomes 1…10(2) which is -2. Do<span
+style='mso-spacerun:yes'>  </span>keep in mind that we have limited number of
+bits (always 32) and so our arithmetic is also of limited precision. So, it is
+possible for very large positive number or very small negative numbers to get
+overflow or underflow (meaning the result will be cropped to 32bits and will
+not be the original number multiplied by 2x, try 10…0 and 01…1 as examples and
+treat them as signed).</p>
+
+<p class=MsoNormal>In general shifting left by N bits amounts to multiplying
+the input number (if we wish to treat it as a number) by 2^N. This should be
+familiar to you from the decimal system where shifting by one digit to the left
+amounts to multiplying by 10, e.g., 0123 becomes 1230.</p>
+
+<p class=MsoNormal>Now let’s discuss rotate right instructions. Besides the
+register and immediate variants there is one more option. Whether the shift is
+“logical” or “arithmetic”. When we are shifting right, we will end up with
+several vacant bit positions at the most significant bits. The question is what
+to fill these with. To appreciate the naming and the functionality it is
+relevant to start from asking what we want the input value to be considered at:
+as a collection of bits or as a signed number. The “logical” shift right
+instructions fill the vacant positions with zeros whereas the “arithmetic”
+shift right instructions fill them with the inputs MSb (bit #31). The logical
+shift instructions treat the input as an *unsigned* number (equivalent to a
+collection of bits without sign), whereas the arithmetic ones treat it as a
+signed number. In either case, the instructions have the effect of diving the
+input number by a power of 2. Shifting by 1 bit to the right is equivalent to
+dividing 2 and shifting right by N positions to the right is equivalent to
+dividing by 2^N. There is one exception which is shifting right arithmetic
+where the input Rsource contains -1. In that case, no matter how many bits we
+shift it by, since the sign is replicated the result will always be all 1s
+which is -1 :(</p>
+
+<p class=MsoNormal>Examples, below. Assume that r9=x87654321 and r7=0x12345678,
+and r10 = 0x4 (pay attention to what bit #31 is in Rsource):</p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in;mso-list:l1 level1 lfo4'><![if !supportLists]><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.0pt;line-height:105%;
+font-family:"Courier New"'>srl r8, r9, r10 </span><span style='font-size:10.0pt;
+line-height:105%;font-family:Wingdings;mso-ascii-font-family:"Courier New";
+mso-hansi-font-family:"Courier New";mso-bidi-font-family:"Courier New";
+mso-char-type:symbol;mso-symbol-font-family:Wingdings'><span style='mso-char-type:
+symbol;mso-symbol-font-family:Wingdings'>à</span></span><span style='font-size:
+10.0pt;line-height:105%;font-family:"Courier New"'> r8=0x08765432<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l1 level1 lfo4'><![if !supportLists]><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.0pt;line-height:105%;
+font-family:"Courier New"'>sra r8, r8, r10 </span><span style='font-size:10.0pt;
+line-height:105%;font-family:Wingdings;mso-ascii-font-family:"Courier New";
+mso-hansi-font-family:"Courier New";mso-bidi-font-family:"Courier New";
+mso-char-type:symbol;mso-symbol-font-family:Wingdings'><span style='mso-char-type:
+symbol;mso-symbol-font-family:Wingdings'>à</span></span><span style='font-size:
+10.0pt;line-height:105%;font-family:"Courier New"'> r8=0xF8765432<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l1 level1 lfo4'><![if !supportLists]><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.0pt;line-height:105%;
+font-family:"Courier New"'>srli r8, r9, 16 </span><span style='font-size:10.0pt;
+line-height:105%;font-family:Wingdings;mso-ascii-font-family:"Courier New";
+mso-hansi-font-family:"Courier New";mso-bidi-font-family:"Courier New";
+mso-char-type:symbol;mso-symbol-font-family:Wingdings'><span style='mso-char-type:
+symbol;mso-symbol-font-family:Wingdings'>à</span></span><span style='font-size:
+10.0pt;line-height:105%;font-family:"Courier New"'> r8=0x00876543<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l1 level1 lfo4'><![if !supportLists]><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.0pt;line-height:105%;
+font-family:"Courier New"'>srai r8, r9, 16 </span><span style='font-size:10.0pt;
+line-height:105%;font-family:Wingdings;mso-ascii-font-family:"Courier New";
+mso-hansi-font-family:"Courier New";mso-bidi-font-family:"Courier New";
+mso-char-type:symbol;mso-symbol-font-family:Wingdings'><span style='mso-char-type:
+symbol;mso-symbol-font-family:Wingdings'>à</span></span><span style='font-size:
+10.0pt;line-height:105%;font-family:"Courier New"'> r8=0xFF876543<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l1 level1 lfo4'><![if !supportLists]><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.0pt;line-height:105%;
+font-family:"Courier New"'>srl r8, r7, r10 </span><span style='font-size:10.0pt;
+line-height:105%;font-family:Wingdings;mso-ascii-font-family:"Courier New";
+mso-hansi-font-family:"Courier New";mso-bidi-font-family:"Courier New";
+mso-char-type:symbol;mso-symbol-font-family:Wingdings'><span style='mso-char-type:
+symbol;mso-symbol-font-family:Wingdings'>à</span></span><span style='font-size:
+10.0pt;line-height:105%;font-family:"Courier New"'> r8=0x01234567<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in;mso-list:l1 level1 lfo4'><![if !supportLists]><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.0pt;line-height:105%;
+font-family:"Courier New"'>sra r8, r7, r10 </span><span style='font-size:10.0pt;
+line-height:105%;font-family:Wingdings;mso-ascii-font-family:"Courier New";
+mso-hansi-font-family:"Courier New";mso-bidi-font-family:"Courier New";
+mso-char-type:symbol;mso-symbol-font-family:Wingdings'><span style='mso-char-type:
+symbol;mso-symbol-font-family:Wingdings'>à</span></span><span style='font-size:
+10.0pt;line-height:105%;font-family:"Courier New"'> r8=0x01234567<o:p></o:p></span></p>
+
+<p class=MsoNormal><b><span lang=EN-CA style='mso-ansi-language:EN-CA'>An
+example: B&amp;W Graphics<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span lang=EN-CA style='mso-ansi-language:EN-CA'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal>Let’s travel back in time. It’s 1989, the year Gameboy will
+be released in Japan and take over the world by storm. It had a small screen
+with B&amp;W graphics. That is every pixel could be either on (1) or off(0). On
+pixels showed as black triangles (no light passing through) whereas off pixels
+showed as black. In an alternate timeline, you are working on a handheld
+console which also had B&amp;W graphics and somehow NIOS II was the processor
+that it was based on. Its resolution is 5 rows by 32 columns:</p>
+
+<p class=MsoNormal><span style='mso-ligatures:none;mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1031" type="#_x0000_t75" alt="A computer screen shot of words in memory"
+ style='width:569.25pt;height:155.65pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="lec_7_2_bitwise_instructions_files/image007.png" o:title="A computer screen shot of words in memory"/>
+</v:shape><![endif]--><![if !vml]><img width=759 height=208
+src="lec_7_2_bitwise_instructions_files/image021.png"
+alt="A computer screen shot of words in memory" v:shapes="_x0000_i1031"><![endif]></span></p>
+
+<p class=MsoNormal>So, the memory addresses 0x400 through 0x413 are mapped to
+the display. By making a bit 1, we expect the corresponding pixel to be black
+and vice versa. For this discussion we will skip over the physical realities of
+how this can be implemented. We are focusing on how the programmer can “paint”
+what they want on this screen.</p>
+
+<p class=MsoNormal>Let’s start by painting a “sprite” on this screen. We will
+use the following assembly:</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>              </span>.data<br>
+<span style='mso-tab-count:1'>              </span>.align 2<br>
+fb:<span style='mso-tab-count:1'>         </span>.word 0x3E, 0x49, 0x7F, 0x7F,
+0x55, 0x00</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Let’see what we painted:</p>
+
+<p class=MsoNormal><span style='mso-ligatures:none;mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1030" type="#_x0000_t75" alt="A screenshot of a computer code"
+ style='width:541.9pt;height:165pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="lec_7_2_bitwise_instructions_files/image009.png" o:title="A screenshot of a computer code"/>
+</v:shape><![endif]--><![if !vml]><img width=723 height=220
+src="lec_7_2_bitwise_instructions_files/image022.png"
+alt="A screenshot of a computer code" v:shapes="_x0000_i1030"><![endif]></span></p>
+
+<p class=MsoNormal>I hope this looks like the ghost from pacman or a little
+alien creature from invaders. In the above drawing, the creature is looking
+straight up from the screen. </p>
+
+<p class=MsoNormal><b><i><u>Is it looking right?<o:p></o:p></u></i></b></p>
+
+<p class=MsoNormal>For the game, we want to be able to check whether it is
+looking left or right. For example, when it is <b>looking right t</b>he creature
+will be like this on screen (notice the two extra pixels that are on – we highlight
+them differently but on the actual screen it would be a pixel that is on like
+all others):</p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:1184;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=312 valign=top style='width:233.75pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='mso-ligatures:none;mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+   id="_x0000_i1029" type="#_x0000_t75" alt="A diagram of numbers and symbols"
+   style='width:167.25pt;height:183.4pt;visibility:visible;mso-wrap-style:square'>
+   <v:imagedata src="lec_7_2_bitwise_instructions_files/image011.png" o:title="A diagram of numbers and symbols"/>
+  </v:shape><![endif]--><![if !vml]><img width=223 height=245
+  src="lec_7_2_bitwise_instructions_files/image023.png"
+  alt="A diagram of numbers and symbols" v:shapes="_x0000_i1029"><![endif]></span></p>
+  </td>
+  <td width=312 valign=top style='width:233.75pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='mso-ligatures:none;mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+   id="_x0000_i1028" type="#_x0000_t75" style='width:207.4pt;height:188.65pt;
+   visibility:visible;mso-wrap-style:square'>
+   <v:imagedata src="lec_7_2_bitwise_instructions_files/image013.png" o:title=""/>
+  </v:shape><![endif]--><![if !vml]><img width=277 height=252
+  src="lec_7_2_bitwise_instructions_files/image024.png" v:shapes="_x0000_i1028"><![endif]></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td width=312 valign=top style='width:233.75pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b>Alien Looking
+  Right<o:p></o:p></b></p>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=312 valign=top style='width:233.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b>Alien Looking Left<o:p></o:p></b></p>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>OK, now let’s try to write the first useful piece of code
+that checks whether the creature is looking right. The pseudo-code is as follows:</p>
+
+<p class=MsoNormal>V = read word from third row (address 0x408)</p>
+
+<p class=MsoNormal>Make all bits of V 0, except bits 1 and 4</p>
+
+<p class=MsoNormal>Is the final V 0? Then the alien is not looking right.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>So, we know that NIOS II provides us with bit-wise
+operations where they treat the inputs as 32 element bit vectors and perform 32
+2-input binary operations as in AND, OR, NOR, XOR in parallel.</p>
+
+<p class=MsoNormal>So, for some input bit positions we want the output to be 0,
+whereas for others we want the output to be whatever the input bit is.
+Effectively we need a “programmable gatekeeper”. That would be the AND
+operation:</p>
+
+<p class=MsoNormal><span style='mso-ligatures:none;mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1027" type="#_x0000_t75" alt="A two arrows pointing to a pass"
+ style='width:295.9pt;height:88.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="lec_7_2_bitwise_instructions_files/image015.png" o:title="A two arrows pointing to a pass"/>
+</v:shape><![endif]--><![if !vml]><img width=395 height=118
+src="lec_7_2_bitwise_instructions_files/image025.png"
+alt="A two arrows pointing to a pass" v:shapes="_x0000_i1027"><![endif]></span><span
+style='mso-spacerun:yes'> </span></p>
+
+<p class=MsoNormal>ANDing with 0 always results in <span
+style='mso-spacerun:yes'> </span>0, whereas ANDing with 1 allows the input
+value to pass through to the output. A term some people use is that we are “masking”
+out all bits except the bits we care about.</p>
+
+<p class=MsoNormal>In our case, we want to AND with a pattern that has 1 only
+in bit positions 1 and 4 (assuming we counting from right starting at bit 0). In
+binary this is this number 00…0001 0010, and in hex (for convenience and
+readability by humans) it can be written as 0x12. That number (0x12) is called
+a “bit mask” but this is not universally adopted terminology.</p>
+
+<p class=MsoNormal>Here’s the assembly:</p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;line-height:105%;font-family:
+"Courier New"'><span style='mso-tab-count:1'>      </span>.text<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;line-height:105%;font-family:
+"Courier New"'>LooksRight:<span style='mso-tab-count:1'> </span>movia r8, fb #
+base address of framebuffer<br>
+<span style='mso-tab-count:2'>            </span>ldw r9, 8(r8) # read third row
+word<br>
+<span style='mso-tab-count:2'>            </span>andi r9, r9, 0x12 # mask out all
+but bits 1 and 4<br>
+<span style='mso-tab-count:2'>            </span>beq r9, r0, NotLookingRight<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;line-height:105%;font-family:
+"Courier New"'>IsLookingRight:<br>
+<span style='mso-tab-count:2'>            </span><span
+style='mso-spacerun:yes'> </span>code goes here<br>
+<span style='mso-tab-count:2'>            </span>br <span style='mso-tab-count:
+1'>   </span>AfterCode<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;line-height:105%;font-family:
+"Courier New"'>NotLookingRight:<br>
+<span style='mso-tab-count:2'>            </span>other code goes here<o:p></o:p></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>In the above code, r9 will end being 0x12 if the alien is
+looking right and 0 otherwise.<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></p>
+
+<p class=MsoNormal><b><i><u>Turn on the eyes as if they are looking left?<o:p></o:p></u></i></b></p>
+
+<p class=MsoNormal>For the next useful piece of code, we would like to make the
+alien look left. Here we assume that the only thing we know about the alien
+drawing is that the pixels for looking left are at positions 2 and 5, whereas
+the pixels for looking right are at positions 1 and 4. That is, there could be
+other drawings, but all use these bits for the eyes (for example, another alien
+can have two more pixels for antennas, or hands or tentacles).</p>
+
+<p class=MsoNormal>So we would like to keep all other pixels (bits) in row 3 as
+they are, and only affect the aforementioned ones. We want the pixels at positions
+2 and 5 to become 1 irrespective or what they are now, and the pixels at
+positions 1 and 4 to be 0. The process for this is to read the word that is
+presently in row 3, manipulate the bits we want, and then write the new value
+in. So we will read the value using a load, modify it using an appropriate combination
+of bitwise operations, and then write the modified value using a store.</p>
+
+<p class=MsoNormal>Let’s start the code</p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;line-height:105%;font-family:
+"Courier New"'><span style='mso-tab-count:1'>      </span>.text<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;line-height:105%;font-family:
+"Courier New"'>LookLeftMake:<span style='mso-tab-count:1'>     </span>movia r8,
+fb # base address of framebuffer<br>
+<span style='mso-tab-count:2'>            </span>ldw r9, 8(r8) # read third row
+word<br>
+<span style='color:red'><span style='mso-tab-count:2'>            </span>CODE
+TO MODIFY R9 GOES HERE<br>
+</span><span style='mso-tab-count:2'>            </span>stw r9, 8(r8)<o:p></o:p></span></p>
+
+<p class=MsoNormal><b>Zeroing out bits: </b>Let’s now discuss what the code
+that modifies r9 can be. We first need to zero out bits 1 and 4. The AND
+operation can help us here. We will use 1 for all bits except for those that we
+need to turn of. The mask (constant) that we need to AND r9 with is:</p>
+
+<p class=MsoNormal>111…1 1110 1101</p>
+
+<p class=MsoNormal>That has 0 only in bit positions 1 and 4. In hexadecimal this
+can be written as 0xFFFF FFED. The code is as follows:</p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:10.0pt;
+line-height:105%;font-family:"Courier New"'>movia r10, 0xFFFF FFFE<br>
+and r9, r9, r10<o:p></o:p></span></p>
+
+<p class=MsoNormal>We cannot use ANDI here because we need a full 32b mask
+where the upper 16bs are all 1s and (please double-check with the instruction
+reference) ANDI accepts only a 16b immediate which it ZERO-extends to 32b. SO
+if we wrote ANDI r9, r9, 0xFFED we would be ANDing with 0x0000FFED and not with
+0xFFFF FFED. Recall that ADD and SUB and LDW and STW also use 16b immediates, but
+SIGN-extend them.</p>
+
+<p class=MsoNormal><b>Turning bits on:</b> Next we need to turn on (set to 1)
+bits 2 and 5. For this we need a bit operation that either passes its input unmodified
+(this will be used for all other bits except bits 2 and 5) or outputs 1. The OR
+function can be used for this purpose:</p>
+
+<p class=MsoNormal><span style='mso-ligatures:none;mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1026" type="#_x0000_t75" alt="A two arrows pointing to one direction"
+ style='width:354.75pt;height:100.9pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="lec_7_2_bitwise_instructions_files/image017.png" o:title="A two arrows pointing to one direction"/>
+</v:shape><![endif]--><![if !vml]><img width=473 height=135
+src="lec_7_2_bitwise_instructions_files/image026.png"
+alt="A two arrows pointing to one direction" v:shapes="_x0000_i1026"><![endif]></span></p>
+
+<p class=MsoNormal>Accordingly, we will OR with a mask that has 0s for all bits
+except for bits 2 and 5. For those it will have 1s. The mask is 0x24 and the
+code looks like this:</p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-size:10.0pt;
+line-height:105%;font-family:"Courier New"'>ori r9, r9, 0x24<o:p></o:p></span></p>
+
+<p class=MsoNormal>And the code in its full glory is as follows:<o:p></o:p></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;line-height:105%;font-family:
+"Courier New"'><span style='mso-tab-count:1'>      </span>.text<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-size:10.0pt;
+line-height:105%;font-family:"Courier New"'>LookLeftMake:<span
+style='mso-tab-count:1'>     </span>movia r8, fb # base address of framebuffer<br>
+<span style='mso-tab-count:2'>            </span><span
+style='mso-spacerun:yes'>      </span>ldw r9, 8(r8) # read third row word<br>
+<span style='color:red'><span style='mso-tab-count:2'>            </span><span
+style='mso-spacerun:yes'>      </span></span>movia r10, 0xFFFF FFFE<br>
+<span style='mso-spacerun:yes'>                  </span>and r9, r9, r10<br>
+<span style='mso-spacerun:yes'>                  </span>ori r9, r9, 0x24<br>
+<span style='mso-spacerun:yes'>                  </span>stw r9, 8(r8)<o:p></o:p></span></p>
+
+<p class=MsoNormal><b><i><u>Toggle the right eyes?<o:p></o:p></u></i></b></p>
+
+<p class=MsoNormal>The next code’s purpose is to change the state of the right
+eyes. If they are 1 we want to make them 0 and vice versa. We could do this we
+if-then-else code (branches). Alternatively, we could use a “selective inverter”,
+that is a bit operation that we can control so that it either passes the value
+as is (used for all bits but the ones we want to toggle) or inverts it (used
+for the bits we want to<span style='mso-spacerun:yes'>  </span>toggle). We can
+use the XOR operation for this purpose:</p>
+
+<p class=MsoNormal><span style='mso-ligatures:none;mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_1" o:spid="_x0000_i1025" type="#_x0000_t75" alt="A two black text with blue arrows"
+ style='width:345pt;height:93.4pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="lec_7_2_bitwise_instructions_files/image019.png" o:title="A two black text with blue arrows"/>
+</v:shape><![endif]--><![if !vml]><img width=460 height=125
+src="lec_7_2_bitwise_instructions_files/image027.png"
+alt="A two black text with blue arrows" v:shapes="Picture_x0020_1"><![endif]></span></p>
+
+<p class=MsoNormal>For our purpose, we will need to XOR with 0x12 for the right
+eyes. The code is as follows:</p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;line-height:105%;font-family:
+"Courier New"'><span style='mso-tab-count:1'>      </span>.text<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-size:10.0pt;
+line-height:105%;font-family:"Courier New"'>RightEyesToggle:<span
+style='mso-tab-count:1'>  </span><br>
+<span style='mso-spacerun:yes'>                  </span>movia r8, fb # base
+address of framebuffer<br>
+<span style='mso-tab-count:2'>            </span><span
+style='mso-spacerun:yes'>      </span>ldw r9, 8(r8) # read third row word<br>
+<span style='color:red'><span style='mso-tab-count:2'>            </span><span
+style='mso-spacerun:yes'>   </span></span><span
+style='mso-spacerun:yes'>   </span>xori r9, r9, 0x12<br>
+<span style='mso-spacerun:yes'>                  </span>stw r9, 8(r8)<o:p></o:p></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>The next code’s purpose is to change the state of the right
+eyes. If they are 1 we want to make them 0 and vice versa. We could do this we
+if-then-else code (branches). Alternatively, we could use a “selective inverter”,
+that is a bit operation that we can control so that it either passes the value
+as is (used for all bits but the ones we want to toggle) or inverts it (used
+for the bits we want to<span style='mso-spacerun:yes'>  </span>toggle). We can
+use the XOR operation for this purpose:<o:p></o:p></p>
+
+<p class=MsoNormal><b><i><u>It’s coming after you<o:p></o:p></u></i></b></p>
+
+<p class=MsoNormal>Moving along, next we would like for our alien to slide on
+the screen. For this purpose we can use the shift or the rotate instructions. The
+shift instructions will make the alien disappear across the edges when we shift
+out of them. The rotate will make the alien appear on the other side of the screen
+(as done in pacman). Here we will show the code for shifting the alien by one
+but to the left. The code belows go through all four rows and shifts their
+contents by one bit to the left. It is not meant to be the most efficient way
+of doing this, only just a way.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;line-height:105%;font-family:
+"Courier New"'><span style='mso-tab-count:1'>      </span>.text<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-size:10.0pt;
+line-height:105%;font-family:"Courier New"'>MoveLeft:<span style='mso-tab-count:
+1'>   </span><br>
+<span style='mso-spacerun:yes'>                  </span>movia r8, fb # base
+address of framebuffer<br>
+<span style='mso-spacerun:yes'>                  </span>movi r9, 5 # r9 = rows<br>
+<span style='mso-spacerun:yes'>                  </span>movi r10, 0 # index of
+next row to process<br>
+<span style='mso-spacerun:yes'>      </span>RowProcess:<br>
+<span style='mso-tab-count:2'>            </span><span
+style='mso-spacerun:yes'>      </span>ldw r4, 0(r8) # read next row<br>
+<span style='color:red'><span style='mso-tab-count:2'>            </span><span
+style='mso-spacerun:yes'>   </span></span><span
+style='mso-spacerun:yes'>   </span>sll r4, r4, 1 # shift bits left by 1. Bit 0 is
+filled with 0.<br>
+<span style='mso-spacerun:yes'>                  </span>stw r9, 0(r8) # write
+back to the framebuffer<br>
+<br>
+<span style='mso-spacerun:yes'>                  </span>addi r10, r10, 1 # one
+more row processed<br>
+<span style='mso-tab-count:3'>                  </span>addi r8, r8, 4 # pointer
+to next row (each row is 4B)<br>
+<span style='mso-spacerun:yes'>                  </span>blt r10, r9, RowProcess
+# still rows to go?<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-size:10.0pt;
+line-height:105%;font-family:"Courier New"'>Aftercode:<o:p></o:p></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b><i><u><o:p><span style='text-decoration:none'>&nbsp;</span></o:p></u></i></b></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-size:10.0pt;
+line-height:105%;font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;line-height:105%;
+font-family:"Courier New"'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='text-indent:.5in'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;line-height:105%;font-family:
+"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;line-height:105%;font-family:
+"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>

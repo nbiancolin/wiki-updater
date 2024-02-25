@@ -1,0 +1,1159 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 14">
+<meta name=Originator content="Microsoft Word 14">
+<link rel=File-List
+href="l18-interrupts-emulating-instrcutions_files/filelist.xml">
+<link rel=Edit-Time-Data
+href="l18-interrupts-emulating-instrcutions_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Explain purpose of this course:</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Name</o:Author>
+  <o:LastAuthor>bongo</o:LastAuthor>
+  <o:Revision>95</o:Revision>
+  <o:TotalTime>396</o:TotalTime>
+  <o:Created>2001-08-02T07:29:00Z</o:Created>
+  <o:LastSaved>2013-10-02T16:11:00Z</o:LastSaved>
+  <o:Pages>4</o:Pages>
+  <o:Words>1279</o:Words>
+  <o:Characters>7293</o:Characters>
+  <o:Company>Organization</o:Company>
+  <o:Lines>60</o:Lines>
+  <o:Paragraphs>17</o:Paragraphs>
+  <o:CharactersWithSpaces>8555</o:CharactersWithSpaces>
+  <o:Version>14.00</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<link rel=themeData
+href="l18-interrupts-emulating-instrcutions_files/themedata.thmx">
+<link rel=colorSchemeMapping
+href="l18-interrupts-emulating-instrcutions_files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>BestFit</w:Zoom>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:SplitPgBreakAndParaMark/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" LatentStyleCount="267">
+  <w:LsdException Locked="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="99" Name="No List"/>
+  <w:LsdException Locked="false" Priority="99" SemiHidden="true"
+   Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="99" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-520081665 -1073717157 41 0 66047 0;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:-520092929 1073806591 9 0 415 0;}
+@font-face
+	{font-family:"Times New \(W1\)";
+	mso-font-alt:"Times New Roman";
+	mso-font-charset:161;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New (W1)","serif";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{mso-style-unhide:no;
+	mso-style-link:"Plain Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-unhide:no;
+	mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-fareast-font-family:"Times New Roman";}
+span.PlainTextChar
+	{mso-style-name:"Plain Text Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Plain Text";
+	mso-ansi-font-size:10.5pt;
+	mso-bidi-font-size:10.5pt;
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-hansi-font-family:Consolas;
+	mso-bidi-font-family:Consolas;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Balloon Text";
+	mso-ansi-font-size:8.0pt;
+	mso-bidi-font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-ascii-font-family:Tahoma;
+	mso-hansi-font-family:Tahoma;
+	mso-bidi-font-family:Tahoma;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:10.0pt;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 65.95pt 1.0in 65.95pt;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+table.MsoTableGrid
+	{mso-style-name:"Table Grid";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-unhide:no;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US style='tab-interval:.5in'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal>Andreas Moshovos</p>
+
+<p class=MsoNormal>Fall 2007</p>
+
+<p class=MsoNormal>Updated Fall 2013</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Using Interrupts
+Continued: Other causes of interrupts and an example of how they can be used to
+emulate new or unimplemented (in hardware) instructions.<o:p></o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal>In the previous lecture we have seen how interrupts can be used
+to communicate with I/O devices. We noted that the interrupts mechanism has a
+lot more diverse applications. Interrupts can be used to detect erroneous
+conditions during execution such as a division by zero or a misaligned memory
+access. In other processors interrupts are also used to support Operating
+System calls (currently, NIOS II does not have support of this kind).</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Emulating
+non-implemented instructions<o:p></o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal>As an example of other uses of interrupts we will see how we
+can <i style='mso-bidi-font-style:normal'>emulate </i>an instruction in software.
+For example, the NIOS II instruction reference defines the instruction “mulxuu
+rC, rA, rB”. This instruction multiplies the values of registers rA and rB and
+writes the upper 32 bits of the result into register rC. Note that since
+registers are 32-bits each, multiplying them may result in a value that
+requires 64-bits to be represented. This instruction treats the input values as
+unsigned. Combined with the regular “mulu” instruction we can use “mulxuu” to
+do a full 32-bit x 32-bit multiplication. Not all NIOS II implementations
+include a hardware unit for “mulxuu”. The reason for that is that this unit is
+quite expensive. So some implementations opt to rely on emulation to execute
+this instruction.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>This interrupt can be used to emulate in software
+instructions that are not really implemented in hardware. Once our interrupt
+handling routine is written, the emulated instruction can be used as if it was
+implemented in the CPU. For example, it used to be the case that one could get
+80386 which implemented the integer subset of the x86 instruction set in
+hardware (80386 is Core Duo’s grand-grand-grand-grand-“father”). The x86
+instruction set, however, included instructions for floating point numbers too.
+To get hardware for those you had to get the 80387 processor which was a
+co-processor that worked in tandem with 80386. If you didn’t have the 80387 you
+could always use interrupts to emulate these instructions in software and still
+run programs that used them (albeit a lot more slowly than they would run if
+you had 80387). </p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Before we emulate the instruction let’s see how it is
+encoded:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="Picture_x0020_1" o:spid="_x0000_i1026" type="#_x0000_t75"
+ style='width:671.25pt;height:174pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="l18-interrupts-emulating-instrcutions_files/image001.emz"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=895 height=232
+src="l18-interrupts-emulating-instrcutions_files/image002.jpg" v:shapes="Picture_x0020_1"><![endif]></span></p>
+
+<p class=MsoNormal>Bits 31 through 27, 26 through 22, and 21 through 17 encode
+the two source operands and the destination register respectively.<span
+style='mso-spacerun:yes'>  </span>Bits 16 through 11 should hold the value 0x7,
+bits 10 through 6 the value 0 and bits 5 through 0 the value 0x3a. In binary
+these are respectively, 000111, 00000, and 111010. So, bit 16 should be 0 and
+the lower 16 bits should hold the value 0011 1000 0011 1010, or 0x383a.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>The interrupt handler is structured as follows:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_3" o:spid="_x0000_i1025" type="#_x0000_t75" style='width:522.75pt;
+ height:499.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="l18-interrupts-emulating-instrcutions_files/image005.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=697 height=666
+src="l18-interrupts-emulating-instrcutions_files/image004.gif" v:shapes="Picture_x0020_3"><![endif]></span></p>
+
+<p class=MsoNormal>Here’s the assembly code for the interrupt handler. This
+code will not work when any of sp, et, or ea are used as the destination
+register for mulxuu.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:480;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=655 valign=top style='width:490.9pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;background:#99CCFF;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>      </span>.section exceptions<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>      </span># tell the assembler to not introduce
+  any additional instructions overwriting registers<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>      </span>.set nobreak<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>      </span>.set noat<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal style='tab-stops:right 480.1pt;background:#FFFF99;
+  mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.0pt;
+  font-family:"Courier New"'>handler:<span style='mso-tab-count:1'>                                                                        </span><o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>      </span><span style='mso-spacerun:yes'> 
+  </span>###########################################<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span># store all registers on the stack<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>      </span><span style='mso-spacerun:yes'> 
+  </span># forming an array of words<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span># the value for register X is at
+  sp+X*4 where X a number 0...32<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>      </span><span style='mso-spacerun:yes'>  </span>###########################################<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span># save all registers on the stack<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>      </span><span style='mso-spacerun:yes'>  </span>subi
+  <span style='mso-spacerun:yes'> </span>sp, sp, 32 * 4<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r0,0(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r1,4(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r2,8(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r3,12(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r4,16(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r5,20(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r6,24(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r7,28(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r8,32(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r9,36(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r10,40(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r11,44(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r12,48(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r13,52(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r14,56(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r15,60(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r16,64(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r17,68(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r18,72(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span><span
+  style='mso-spacerun:yes'>  </span>stw r19,76(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r20,80(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r21,84(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r22,88(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r23,92(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r24,96(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r25,100(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r26,104(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r27,108(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r28,112(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r29,116(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r30,120(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FFFF99;mso-layout-grid-align:none;
+  text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r31,124(sp)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=655 valign=top style='width:490.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  background:#8DB3E2;mso-background-themecolor:text2;mso-background-themetint:
+  102;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>rdctl et, ctl4<span style='mso-tab-count:3'>                </span>#
+  Check that interrupt was caused by<span style='mso-tab-count:1'>      </span>software<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>beq et, r0, software<span style='mso-tab-count:2'>          </span>#
+  if not, it's a hardware interrupt ignore <o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span><o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>HANDLE HARDWARE INTERRUPTS HERE<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>br <span
+  style='mso-spacerun:yes'> </span>iEpilogue<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=655 valign=top style='width:490.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  background:#FFCC99;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>#####################################################<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span># read the instruction opcode to test whether it is a mulxuu<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span># ea points to the instruction<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>#####################################################<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'>software:<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>stw<span style='mso-tab-count:1'>   </span>r9, -4(ea)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>add<span style='mso-tab-count:1'>   </span>r10, r9, r0<span
+  style='mso-tab-count:1'> </span># keep a copy of the opcode<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>andi<span style='mso-tab-count:1'>  </span>r9, r9, 0xffff<span
+  style='mso-tab-count:1'>    </span># keep just the lower 16 bits<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>cmpeqi<span style='mso-tab-count:1'>      </span>r11, r9,
+  0x383a<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>beq<span style='mso-tab-count:1'>   </span>r11, r0, notmulxuu<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>srli<span style='mso-tab-count:1'>  </span>r10, r10, 16<span
+  style='mso-tab-count:1'>      </span># shift the upper 16 bits into the lower
+  16<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>andi<span style='mso-tab-count:1'>  </span>r11, r10, 0x1<span
+  style='mso-tab-count:1'>     </span># test bit 0 which used to be bit 17<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>bne<span style='mso-tab-count:1'>   </span>r11, r0, notmulxuu
+  # if not zero this is not mulxuu<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=655 valign=top style='width:490.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  background:#CCFF99;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>#####################################################<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span># Operand index calculations<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>#####################################################<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'>ismulxuu:<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span># now calculate indexes into the stack for accessing<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span># the input and output operands<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span># treat the stack as a 32-entry array of words<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span># we extract the 5 bit field for each operand<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span># multiply by four because each entry is four bytes<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span># and add the stack point which is the base of the array<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>#####################################################<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>srli<span style='mso-tab-count:1'>  </span>r10,r10,1<span
+  style='mso-tab-count:1'>   </span># keep just the upper 15 bits of the opcode<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span># rC<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>andi<span style='mso-tab-count:1'>  </span>r11, r10, 0x1f<span
+  style='mso-tab-count:1'>    </span># these are the 5 bits indicating rC the
+  destination register<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>slli<span style='mso-tab-count:1'>  </span>r11, r11, 2<span
+  style='mso-tab-count:1'> </span># multiply by 4<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>add<span style='mso-tab-count:1'>   </span>r11, r11, sp<span
+  style='mso-tab-count:1'>      </span># add the base of the array<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span># rB<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>srli<span style='mso-tab-count:1'>  </span>r10, r10, 5<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>andi<span style='mso-tab-count:1'>  </span>r12, r10, 0x1f #
+  keep the bits for rB<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>slli<span style='mso-tab-count:1'>  </span>r12, r12, 2<span
+  style='mso-tab-count:1'> </span># multiply by 4<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>add<span style='mso-tab-count:1'>   </span>r12, r12, sp<span
+  style='mso-tab-count:1'>      </span># add the base of the array<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span># rA<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>srli<span style='mso-tab-count:1'>  </span>r10, r10, 5<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>andi<span style='mso-tab-count:1'>  </span>r13, r10, 0x1f #
+  keep the bits for rA<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>slli<span style='mso-tab-count:1'>  </span>r13, r13, 2<span
+  style='mso-tab-count:1'> </span># multiply by 4<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>add<span style='mso-tab-count:1'>   </span>r13, r13, sp<span
+  style='mso-tab-count:1'>      </span># add the base of the array<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>#####################################################<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span># Access input registers<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>#####################################################<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span># at this point:<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span># r11 points to the entry for rC<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span># r12 points to the entry for rB<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span># r13 points to the entry for rA<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span># read rA and rB into r9 and r10 respectively<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>#####################################################<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>stw r9, 0(r13)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>stw r10, 0(r12)<o:p></o:p></span></p>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td width=655 valign=top style='width:490.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  background:#FFCCCC;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>#####################################################<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span># Multiplication : No need to understand how this works<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span># end result is in r10<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span># I haven’t tested it much :(<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>#####################################################<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>srli<span style='mso-tab-count:1'>  </span>r4, r9, 16<span
+  style='mso-tab-count:1'>  </span># a = (v1 &gt;&gt; 16) &amp; 0xffff;<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>andi<span style='mso-tab-count:1'>  </span>r5, r9, 0xffff<span
+  style='mso-tab-count:1'>    </span># b = v1 &amp; 0xffff;<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>srli<span style='mso-tab-count:1'>  </span>r6, r10, 16<span
+  style='mso-tab-count:1'> </span># c = (v2 &gt;&gt; 16) &amp; 0xffff<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>andi<span style='mso-tab-count:1'>  </span>r7, r10, 0xffff<span
+  style='mso-tab-count:1'>   </span># d = v2 &amp; 0xffff;<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>mul<span style='mso-tab-count:1'>   </span>r9, r5, r7<span
+  style='mso-tab-count:1'>  </span># LO = b * d;<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>srli<span style='mso-tab-count:1'>  </span>r9, r9, 16<span
+  style='mso-tab-count:1'>  </span># y = ((LO &gt;&gt; 16) &amp; 0xffff)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>mul<span style='mso-tab-count:1'>   </span>r10, r4, r7<span
+  style='mso-tab-count:1'> </span># x= a * d<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>mul<span style='mso-tab-count:1'>   </span>r12, r5, r6<span
+  style='mso-tab-count:1'> </span># x1 = c * b<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>add<span style='mso-tab-count:1'>   </span>r10, r10, r12<span
+  style='mso-tab-count:1'>     </span># x = x + x1<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>add<span style='mso-tab-count:1'>   </span>r9, r9, r10<span
+  style='mso-tab-count:1'> </span># y = y + x<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>srli<span style='mso-tab-count:1'>  </span>r9, r9, 16<span
+  style='mso-tab-count:1'>  </span># y = (y &gt;&gt; 16) &amp; 0xffff<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>mul<span style='mso-tab-count:1'>   </span>r10, r4, r6<span
+  style='mso-tab-count:1'> </span># HI = a * c<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>add<span style='mso-tab-count:1'>   </span>r10, r10, r9<span
+  style='mso-tab-count:1'>      </span># HI = HI + y<o:p></o:p></span></p>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td width=655 valign=top style='width:490.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  background:#CCFF99;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>#####################################################<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span># write result onto the corresponding stack entry<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>#####################################################<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span># store the result to the stack<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>stw r10, 0(r11)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span># declare this instruction as executed<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>addi<span style='mso-tab-count:1'>  </span>ea, ea, 4<o:p></o:p></span></p>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6'>
+  <td width=655 valign=top style='width:490.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  background:#FFFF99;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'>iEpilogue:<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'>notmulxuu:<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span><span style='mso-spacerun:yes'> 
+  </span>###########################################<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span># restore all registers from the
+  stack<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span><span style='mso-spacerun:yes'>  </span># one value has been
+  changed<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span><span style='mso-spacerun:yes'> 
+  </span>###########################################<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r0,0(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r1,4(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r2,8(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r3,12(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r4,16(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r5,20(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r6,24(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r7,28(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r8,32(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r9,36(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r10,40(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r11,44(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r12,48(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r13,52(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r14,56(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r15,60(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r16,64(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r17,68(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r18,72(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r19,76(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r20,80(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r21,84(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r22,88(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r23,92(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r24,96(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r25,100(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r26,104(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r27,108(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r28,112(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r29,116(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r30,120(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>        </span>stw r31,124(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span># restore the stack<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>addi<span style='mso-tab-count:1'>  </span>sp, sp, 32 * 4<o:p></o:p></span></p>
+  <p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>br<span style='mso-tab-count:1'>    </span>idone<o:p></o:p></span></p>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7;mso-yfti-lastrow:yes'>
+  <td width=655 valign=top style='width:490.9pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  background:#99CCFF;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='background:#FBD4B4;mso-background-themecolor:accent6;
+  mso-background-themetint:102;mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span># for hardware interrupts re-execute instruction that was
+  interrupted<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FBD4B4;mso-background-themecolor:accent6;
+  mso-background-themetint:102;mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'>eadec:<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FBD4B4;mso-background-themecolor:accent6;
+  mso-background-themetint:102;mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>subi<span style='mso-tab-count:1'>  </span>ea, ea, 4<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FBD4B4;mso-background-themecolor:accent6;
+  mso-background-themetint:102;mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'>idone:<o:p></o:p></span></p>
+  <p class=MsoNormal style='background:#FBD4B4;mso-background-themecolor:accent6;
+  mso-background-themetint:102;mso-layout-grid-align:none;text-autospace:none'><span
+  style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+  1'>      </span>eret<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+1'>      </span><o:p></o:p></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Here’s a piece of code that uses the new instruction</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+1'>      </span>.text<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+1'>      </span>.global main<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>main:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+1'>      </span>movhi r9, 0xffff<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+1'>      </span>ori<span style='mso-tab-count:1'>   </span>r9, r9, 0xffff<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+1'>      </span>add<span style='mso-tab-count:1'>   </span>r10, r9, r0<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+1'>      </span>mulxuu r11, r9, r10<o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

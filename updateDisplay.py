@@ -26,3 +26,15 @@ def updateTable(fileName, tasks):
 
     with open(fileName, 'w') as file:
         file.writelines(lines)
+
+
+def readTable(fileName):
+    with open(fileName, 'r') as file:
+        lines = file.readlines()
+
+    res = ""
+    for elem in lines:
+        res += elem
+        res += "\n"
+
+    return res

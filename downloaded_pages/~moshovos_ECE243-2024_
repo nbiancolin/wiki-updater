@@ -1,0 +1,1759 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 15">
+<meta name=Originator content="Microsoft Word 15">
+<link rel=File-List href="index_files/filelist.xml">
+<title>ECE352</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Andreas Moshovos</o:Author>
+  <o:LastAuthor>Andreas Moshovos</o:LastAuthor>
+  <o:Revision>8</o:Revision>
+  <o:TotalTime>2806</o:TotalTime>
+  <o:Created>2024-01-18T02:03:00Z</o:Created>
+  <o:LastSaved>2024-02-11T22:02:00Z</o:LastSaved>
+  <o:Pages>4</o:Pages>
+  <o:Words>1299</o:Words>
+  <o:Characters>7409</o:Characters>
+  <o:Lines>61</o:Lines>
+  <o:Paragraphs>17</o:Paragraphs>
+  <o:CharactersWithSpaces>8691</o:CharactersWithSpaces>
+  <o:Version>16.00</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<link rel=themeData href="index_files/themedata.thmx">
+<link rel=colorSchemeMapping href="index_files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:View>Print</w:View>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:DontVertAlignCellWithSp/>
+   <w:DontBreakConstrainedForcedTables/>
+   <w:DontVertAlignInTxbx/>
+   <w:Word11KerningPairs/>
+   <w:CachedColBalance/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="376">
+  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 9"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="header"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footer"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index heading"/>
+  <w:LsdException Locked="false" Priority="35" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of figures"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope return"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="line number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="page number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of authorities"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="macro"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toa heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 5"/>
+  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Closing"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Signature"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Message Header"/>
+  <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Salutation"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Date"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Note Heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Block Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="FollowedHyperlink"/>
+  <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Document Map"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Plain Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="E-mail Signature"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Top of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Bottom of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal (Web)"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Acronym"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Cite"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Code"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Definition"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Keyboard"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Preformatted"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Sample"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Typewriter"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Variable"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Table"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation subject"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="No List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Contemporary"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Elegant"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Professional"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Balloon Text"/>
+  <w:LsdException Locked="false" Priority="59" Name="Table Grid"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Theme"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>
+  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>
+  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>
+  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>
+  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>
+  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>
+  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hashtag"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Unresolved Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Link"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Batang;
+	panose-1:2 3 6 0 0 1 1 1 1 1;
+	mso-font-alt:\BC14\D0D5;
+	mso-font-charset:129;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-1342176593 1775729915 48 0 524447 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-536869121 1107305727 33554432 0 415 0;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:-536869121 64767 1 0 415 0;}
+@font-face
+	{font-family:"\@Batang";
+	panose-1:2 3 6 0 0 1 1 1 1 1;
+	mso-font-charset:129;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-1342176593 1775729915 48 0 524447 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:Batang;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"Plain Text Char";
+	margin:0in;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:Batang;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	mso-add-space:auto;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:Batang;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	mso-add-space:auto;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:Batang;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	mso-add-space:auto;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:Batang;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	mso-add-space:auto;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:Batang;}
+p.msonormal0, li.msonormal0, div.msonormal0
+	{mso-style-name:msonormal;
+	mso-style-unhide:no;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;}
+span.PlainTextChar
+	{mso-style-name:"Plain Text Char";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Plain Text";
+	mso-ansi-font-size:10.5pt;
+	mso-bidi-font-size:10.5pt;
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-fareast-font-family:Batang;
+	mso-hansi-font-family:Consolas;
+	mso-bidi-font-family:Consolas;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:10.0pt;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	mso-font-kerning:0pt;
+	mso-ligatures:none;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 65.95pt 1.0in 65.95pt;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:471336019;
+	mso-list-type:hybrid;
+	mso-list-template-ids:479755102 67698703 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l0:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l0:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l0:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l1
+	{mso-list-id:1051225926;
+	mso-list-type:hybrid;
+	mso-list-template-ids:724201306 67698703 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l1:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l1:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l1:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l2
+	{mso-list-id:1290159991;
+	mso-list-type:hybrid;
+	mso-list-template-ids:2143222422 67698703 67698713 -650739348 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l2:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level3
+	{mso-level-start-at:2;
+	mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:147.0pt;
+	text-indent:-48.0pt;
+	font-family:Symbol;
+	mso-fareast-font-family:Batang;
+	mso-bidi-font-family:"Courier New";}
+@list l2:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l2:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman",serif;}
+table.a
+	{mso-style-name:"\039A\03B1\03BD\03BF\03BD\03B9\03BA\03CC\03C2 \03C0\03AF\03BD\03B1\03BA\03B1\03C2";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-unhide:no;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman",serif;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:documentproperties>
+  <o:author>Name</o:author>
+  <o:template>Normal</o:template>
+  <o:lastauthor>Owner</o:lastauthor>
+  <o:revision>243</o:revision>
+  <o:totaltime>740</o:totaltime>
+  <o:created>2005-01-12T16:36:00Z</o:created>
+  <o:lastsaved>2009-04-06T18:43:00Z</o:lastsaved>
+  <o:pages>1</o:pages>
+  <o:words>1241</o:words>
+  <o:characters>7076</o:characters>
+  <o:company>Organization</o:company>
+  <o:lines>58</o:lines>
+  <o:paragraphs>16</o:paragraphs>
+  <o:characterswithspaces>8301</o:characterswithspaces>
+  <o:version>11.9999</o:version>
+ </o:documentproperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:worddocument>
+  <w:zoom>BestFit</w:zoom>
+  <w:validateagainstschemas/>
+  <w:saveifxmlinvalid>false</w:saveifxmlinvalid>
+  <w:ignoremixedcontent>false</w:ignoremixedcontent>
+  <w:alwaysshowplaceholdertext>false</w:alwaysshowplaceholdertext>
+  <w:compatibility>
+   <w:breakwrappedtables/>
+   <w:snaptogridincell/>
+   <w:wraptextwithpunct/>
+   <w:useasianbreakrules/>
+  </w:compatibility>
+  <w:browserlevel>MicrosoftInternetExplorer4</w:browserlevel>
+ </w:worddocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:latentstyles deflockedstate="false" latentstylecount="156">  </w:latentstyles>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in;word-wrap:
+break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>Computer
+Organization - Fall 2024<o:p></o:p></b></p>
+
+<p class=MsoPlainText>Andreas Moshovos (*)</p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>** Warning **<o:p></o:p></b></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>There may be errors or omissions in the notes that follow
+and of course I’m responsible for them. If you do spot an error please let me
+know. There no intentional errors in the notes. Irrespective of any typos and
+other errors, you are responsible for the correct answers to questions and
+problems.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>If you want to experiment with NIOS II programs outside
+of the labs I recommend purchasing a <span class=SpellE>SOCkit</span> board.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><u><span
+style='color:red'>The schedule below is from an earlier offering. <o:p></o:p></span></u></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><u><span
+style='color:red'>The material and order may change as we move forward.<o:p></o:p></span></u></b></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>THEMATIC SECTION
+#1: Understanding what computers do at the low level:<o:p></o:p></b></p>
+
+<p class=MsoPlainText>What you need to know to successfully program a computer</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]><a
+href="l01-intro-coursegoals-digitalsystems.html">Introduction, course goals,
+digital systems and why they are useful</a>. </p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]><a
+href="l02-representations.html">Using Binary Quantities to Represent Other
+Things</a>. </p>
+
+<p class=MsoPlainText style='margin-left:1.0in'>We will not cover real number
+representations (including floating point) yet. We will do so later in the
+semester.</p>
+
+<p class=MsoPlainText style='margin-left:1.0in'>**** <a
+href="quiz/representation/representing%20things.htm">Self-Assessment Quiz</a> (<a
+href="quiz/representation/representing%20things%20answers.htm">answers</a>)</p>
+
+<p class=MsoPlainText style='margin-left:1.0in'>**** <a
+href="quiz/representation/float2hex.c">Program to print out the floating point
+representation in hexadecimal.</a></p>
+
+<p class=MsoPlainText style='margin-left:1.0in'>**** <a
+href="00.practice/l2-numbers.htm">Practice questions</a> <a
+href="http://www.eecg.toronto.edu/~moshovos/ECE243-2008/00.practice/sl2-numbers.htm">Answers</a></p>
+
+<p class=MsoPlainText style='margin-left:147.0pt;text-indent:-48.0pt;
+mso-list:l2 level3 lfo4'><![if !supportLists]><span style='font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><a
+href="00.practice/What%20Every%20Computer%20Scientist%20Should%20Know%20About%20Floating-Point%20Arithmetic.htm">More
+information about floating point numbers</a> – we will not cover or discuss any
+of this material. </p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]><span
+style='color:blue'><a href="l03-memory.html">Behavioral Model of Memory</a>. </span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'>* if there is time we will cover
+this in the lectures:</p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='mso-tab-count:1'>      </span><span
+style='mso-spacerun:yes'> </span>- The DE1 SRAM memory chip interface: <a
+href="DE1-memory.ppt">lecture slides</a>, <a href="61LV25616AL.pdf">datasheet</a></p>
+
+<p class=MsoPlainText style='margin-left:.5in'>**** <a
+href="00.practice/l3-memory.htm">Practice questions</a> </p>
+
+<p class=MsoPlainText style='margin-left:.5in'>**** <a href="quiz/memory.htm">Self-Assessment
+Quiz</a> <span style='color:red'><o:p></o:p></span></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span style='mso-fareast-font-family:"Courier New"'><span
+style='mso-list:Ignore'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><span
+style='color:blue'><a href="lec4%20-%20Programming%20Model.htm">Introduction to
+the NIOS II programming model</a></span>. <b style='mso-bidi-font-weight:normal'><o:p></o:p></b></p>
+
+<p class=MsoPlainText style='margin-left:1.0in'>Practice questions: <a
+href="l4-addi-imm.html">ADDI and <span class=SpellE>immediates</span></a>. </p>
+
+<p class=MsoPlainText style='margin-left:1.0in'>*ADDED* SEP 30: Practice
+question: <a href="00.practice/NIOSIIMemory.htm">NIOSII Memory Instructions</a></p>
+
+<p class=MsoPlainText style='margin-left:1.0in'><a
+href="Datatypes_and_LoadsStores.html">Another example of words, half-word,
+bytes and memory instructions</a>.<span class=MsoHyperlink><o:p></o:p></span></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>5.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]><span
+style='color:blue'><a href="lec6%20-%20Control%20Flow.htm">Simple Control Flow
+(<span class=SpellE>non straight-line</span> sequencing)</a></span>.</p>
+
+<p class=MsoPlainText style='margin-left:1.0in'>Lecture Slides: <a
+href="slides/aplusbfithenelsefor.pptx">A = B + C, if-then-else</a> (PPTX)<span
+style='color:red'><o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.25in'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>6.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]><span
+style='color:blue'><a href="lec7%20-%20loops%20and%20arrays.htm">For loops,
+arrays and do-while loops</a></span>. </p>
+
+<p class=MsoPlainText style='margin-left:.5in'>Another example: <a
+href="lec7_1_for_loops_and_arrays_ex.htm">a loop over an array of words and an
+if statement.</a> <b><span style='color:red'>UPDATED WITH additional, more
+optimized code on Jan 12, 2024, 9pm<o:p></o:p></span></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New";color:blue'><span
+style='mso-list:Ignore'>7.<span style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]><span
+style='color:blue'><a href="lec9%20-%20subroutines.htm">Subroutines –
+Requirements – Calling and Returning</a><o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:1.0in'>Lecture Slides: <span
+class=SpellE>i</span>. <a href="call-example/calls.pptx">Calling and Returning</a>
+(PPTX)</p>
+
+<p class=MsoPlainText style='margin-left:1.0in'><span style='mso-tab-count:
+2'>            </span><span style='mso-spacerun:yes'>   </span>ii. <a
+href="call-example/call-example.pptx">Call/return execution sequence</a> (PPTX)</p>
+
+<p class=MsoPlainText style='margin-left:1.0in'><span style='mso-tab-count:
+2'>            </span></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>8.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]><a
+href="lec10-subroutines-2.htm">Subroutines – Passing Arguments</a></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><b><span style='color:red'>ADDED
+January 26, 2024<o:p></o:p></span></b></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><a href="lec10-subroutines-3.htm">Another
+example of passing arguments: add7() calling add5() and add2(). </a><span
+class=MsoHyperlink><o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='mso-tab-count:1'>      </span><a
+href="strings.txt">Examples of functions using strings as arguments</a></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='mso-tab-count:1'>      </span>Strings
+are zero-terminated in C. So “<span class=SpellE>lala</span>” is stored in
+memory as five bytes: ‘l’, ‘a’, ‘l’, ‘a’, 0.</p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='mso-tab-count:1'>      </span>You
+can think of strings as arrays of bytes where the last element is always zero.</p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='mso-tab-count:1'>      </span>See
+lecture 2 for more information.<br>
+<span style='mso-tab-count:1'>      </span><a href="call-example.htm">Another
+example of subroutine calls</a></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><b><span style='color:red'>ADDED
+January 21, 2024:<o:p></o:p></span></b></p>
+
+<p class=MsoPlainText><span style='mso-spacerun:yes'>   </span>8.1 <a
+href="lec_7_2_bitwise_instructions.htm">Bitwise and Shift Operations</a></p>
+
+<p class=MsoPlainText><span style='mso-spacerun:yes'>   </span>8.2<span
+style='mso-spacerun:yes'>  </span><a
+href="lec_7_3_Using_bitwise_instructions.htm">Function Calls Examples with
+Bitwise and Shift Operations</a></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>9.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]><a
+href="lec11-Ackerman.htm">A Recursive Subroutine</a> (<b><span
+style='color:red'>Revised January 23, 2024</span></b>)</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>10.</span></span><![endif]><a
+href="lec12-subroutines-example3.html">Structures and recursive datatypes</a><br>
+We did not go over the assembly code yet. We will do so later on in the course.</p>
+
+<p class=MsoListParagraph><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>11.</span></span><![endif]><a
+href="l15.1-introduction-to-IO-the-PIT.html">Introduction to I/O Devices: The
+Parallel Port Interface (PIT)</a> <b><span style='color:red'>(Revised January
+2024)</span></b> <br>
+We are not covering the implementation nor the GPIO PITs</p>
+
+<p class=MsoPlainText><span style='color:red'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>12.</span></span><![endif]><a
+href="l16-IO-Serial-Interface.html">The Serial Port / Universal Asynchronous
+Receiver Transmitter (UART)</a> </p>
+
+<p class=MsoPlainText style='margin-left:.5in'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>13.</span></span><![endif]><a
+href="l17-intro-to-interrupts-Serial.html">Introduction to Interrupts / UART</a>
+</p>
+
+<p class=MsoListParagraph><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='margin-left:.5in'>13.1 <a
+href="L17.2-intro-to-interrupts-LEDbuttons.html">Introduction to Interrupts /
+Button PIT</a></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>14.</span></span><![endif]><a
+href="lec15.1%20The%20Timer.html">The Timer Device</a></p>
+
+<p class=MsoPlainText style='margin-left:.5in'>This is for reference for your
+lab.</p>
+
+<p class=MsoPlainText style='margin-left:.5in'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='mso-spacerun:yes'>   </span>14.1<span
+style='mso-spacerun:yes'>  </span><a href="l17.3-The_Audio_Device.html">The
+Audio Device</a> </p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='mso-spacerun:yes'>   </span>14.2<span
+style='mso-tab-count:1'>     </span>Floating-Point Number Representation</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span><a
+href="fp.pptx">Slide deck</a></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span>In
+lecture 2 there is additional material.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span style='mso-fareast-font-family:"Courier New"'><span
+style='mso-list:Ignore'>15.</span></span></b><![endif]><b style='mso-bidi-font-weight:
+normal'><a href="l17.1-Interrupts%20and%20Races.html">Code Races</a>.<o:p></o:p></b></p>
+
+<p class=MsoPlainText style='margin-left:.25in'><b style='mso-bidi-font-weight:
+normal'>15.1<span style='mso-tab-count:1'>     </span><a
+href="Stack%20Smash.htm">Stack Smashing Attacks (Viruses)</a><o:p></o:p></b></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><b style='mso-bidi-font-weight:
+normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span style='mso-fareast-font-family:"Courier New"'><span
+style='mso-list:Ignore'>16.</span></span></b><![endif]><b style='mso-bidi-font-weight:
+normal'><a href="l18-interrupts-emulating-instrcutions.html">Emulating
+instructions in software via interrupts</a>. <o:p></o:p></b></p>
+
+<p class=MsoPlainText style='margin-left:1.0in'><b style='mso-bidi-font-weight:
+normal'><a href="interrupts.pptx">Lecture slides</a><o:p></o:p></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>17.</span></span><![endif]><a
+href="l19-implemenation-single-cycle.html">A Single-Cycle Processor</a></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>18.</span></span><![endif]><a
+href="l19.1-implemenation-single-cycle-modification.html">Modifying the
+single-cycle processor</a><br>
+Slides used in the lectures: <a href="singlecycle.ppt">singlecycle.ppt</a><br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>19.</span></span><![endif]><a
+href="l20-multicycle.html">Multi-cycle implementation: General principle and
+the <span class=SpellE>datapath</span></a></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><a
+href="multicycle.pdf">Datapath drawing</a></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><a
+href="l20-multicycle-columns.html">Notes formatted for better printing</a></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>20.</span></span><![endif]><a
+href="l21-multicycle-control.html">Multi-cycle implementation: The control</a></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='mso-tab-count:1'>      </span><a
+href="multicycle-control.ppt">Control drawing</a></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='mso-tab-count:1'>      </span>Slides
+used in the lectures: <a href="multicycle.ppt">multicycle.ppt</a></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><b style='mso-bidi-font-weight:
+normal'><span style='color:maroon'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>21.</span></span><![endif]><a
+href="l21.1-multicycle-newload.html">Modifying the multi-cycle implementation</a></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>22.</span></span><![endif]><a
+href="pipelining.htm">Pipelined implementation</a> </p>
+
+<p class=MsoPlainText style='margin-left:.5in'>Lecture slides: <a
+href="pipelining.pptx">pipelining</a></p>
+
+<p class=MsoPlainText style='margin-left:.5in'>Description of the SRAM chip to
+be used in the lab: <a href="DE1-memory.ppt">DE1 SRAM chip</a>. The <a
+href="61LV25616AL.pdf">datasheet</a> for this SRAM chip.</p>
+
+<p class=MsoPlainText style='margin-left:.5in'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New";color:red'><span style='mso-list:
+Ignore'>23.</span></span><![endif]><a href="l22-microprogrammed-control.htm">Multi-programmed
+Control</a> <span style='color:red'>Optional<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='color:red'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New";color:red'><span style='mso-list:
+Ignore'>24.</span></span><![endif]><a
+href="yyz/l25-bus-based-implementation.html">Bus-based <span class=SpellE>datapath</span>/control
+implementation</a> <span style='color:red'>Optional<o:p></o:p></span></p>
+
+<p class=MsoListParagraph><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New";color:red'><span style='mso-list:
+Ignore'>25.</span></span><![endif]>Pipelining example, interrupts, preserving
+sequential semantics and superscalar: <a href="pipelining%20part%202.pptx">slides</a>.<span
+style='color:red'><o:p></o:p></span></p>
+
+<p class=MsoListParagraph><span style='color:red'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span style='mso-fareast-font-family:"Courier New"'><span
+style='mso-list:Ignore'>26.</span></span></b><![endif]><a
+href="lec24-external-interface.html">Memory Interface: Connecting to Memory and
+Devices</a><b style='mso-bidi-font-weight:normal'><o:p></o:p></b></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='color:red'>Slides
+used in the lectures: </span><a href="bus%20and%20devices.pptx">bus and
+devices.pptx</a><b style='mso-bidi-font-weight:normal'><span style='color:red'><o:p></o:p></span></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span style='mso-fareast-font-family:"Courier New"'><span
+style='mso-list:Ignore'>27.</span></span></b><![endif]><a
+href="lec25-device-interface.html">Memory-Mapped I/O: Physical Implementation</a><b
+style='mso-bidi-font-weight:normal'><o:p></o:p></b></p>
+
+<p class=MsoListParagraph><span style='color:red'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='color:red'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>28.</span></span><![endif]>Dynamic
+Scheduling: Out-of-order execution and register renaming: <a
+href="OOO%20review.pptx">slides</a>.</p>
+
+<p class=MsoPlainText style='margin-left:.5in'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>29.</span></span><![endif]>A
+Modern Processor: <a href="intel_sandy_bridge.pptx">slides</a>:</p>
+
+<p class=MsoListParagraph><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>30.</span></span><![endif]>Independence
+Architectures: VLIW, SIMD, and Vector Processors: <a
+href="independence%20ISA.pptx">slides</a>.</p>
+
+<p class=MsoListParagraph><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>31.</span></span><![endif]><b
+style='mso-bidi-font-weight:normal'>Graphics processors for general purpose
+computation: <a href="GPGPU.pptx">slides</a>. </b></p>
+
+<p class=MsoListParagraph><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>32.</span></span><![endif]><b
+style='mso-bidi-font-weight:normal'><a href="cfprediction.htm">Control Flow
+Prediction</a>: <a href="cfpred.pptx">slides</a>. </b></p>
+
+<p class=MsoListParagraph><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>33.</span></span><![endif]><a
+href="l24-synthesizing-larger-memories.html">Synthesizing Large Memory from
+Existing Components</a></p>
+
+<p class=MsoListParagraph><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>34.</span></span><![endif]>Memory:
+internal organization and operation, SRAM and DRAM: <a href="memory.pptx">slides</a>.</p>
+
+<p class=MsoListParagraph><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>35.</span></span><![endif]><a
+href="http://www.eecg.toronto.edu/~steffan/teaching/permanent/ece243/cache_lecture/">Caches</a>
+(Prof. Steffan) – <span style='color:red'>We will be going over this material
+over several lectures. We will cover it in a different way, and we may cover
+topics not referred to in these notes. Please keep notes during the lectures. </span></p>
+
+<p class=MsoPlainText><span style='mso-spacerun:yes'>    </span><span
+style='mso-tab-count:1'>  </span><a href="l26-caches.html">Additional Notes on
+Caches</a></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><span
+style='color:red'><span style='mso-spacerun:yes'>    </span><span
+style='mso-tab-count:1'>  </span></span></b><a
+href="l21-3-caches-exec-time.html">Examples on Caches and Execution Time</a></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><span
+style='mso-spacerun:yes'>   </span><o:p></o:p></b></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in;mso-list:l0 level1 lfo6;
+display:none'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Courier New";display:none;mso-hide:all'><span
+style='mso-list:Ignore'>1.</span></span><![endif]><span style='font-size:10.0pt;
+font-family:"Courier New";display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l0 level1 lfo6;
+display:none'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Courier New";display:none;mso-hide:all'><span
+style='mso-list:Ignore'>2.</span></span><![endif]><span style='font-size:10.0pt;
+font-family:"Courier New";display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l0 level1 lfo6;
+display:none'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Courier New";display:none;mso-hide:all'><span
+style='mso-list:Ignore'>3.</span></span><![endif]><span style='font-size:10.0pt;
+font-family:"Courier New";display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l0 level1 lfo6;
+display:none'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Courier New";display:none;mso-hide:all'><span
+style='mso-list:Ignore'>4.</span></span><![endif]><span style='font-size:10.0pt;
+font-family:"Courier New";display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l0 level1 lfo6;
+display:none'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Courier New";display:none;mso-hide:all'><span
+style='mso-list:Ignore'>5.</span></span><![endif]><span style='font-size:10.0pt;
+font-family:"Courier New";display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l0 level1 lfo6;
+display:none'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Courier New";display:none;mso-hide:all'><span
+style='mso-list:Ignore'>6.</span></span><![endif]><span style='font-size:10.0pt;
+font-family:"Courier New";display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l0 level1 lfo6;
+display:none'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Courier New";display:none;mso-hide:all'><span
+style='mso-list:Ignore'>7.</span></span><![endif]><span style='font-size:10.0pt;
+font-family:"Courier New";display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l0 level1 lfo6;
+display:none'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Courier New";display:none;mso-hide:all'><span
+style='mso-list:Ignore'>8.</span></span><![endif]><span style='font-size:10.0pt;
+font-family:"Courier New";display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l0 level1 lfo6;
+display:none'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Courier New";display:none;mso-hide:all'><span
+style='mso-list:Ignore'>9.</span></span><![endif]><span style='font-size:10.0pt;
+font-family:"Courier New";display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l0 level1 lfo6;
+display:none'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Courier New";display:none;mso-hide:all'><span
+style='mso-list:Ignore'>10.</span></span><![endif]><span style='font-size:10.0pt;
+font-family:"Courier New";display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l0 level1 lfo6;
+display:none'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Courier New";display:none;mso-hide:all'><span
+style='mso-list:Ignore'>11.</span></span><![endif]><span style='font-size:10.0pt;
+font-family:"Courier New";display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l0 level1 lfo6;
+display:none'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Courier New";display:none;mso-hide:all'><span
+style='mso-list:Ignore'>12.</span></span><![endif]><span style='font-size:10.0pt;
+font-family:"Courier New";display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l0 level1 lfo6;
+display:none'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Courier New";display:none;mso-hide:all'><span
+style='mso-list:Ignore'>13.</span></span><![endif]><span style='font-size:10.0pt;
+font-family:"Courier New";display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l0 level1 lfo6;
+display:none'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Courier New";display:none;mso-hide:all'><span
+style='mso-list:Ignore'>14.</span></span><![endif]><span style='font-size:10.0pt;
+font-family:"Courier New";display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l0 level1 lfo6;
+display:none'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Courier New";display:none;mso-hide:all'><span
+style='mso-list:Ignore'>15.</span></span><![endif]><span style='font-size:10.0pt;
+font-family:"Courier New";display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l0 level1 lfo6;
+display:none'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Courier New";display:none;mso-hide:all'><span
+style='mso-list:Ignore'>16.</span></span><![endif]><span style='font-size:10.0pt;
+font-family:"Courier New";display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l0 level1 lfo6;
+display:none'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Courier New";display:none;mso-hide:all'><span
+style='mso-list:Ignore'>17.</span></span><![endif]><span style='font-size:10.0pt;
+font-family:"Courier New";display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l0 level1 lfo6;
+display:none'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Courier New";display:none;mso-hide:all'><span
+style='mso-list:Ignore'>18.</span></span><![endif]><span style='font-size:10.0pt;
+font-family:"Courier New";display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l0 level1 lfo6;
+display:none'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Courier New";display:none;mso-hide:all'><span
+style='mso-list:Ignore'>19.</span></span><![endif]><span style='font-size:10.0pt;
+font-family:"Courier New";display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l0 level1 lfo6;
+display:none'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Courier New";display:none;mso-hide:all'><span
+style='mso-list:Ignore'>20.</span></span><![endif]><span style='font-size:10.0pt;
+font-family:"Courier New";display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l0 level1 lfo6;
+display:none'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Courier New";display:none;mso-hide:all'><span
+style='mso-list:Ignore'>21.</span></span><![endif]><span style='font-size:10.0pt;
+font-family:"Courier New";display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l0 level1 lfo6;
+display:none'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Courier New";display:none;mso-hide:all'><span
+style='mso-list:Ignore'>22.</span></span><![endif]><span style='font-size:10.0pt;
+font-family:"Courier New";display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l0 level1 lfo6;
+display:none'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Courier New";display:none;mso-hide:all'><span
+style='mso-list:Ignore'>23.</span></span><![endif]><span style='font-size:10.0pt;
+font-family:"Courier New";display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l0 level1 lfo6;
+display:none'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Courier New";display:none;mso-hide:all'><span
+style='mso-list:Ignore'>24.</span></span><![endif]><span style='font-size:10.0pt;
+font-family:"Courier New";display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l0 level1 lfo6;
+display:none'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Courier New";display:none;mso-hide:all'><span
+style='mso-list:Ignore'>25.</span></span><![endif]><span style='font-size:10.0pt;
+font-family:"Courier New";display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l0 level1 lfo6;
+display:none'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Courier New";display:none;mso-hide:all'><span
+style='mso-list:Ignore'>26.</span></span><![endif]><span style='font-size:10.0pt;
+font-family:"Courier New";display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l0 level1 lfo6;
+display:none'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Courier New";display:none;mso-hide:all'><span
+style='mso-list:Ignore'>27.</span></span><![endif]><span style='font-size:10.0pt;
+font-family:"Courier New";display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l0 level1 lfo6;
+display:none'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Courier New";display:none;mso-hide:all'><span
+style='mso-list:Ignore'>28.</span></span><![endif]><span style='font-size:10.0pt;
+font-family:"Courier New";display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l0 level1 lfo6;
+display:none'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Courier New";display:none;mso-hide:all'><span
+style='mso-list:Ignore'>29.</span></span><![endif]><span style='font-size:10.0pt;
+font-family:"Courier New";display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l0 level1 lfo6;
+display:none'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Courier New";display:none;mso-hide:all'><span
+style='mso-list:Ignore'>30.</span></span><![endif]><span style='font-size:10.0pt;
+font-family:"Courier New";display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l0 level1 lfo6;
+display:none'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Courier New";display:none;mso-hide:all'><span
+style='mso-list:Ignore'>31.</span></span><![endif]><span style='font-size:10.0pt;
+font-family:"Courier New";display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l0 level1 lfo6;
+display:none'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Courier New";display:none;mso-hide:all'><span
+style='mso-list:Ignore'>32.</span></span><![endif]><span style='font-size:10.0pt;
+font-family:"Courier New";display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l0 level1 lfo6;
+display:none'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Courier New";display:none;mso-hide:all'><span
+style='mso-list:Ignore'>33.</span></span><![endif]><span style='font-size:10.0pt;
+font-family:"Courier New";display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in;mso-list:l0 level1 lfo6;
+display:none'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Courier New";display:none;mso-hide:all'><span
+style='mso-list:Ignore'>34.</span></span><![endif]><span style='font-size:10.0pt;
+font-family:"Courier New";display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo6'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>35.</span></span><![endif]>Replacement
+policies, <a href="virtual_memory.htm">Virtual Memory</a> and Multiprocessor
+systems: <a href="cachevirtmem.pptx">slides</a>. </p>
+
+<p class=MsoPlainText style='margin-left:.5in'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo6'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>36.</span></span><![endif]>Floating
+Point Representation (see earlier notes #2 above): <a href="fp.pdf">slides</a>.</p>
+
+<p class=MsoListParagraph><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo6'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>37.</span></span><![endif]>Addition
+and Adder Circuits: <a href="adders.pdf">slides</a>.</p>
+
+<p class=MsoListParagraph><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo6'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>38.</span></span><![endif]>Multiplication
+and Division: <a href="multiply.pdf">slides</a>.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>(*) Permission is given to reproduce these notes provided
+that a notice of their origin is clearly given. All rights reserved just in
+case :)</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>

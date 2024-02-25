@@ -1,0 +1,1380 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 15">
+<meta name=Originator content="Microsoft Word 15">
+<link rel=File-List href="lec7_1_for_loops_and_arrays_ex_files/filelist.xml">
+<link rel=Edit-Time-Data
+href="lec7_1_for_loops_and_arrays_ex_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Andreas Moshovos</o:Author>
+  <o:LastAuthor>Andreas Moshovos</o:LastAuthor>
+  <o:Revision>3</o:Revision>
+  <o:TotalTime>944</o:TotalTime>
+  <o:Created>2024-01-18T02:05:00Z</o:Created>
+  <o:LastSaved>2024-01-18T16:59:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>879</o:Words>
+  <o:Characters>5014</o:Characters>
+  <o:Lines>41</o:Lines>
+  <o:Paragraphs>11</o:Paragraphs>
+  <o:CharactersWithSpaces>5882</o:CharactersWithSpaces>
+  <o:Version>16.00</o:Version>
+ </o:DocumentProperties>
+ <o:CustomDocumentProperties>
+  <o:ContentTypeId dt:dt="string">0x010100145FF6D4F5BCEA4F8DB5948B395DD3D2</o:ContentTypeId>
+ </o:CustomDocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+<link rel=dataStoreItem href="lec7_1_for_loops_and_arrays_ex_files/item0010.xml"
+target="lec7_1_for_loops_and_arrays_ex_files/props011.xml">
+<link rel=dataStoreItem href="lec7_1_for_loops_and_arrays_ex_files/item0012.xml"
+target="lec7_1_for_loops_and_arrays_ex_files/props013.xml">
+<link rel=themeData href="lec7_1_for_loops_and_arrays_ex_files/themedata.thmx">
+<link rel=colorSchemeMapping
+href="lec7_1_for_loops_and_arrays_ex_files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:EnableOpenTypeKerning/>
+   <w:DontFlipMirrorIndents/>
+   <w:OverrideTableStyleHps/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="376">
+  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 9"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="header"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footer"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index heading"/>
+  <w:LsdException Locked="false" Priority="35" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of figures"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope return"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="line number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="page number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of authorities"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="macro"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toa heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 5"/>
+  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Closing"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Signature"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Message Header"/>
+  <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Salutation"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Date"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Note Heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Block Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="FollowedHyperlink"/>
+  <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Document Map"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Plain Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="E-mail Signature"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Top of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Bottom of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal (Web)"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Acronym"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Cite"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Code"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Definition"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Keyboard"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Preformatted"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Sample"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Typewriter"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Variable"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Table"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation subject"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="No List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Contemporary"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Elegant"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Professional"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Balloon Text"/>
+  <w:LsdException Locked="false" Priority="39" Name="Table Grid"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Theme"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>
+  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>
+  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>
+  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>
+  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>
+  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>
+  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hashtag"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Unresolved Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Link"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-536869121 1107305727 33554432 0 415 0;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-469750017 -1040178053 9 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:106%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-font-kerning:1.0pt;
+	mso-ligatures:standardcontextual;}
+p.msonormal0, li.msonormal0, div.msonormal0
+	{mso-style-name:msonormal;
+	mso-style-unhide:no;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:10.0pt;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-font-kerning:0pt;
+	mso-ligatures:none;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US style='tab-interval:.5in;word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:106%'>For loops
+and arrays – more examples<o:p></o:p></span></b></p>
+
+<p class=MsoNormal>Andreas Moshovos, Jan 2024</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Let’s look at another example of a for loop going over an
+array:</p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'>#define N 10 // elements in the
+array<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'>#define T 5 // T stands for
+threshold<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'>int a[N] = <span class=GramE>{ some</span>
+values };<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'>int sum = <span class=GramE>0;</span><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'>int <span class=SpellE><span
+class=GramE>i</span></span><span class=GramE>;</span><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'>for (<span class=SpellE>i</span> =
+0; <span class=SpellE>i</span> &lt; N; <span class=SpellE>i</span>++)<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-spacerun:yes'> 
+</span>if (a[<span class=SpellE>i</span>] &gt;= T) sum += a[<span class=SpellE>i</span><span
+class=GramE>];</span><o:p></o:p></span></b></p>
+
+<p class=MsoNormal>The above code adds up all elements in a[<span class=SpellE>i</span>]
+whose value exceeds or is equal to some threshold value T.</p>
+
+<p class=MsoNormal>The control flow diagram for the code is as follows:</p>
+
+<p class=MsoNormal><span style='mso-ligatures:none;mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="Picture_x0020_1" o:spid="_x0000_i1025" type="#_x0000_t75"
+ alt="A diagram of a algorithm&#10;&#10;Description automatically generated"
+ style='width:207.4pt;height:297pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="lec7_1_for_loops_and_arrays_ex_files/image003.png" o:title="A diagram of a algorithm&#10;&#10;Description automatically generated"/>
+</v:shape><![endif]--><![if !vml]><img width=277 height=396
+src="lec7_1_for_loops_and_arrays_ex_files/image002.png"
+alt="A diagram of a algorithm&#10;&#10;Description automatically generated"
+v:shapes="Picture_x0020_1"><![endif]></span></p>
+
+<p class=MsoNormal>As programmers we <span class=GramE>have to</span> decide
+where to place the variables. Since <span class=GramE>a[</span>] is an array it
+will be placed in memory. We can declare it with a statement that looks as
+follows:</p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;line-height:106%;font-family:
+"Courier New"'><span style='mso-tab-count:1'>      </span><b>.data<o:p></o:p></b></span></p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;line-height:106%;
+font-family:"Courier New"'>a<span class=GramE>: .word</span> <span
+class=SpellE>list_of_values_goes_here</span> <o:p></o:p></span></b></p>
+
+<p class=MsoNormal>In the rest of this note we will assume that <span
+class=GramE>a[</span>] has been declared and initialized and we will refer to
+the label “a”. As we discussed, “a” from this point on becomes the address in
+memory where <span class=GramE>a[</span>0] will be stored at. <span
+class=GramE>For<span style='mso-spacerun:yes'>  </span>example</span>, a[0]
+could be 0x200000. Since every element is a word (4B), then <span class=GramE>a[</span>1]
+will be at 0x200004, a[2] at 0x200008, and so on. In general, a[<span
+class=SpellE>i</span>] will be stored as 4B starting at address <i>(a + 4 x <span
+class=SpellE>i</span>)</i>.</p>
+
+<p class=MsoNormal>Let’s now decide <span class=GramE>that <span class=SpellE>i</span></span>
+will be stored in r2 and sum in r8.</p>
+
+<p class=MsoNormal>The code is as follows:</p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'>example:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-tab-count:1'>      </span><span
+class=SpellE>movi</span> r8, 0 # sum = 0<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-tab-count:1'>      </span><span
+class=SpellE>movi</span> r2, 0 # <span class=SpellE>i</span> = 0, INIT of loop<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><span class=SpellE><b><span
+style='font-size:10.0pt;line-height:106%;font-family:"Courier New"'>cond</span></b></span><b><span
+style='font-size:10.0pt;line-height:106%;font-family:"Courier New"'>:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-tab-count:1'>      </span><span
+class=SpellE>movi</span> r4, 10 # r4 = N<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-tab-count:1'>      </span><span
+class=SpellE>bge</span> r2, r4, after # if <span class=SpellE>i</span> &gt;= N
+we are done<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'>body:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-tab-count:1'>      </span>#
+a[<span class=SpellE>i</span>] &lt; T<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-tab-count:1'>      </span><span
+class=SpellE>movi</span> r5, <span class=GramE>5<span
+style='mso-spacerun:yes'>  </span>#</span> r5 = T<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;text-indent:.5in'><b><span
+style='font-size:10.0pt;line-height:106%;font-family:"Courier New"'># let’s
+find where a[<span class=SpellE>i</span>] is at<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;text-indent:.5in'><span
+class=SpellE><b><span style='font-size:10.0pt;line-height:106%;font-family:
+"Courier New"'>movia</span></b></span><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'> r6, a<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;text-indent:.5in'><b><span
+style='font-size:10.0pt;line-height:106%;font-family:"Courier New"'>add r7, r2,
+r2 # r7 = 2xi<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;text-indent:.5in'><b><span
+style='font-size:10.0pt;line-height:106%;font-family:"Courier New"'>add r7, r7,
+r7 # r7 = 4xi<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;text-indent:.5in'><b><span
+style='font-size:10.0pt;line-height:106%;font-family:"Courier New"'>add r6, r6,
+r7 # r<span class=GramE>6<span style='mso-spacerun:yes'>  </span>=</span> a + 4
+x <span class=SpellE>i</span> / address where a[<span class=SpellE>i</span>] is
+at<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;text-indent:.5in'><span
+class=SpellE><b><span style='font-size:10.0pt;line-height:106%;font-family:
+"Courier New"'>ldw</span></b></span><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'> r7, 0(r6) # r7 = a[<span
+class=SpellE>i</span>] / read a[<span class=SpellE>i</span>] from memory<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;text-indent:.5in'><span
+class=SpellE><b><span style='font-size:10.0pt;line-height:106%;font-family:
+"Courier New"'>bge</span></b></span><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'> r7, r5, post # if a[<span
+class=SpellE>i</span>] &gt;= T do not add to sum<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><span class=SpellE><b><span
+style='font-size:10.0pt;line-height:106%;font-family:"Courier New"'>addsum</span></b></span><b><span
+style='font-size:10.0pt;line-height:106%;font-family:"Courier New"'>:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-tab-count:1'>      </span>add
+r8, r8, r7 # sum += a[<span class=SpellE>i</span>]<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'>post:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-tab-count:1'>      </span><span
+class=SpellE>addi</span> r2, r2, 1<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-tab-count:1'>      </span><span
+class=SpellE>br</span> loop <o:p></o:p></span></b></p>
+
+<p class=MsoNormal><b><span style='mso-spacerun:yes'> </span><o:p></o:p></b></p>
+
+<p class=MsoNormal>That’s all. Now, can we find any instructions that execute
+in the loop but whose output register does not change in value across
+iterations? Loop at the <span class=SpellE>movi</span> r4, 10 in the <span
+class=SpellE>cond</span> block. It always assigns 10 to r4 and it does so once
+per iteration. What if we move this instruction just before the loop? Will the
+final values calculated by the loop change? This is what we’ve done below:</p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'>example:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-tab-count:1'>      </span><span
+class=SpellE>movi</span> r8, 0 # sum = 0<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-tab-count:1'>      </span><span
+class=SpellE>movi</span> r2, 0 # <span class=SpellE>i</span> = 0, INIT of loop<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New";color:red'><span style='mso-tab-count:
+1'>      </span><span class=SpellE>movi</span> r4, 10 # r4 = N // moved to INIT
+block<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><span class=SpellE><b><span
+style='font-size:10.0pt;line-height:106%;font-family:"Courier New"'>cond</span></b></span><b><span
+style='font-size:10.0pt;line-height:106%;font-family:"Courier New"'>:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-tab-count:1'>      </span><span
+class=SpellE>bge</span> r2, r4, after # if <span class=SpellE>i</span> &gt;= N
+we are done<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'>body:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-tab-count:1'>      </span>#
+a[<span class=SpellE>i</span>] &lt; T<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-tab-count:1'>      </span><span
+class=SpellE>movi</span> r5, <span class=GramE>5<span
+style='mso-spacerun:yes'>  </span>#</span> r5 = T<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;text-indent:.5in'><b><span
+style='font-size:10.0pt;line-height:106%;font-family:"Courier New"'># let’s
+find where a[<span class=SpellE>i</span>] is at<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;text-indent:.5in'><span
+class=SpellE><b><span style='font-size:10.0pt;line-height:106%;font-family:
+"Courier New"'>movia</span></b></span><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'> r6, a<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;text-indent:.5in'><b><span
+style='font-size:10.0pt;line-height:106%;font-family:"Courier New"'>add r7, r2,
+r2 # r7 = 2xi<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;text-indent:.5in'><b><span
+style='font-size:10.0pt;line-height:106%;font-family:"Courier New"'>add r7, r7,
+r7 # r7 = 4xi<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;text-indent:.5in'><b><span
+style='font-size:10.0pt;line-height:106%;font-family:"Courier New"'>add r6, r6,
+r7 # r<span class=GramE>6<span style='mso-spacerun:yes'>  </span>=</span> a + 4
+x <span class=SpellE>i</span> / address where a[<span class=SpellE>i</span>] is
+at<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;text-indent:.5in'><span
+class=SpellE><b><span style='font-size:10.0pt;line-height:106%;font-family:
+"Courier New"'>ldw</span></b></span><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'> r7, 0(r6) # r7 = a[<span
+class=SpellE>i</span>] / read a[<span class=SpellE>i</span>] from memory<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;text-indent:.5in'><span
+class=SpellE><b><span style='font-size:10.0pt;line-height:106%;font-family:
+"Courier New"'>bge</span></b></span><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'> r7, r5, post # if a[<span
+class=SpellE>i</span>] &gt;= T do not add to sum<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><span class=SpellE><b><span
+style='font-size:10.0pt;line-height:106%;font-family:"Courier New"'>addsum</span></b></span><b><span
+style='font-size:10.0pt;line-height:106%;font-family:"Courier New"'>:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-tab-count:1'>      </span>add
+r8, r8, r7 # sum += a[<span class=SpellE>i</span>]<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'>post:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-tab-count:1'>      </span><span
+class=SpellE>addi</span> r2, r2, 1<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-tab-count:1'>      </span><span
+class=SpellE>br</span> <span class=SpellE><span style='color:red'>cond</span></span>
+<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><b><span style='mso-spacerun:yes'> </span><o:p></o:p></b></p>
+
+<p class=MsoNormal>At the end, even with this change, the loop produces <span
+class=GramE>exactly the same</span> values. Why would we want to move such
+instructions out of the loop? Well, <span class=GramE>at</span> the end, while
+the code produces the same results, it does so by executing fewer instructions.
+This means it is faster and uses less energy. Usually both these are
+advantages. Such instructions and code are referred to as “loop invariant”
+meaning they do not change across loops.</p>
+
+<p class=MsoNormal>Can you spot other such instructions? HINT: this is not a
+wild goose chase. There are more.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;line-height:106%'>Revisiting
+how we access the <span class=GramE>array</span><o:p></o:p></span></b></p>
+
+<p class=MsoNormal>Let’s us revisit the C code we wrote for summing some of the
+elements of the array:</p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'>int <span class=SpellE><span
+class=GramE>i</span></span><span class=GramE>;</span><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'>for (<span class=SpellE>i</span> =
+0; <span class=SpellE>i</span> &lt; N; <span class=SpellE>i</span>++)<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-spacerun:yes'> 
+</span>if (a[<span class=SpellE>i</span>] &gt;= T) sum += a[i<span class=GramE>];</span><o:p></o:p></span></b></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>We can note that in this loop we know <span class=GramE>that
+<span class=SpellE>i</span></span> will increment by 1 at every iteration. However,
+the way the code is written we <span class=GramE>have to</span> calculate where
+in memory a[<span class=SpellE>i</span>] is from scratch as every iteration. We
+do not take advantage of the fact that we are going over all array elements one
+after the other in sequence. We know that next(<span class=SpellE>i</span>)=current(<span
+class=SpellE>i</span>)+1. Given this observation, we can instead write the loop
+as follows where we use a pointer in memory (p) to walk through the elements of
+the array:</p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'>int <span class=SpellE><span
+class=GramE>i</span></span><span class=GramE>;</span><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'>int *<span class=GramE>p;</span><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'>p = &amp;<span class=GramE>a[</span>0];<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'>for (<span class=SpellE>i</span> =
+0; <span class=SpellE>i</span> &lt; N; <span class=SpellE>i</span>++, p++)<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-spacerun:yes'> 
+</span>if (*p &gt;= T) sum += *<span class=GramE>p;</span><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal>The pointer p is just a 32b value which we intend to use as
+an address to access memory (load values in this case). It is 32b because in
+NIOS II the memory address space is 2^32 and all addresses are 32b. In other
+architectures pointers can be of different bit length. </p>
+
+<p class=MsoNormal>The statement *p = &amp;<span class=GramE>a[</span>0] can also
+be written as p = a. In both cases, we assign into variable p, the address of
+the first element of array a. </p>
+
+<p class=MsoNormal>Let’s see what the above code translates to. Below we assume
+that sum is in r8, <span class=SpellE>i</span> in r9, and p in r10:</p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span
+style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'>  </span><span
+class=SpellE>movia</span> r10, a # p = a<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-spacerun:yes'>  
+</span><span class=SpellE>movi</span> r8, 0 # sum = 0<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-spacerun:yes'>  
+</span><span class=SpellE>movi</span> r9, 0 # <span class=SpellE>i</span> = 0<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-spacerun:yes'>  
+</span><span class=SpellE>movi</span> r11, 10 # r11 = N<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-spacerun:yes'>  
+</span><span class=SpellE>movi</span> r12, <span class=GramE>5<span
+style='mso-spacerun:yes'>  </span>#</span> r12 = 5<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><span class=SpellE><b><span
+style='font-size:10.0pt;line-height:106%;font-family:"Courier New"'>cond</span></b></span><b><span
+style='font-size:10.0pt;line-height:106%;font-family:"Courier New"'>:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-spacerun:yes'>  
+</span><span class=SpellE>bge</span> r9, r11, after<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'>body:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-spacerun:yes'>  
+</span><span class=SpellE>ldw</span> r13, 0(r10<span class=GramE>)<span
+style='mso-spacerun:yes'>  </span>#</span> r13 = *p // we are reading a[<span
+class=SpellE>i</span>] into r13<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-spacerun:yes'>  
+</span><span class=SpellE>blt</span> r13, r12, post # a[<span class=SpellE>i</span>]
+&lt; T then skip the <span class=GramE>sum</span><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><span class=SpellE><b><span
+style='font-size:10.0pt;line-height:106%;font-family:"Courier New"'>usum</span></b></span><b><span
+style='font-size:10.0pt;line-height:106%;font-family:"Courier New"'>:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-spacerun:yes'>  
+</span>add r8, r8, r<span class=GramE>13<span style='mso-spacerun:yes'> 
+</span>#</span> sum += r13<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'>post:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-spacerun:yes'>  
+</span><span class=SpellE>addi</span> r9, r9, <span class=GramE>1<span
+style='mso-spacerun:yes'>  </span>#</span> <span class=SpellE>i</span>++<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-spacerun:yes'>  
+</span><span class=SpellE>addi</span> r10, r10, 4 # p++, p points to int so we
+increment by the <span class=SpellE>sizeof</span>(int) = 4<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-spacerun:yes'>  
+</span><span class=SpellE>br</span> <span class=SpellE>cond</span><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal>In the above code, we use p to access the elements of <span
+class=GramE>a[</span>] one after the other. P points to the next element to
+process. We start with p pointing to <span class=GramE>a[</span>0], and at
+every iteration we increment it by 4 so that we access the next element in
+order.</p>
+
+<p class=MsoNormal>We can further optimize the code by getting rid the <span
+class=SpellE>i</span> variable and use p and the size of the array to check
+whether we processed all elements:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'>int <span class=SpellE><span
+class=GramE>i</span></span><span class=GramE>;</span><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'>int *p, *<span class=SpellE>p_<span
+class=GramE>last</span></span><span class=GramE>;</span><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'>p = &amp;<span class=GramE>a[</span>0];<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><span class=SpellE><b><span
+style='font-size:10.0pt;line-height:106%;font-family:"Courier New"'>p_last</span></b></span><b><span
+style='font-size:10.0pt;line-height:106%;font-family:"Courier New"'> = p + N;
+// address immediately after the last element of <span class=GramE>a[</span>]
+since there are N elements in it<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'>for (; p &lt; <span class=SpellE>p_last</span>;
+p++)<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-spacerun:yes'> 
+</span>if (*p &gt;= T) sum += *<span class=GramE>p;</span><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal>and in assembly:</p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span
+style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'>  </span><span
+class=SpellE>movia</span> r10, a # p = a<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-spacerun:yes'>  
+</span><span class=SpellE>movi</span> r8, 0 # sum = 0<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span
+style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'>  </span><span
+class=SpellE>addi</span> r9, r10, 40 # <span class=SpellE>p_last</span> = a +
+10 elements x 4B per element<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-spacerun:yes'>  
+</span><span class=SpellE>movi</span> r12, <span class=GramE>5<span
+style='mso-spacerun:yes'>  </span>#</span> r12 = 5 / T<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><span class=SpellE><b><span
+style='font-size:10.0pt;line-height:106%;font-family:"Courier New"'>cond</span></b></span><b><span
+style='font-size:10.0pt;line-height:106%;font-family:"Courier New"'>:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-spacerun:yes'>  
+</span><span class=SpellE>bge</span> r10, r9, after # if <span class=GramE>NOT <span
+style='mso-spacerun:yes'> </span>p</span> &lt; <span class=SpellE>p_last</span>
+we are done<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'>body:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-spacerun:yes'>  
+</span><span class=SpellE>ldw</span> r13, 0(r10<span class=GramE>)<span
+style='mso-spacerun:yes'>  </span>#</span> r13 = *p // we are reading a[<span
+class=SpellE>i</span>] into r13<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-spacerun:yes'>  
+</span><span class=SpellE>blt</span> r13, r12, post # a[<span class=SpellE>i</span>]
+&lt; T then skip the <span class=GramE>sum</span><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><span class=SpellE><b><span
+style='font-size:10.0pt;line-height:106%;font-family:"Courier New"'>usum</span></b></span><b><span
+style='font-size:10.0pt;line-height:106%;font-family:"Courier New"'>:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-spacerun:yes'>  
+</span>add r8, r8, r<span class=GramE>13<span style='mso-spacerun:yes'> 
+</span>#</span> sum += r13<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'>post:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-spacerun:yes'>  
+</span><span class=SpellE>addi</span> r10, r10, 4 # p++, p points to int so we
+increment by the <span class=SpellE>sizeof</span>(int) = 4<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><span style='mso-spacerun:yes'>  
+</span><span class=SpellE>br</span> <span class=SpellE>cond</span><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in'><b><span style='font-size:10.0pt;
+line-height:106%;font-family:"Courier New"'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>

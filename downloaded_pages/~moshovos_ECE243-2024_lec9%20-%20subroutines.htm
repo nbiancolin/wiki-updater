@@ -1,0 +1,1885 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1253">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 12">
+<meta name=Originator content="Microsoft Word 12">
+<link rel=File-List href="lec9%20-%20subroutines_files/filelist.xml">
+<link rel=Edit-Time-Data href="lec9%20-%20subroutines_files/editdata.mso">
+<link rel=OLE-Object-Data href="lec9%20-%20subroutines_files/oledata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Lecture 2</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="place"/>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="PlaceType"/>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="PlaceName"/>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Name</o:Author>
+  <o:LastAuthor>dodo</o:LastAuthor>
+  <o:Revision>156</o:Revision>
+  <o:TotalTime>532</o:TotalTime>
+  <o:Created>2005-01-01T01:34:00Z</o:Created>
+  <o:LastSaved>2012-01-30T02:19:00Z</o:LastSaved>
+  <o:Pages>3</o:Pages>
+  <o:Words>2760</o:Words>
+  <o:Characters>15733</o:Characters>
+  <o:Company>Organization</o:Company>
+  <o:Lines>131</o:Lines>
+  <o:Paragraphs>36</o:Paragraphs>
+  <o:CharactersWithSpaces>18457</o:CharactersWithSpaces>
+  <o:Version>12.00</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<link rel=themeData href="lec9%20-%20subroutines_files/themedata.thmx">
+<link rel=colorSchemeMapping
+href="lec9%20-%20subroutines_files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>BestFit</w:Zoom>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:DontVertAlignCellWithSp/>
+   <w:DontBreakConstrainedForcedTables/>
+   <w:DontVertAlignInTxbx/>
+   <w:Word11KerningPairs/>
+   <w:CachedColBalance/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" LatentStyleCount="267">
+  <w:LsdException Locked="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="99" Name="No List"/>
+  <w:LsdException Locked="false" Priority="99" SemiHidden="true"
+   Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="99" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:Batang;
+	panose-1:2 3 6 0 0 1 1 1 1 1;
+	mso-font-alt:Batang;
+	mso-font-charset:129;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-1342176593 1775729915 48 0 524447 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870145 1107305727 0 0 415 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-520081665 -1073717157 41 0 66047 0;}
+@font-face
+	{font-family:"\@Batang";
+	panose-1:2 3 6 0 0 1 1 1 1 1;
+	mso-font-charset:129;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-1342176593 1775729915 48 0 524447 0;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:-520092929 1073806591 9 0 415 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:Batang;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{mso-style-unhide:no;
+	mso-style-link:"Plain Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:Batang;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-unhide:no;
+	mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-fareast-font-family:Batang;}
+span.PlainTextChar
+	{mso-style-name:"Plain Text Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Plain Text";
+	mso-ansi-font-size:10.5pt;
+	mso-bidi-font-size:10.5pt;
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-fareast-font-family:Batang;
+	mso-hansi-font-family:Consolas;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Balloon Text";
+	mso-ansi-font-size:8.0pt;
+	mso-bidi-font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-ascii-font-family:Tahoma;
+	mso-fareast-font-family:Batang;
+	mso-hansi-font-family:Tahoma;
+	mso-bidi-font-family:Tahoma;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:10.0pt;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 65.95pt 1.0in 65.95pt;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:454296057;
+	mso-list-template-ids:-1773763864;}
+@list l1
+	{mso-list-id:1410883490;
+	mso-list-template-ids:-1704452118;}
+@list l1:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2
+	{mso-list-id:1541168469;
+	mso-list-template-ids:-1958997550;}
+@list l2:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3
+	{mso-list-id:1796479431;
+	mso-list-template-ids:1127755682;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+table.MsoTableGrid
+	{mso-style-name:"Table Grid";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-unhide:no;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+</style>
+<![endif]-->
+<script id="injection_graph_func"  charset="utf-8" src="lec9%20-%20subroutines_files/injection_graph_func.js">
+</script>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="20482"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US style='tab-interval:.5in'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal>Andreas <span class=SpellE>Moshovos</span></p>
+
+<p class=MsoNormal>Spring 2008, Updated 2012</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b>Subroutines<o:p></o:p></b></p>
+
+<p class=MsoNormal><b><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal>Structured programming relies on subroutines. Restricting
+our attention to C, we could write a subroutine that accepts three numerical
+arguments and returns their sum.&nbsp; This subroutine can then be used (or <i>called</i>)
+from many different places in our program. That is we could for example write
+the following in C:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span class=SpellE><span class=GramE><span style='font-family:
+"Courier New"'>int</span></span></span><span style='font-family:"Courier New"'>
+add3 (<span class=SpellE>int</span> a, <span class=SpellE>int</span> b, <span
+class=SpellE>int</span> c)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>{<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:6.0pt'><span class=GramE><span
+style='font-family:"Courier New"'>return</span></span><span style='font-family:
+"Courier New"'> a&nbsp; +&nbsp; b +c;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><span class=GramE><span style='font-family:
+"Courier New"'>int</span></span></span><span style='font-family:"Courier New"'>
+sum = 0;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span class=GramE><span style='font-family:"Courier New"'>main</span></span><span
+style='font-family:"Courier New"'> ()<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>{<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>&nbsp;&nbsp; <span
+class=GramE>sum</span> += add3 (1, 2, 3);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>&nbsp;&nbsp; <span
+class=GramE>sum</span> += 10;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>&nbsp;&nbsp; <span
+class=GramE>sum</span> += add3 (10, 20, 30);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>For<span class=GramE>&nbsp; C</span> subroutines to work as
+intended we need the following functionality:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in'>We should be
+able to call a subroutine from anywhere in our program. By “call” we mean being
+able to change control flow so that the routine is executed.</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in'>We should be
+able to pass parameters that may take different values across different calls.</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in'>A subroutine
+must be able to return a value. </p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in'>A subroutine
+must be able to change control flow so that execution continues immediately
+after the point where it was called. Since a subroutine can be called from many
+different places this suggests that the routine should be able to differentiate
+between them and “return” to the right spot depending on where it was called
+from.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>We can see these requirements at work in our example:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:shapetype id="_x0000_t75" coordsize="21600,21600"
+ o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f"
+ stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" style='width:600pt;
+ height:337.5pt' o:ole="">
+ <v:imagedata src="lec9%20-%20subroutines_files/image001.emz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=800 height=450
+src="lec9%20-%20subroutines_files/image002.gif" v:shapes="_x0000_i1025"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PowerPoint.Slide.8" ShapeID="_x0000_i1025"
+  DrawAspect="Content" ObjectID="_1389377111">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class=MsoNormal>We can see that the add3 subroutine is called from two
+different places. The place a routine is called from is also referred to as a <i>call
+site. </i>The three parameters that add3 accepts take different values at each
+call site ((1<span class=GramE>,2,3</span>) and (10,20,30)). Add3 “returns” a
+value which is the sum of its three arguments. So, every time add3 is called,
+it calculates a result and that result is returned as the subroutine’s value.
+This value can then be used in an expression (e.g., in <span class=GramE>add3(</span>10,20,30)
+evaluates to 60). The first time add3 is called we expect execution to resume
+immediately after the statement that called it. So, once <span class=GramE>add3(</span>1,2,3)
+returns execution will resume by adding the return value to sum. Then, the “sum
++= 10” statement will get executed. The second time add3 is called execution
+resumes immediately after the particular call.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Let’s review the way control flows in time with subroutines
+with aid of the add3 example:</p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:shape id="_x0000_i1026" type="#_x0000_t75"
+ style='width:600pt;height:336.75pt' o:ole="">
+ <v:imagedata src="lec9%20-%20subroutines_files/image003.emz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=800 height=449
+src="lec9%20-%20subroutines_files/image004.gif" v:shapes="_x0000_i1026"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PowerPoint.Slide.8" ShapeID="_x0000_i1026"
+  DrawAspect="Content" ObjectID="_1389377112">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class=MsoNormal>This diagram also shows a <i>call site, </i>the <i>caller </i>and
+the <span class=SpellE><i>callee</i></span><i>. </i>The call site is the place
+a subroutine is called. The caller is the subroutine that is making the call.
+The <span class=SpellE>callee</span> is the subroutine that is called.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>We can now look at the list of required functionalities and
+since we are interested in how to implement subroutines in assembly we can add
+concerns/requirements that related to machine level constructs. Thus we need to
+provide answers for the following questions:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in'>How <span
+class=GramE>does the subroutine</span> returns immediately after the call site?</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in'>Where and how
+does it return a value?</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in'>Where and how
+are we passing arguments to a subroutine?</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in'>Where and how
+are we allocating storage for any local variables (i.e., variable that belong
+to the subroutine)</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in'>What happens to
+register values once a subroutine is <span class=GramE>called.</span> Do we
+require that the subroutine preserves their values or is it OK to overwrite
+some <span class=GramE>registers.</span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>We will address each of these issues in turn. For most
+machines there is a set of rules that all valid subroutines must follow. This
+set of rules is called the <b>calling convention. </b>This set of rules is not
+the only viable option for implementing subroutines. However, at some point
+someone decided on a particular solution. If we want a subroutine to
+interoperate correctly with other subroutines (possibly written by others) we
+have to follow these set of rules. This way someone else could also use our
+subroutines. We will be describing the calling convention used by <span
+class=SpellE>gcc</span> for the NIOS II family of processors. There are other
+conventions in use in NIOS II. At any given point of time one of them can be in
+use, or special code must be devised to translate from one form to the other
+(and we do not want that).</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>There are a few different options for providing the
+aforementioned functionality. We will present the solution used in NIOS II and
+once this is understood we will discuss some of the other options. Key to
+supporting subroutines in NIOS II is the use of a <b>stack.&nbsp; </b>This
+stack is used to provide the functionality explained<span class=GramE>&nbsp; in</span>
+points 1 through 5 above. We first explain how a stack can be implemented in
+NIOS II machine code and then explain how the stack is used to support
+subroutines.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b>STACK:<o:p></o:p></b></p>
+
+<p class=MsoNormal>Let’s review what stack is. Stack is a last-in first-out
+(LIFO) queue. In more detail, the stack is a data structure for which three
+operations are defined:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<ol style='margin-top:0in' start=1 type=1>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo3;tab-stops:list .5in'>Push
+     value</li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo3;tab-stops:list .5in'>Pop</li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo3;tab-stops:list .5in'>Top
+     (distance)</li>
+</ol>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>The first operation adds a new element onto the stack. The
+order in which elements are added onto the stack is important. Internally, the elements
+are placed in a queue following exactly the order in which they were
+inserted.&nbsp; Push takes a single argument which is the value we will insert
+onto the stack. After a push, the number of stack elements increases by one.
+The pop operation removes the most recently inserted element within the stack.
+After a pop, the number of items in the stack is reduced by one. If the stack
+is empty then pop is not a valid operation. </p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Top returns the value of a stack element without removing it
+from the stack. Top accepts a single argument which specifies the relative to
+the most recently inserted element of the element we are interested in. So, <span
+class=GramE>top(</span>0) returns the value of the most recently inserted
+element (this is also called the <i>top of the stack</i> , which corresponds to
+viewing the stack as a vertical queue with elements being placed on top of each
+other). <span class=GramE>Top(</span>3) returns the value of the 4<sup>th</sup>
+element in the stack (as measured starting from the top).</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>For example, assuming that initially the stack is empty
+here’s an example of how the stack operates:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<ol style='margin-top:0in' start=1 type=1>
+ <li class=MsoNormal style='mso-list:l2 level1 lfo6;tab-stops:list .5in'>Push 3
+     <span style='font-family:Wingdings'>&agrave;</span> (3) </li>
+ <li class=MsoNormal style='mso-list:l2 level1 lfo6;tab-stops:list .5in'>Push 4
+     <span style='font-family:Wingdings'>&agrave;</span> (4,3) , where 4 is the
+     top element</li>
+ <li class=MsoNormal style='mso-list:l2 level1 lfo6;tab-stops:list .5in'>Push
+     10 <span style='font-family:Wingdings'>&agrave;</span> (10, 4, 3)</li>
+ <li class=MsoNormal style='mso-list:l2 level1 lfo6;tab-stops:list .5in'>Top(2)
+     <span style='font-family:Wingdings'>&agrave;</span> returns 3</li>
+ <li class=MsoNormal style='mso-list:l2 level1 lfo6;tab-stops:list .5in'>Top(1)
+     <span style='font-family:Wingdings'>&agrave;</span> returns 4</li>
+ <li class=MsoNormal style='mso-list:l2 level1 lfo6;tab-stops:list .5in'>Pop <span
+     style='font-family:Wingdings'>&agrave;</span> returns 10 and then the
+     stack becomes (4, 3)</li>
+</ol>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b>The NIOS II STACK:<o:p></o:p></b></p>
+
+<p class=MsoNormal><b><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal>By convention the NIOS II uses a stack&nbsp;to support
+subroutines (the stack is also used to support interrupts and in other machines
+to support OS calls). The stack is implemented in memory with register r27
+pointing to the top of the stack. That is, sp contains a value which corresponds
+to the <i>address</i> of the top element of the stack in memory. The NIOS II
+stack (very much like most <span class=GramE>stacks</span> for other CPU
+families) grows towards lower addresses. The exact value the stack takes
+typically depends on the machine and the operating system running. On the DE2,
+there is an initialization code that sets the stack to be at 0x17fff80 when
+your code is called. This initialization code makes a call to your <span
+class=GramE>main(</span>) function. This code is in file crt0.o which is linked
+with your program. In most machines and <span class=SpellE>OSes</span> today a
+program is laid out in memory so that the program instructions appear first.
+Then follows the statically defined data (global variables), and then comes the
+heap (see note below) which grows towards higher addresses. At the very end of
+memory starts the stack and grows downwards:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:1184;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;height:44.5pt'>
+  <td width=327 valign=top style='width:245.45pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:44.5pt;border-color:-moz-use-text-color windowtext -moz-use-text-color -moz-use-text-color'>
+  <p class=MsoNormal align=right style='text-align:right'>0x1000000<o:p></o:p></p>
+  </td>
+  <td width=357 valign=top style='width:267.55pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt;height:44.5pt;border-color:-moz-use-text-color'>
+  <p class=MsoNormal>Instructions (.text section)</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;height:35.5pt'>
+  <td width=327 valign=top style='width:245.45pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:35.5pt;border-color:-moz-use-text-color windowtext -moz-use-text-color -moz-use-text-color'>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=357 valign=top style='width:267.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:35.5pt;border-color:-moz-use-text-color windowtext windowtext -moz-use-text-color'>
+  <p class=MsoNormal>Statically defined data (global variables in C)</p>
+  <p class=MsoNormal>(.data and .<span class=SpellE>bss</span> sections)</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;height:26.5pt'>
+  <td width=327 valign=top style='width:245.45pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:26.5pt;border-color:-moz-use-text-color windowtext -moz-use-text-color -moz-use-text-color'>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=357 valign=top style='width:267.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:26.5pt;border-color:-moz-use-text-color windowtext windowtext -moz-use-text-color'>
+  <p class=MsoNormal><!--[if gte vml 1]><v:line id="_x0000_s1030" style='position:absolute;
+   z-index:1;mso-position-horizontal-relative:text;
+   mso-position-vertical-relative:text' from="96pt,18.75pt" to="96pt,41.25pt">
+   <v:stroke endarrow="block"/>
+  </v:line><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+  absolute;z-index:1;margin-left:122px;margin-top:24px;width:12px;height:33px'><img
+  width=12 height=33 src="lec9%20-%20subroutines_files/image005.gif" v:shapes="_x0000_s1030"></span><![endif]>Heap:
+  Dynamically allocated data</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;height:40.0pt'>
+  <td width=327 valign=top style='width:245.45pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:40.0pt;border-color:-moz-use-text-color windowtext -moz-use-text-color -moz-use-text-color'>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=357 valign=top style='width:267.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:40.0pt;border-color:-moz-use-text-color windowtext windowtext -moz-use-text-color'>
+  <p class=MsoNormal><!--[if gte vml 1]><v:line id="_x0000_s1031" style='position:absolute;
+   flip:y;z-index:2;mso-position-horizontal-relative:text;
+   mso-position-vertical-relative:text' from="96pt,23.25pt" to="96pt,41.25pt">
+   <v:stroke endarrow="block"/>
+  </v:line><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+  absolute;z-index:2;margin-left:122px;margin-top:29px;width:12px;height:27px'><img
+  width=12 height=27 src="lec9%20-%20subroutines_files/image006.gif" v:shapes="_x0000_s1031"></span><![endif]></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;mso-yfti-lastrow:yes;height:25.15pt'>
+  <td width=327 valign=top style='width:245.45pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:25.15pt;border-color:-moz-use-text-color windowtext -moz-use-text-color -moz-use-text-color'>
+  <p class=MsoNormal align=right style='text-align:right'>0x17fff80<span
+  style='mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=357 valign=top style='width:267.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:25.15pt'>
+  <p class=MsoNormal>Stack:</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>In NIOS II there is no way to represent an empty stack. The
+r27 always has a value and this always corresponds to a valid address (they are
+both 32 bit numbers). If you do use r27 to read from memory you will read the
+element at the top of the stack. If you did not push an element you are just
+reading the value that happens to be there where r27 points to. It would be
+garbage for all we care but you will still be able to read a value. So, whether
+the stack is empty and how elements it holds is a concept that only the
+programmer can understand and <span class=SpellE><span class=GramE>its</span></span>
+all a matter of convention and of using the appropriate operations in sequence
+to achieve the effect we desire.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>On another related note, an element in memory is within the
+stack if its address is equal to or higher than the value of r27. Finally, we
+can use sp instead of r27. “<span class=GramE>sp</span>” is an alias for “r27”.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>(*) the heap is used for dynamic memory allocation in
+several programming languages. For example, in C when you use <span
+class=SpellE><span class=GramE>malloc</span></span><span class=GramE>(</span>)
+this is where the memory comes from. Similarly, in C++ you use “new” to get
+memory in the heap. In Java, objects are allocated within the heap. There is no
+need for hardware support for the heap. It’s all done with appropriate
+manipulation of register or memory variables. That is, the heap is a software
+construct. But for our purposes we can safely ignore this topic for the time
+being. </p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b>PUSH value: </b>Here’s how push can be implemented in
+NIOS II assembly. Let’s assumed that the value we want to push onto the stack
+is in register r9:</p>
+
+<p class=MsoNormal>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class=SpellE><span class=GramE>subi</span></span> sp, sp, 4&nbsp; <span
+style='font-family:Wingdings'>&agrave;</span> grow the stack by four bytes (a
+long word)</p>
+
+<p class=MsoNormal>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class=SpellE><span class=GramE>stw</span></span> r9, 0(sp) <span
+style='font-family:Wingdings'>&agrave;</span> save the value of d0 onto the top
+of the stack</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b>POP: </b>Let’s assume that in addition to removing an element
+from the top of the stack pop also returns its value into register r9.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1. <span class=SpellE><span class=GramE>ldw</span></span> r9,
+0(sp)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='font-family:Wingdings'>&agrave;</span>
+read top value</p>
+
+<p class=MsoNormal>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2. <span class=SpellE><span class=GramE>addi</span></span> sp, sp,
+4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span
+style='font-family:Wingdings'>&agrave;</span> increment the stack point thus
+removing the top element</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b>Top (index): </b>Assuming that all elements in the stack
+are long words then we could access the <span class=SpellE>ith</span> element
+using a sequence of instructions. For example, if we assume that <span
+class=SpellE>i</span> (our index) <span class=GramE>is</span> in register r9,
+then we can use:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class=GramE>add</span> r9, r9, r9&nbsp;&nbsp;&nbsp; <span
+style='font-family:Wingdings'>&agrave;</span> assume r9 holds <span
+class=SpellE>i</span></p>
+
+<p class=MsoNormal>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class=GramE>add</span> r9, r9, r9&nbsp;&nbsp;&nbsp; <span
+style='font-family:Wingdings'>&agrave;</span> r9 = 4 * <span class=SpellE>i</span></p>
+
+<p class=MsoNormal>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class=GramE>add</span> r9, sp, r9 <span style='font-family:Wingdings'>&agrave;</span>
+the address of the element in the stack is sp + 4*<span class=SpellE>i</span></p>
+
+<p class=MsoNormal>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+class=SpellE><span class=GramE>ldw</span></span> r9, 0(r9) <span
+style='font-family:Wingdings'>&agrave;</span> return value of the <span
+class=SpellE>ith</span> element into d1</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>If “<span class=SpellE>i</span>” is not a variable but a
+constant we can use just a load to read the value from the stack. For example:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class=SpellE><span class=GramE>ldw</span></span> r9, 16(sp) </p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span class=GramE>reads</span> the fourth element of the
+stack assuming that all elements are words.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>To avoid writing too long <span class=SpellE>hexademical</span>
+numbers in the example that follows we assume that the stack started at
+0x70000. Let’s assume that the stack has the following values (all values in
+hexadecimal):</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:1184;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=174 valign=top style='width:130.5pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;border-color:-moz-use-text-color windowtext -moz-use-text-color -moz-use-text-color'>
+  <p class=MsoNormal align=right style='text-align:right'><span
+  style='font-family:"Courier New"'>SP --&gt; 0x6fff0<o:p></o:p></span></p>
+  </td>
+  <td width=88 valign=top style='width:65.8pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt;border-color:-moz-use-text-color'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:"Courier New"'>01<o:p></o:p></span></p>
+  </td>
+  <td width=131 valign=top style='width:98.2pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt;border-color:-moz-use-text-color'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:"Courier New"'>02<o:p></o:p></span></p>
+  </td>
+  <td width=131 valign=top style='width:98.2pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt;border-color:-moz-use-text-color'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:"Courier New"'>03<o:p></o:p></span></p>
+  </td>
+  <td width=131 valign=top style='width:98.2pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt;border-color:-moz-use-text-color'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:"Courier New"'>04<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=174 valign=top style='width:130.5pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;border-color:-moz-use-text-color windowtext -moz-use-text-color -moz-use-text-color'>
+  <p class=MsoNormal align=right style='text-align:right'><span
+  style='font-family:"Courier New"'>0x6fff4<o:p></o:p></span></p>
+  </td>
+  <td width=88 valign=top style='width:65.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;border-color:-moz-use-text-color windowtext windowtext -moz-use-text-color'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:"Courier New"'>10<o:p></o:p></span></p>
+  </td>
+  <td width=131 valign=top style='width:98.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;border-color:-moz-use-text-color windowtext windowtext -moz-use-text-color'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:"Courier New"'>20<o:p></o:p></span></p>
+  </td>
+  <td width=131 valign=top style='width:98.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;border-color:-moz-use-text-color windowtext windowtext -moz-use-text-color'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:"Courier New"'>30<o:p></o:p></span></p>
+  </td>
+  <td width=131 valign=top style='width:98.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;border-color:-moz-use-text-color windowtext windowtext -moz-use-text-color'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:"Courier New"'>40<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=174 valign=top style='width:130.5pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;border-color:-moz-use-text-color windowtext -moz-use-text-color -moz-use-text-color'>
+  <p class=MsoNormal align=right style='text-align:right'><span
+  style='font-family:"Courier New"'>0x6fff8<o:p></o:p></span></p>
+  </td>
+  <td width=88 valign=top style='width:65.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;border-color:-moz-use-text-color windowtext windowtext -moz-use-text-color'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:"Courier New"'>11<o:p></o:p></span></p>
+  </td>
+  <td width=131 valign=top style='width:98.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;border-color:-moz-use-text-color windowtext windowtext -moz-use-text-color'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:"Courier New"'>22<o:p></o:p></span></p>
+  </td>
+  <td width=131 valign=top style='width:98.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;border-color:-moz-use-text-color windowtext windowtext -moz-use-text-color'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:"Courier New"'>33<o:p></o:p></span></p>
+  </td>
+  <td width=131 valign=top style='width:98.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;border-color:-moz-use-text-color windowtext windowtext -moz-use-text-color'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:"Courier New"'>44<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;mso-yfti-lastrow:yes'>
+  <td width=174 valign=top style='width:130.5pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;border-color:-moz-use-text-color windowtext -moz-use-text-color -moz-use-text-color'>
+  <p class=MsoNormal align=right style='text-align:right'><span
+  style='font-family:"Courier New"'>0x6fffc<o:p></o:p></span></p>
+  </td>
+  <td width=88 valign=top style='width:65.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;border-color:-moz-use-text-color windowtext windowtext -moz-use-text-color'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:"Courier New"'>55<o:p></o:p></span></p>
+  </td>
+  <td width=131 valign=top style='width:98.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;border-color:-moz-use-text-color windowtext windowtext -moz-use-text-color'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:"Courier New"'>66<o:p></o:p></span></p>
+  </td>
+  <td width=131 valign=top style='width:98.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;border-color:-moz-use-text-color windowtext windowtext -moz-use-text-color'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:"Courier New"'>77<o:p></o:p></span></p>
+  </td>
+  <td width=131 valign=top style='width:98.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;border-color:-moz-use-text-color windowtext windowtext -moz-use-text-color'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:"Courier New"'>88<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Here are a few examples:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in'><span
+class=SpellE><span class=GramE>ldw</span></span> r9, 8(sp) <span
+style='font-family:Wingdings'>&agrave;</span> r9 = <span class=SpellE>mem</span>[sp
++ 8] = <span class=SpellE>mem</span>[0x6fff0 + 8] = <span class=SpellE>mem</span>[0x6fff8]
+= 0x144332211</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in'><span
+class=SpellE><span class=GramE>ldb</span></span> r10, 0xd(sp) <span
+style='font-family:Wingdings'>&agrave;</span> r10 = <span class=SpellE>mem</span>[sp
++ 0xd] = 0x66 (this reads a single byte and sign extends it into 32 prior to
+writing into r10).</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b>Requirement 1: Calling a subroutine and having it return
+to the caller<o:p></o:p></b></p>
+
+<p class=MsoNormal><b><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal>Having explained the stack we are now ready to explain how
+the first requirement can be satisfied using the stack. Let’s focus only on
+control flow for the time being and thus use subroutines that do not accept
+arguments and do not return values. Let’s use the following C code as our
+example:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span class=GramE><span style='font-family:"Courier New"'>boo</span></span><span
+style='font-family:"Courier New"'> ()<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>{<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span><span class=GramE>coo</span> ();<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span class=GramE><span style='font-family:"Courier New"'>coo</span></span><span
+style='font-family:"Courier New"'> ()<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>{<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span><span class=GramE>return</span>;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>In this example function boo calls function coo. Here’s the
+assembly code:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>.text<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-spacerun:yes'> </span><span class=GramE>boo</span>:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span><span class=GramE>call</span> coo<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>…<o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=GramE><span style='font-family:"Courier New"'>coo</span></span><span
+style='font-family:"Courier New"'>:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span><span class=GramE>ret</span><o:p></o:p></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>There are two new instructions: “call coo” and “ret”. “Call
+coo” does:</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span></p>
+
+<p class=MsoNormal style='text-indent:.5in'>r31 = PC + 4</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>PC = coo</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>“Ret” is equivalent to “<span class=SpellE>jmp</span> r31”
+as it does: </p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>PC = r31</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>(It would seem that “ret” is superfluous. Functionally it
+is. However, it facilitates performance enhancing techniques where the
+processor exploits the fact that it knows it advance that this instruction
+returns from a subroutine. This will be explained if you take the Computer
+Architecture course.)</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>So, <span class=GramE>boo(</span>), prior to calling coo(),
+saves in register r31, the address of the instruction that it wants coo() to
+return to. This address is the address of the call plus four since every
+instruction is four bytes long. When coo returns, it simply uses “<span
+class=SpellE>jmp</span> r31”. In the assembler you can use the alias “<span
+class=SpellE>ra</span>” (for return address) instead of r31.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>The aforementioned example works without needing a stack
+because we have only one call. Let’s see what happens if <span class=GramE>coo(</span>)
+were to make a few calls also. Let’s look at the following code:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span class=SpellE><span style='font-family:"Courier New"'>boo_calls</span></span><span
+style='font-family:"Courier New"'> ()<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>{<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class=GramE>coo</span> ();<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class=GramE>doo</span> ();<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class=GramE>return</span>;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span class=GramE><span style='font-family:"Courier New"'>void</span></span><span
+style='font-family:"Courier New"'> coo ()<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>{<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:6.0pt'><span class=GramE><span
+style='font-family:"Courier New"'>doo</span></span><span style='font-family:
+"Courier New"'> ();<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:6.0pt'><span class=GramE><span
+style='font-family:"Courier New"'>return</span></span><span style='font-family:
+"Courier New"'>;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span class=GramE><span style='font-family:"Courier New"'>void</span></span><span
+style='font-family:"Courier New"'> doo()<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>{ <o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:6.0pt'><span class=GramE><span
+style='font-family:"Courier New"'>return</span></span><span style='font-family:
+"Courier New"'>; <o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>} <o:p></o:p></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Notice that boo calls coo which then calls doo. After doo
+returns to coo and it returns to boo, boo calls doo directly. Focusing thus on
+doo, we see an example where a function is called from two different places and
+is supposed to return at different spots for each of those calls.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>The “trick” is to apply the following convention: If a
+function will be calling another it has to save the <span class=SpellE>ra</span>
+value on the stack in the beginning and restore it from the stack prior to
+returning. Here’s the code:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>The NIOS II code is as follows:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+.text<o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=GramE><b><span style='font-family:"Courier New"'>boo</span></b></span><b><span
+style='font-family:"Courier New"'>:<span style='mso-tab-count:6'>                         </span>#
+boo will be making calls, so it first pushes the <span class=SpellE>ra</span>
+value on the stack<span style='mso-tab-count:1'>    </span><o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class=SpellE><span class=GramE>subi</span></span> sp, sp, 4<span
+style='mso-tab-count:1'>   </span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class=SpellE><span class=GramE>stw</span></span>
+ra,0(sp)&nbsp;&nbsp;&nbsp;# push the return address onto the stack<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class=GramE>call</span> coo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+style='mso-tab-count:1'>    </span># resume execution at coo, <span
+class=SpellE>ra</span> = PC + 4 = boo_ret1<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>boo_ret1:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class=GramE>call</span> doo<span style='mso-tab-count:2'>         </span>#
+continue execution at doo, <span class=SpellE>ra</span> = PC + 4 = boo_ret2<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>boo_ret2:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class=SpellE><span class=GramE>ldw</span></span><span class=GramE> <span
+style='mso-spacerun:yes'> </span><span class=SpellE>ra</span></span>,
+0(sp)&nbsp;&nbsp;&nbsp;# pop return address from the stack<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class=SpellE><span class=GramE>addi</span></span> sp, sp, 4<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-spacerun:yes'>            </span><span class=GramE>ret</span>&nbsp;&nbsp;&nbsp;&nbsp;<span
+style='mso-spacerun:yes'>    </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#
+resume execution there<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span class=GramE><b><span style='font-family:"Courier New"'>coo</span></b></span><b><span
+style='font-family:"Courier New"'>:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class=SpellE><span class=GramE>subi</span></span><span class=GramE> <span
+style='mso-spacerun:yes'> </span>sp</span>, sp, 4<span style='mso-tab-count:
+1'>  </span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class=SpellE><span class=GramE>stw</span></span> <span
+style='mso-spacerun:yes'>  </span>ra,0(sp)&nbsp;&nbsp;&nbsp; # push the return
+address onto the stack<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+call<span class=GramE>&nbsp; doo</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+style='mso-spacerun:yes'>   </span># resume execution at coo, <span
+class=SpellE>ra</span> = PC + 4 = <span class=SpellE>coo_ret</span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><span style='font-family:"Courier New"'>coo_ret</span></span><span
+style='font-family:"Courier New"'>:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class=SpellE><span class=GramE>ldw</span></span><span class=GramE> <span
+style='mso-spacerun:yes'> </span><span class=SpellE>ra</span></span>,
+0(sp)&nbsp;&nbsp;&nbsp;# pop return address of boo from the stack<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class=SpellE><span class=GramE>addi</span></span> sp, sp, 4<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-spacerun:yes'>            </span><span class=GramE>ret</span>&nbsp;&nbsp;<span
+style='mso-tab-count:1'>  </span>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#
+resume execution there<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span class=GramE><b><span style='font-family:"Courier New"'>doo</span></b></span><b><span
+style='font-family:"Courier New"'>:<span style='mso-tab-count:6'>                         </span>
+# doo will not be making any calls, no need to save <span class=SpellE>ra</span>
+on the stack<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class=GramE>ret</span><span style='mso-tab-count:3'>              </span>
+# just return to whoever called <o:p></o:p></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>The first two instructions push on the stack the return
+address for the call to coo. The <b>return address </b>is the address of the
+instruction that follows the call in the calling function. We use the label
+“boo_ret1” to refer to this address which is the PC of the “call coo” plus 4.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class=SpellE><span class=GramE>subi</span></span> sp, sp,
+4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span
+style='mso-tab-count:2'>                 </span><span style='font-family:Wingdings'>&agrave;</span>
+make space on the stack for a word</p>
+
+<p class=MsoNormal>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class=SpellE><span class=GramE>stw</span></span> <span class=SpellE>ra</span>,
+0(sp)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+style='mso-spacerun:yes'>   </span><span style='font-family:Wingdings'>&agrave;</span>
+save return address for boo onto stack</p>
+
+<p class=MsoNormal>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class=GramE>call</span>
+coo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style='font-family:Wingdings'>&agrave;</span> <span class=SpellE>ra</span>
+= PC + 4, PC = coo, continue execution at coo</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span class=GramE>after</span> these instructions have been
+executed, the PC points to “coo” and the stack contains a single word element
+whose value is the address of the instruction that boo should return to
+eventually.&nbsp; In coo now, the first two instructions push onto the stack
+the return address for coo, which in this case is boo_ret1; when coo returns
+execution should continue immediately after the “call coo”. So, at this stage,
+the stack contains two words. At the top of the stack is the return address for
+coo. After it is the return address for boo.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Since doo does not call any other routines, it does not need
+to save the “<span class=SpellE>ra</span>” on the stack.<span
+style='mso-spacerun:yes'>  </span>It can simply return to whoever called it. To
+do this, “doo” uses a “<span class=SpellE>jmp</span> <span class=SpellE>ra</span>”
+to resume execution at that address. </p>
+
+<p class=MsoNormal>Once doo returns, the PC will point to <span class=SpellE>coo_ret</span>.
+The instruction sequence starting at <span class=SpellE>coo_ret</span> pops the
+saved return address for coo and then returns to it. Specifically:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span class=SpellE><span
+class=GramE>ldw</span></span> <span class=SpellE>ra</span>, 0(sp)<span
+style='mso-tab-count:2'>                </span><span style='font-family:Wingdings;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman";
+mso-char-type:symbol;mso-symbol-font-family:Wingdings'><span style='mso-char-type:
+symbol;mso-symbol-font-family:Wingdings'>&agrave;</span></span> restore <span
+class=SpellE>ra</span> from the stack, <span class=SpellE>ra</span> becomes
+boo_ret1.</p>
+
+<p class=MsoNormal style='margin-left:.5in'><span class=GramE>add</span> sp,
+sp, 4<span style='mso-tab-count:2'>                </span><span
+style='font-family:Wingdings;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:
+Wingdings'><span style='mso-char-type:symbol;mso-symbol-font-family:Wingdings'>&agrave;</span></span>
+adjust the stack (value popped)</p>
+
+<p class=MsoNormal style='margin-left:.5in'><span class=SpellE><span
+class=GramE>jmp</span></span> <span class=SpellE>ra</span><span
+style='mso-tab-count:3'>                          </span><span
+style='font-family:Wingdings;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:
+Wingdings'><span style='mso-char-type:symbol;mso-symbol-font-family:Wingdings'>&agrave;</span></span>
+return to boo at address <span class=SpellE>boo_ret</span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Back in boo, we then call doo. This changes the PC to point
+to doo while <span class=SpellE>ra</span> becomes boo_ret2 which is the address
+of the “call doo” plus four. Doo again uses <span class=SpellE>ra</span> to
+return to whoever called it. After doo returns, we go to boo_ret1. Finally, boo
+pops the saved return value from the stack and returns to whichever function
+called it.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Notice that while the first time doo was called the return
+address was pointing in coo, during the second call to doo the return is in
+boo. Also note that while boo called coo, coo was able to call doo. The stack
+thus allowed us to implement nested calls and have each one of them return
+appropriately. </p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Here’s how the particular code compiles with the DE2
+compiler. <b style='mso-bidi-font-weight:normal'>In this example, I used “<span
+class=SpellE>jmp</span> <span class=SpellE>ra</span>” instead of “ret” which is
+equivalent -- in retrospect it would have been better to stick to ret however I
+realized that after I put in the work of creating the <span class=GramE>images </span></b><b
+style='mso-bidi-font-weight:normal'><span style='font-family:Wingdings;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman";
+mso-char-type:symbol;mso-symbol-font-family:Wingdings'><span style='mso-char-type:
+symbol;mso-symbol-font-family:Wingdings'>L</span></span>. In addition, this
+code uses <span class=SpellE>ldwio</span> and <span class=SpellE>stwio</span>
+instead of <span class=SpellE>ldw</span> and <span class=SpellE>stw</span>
+respectively. The code was written for an earlier version of the system we are
+currently using where the use of <span class=SpellE>ldwio</span> and <span
+class=SpellE>stwio</span> was necessary. <span class=SpellE>Ldwio</span> and <span
+class=SpellE>stwio</span> are identical to <span class=SpellE>ldw</span> and <span
+class=SpellE>stw</span> except when the system employs caches. We’ll talk about
+caches much later on. For the time being assume that they are the same.<o:p></o:p></b></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>01000000
+&lt;boo&gt;:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-spacerun:yes'> </span>1000000:<span style='mso-spacerun:yes'>      
+</span>deffff04<span style='mso-spacerun:yes'>        </span><span
+class=SpellE>addi</span><span style='mso-spacerun:yes'>    </span>sp<span
+class=GramE>,sp</span>,-4<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-spacerun:yes'> </span>1000004:<span style='mso-spacerun:yes'>      
+</span>dfc00035<span style='mso-spacerun:yes'>        </span><span
+class=SpellE>stw</span><span style='mso-spacerun:yes'>   </span>ra<span
+class=GramE>,0</span>(sp)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-spacerun:yes'> </span>1000008:<span style='mso-spacerun:yes'>      
+</span>100001c0<span style='mso-spacerun:yes'>        </span>call<span
+style='mso-spacerun:yes'>    </span>100001c &lt;coo&gt;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>0100000c
+&lt;boo_ret1&gt;:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-spacerun:yes'> </span>100000c:<span style='mso-spacerun:yes'>      
+</span>10000340<span style='mso-spacerun:yes'>        </span>call<span
+style='mso-spacerun:yes'>    </span>1000034 &lt;doo&gt;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>01000010
+&lt;boo_ret2&gt;:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-spacerun:yes'> </span>1000010:<span style='mso-spacerun:yes'>      
+</span>dfc00037<span style='mso-spacerun:yes'>        </span><span
+class=SpellE>ldw</span><span style='mso-spacerun:yes'>   </span>ra<span
+class=GramE>,0</span>(sp)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-spacerun:yes'> </span>1000014:<span style='mso-spacerun:yes'>      
+</span>dec00104<span style='mso-spacerun:yes'>  </span><span
+style='mso-spacerun:yes'>      </span><span class=SpellE>addi</span><span
+style='mso-spacerun:yes'>    </span>sp<span class=GramE>,sp,4</span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-spacerun:yes'> </span>1000018:<span style='mso-spacerun:yes'>      
+</span>f800683a<span style='mso-spacerun:yes'>        </span><span
+class=SpellE>jmp</span><span style='mso-spacerun:yes'>     </span><span
+class=SpellE>ra</span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>0100001c
+&lt;coo&gt;:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-spacerun:yes'> </span>100001c:<span style='mso-spacerun:yes'>      
+</span>deffff04<span style='mso-spacerun:yes'>        </span><span
+class=SpellE>addi</span><span style='mso-spacerun:yes'>    </span>sp<span
+class=GramE>,sp</span>,-4<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-spacerun:yes'> </span>1000020:<span style='mso-spacerun:yes'>      
+</span>dfc00035<span style='mso-spacerun:yes'>        </span><span
+class=SpellE>stw</span><span style='mso-spacerun:yes'>   </span>ra<span
+class=GramE>,0</span>(sp)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-spacerun:yes'> </span>1000024:<span style='mso-spacerun:yes'>      
+</span>10000340<span style='mso-spacerun:yes'>        </span>call<span
+style='mso-spacerun:yes'>    </span>1000034 &lt;doo&gt;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>01000028 &lt;<span
+class=SpellE>coo_ret</span>&gt;:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-spacerun:yes'> </span>1000028:<span style='mso-spacerun:yes'>      
+</span>dfc00037<span style='mso-spacerun:yes'>        </span><span
+class=SpellE>ldw</span><span style='mso-spacerun:yes'>   </span>ra<span
+class=GramE>,0</span>(sp)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-spacerun:yes'> </span>100002c:<span style='mso-spacerun:yes'>      
+</span>dec00104<span style='mso-spacerun:yes'>        </span><span
+class=SpellE>addi</span><span style='mso-spacerun:yes'>    </span>sp<span
+class=GramE>,sp,4</span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-spacerun:yes'> </span>1000030:<span style='mso-spacerun:yes'>      
+</span>f800683a<span style='mso-spacerun:yes'>        </span><span
+class=SpellE>jmp</span><span style='mso-spacerun:yes'>     </span><span
+class=SpellE>ra</span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>01000034
+&lt;doo&gt;:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-spacerun:yes'> </span>1000034:<span style='mso-spacerun:yes'>      
+</span>f800683a<span style='mso-spacerun:yes'>        </span><span
+class=SpellE>jmp</span><span style='mso-spacerun:yes'>     </span><span
+class=SpellE>ra</span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>Here’s how the code
+executes step-by-step on DE2. In this example, we assume that when boo is
+called <span class=SpellE>ra</span> holds the value 0x1000068, this is the
+return address for <span class=GramE>boo(</span>). We also assume that the
+stack initially points to 0x20000c. This is not the actual value used on DE2
+but it does not matter. The point is that as long as the stack does not
+overflow into .data or .text the code will work independently of where the
+stack actually is.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:480;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=716 valign=top style='width:537.3pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><st1:place w:st="on"><st1:PlaceName w:st="on"><b
+    style='mso-bidi-font-weight:normal'><span style='font-family:"Courier New"'>Initial</span></b></st1:PlaceName><b
+   style='mso-bidi-font-weight:normal'><span style='font-family:"Courier New"'>
+   <st1:PlaceType w:st="on">State</st1:PlaceType></span></b></st1:place><b
+  style='mso-bidi-font-weight:normal'><span style='font-family:"Courier New"'>:<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=716 valign=top style='width:537.3pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New";mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+   id="Picture_x0020_3" o:spid="_x0000_i1040" type="#_x0000_t75" alt="Slide1"
+   style='width:507pt;height:380.25pt;visibility:visible;mso-wrap-style:square'>
+   <v:imagedata src="lec9%20-%20subroutines_files/image007.gif" o:title="Slide1"/>
+  </v:shape><![endif]--><![if !vml]><img width=676 height=507
+  src="lec9%20-%20subroutines_files/image008.jpg" alt=Slide1 v:shapes="Picture_x0020_3"><![endif]></span><span
+  style='font-family:"Courier New"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=716 valign=top style='width:537.3pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=716 valign=top style='width:537.3pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>After the first
+  instruction executes:<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td width=716 valign=top style='width:537.3pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New";mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+   id="Picture_x0020_4" o:spid="_x0000_i1039" type="#_x0000_t75" alt="Slide2"
+   style='width:516.75pt;height:387.75pt;visibility:visible;mso-wrap-style:square'>
+   <v:imagedata src="lec9%20-%20subroutines_files/image009.gif" o:title="Slide2"/>
+  </v:shape><![endif]--><![if !vml]><img width=689 height=517
+  src="lec9%20-%20subroutines_files/image010.jpg" alt=Slide2 v:shapes="Picture_x0020_4"><![endif]></span><span
+  style='font-family:"Courier New"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td width=716 valign=top style='width:537.3pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>After the third
+  instruction executes.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6'>
+  <td width=716 valign=top style='width:537.3pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New";mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+   id="Picture_x0020_5" o:spid="_x0000_i1038" type="#_x0000_t75" alt="Slide4"
+   style='width:516.75pt;height:387.75pt;visibility:visible;mso-wrap-style:square'>
+   <v:imagedata src="lec9%20-%20subroutines_files/image011.gif" o:title="Slide4"/>
+  </v:shape><![endif]--><![if !vml]><img width=689 height=517
+  src="lec9%20-%20subroutines_files/image012.jpg" alt=Slide4 v:shapes="Picture_x0020_5"><![endif]></span><span
+  style='font-family:"Courier New"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7'>
+  <td width=716 valign=top style='width:537.3pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New";mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+   id="Picture_x0020_6" o:spid="_x0000_i1037" type="#_x0000_t75" alt="Slide5"
+   style='width:513pt;height:384.75pt;visibility:visible;mso-wrap-style:square'>
+   <v:imagedata src="lec9%20-%20subroutines_files/image013.gif" o:title="Slide5"/>
+  </v:shape><![endif]--><![if !vml]><img width=684 height=513
+  src="lec9%20-%20subroutines_files/image014.jpg" alt=Slide5 v:shapes="Picture_x0020_6"><![endif]></span><span
+  style='font-family:"Courier New"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8'>
+  <td width=716 valign=top style='width:537.3pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New";mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+   id="Picture_x0020_7" o:spid="_x0000_i1036" type="#_x0000_t75" alt="Slide6"
+   style='width:499.5pt;height:375pt;visibility:visible;mso-wrap-style:square'>
+   <v:imagedata src="lec9%20-%20subroutines_files/image015.gif" o:title="Slide6"/>
+  </v:shape><![endif]--><![if !vml]><img width=666 height=500
+  src="lec9%20-%20subroutines_files/image016.jpg" alt=Slide6 v:shapes="Picture_x0020_7"><![endif]></span><span
+  style='font-family:"Courier New"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9'>
+  <td width=716 valign=top style='width:537.3pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New";mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+   id="Picture_x0020_8" o:spid="_x0000_i1035" type="#_x0000_t75" alt="Slide7"
+   style='width:517.5pt;height:388.5pt;visibility:visible;mso-wrap-style:square'>
+   <v:imagedata src="lec9%20-%20subroutines_files/image017.gif" o:title="Slide7"/>
+  </v:shape><![endif]--><![if !vml]><img width=690 height=518
+  src="lec9%20-%20subroutines_files/image018.jpg" alt=Slide7 v:shapes="Picture_x0020_8"><![endif]></span><span
+  style='font-family:"Courier New"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:10'>
+  <td width=716 valign=top style='width:537.3pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New";mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+   id="Picture_x0020_9" o:spid="_x0000_i1034" type="#_x0000_t75" alt="Slide9"
+   style='width:514.5pt;height:386.25pt;visibility:visible;mso-wrap-style:square'>
+   <v:imagedata src="lec9%20-%20subroutines_files/image019.gif" o:title="Slide9"/>
+  </v:shape><![endif]--><![if !vml]><img width=686 height=515
+  src="lec9%20-%20subroutines_files/image020.jpg" alt=Slide9 v:shapes="Picture_x0020_9"><![endif]></span><span
+  style='font-family:"Courier New"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:11'>
+  <td width=716 valign=top style='width:537.3pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New";mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+   id="Picture_x0020_10" o:spid="_x0000_i1033" type="#_x0000_t75" alt="Slide10"
+   style='width:514.5pt;height:386.25pt;visibility:visible;mso-wrap-style:square'>
+   <v:imagedata src="lec9%20-%20subroutines_files/image021.gif" o:title="Slide10"/>
+  </v:shape><![endif]--><![if !vml]><img width=686 height=515
+  src="lec9%20-%20subroutines_files/image022.jpg" alt=Slide10 v:shapes="Picture_x0020_10"><![endif]></span><span
+  style='font-family:"Courier New"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:12'>
+  <td width=716 valign=top style='width:537.3pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New";mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+   id="Picture_x0020_11" o:spid="_x0000_i1032" type="#_x0000_t75" alt="Slide11"
+   style='width:514.5pt;height:386.25pt;visibility:visible;mso-wrap-style:square'>
+   <v:imagedata src="lec9%20-%20subroutines_files/image023.gif" o:title="Slide11"/>
+  </v:shape><![endif]--><![if !vml]><img width=686 height=515
+  src="lec9%20-%20subroutines_files/image024.jpg" alt=Slide11 v:shapes="Picture_x0020_11"><![endif]></span><span
+  style='font-family:"Courier New"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:13'>
+  <td width=716 valign=top style='width:537.3pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New";mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+   id="Picture_x0020_12" o:spid="_x0000_i1031" type="#_x0000_t75" alt="Slide12"
+   style='width:514.5pt;height:386.25pt;visibility:visible;mso-wrap-style:square'>
+   <v:imagedata src="lec9%20-%20subroutines_files/image025.gif" o:title="Slide12"/>
+  </v:shape><![endif]--><![if !vml]><img width=686 height=515
+  src="lec9%20-%20subroutines_files/image026.jpg" alt=Slide12 v:shapes="Picture_x0020_12"><![endif]></span><span
+  style='font-family:"Courier New"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:14'>
+  <td width=716 valign=top style='width:537.3pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New";mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+   id="Picture_x0020_13" o:spid="_x0000_i1030" type="#_x0000_t75" alt="Slide13"
+   style='width:521.25pt;height:390.75pt;visibility:visible;mso-wrap-style:square'>
+   <v:imagedata src="lec9%20-%20subroutines_files/image027.gif" o:title="Slide13"/>
+  </v:shape><![endif]--><![if !vml]><img width=695 height=521
+  src="lec9%20-%20subroutines_files/image028.jpg" alt=Slide13 v:shapes="Picture_x0020_13"><![endif]></span><span
+  style='font-family:"Courier New"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:15'>
+  <td width=716 valign=top style='width:537.3pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New";mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+   id="Picture_x0020_14" o:spid="_x0000_i1029" type="#_x0000_t75" alt="call-example"
+   style='width:519.75pt;height:390pt;visibility:visible;mso-wrap-style:square'>
+   <v:imagedata src="lec9%20-%20subroutines_files/image029.gif" o:title="call-example"/>
+  </v:shape><![endif]--><![if !vml]><img width=693 height=520
+  src="lec9%20-%20subroutines_files/image030.jpg" alt=call-example v:shapes="Picture_x0020_14"><![endif]></span><span
+  style='font-family:"Courier New"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:16'>
+  <td width=716 valign=top style='width:537.3pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:17;mso-yfti-lastrow:yes'>
+  <td width=716 valign=top style='width:537.3pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New";mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+   id="Picture_x0020_15" o:spid="_x0000_i1028" type="#_x0000_t75" alt="Slide15"
+   style='width:526.5pt;height:394.5pt;visibility:visible;mso-wrap-style:square'>
+   <v:imagedata src="lec9%20-%20subroutines_files/image031.gif" o:title="Slide15"/>
+  </v:shape><![endif]--><![if !vml]><img width=702 height=526
+  src="lec9%20-%20subroutines_files/image032.jpg" alt=Slide15 v:shapes="Picture_x0020_15"><![endif]></span><span
+  style='font-family:"Courier New"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Limitations of the
+call instruction<o:p></o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal>In general, the “call” instruction accepts a label as the
+second argument. There limitations on how far the called function can be. Label
+is encoded in the call instruction using a 26-bit immediate. The actual target
+is calculated by multiplying that immediate by 4 (since each instruction is
+four bytes long) and by concatenating the upper 6 bits (bits 31 through 28)
+from the call’s PC. Here’s the encoding of the call instruction:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_16" o:spid="_x0000_i1027" type="#_x0000_t75" style='width:605.25pt;
+ height:60.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="lec9%20-%20subroutines_files/image033.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=807 height=81
+src="lec9%20-%20subroutines_files/image034.gif" v:shapes="Picture_x0020_16"><![endif]></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+</div>
+
+</body>
+
+</html>

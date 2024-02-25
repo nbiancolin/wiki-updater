@@ -1,0 +1,165 @@
+	.text
+	.align 2
+	.global strlen
+	.global strcpy
+	.global strcmp
+
+/*****************************************************************************
+	int strlen(char *s)
+
+	determines the length of the string s.
+	Returns the number of characters in the string before the '\0'.
+
+	pseudo-code:
+
+		length = 0;
+
+		while (*s != 0)
+		{
+		  length++;
+		  s++;
+		}
+
+
+*****************************************************************************/
+strlen:
+	# r4 = s
+	# length = 0
+	add	r2, r0, r0
+
+	# if (s == NULL) return 0;
+	# NULL is 0 in C
+	beq	r4, r0, done0
+	
+	# while (*s != 0) 
+L0:
+	ldb r5, 0(r4)
+	beq	r5, r0, done0	
+
+	# length++
+	addi	r2, r2, 1
+	
+	# s++
+	addi	r4, r4, 1
+	br 	L0
+	
+done0:
+	ret
+
+
+
+/*****************************************************************************
+
+	 char *strcpy(char *dest, const char *src);
+
+	The  strcpy() function copies the string pointed to be src
+       	(including the terminating `\0' character)  to  the  array
+       	pointed  to by dest.  The strings may not overlap, and the
+       	destination string dest must be large  enough  to  receive
+       	the copy.
+
+	The  strcpy()  function returns a pointer to
+        the destination string dest.
+
+
+	pseudo-code:
+		tmp = dest;
+
+		while (*src != 0)
+			*src++ = *dest ++;
+
+		*dest = 0;
+		return tmp;
+
+*****************************************************************************/
+
+
+
+strcpy:
+	# r4 = dest, r5 = src
+	# assume that both are non-NULL
+	# make a copy of dest so that we can return it
+	# we use r6, a caller saved register
+	add	r6, r5, r0
+
+
+L1:
+	# while (*src != 0) -- while we have not reached the terminating zero in src 
+	ldb	r2, 0(r5)
+	beq	r2, r0, done1	
+
+
+	# *dest = *src
+	# copy the character from src to dest
+	stb	r2, 0(r4)
+
+
+	# src++, dest++
+	# move on the next position
+	addi	r4, r4, 1
+	addi	r5, r5, 1
+	br	L1	
+
+	# terminate dest with a zero
+
+	stb	r0, 0(r4)
+	
+	# return the original value of dest
+	add	r2, r6, r0
+	
+	ret
+
+/*****************************************************************************
+
+	int strcmp(char *s1,char *s2)
+
+	compares the string s1 to the string s2. 
+	The function returns 0 if they are the same,
+	a number < 0 if s1 < s2,
+	a number > 0 if s1 > s2.
+
+
+	pseudo-code:
+
+		while (*s1 == *s2 && *s1 != 0 && *s2 != 0)
+		{
+		  s1++;
+		  s2++;
+		}
+
+		if (*s1 == *s2) return 0;	// we must have reached the 
+						// terminating zeroes
+
+		return (*s1 - *s2);
+
+*****************************************************************************/
+
+
+strcmp:
+	# r4 = s1
+	# r5 = s2
+
+	# assume that both strings are non-NULL
+	# while (*s1 == *s2 && *s1 != 0 && *s2 != 0) s1++, s2++;
+
+L2:
+	ldb	r6, 0(r4)
+	ldb	r7, 0(r5)
+	bne	r6, r7, done2
+	beq	r6, r0, done2
+	beq	r7, r0, done2
+
+	addi	r4, r4, 1
+	addi	r5, r5, 1
+	br	L2
+
+done2:
+	# if (*s1 == *s2) return 0;	
+	add	r2, r0, r0
+	beq	r6, r7, done3:
+
+	# return	*s1 - *s2 
+	sub	r2, r6, r7
+
+done3:
+	ret

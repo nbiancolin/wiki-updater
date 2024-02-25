@@ -1,0 +1,3134 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1253">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 15">
+<meta name=Originator content="Microsoft Word 15">
+<link rel=File-List href="lec10-subroutines-2_files/filelist.xml">
+<title>Lecture 2</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="place"/>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Name</o:Author>
+  <o:LastAuthor>Andreas Moshovos</o:LastAuthor>
+  <o:Revision>304</o:Revision>
+  <o:TotalTime>911</o:TotalTime>
+  <o:Created>2005-01-01T01:34:00Z</o:Created>
+  <o:LastSaved>2024-01-26T15:17:00Z</o:LastSaved>
+  <o:Pages>14</o:Pages>
+  <o:Words>2953</o:Words>
+  <o:Characters>16838</o:Characters>
+  <o:Company>Organization</o:Company>
+  <o:Lines>140</o:Lines>
+  <o:Paragraphs>39</o:Paragraphs>
+  <o:CharactersWithSpaces>19752</o:CharactersWithSpaces>
+  <o:Version>16.00</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<link rel=themeData href="lec10-subroutines-2_files/themedata.thmx">
+<link rel=colorSchemeMapping
+href="lec10-subroutines-2_files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:View>Print</w:View>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:DontVertAlignCellWithSp/>
+   <w:DontBreakConstrainedForcedTables/>
+   <w:DontVertAlignInTxbx/>
+   <w:Word11KerningPairs/>
+   <w:CachedColBalance/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" LatentStyleCount="376">
+  <w:LsdException Locked="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toc 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toc 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toc 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toc 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toc 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toc 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toc 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toc 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toc 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="header"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footer"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of figures"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope return"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="line number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="page number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="macro"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toa heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 5"/>
+  <w:LsdException Locked="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Closing"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Signature"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Message Header"/>
+  <w:LsdException Locked="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Salutation"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Date"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Note Heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Block Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="FollowedHyperlink"/>
+  <w:LsdException Locked="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Document Map"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Plain Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="E-mail Signature"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Top of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Bottom of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal (Web)"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Acronym"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Cite"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Code"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Definition"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Keyboard"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Preformatted"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Sample"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Typewriter"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Variable"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Table"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation subject"/>
+  <w:LsdException Locked="false" Priority="99" SemiHidden="true"
+   UnhideWhenUsed="true" Name="No List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Contemporary"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Elegant"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Professional"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 1"/>
+  <w:LsdException Locked="false" Priority="99" SemiHidden="true"
+   Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="99" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>
+  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>
+  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>
+  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>
+  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>
+  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>
+  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="99" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Mention"/>
+  <w:LsdException Locked="false" Priority="99" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Smart Hyperlink"/>
+  <w:LsdException Locked="false" Priority="99" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Hashtag"/>
+  <w:LsdException Locked="false" Priority="99" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Unresolved Mention"/>
+  <w:LsdException Locked="false" Priority="99" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Smart Link"/>
+ </w:LatentStyles>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:Batang;
+	panose-1:2 3 6 0 0 1 1 1 1 1;
+	mso-font-alt:Batang;
+	mso-font-charset:129;
+	mso-generic-font-family:auto;
+	mso-font-pitch:fixed;
+	mso-font-signature:1 151388160 16 0 524288 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:"\@Batang";
+	panose-1:2 3 6 0 0 1 1 1 1 1;
+	mso-font-charset:129;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-1342176593 1775729915 48 0 524447 0;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:-536869121 64767 1 0 415 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:Batang;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{mso-style-noshow:yes;
+	mso-style-link:"Plain Text Char";
+	margin:0in;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:Batang;}
+p.msonormal0, li.msonormal0, div.msonormal0
+	{mso-style-name:msonormal;
+	mso-style-unhide:no;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;}
+span.PlainTextChar
+	{mso-style-name:"Plain Text Char";
+	mso-style-noshow:yes;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Plain Text";
+	mso-ansi-font-size:10.5pt;
+	mso-bidi-font-size:10.5pt;
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-fareast-font-family:Batang;
+	mso-hansi-font-family:Consolas;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:10.0pt;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 65.95pt 1.0in 65.95pt;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:475611113;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1496376064 -1629061144 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l0:level1
+	{mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;}
+@list l0:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman",serif;}
+table.MsoTableGrid
+	{mso-style-name:"Table Grid";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-unhide:no;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0in;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman",serif;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US style='tab-interval:.5in;word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal>Andreas Moshovos</p>
+
+<p class=MsoNormal>Fall 2007, Corrections Jan 2024</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Subroutines
+Continued: Passing Arguments, Returning Values and Allocating Local Variables<o:p></o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal>Thus far we have seen the mechanisms via which a subroutine can
+be called and return to its caller. In this lecture we will be looking at the
+mechanisms that are used for passing arguments and for returning a value.
+Please keep in mind that what we present is the calling convention used by the
+popular GNU gcc compiler for the NIOS II processor family.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>For clarity, we will assume that all arguments and values
+returned are words, i.e., 32 bits. You can use the gcc compiler to see how
+other datatypes are passed including aggregate ones (structures).</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Let us first ignore local variables and instead focus on
+parameter passing and return values.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>In this calling convention the return value is returned into
+register r2. The first four parameters are passed respectively in registers r4,
+r5, r6, and r7. Additional parameters are passed through the stack in order, so
+that <b style='mso-bidi-font-weight:normal'><span style='color:red'>the fifth
+parameter </span></b>is on the top of the stack prior to calling the function.
+Here are a couple of examples to clarify things where we show functions and
+where do they expect to find their arguments and where they return their value.
+The last column shows how to call the function. We will clarify this later in
+the lecture so you may ignore it if you find it confusing at first.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:480;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=298 valign=top style='width:223.8pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>C Code<o:p></o:p></b></p>
+  </td>
+  <td width=256 valign=top style='width:191.65pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Explanation<o:p></o:p></b></p>
+  </td>
+  <td width=232 valign=top style='width:173.75pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Assembly code<o:p></o:p></b></p>
+  </td>
+  <td width=217 valign=top style='width:163.0pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>How to call passing
+  1, 2, 3, … as arguments. Code assumes that space has been pre-allocated on
+  the stack<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=298 valign=top style='width:223.8pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>int add0(void)<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>{<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>   </span>return 0;<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>}<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=256 valign=top style='width:191.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>This function takes no arguments, it will return the value
+  into register r2.</p>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=232 valign=top style='width:173.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>add0:<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>add r2, r0, r0<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>ret<o:p></o:p></span></p>
+  </td>
+  <td width=217 valign=top style='width:163.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>call add0<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=298 valign=top style='width:223.8pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>int add1(int a)<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>{<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>   </span>return a + 10;<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>}<o:p></o:p></span></p>
+  </td>
+  <td width=256 valign=top style='width:191.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>This function takes a single argument “a”, which it
+  expects to find in register r4. It will return the value in r2.</p>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=232 valign=top style='width:173.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>add1:<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>addi r2, r4, 10<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>ret<o:p></o:p></span></p>
+  </td>
+  <td width=217 valign=top style='width:163.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>movi r4, 1<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>call add1<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=298 valign=top style='width:223.8pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>int add2(int a,
+  int b)<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>{<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>    </span>return a + b;<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>}<o:p></o:p></span></p>
+  </td>
+  <td width=256 valign=top style='width:191.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>It expects “a” to be in r4, and “b” in r5. It returns the
+  sum in r2.</p>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=232 valign=top style='width:173.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>add2:<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>add r2, r4, r5<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>ret<o:p></o:p></span></p>
+  </td>
+  <td width=217 valign=top style='width:163.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>movi r4, 1<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>movi r5, 2<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>call add2<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td width=298 valign=top style='width:223.8pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>int add3(int a,
+  int b, int c)<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>{<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>   </span>return a + b + c;<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>}<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=256 valign=top style='width:191.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>It expects “a” to be in r4, “b” in r5, and “c” in r6. It
+  returns the sum in r2.</p>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=232 valign=top style='width:173.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>add3:<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>add r2, r4, r5<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>add r2, r2, r6<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>ret<o:p></o:p></span></p>
+  </td>
+  <td width=217 valign=top style='width:163.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>movi r4, 1<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>movi r5, 2<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>movi r6, 3<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>call add3<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td width=298 valign=top style='width:223.8pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>int add4(int a,
+  int b, int c, int d)<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>{<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>   </span>return a + b + c + d;<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>}<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=256 valign=top style='width:191.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>It expects “a” to be in r4, “b” in r5, “c” in r6, and “d”
+  in r7. It returns the sum in r2.</p>
+  </td>
+  <td width=232 valign=top style='width:173.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>add4:<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>add r2, r4, r5<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>add r2, r2, r6<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>add r2, r2, r7<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>ret<o:p></o:p></span></p>
+  </td>
+  <td width=217 valign=top style='width:163.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>movi r4, 1<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>movi r5, 2<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>movi r6, 3<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>movi r7, 4<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>call add4<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6'>
+  <td width=298 valign=top style='width:223.8pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>int add5(int a,
+  int b, int c, int d, int e)<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>{<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>   </span>return a + b + c + d + e;<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>}<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=256 valign=top style='width:191.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>It expects “a” to be in r4, “b” in r5, “c” in r6, and “d” in
+  r7. It expects “e” to be on top of the stack. It can access “e” via a “ldw
+  __, 0(sp)” where “__” is a register (for example, r9). It returns the sum in
+  r2.</p>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=232 valign=top style='width:173.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>add5:<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>add r2, r4, r5<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>add r2, r2, r6<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>add r2, r2, r7<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>ldw r7, 0(sp) <o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>add r2, r2, r7<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>ret<o:p></o:p></span></p>
+  </td>
+  <td width=217 valign=top style='width:163.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>movi r4, 1<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>movi r5, 2<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>movi r6, 3<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>movi r7, 4<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>movi r2, 5<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>stw r2, 0(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>call add5<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7'>
+  <td width=298 valign=top style='width:223.8pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>int add6(int a,
+  int b, int c, int d, int e, int f)<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>{<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>   </span>return a + b + c + d + e + f;<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>}<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=256 valign=top style='width:191.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>It expects “a” to be in r4, “b” in r5, “c” in r6, and “d”
+  in r7. It expects “e” to be on top of the stack. It can access “e” via a “ldw
+  __, 0(sp)” where “__” is a register (for example, r9). It expects “f” to be
+  the second element of the stack. It can access “f” via a “ldw __, 4(sp)”. It
+  returns the sum in r2.</p>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=232 valign=top style='width:173.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>add6:<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>add r2, r4, r5<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>add r2, r2, r6<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>add r2, r2, r7<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>ldw r7, 0(sp) <o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>add r2, r2, r7 <o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>ldw r7, 4(sp) <o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>add r2, r2, r7<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>ret<o:p></o:p></span></p>
+  </td>
+  <td width=217 valign=top style='width:163.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>movi r4, 1<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>movi r5, 2<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>movi r6, 3<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>movi r7, 4<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>movi r2, 5<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>stw r2, 0(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>movi r2, 6<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>stw r2, 4(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>call add6<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8;mso-yfti-lastrow:yes'>
+  <td width=298 valign=top style='width:223.8pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>int add7(int a,
+  int b, int c, int d, int e, int f, int g)<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>{<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>   </span>return a + b + c + d + e + f + g;<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>}<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=256 valign=top style='width:191.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>It expects “a” to be in r4, “b” in r5, “c” in r6, and “d”
+  in r7. It expects “e” to be on top of the stack. It can access “e” via a “ldw
+  __, 0(sp)” where “__” is a register (for example, r9). It expects “f” to be
+  the second element of the stack. It can access “f” via a “ldw __, 4(sp)”. It
+  expects “g” to be the third element of the stack. It can access “g” via a
+  “ldw __, 8(sp)”. It returns the sum in r2.</p>
+  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=232 valign=top style='width:173.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>add7:<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>add r2, r4, r5<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>add r2, r2, r6<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>add r2, r2, r7<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>ldw r7, 0(sp) <o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>add r2, r2, r7 <o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>ldw r7, 4(sp) <o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>add r2, r2, r7<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>ldw r7, 8(sp) <o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>add r2, r2, r7<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>ret<o:p></o:p></span></p>
+  </td>
+  <td width=217 valign=top style='width:163.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>movi r4, 1<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>movi r5, 2<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>movi r6, 3<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>movi r7, 4<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>movi r2, 5<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>stw r2, 0(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>movi r2, 6<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>stw r2, 4(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>movi r2, 7<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>stw r2, 8(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>call add7<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>The code for performing a call generally will consist of the
+following four sections (shown underlined):</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Caller<span
+style='mso-tab-count:3'>                         </span>Callee<o:p></o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal>…<span style='mso-tab-count:3'>                                </span><u>prologue</u></p>
+
+<p class=MsoNormal><u>pre-call</u><span style='mso-tab-count:2'>                        </span><b
+style='mso-bidi-font-weight:normal'>main body</b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>call callee</b><span
+style='mso-tab-count:2'>                   </span><u>epilogue</u></p>
+
+<p class=MsoNormal><u>post-call</u><span style='mso-tab-count:2'>                      </span><b
+style='mso-bidi-font-weight:normal'>ret<o:p></o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>…<o:p></o:p></b></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Pre-Call: </b>Prior
+to making the call, the caller we will have to take some actions.<span
+style='mso-spacerun:yes'>  </span>In particular, it must write the appropriate
+values into the registers for the first four parameters if any. It then needs
+to push on the stack any other parameters. Parameters five and higher are
+pushed onto the stack in order. <b style='mso-bidi-font-weight:normal'><span
+style='color:red'>That is, we first push onto the stack the last parameter,
+then the previous to last and so on until we last push the 5th parameter. <o:p></o:p></span></b></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Post-Call: </b>After
+the call, the caller must de-allocate the stack space it allocated in the
+pre-call section for passing arguments, if any.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Prologue: </b>In this
+section the callee will be allocating space for local variables and will be
+taking appropriate actions for preserving those register values that it should
+not change such as the return address register. We will revisit this later on.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Epilogue: </b>In this
+section, the callee will be reversing all actions that took place in the
+prologue. We will expand on this later on.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Let’s see an example:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>int add3 (int a, int
+b, int c)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>{<span
+style='mso-spacerun:yes'>  </span>return a + b + c;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>int sum = 0;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>main()<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>{<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:6.0pt'><span style='font-family:"Courier New"'>sum
++= add3 (1, 2, 3);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal>Here’s the code for main:</p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>.data<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>sum:<span
+style='mso-tab-count:1'> </span>.word 0<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>.text<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>main:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># push ra on the stack, main will be
+calling add3<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>addi<span style='mso-tab-count:1'> </span>sp,
+sp, -4<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>stw ra, 0(sp)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-family:"Courier New"'><span style='mso-tab-count:1'>     </span>#
+Pre-call section<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># pass the arguments<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>movi<span style='mso-tab-count:1'> </span>r4,
+1<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>movi<span style='mso-tab-count:1'> </span>r5,
+2<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>movi<span style='mso-tab-count:1'> </span>r6,
+3<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>movi<span style='mso-tab-count:1'> </span>r7,
+4<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>call<span style='mso-tab-count:1'> </span>add3<span
+style='mso-tab-count:2'>      </span>; call the subroutine<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-family:"Courier New"'><span style='mso-tab-count:1'>     </span>#
+post-call section<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>retadd:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># return value is in r2<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># nothing to do<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># load sum from memory add r2 to it and
+save back to memory<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>movia r9, sum<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>ldw r10, 0(r9)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>add<span style='mso-tab-count:1'>  </span>r10,
+r10, r2<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>stw<span style='mso-spacerun:yes'> 
+</span>r10, 0(r9)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># restore return address from the stack<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>lwd ra, 0(sp)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>addi sp, sp, 4<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>ret<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:6.0pt'>Here’s the code for add3:</p>
+
+<p class=MsoNormal style='text-indent:6.0pt'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-indent:6.0pt'><span style='font-family:"Courier New"'>add3:<span
+style='mso-tab-count:1'>    </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:6.0pt'><span style='font-family:"Courier New"'><span
+style='mso-spacerun:yes'>    </span>add r2, r4, r5<span style='mso-tab-count:
+1'> </span>#<span style='mso-spacerun:yes'>  </span>add the first two
+parameters and store the sum in r2<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:6.0pt'><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>    </span>add r2, r2, r6<span style='mso-tab-count:
+1'> </span># add the third parameter to r2<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:6.0pt'><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>    </span>ret<span style='mso-tab-count:3'>            </span>#
+return to the caller<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:6.0pt'><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:6.0pt'>There are no prologue and epilogue
+sections in add3 since it has no local variables and since it does not change
+any registers other than d0.</p>
+
+<p class=MsoNormal style='text-indent:6.0pt'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-size:14.0pt'>A More Elaborate Example:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='text-indent:6.0pt'><b style='mso-bidi-font-weight:
+normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal>Now let see at a more elaborate example where main calls
+add7</p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>int add7 (int a, int
+b, int c, int d, int e, int f, int g)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>{<span
+style='mso-spacerun:yes'>  </span>return a + b + c + d + e + f + g;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>int sum = 0;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>main()<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>{<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:6.0pt'><span style='font-family:"Courier New"'>sum
++= add7 (1, 2, 3, 4, 5, 6, 7);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Here’s the code for main:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>.data<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>sum:<span
+style='mso-tab-count:1'> </span>.word 0<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>.text<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>main:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># push ra on the stack, main will be
+calling add3<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>addi<span style='mso-tab-count:1'> </span>sp,
+sp, -4<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>stw ra, 0(sp)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-family:"Courier New"'><span style='mso-tab-count:1'>     </span>#
+Pre-call section<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># pass the arguments<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>movi<span style='mso-tab-count:1'> </span>r4,
+1<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>movi<span style='mso-tab-count:1'> </span>r5,
+2<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>movi<span style='mso-tab-count:1'> </span>r6,
+3<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>movi
+r7, 4<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New";color:blue'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># allocate space for arguments five through
+seven<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># Need space for 3 words, or 12 bytes<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>addi<span
+style='mso-tab-count:1'> </span>sp, sp, -12<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>#
+pass the fifth argument, it goes on the top of the stack<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>#
+we use r2 as a temporary<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>movi
+r2, 5<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>stw
+r2, 0(sp)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>#
+pass the sixth argument, it should be the second argument on the stack<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>#
+that is at distance plus four from the top of the stack<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>#
+we use r2 as a temporary<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>movi
+r2, 6<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>stw
+r2, 4(sp)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>#
+pass the seventh argument, it should be the third argument on the stack<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>#
+that is at distance plus eight from the top of the stack<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>#
+we use r2 as a temporary<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>movi
+r2, 7<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>stw
+r2, 8(sp)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>#
+call the subroutine<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>call
+add7<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-family:"Courier New"'><span style='mso-tab-count:1'>     </span>#
+post-call section<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>retadd:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># return value is in r2<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># adjust the stack by popping the three
+values<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>addi sp, sp, 12<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># load sum from memory add r2 to it and
+save back to memory<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>movia r9, sum<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>ldw r10, 0(r9)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>add<span style='mso-tab-count:1'>  </span>r10,
+r10, r2<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>stw<span style='mso-spacerun:yes'> 
+</span>r10, 0(r9)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># restore and pop the return address from
+the stack<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>lwdio ra, 0(sp)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>addi sp, sp, 4<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>ret<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:6.0pt'>Here’s the code for add7:</p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>add7:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-spacerun:yes'>      </span>add r2, r4, r5<span style='mso-tab-count:
+1'>     </span># add the first two arguments and place the sum into r2<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-spacerun:yes'>      </span>add r2, r2, r6<span style='mso-tab-count:
+1'>     </span># add the third argument to r2<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-spacerun:yes'>      </span>add r2, r2, r7<span style='mso-tab-count:
+1'>     </span># add the fourth argument to r2<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-spacerun:yes'>      </span>ldw r7, 0(sp) <span style='mso-tab-count:
+1'>     </span># read the fifth argument from the stack<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-spacerun:yes'>      </span>add r2, r2, r7 <span style='mso-tab-count:
+1'>    </span># add to r2<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-spacerun:yes'>      </span>ldw r7, 4(sp) <span style='mso-tab-count:
+1'>     </span># read the sixth argument from the stack<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-spacerun:yes'>      </span>add r2, r2, r7<span style='mso-tab-count:
+1'>     </span># add to r2<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-spacerun:yes'>      </span>ldw r7, 8(sp) <span style='mso-tab-count:
+1'>     </span># read the seventh argument from the stack<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-spacerun:yes'>      </span>add r2, r2, r7<span style='mso-tab-count:
+1'>     </span># add to r2<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:6.0pt'><span style='font-family:"Courier New"'><span
+style='mso-spacerun:yes'>     </span>ret<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:6.0pt'><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:6.0pt'><span style='font-family:"Courier New"'>Here’s
+how the stack looks like when add7 is called:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:6.0pt'><o:p>&nbsp;</o:p></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:480;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=70 valign=top style='width:52.2pt;border:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>sp </span><span
+  style='font-family:Wingdings;mso-ascii-font-family:"Courier New";mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";mso-char-type:symbol;
+  mso-symbol-font-family:Wingdings'><span style='mso-char-type:symbol;
+  mso-symbol-font-family:Wingdings'>&agrave;</span></span><span
+  style='font-family:"Courier New"'><o:p></o:p></span></p>
+  </td>
+  <td width=44 valign=top style='width:33.3pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>+0<o:p></o:p></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.5pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>5<sup>th</sup>
+  argument<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=70 valign=top style='width:52.2pt;border:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=44 valign=top style='width:33.3pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>+4<o:p></o:p></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>6<sup>th</sup> argument<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=70 valign=top style='width:52.2pt;border:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=44 valign=top style='width:33.3pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>+8<o:p></o:p></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>7<sup>th</sup>
+  argument<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=70 valign=top style='width:52.2pt;border:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=44 valign=top style='width:33.3pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>+12<o:p></o:p></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><st1:place w:st="on"><span style='font-family:"Courier New"'>Main</span></st1:place><span
+  style='font-family:"Courier New"'>’s saved return address<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;mso-yfti-lastrow:yes'>
+  <td width=70 valign=top style='width:52.2pt;border:none;background:#FFFF99;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=44 valign=top style='width:33.3pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;background:#FFFF99;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New";color:black;
+  mso-color-alt:windowtext'>+16</span><span style='font-family:"Courier New"'><o:p></o:p></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;background:#FFFF99;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-size:14.0pt'>Aggregating Stack Changes<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Going back to the code for main(), please notice that the adjustments
+to the stack have been highlighted in blue. Rather that adjusting the stack
+before and after each call, the code generated by GCC does the adjustments in
+the beginning of main. Specifically, the compile figures out what is the <b
+style='mso-bidi-font-weight:normal'>maximum space </b>that will be needed for
+the function and pre-allocates the space at the beginning. Focusing on
+parameter passing the maximum space needed is determined by the callee that has
+the maximum number of arguments.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>In the<span style='mso-spacerun:yes'>  </span>modified
+main() that follows please notice that there are only two adjustments made to
+the stack, one at the prologue and one at the epilogue. As a result, the
+relative index for the saved “ra” value was changed to +12. The stack frame
+looks as follows:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>After main is called but before any instruction in main
+executes:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:480;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width=50 valign=top style='width:37.8pt;border:none;background:#FFFF99;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>sp</span><span
+  style='font-family:Wingdings;mso-ascii-font-family:"Courier New";mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:black;mso-color-alt:
+  windowtext;mso-char-type:symbol;mso-symbol-font-family:Wingdings'><span
+  style='mso-char-type:symbol;mso-symbol-font-family:Wingdings'>&agrave;</span></span><span
+  style='font-family:"Courier New"'><o:p></o:p></span></p>
+  </td>
+  <td width=53 valign=top style='width:39.85pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;background:#FFFF99;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New";color:black;
+  mso-color-alt:windowtext'>+16</span><span style='font-family:"Courier New"'><o:p></o:p></span></p>
+  </td>
+  <td width=316 valign=top style='width:237.35pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;background:#FFFF99;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>After main executes its prolog</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:480;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=70 valign=top style='width:52.2pt;border:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>sp </span><span
+  style='font-family:Wingdings;mso-ascii-font-family:"Courier New";mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";mso-char-type:symbol;
+  mso-symbol-font-family:Wingdings'><span style='mso-char-type:symbol;
+  mso-symbol-font-family:Wingdings'>&agrave;</span></span><span
+  style='font-family:"Courier New"'><o:p></o:p></span></p>
+  </td>
+  <td width=44 valign=top style='width:33.3pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>+0<o:p></o:p></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.5pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>Used to pass the 5<sup>th</sup>
+  argument<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=70 valign=top style='width:52.2pt;border:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=44 valign=top style='width:33.3pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>+4<o:p></o:p></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>Used to pass the 6<sup>th</sup>
+  argument<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=70 valign=top style='width:52.2pt;border:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=44 valign=top style='width:33.3pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>+8<o:p></o:p></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>Used to pass the 7<sup>th</sup>
+  argument<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=70 valign=top style='width:52.2pt;border:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=44 valign=top style='width:33.3pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>+12<o:p></o:p></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>Saved return
+  address<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;mso-yfti-lastrow:yes'>
+  <td width=70 valign=top style='width:52.2pt;border:none;background:#FFFF99;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=44 valign=top style='width:33.3pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;background:#FFFF99;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New";color:black;
+  mso-color-alt:windowtext'>+16</span><span style='font-family:"Courier New"'><o:p></o:p></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;background:#FFFF99;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span style='text-transform:uppercase'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>.data<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>sum:<span
+style='mso-tab-count:1'> </span>.word 0<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>.text<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>main:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># <b style='mso-bidi-font-weight:normal'>PROLOG<o:p></o:p></b></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># create space on the stack for the return
+address and the three parameters that need to be<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># pushed on the stack. We need 16 bytes
+since we will be saving four words.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>addi<span style='mso-tab-count:1'> </span>sp,
+sp, -16<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># save the return address. This is the
+first word that should be pushed, so it ends up at <o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># the bottom of the stack. Ra now occupies
+the bytes at offsets +12 through +15.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>stw ra, 12(sp)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-family:"Courier New"'><span style='mso-tab-count:1'>     </span>#
+Pre-call section<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># pass the arguments<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>movi<span style='mso-tab-count:1'> </span>r4,
+1<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>movi<span style='mso-tab-count:1'> </span>r5,
+2<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>movi<span style='mso-tab-count:1'> </span>r6,
+3<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>movi
+r7, 4<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>#
+pass the fifth argument, it goes on the top of the stack<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>#
+we use r2 as a temporary<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>movi
+r2, 5<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>stw
+r2, 0(sp)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>#
+pass the sixth argument, it should be the second argument on the stack<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>#
+that is at distance plus four from the top of the stack<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>#
+we use r2 as a temporary<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>movi
+r2, 6<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>stw
+r2, 4(sp)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>#
+pass the seventh argument, it should be the third argument on the stack<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>#
+that is at distance plus eight from the top of the stack<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>#
+we use r2 as a temporary<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>movi
+r2, 7<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>stw
+r2, 8(sp)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>#
+call the subroutine<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>call
+add7<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-family:"Courier New"'><span style='mso-tab-count:1'>     </span>#
+post-call section<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>retadd:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># return value is in r2<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># load sum from memory add r2 to it and
+save back to memory<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>movia r9, sum<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>ldw r10, 0(r9)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>add<span style='mso-tab-count:1'>  </span>r10,
+r10, r2<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>stw<span style='mso-spacerun:yes'> 
+</span>r10, 0(r9)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span><b style='mso-bidi-font-weight:normal'>#
+EPILOGUE<o:p></o:p></b></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># restore and pop the return address from
+the stack<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>lwd ra, 12(sp)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># pop all values from the stack <o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>addi sp, sp, 16<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>ret<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:6.0pt'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-indent:6.0pt'>The portion of the stack the
+function allocates and uses is called the <b style='mso-bidi-font-weight:normal'>stack
+frame </b>for the function. We have seen that the stack frame contains:</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l0 level1 lfo2;
+tab-stops:list .75in'><![if !supportLists]><span style='mso-fareast-font-family:
+"Times New Roman"'><span style='mso-list:Ignore'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>The input parameters which were pushed by the
+calling function.</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l0 level1 lfo2;
+tab-stops:list .75in'><![if !supportLists]><span style='mso-fareast-font-family:
+"Times New Roman"'><span style='mso-list:Ignore'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>The saved return address if this function calls
+another one.</p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l0 level1 lfo2;
+tab-stops:list .75in'><![if !supportLists]><span style='mso-fareast-font-family:
+"Times New Roman"'><span style='mso-list:Ignore'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Space for input parameters for calling other
+functions.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>We’ll complete the description of the stack frame soon.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>As we noted in the beginning, we need to figure out what is
+the maximum space that will be needed on the stack. This is determined by the
+callee that has the maximum number of arguments amongst all functions that are
+being called from this one. Even if this is a variable argument function, every
+call to it has a specific number of arguments. See the following examples.
+Notice the constants used to adjust the stack and to save and restore the
+return address (shown in blue):</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:480;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=218 valign=top style='width:163.6pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Example code<o:p></o:p></b></p>
+  </td>
+  <td width=218 valign=top style='width:163.65pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Stack Allocation
+  Explanation<o:p></o:p></b></p>
+  </td>
+  <td width=218 valign=top style='width:163.65pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Prologue<o:p></o:p></b></p>
+  </td>
+  <td width=218 valign=top style='width:163.65pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Epilogue<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=218 valign=top style='width:163.6pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>main()<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>{<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>   </span>…<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>   </span>foo (1, 2, 3)<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>   </span>… <o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>   </span>boo (1, 2, 3, 4, 5, 6, 7, 8)<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>}<o:p></o:p></span></p>
+  </td>
+  <td width=218 valign=top style='width:163.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Boo has the maximum number of arguments</p>
+  <p class=MsoNormal>We’ll need to allocate space for 8-4=4 words on the stack for
+  arguments 5 through 8, and the return address. In total that’s five words, or
+  20 bytes.</p>
+  </td>
+  <td width=218 valign=top style='width:163.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>addi sp, sp, <span
+  style='color:blue'>-20</span><o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>stw ra, 16(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=218 valign=top style='width:163.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>ldw ra, <span
+  style='color:blue'>16</span>(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>addi sp, sp, <span
+  style='color:blue'>20</span><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;mso-yfti-lastrow:yes'>
+  <td width=218 valign=top style='width:163.6pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>main()<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>{<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>   </span>…<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>   </span>foo (1, 2, 3)<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>   </span>… <o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>   </span>printf (“%d %d %d %d %d”, 2, 3, 4, 5, 6)<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>}<o:p></o:p></span></p>
+  </td>
+  <td width=218 valign=top style='width:163.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Printf() takes 6 arguments (we will see that a string is
+  passed by passing its starting address as the parameter).</p>
+  <p class=MsoNormal>We need to allocate space for 6-4=2 arguments plus the
+  return address. That’s 4*3 = 12.</p>
+  </td>
+  <td width=218 valign=top style='width:163.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>addi sp, sp, <span
+  style='color:blue'>-12</span><o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>stw sp, <span
+  style='color:blue'>8</span>(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=218 valign=top style='width:163.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>ldw ra, <span
+  style='color:blue'>8</span>(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>addi sp, sp, <span
+  style='color:blue'>12</span><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='text-indent:6.0pt'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-size:14.0pt'>What happens to registers across calls? Callee- vs.
+Caller-Saved registers.<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal>In the previous example, the callee (add7) did not change
+any registers other than r2, and r4 through r7. The caller expects these
+registers to change as r2 is used to return a value and the others to pass
+arguments. What if add7 was using other registers? The convention says that
+registers r16 through r23, and registers r26, r27, and r28 should be preserved
+across a call. That is, the caller expects that when the callee returns, these
+registers will have the same values they had before the callee was called. If
+we read through this statement carefully we can see that it does not say that
+the registers should not change value while the callee executes. All we have to
+guarantee is that before returning to the caller the registers must be loaded
+with the original values. There are two ways of achieving this: (1) Do not
+touch a register at all, (2) Allow a register to change its value but remember
+what value it had prior to the call and restore that value prior to returning
+to the caller.<span style='mso-spacerun:yes'>  </span>For (2) we can do the
+following. In the subroutine prologue save on the stack the values of all those
+registers that the routine will change. In the epilogue restore the registers
+to their original values using those stored onto the stack. </p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>So registers that must be preserved across a call by the
+callee are called <b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>callee-saved </i></b>registers. </p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>While this is contrived example, let us assume that add7 was
+using register r16 to calculate the return value prior to writing it to r2. The
+modified code follows. Note that add7 first saves the value of r16 on the stack
+in the prologue and restores it in the epilogue. For this reason, the offsets
+of the parameters need to change. Notice that the fifth argument is now at
+offset +4 and not +0, the sixth at +8 and not +4 and the last at offset +12 and
+not +8 (offsets shown in blue):</p>
+
+<p class=MsoNormal><span style='mso-spacerun:yes'> </span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:480;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=327 valign=top style='width:245.45pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Original code that
+  uses r2 for the partial sum<o:p></o:p></b></p>
+  </td>
+  <td width=494 valign=top style='width:370.65pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Code that uses r16,
+  a callee-saved register<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td width=327 valign=top style='width:245.45pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>add7:<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>add r2, r4, r5<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>add r2, r2, r6<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>add r2, r2, r7<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>ldw r7, <b style='mso-bidi-font-weight:
+  normal'><span style='color:blue'>0</span></b>(sp) <o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>add r2, r2, r7 <o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>ldw r7, <b style='mso-bidi-font-weight:
+  normal'><span style='color:blue'>4</span></b>(sp) <o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>add r2, r2, r7<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>ldw r7, <b style='mso-bidi-font-weight:
+  normal'><span style='color:blue'>8</span></b>(sp) <o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>add r2, r2, r7<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>ret</span></p>
+  </td>
+  <td width=494 valign=top style='width:370.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>add7:<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span><b style='mso-bidi-font-weight:normal'>#
+  Prologue<o:p></o:p></b></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span># push r16’s value on the stack<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>addi sp, sp, 4<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>stw r16, 0(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span># add the first four arguments<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>add r16, r4, r5<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>add r16, r16, r6<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>add r16, r16, r7<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span># add arguments five through seven<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>ldw r7, <b style='mso-bidi-font-weight:
+  normal'><span style='color:blue'>4</span></b>(sp) <o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>add r16, r16, r7 <o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>ldw r7, <b style='mso-bidi-font-weight:
+  normal'><span style='color:blue'>8</span></b>(sp) <o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>add r16, r16, r7<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>ldw r7, <b style='mso-bidi-font-weight:
+  normal'><span style='color:blue'>12</span></b>(sp) <o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>add r2, r16, r7<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span><b style='mso-bidi-font-weight:normal'>#
+  Epilogue<o:p></o:p></b></span></p>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:"Courier New"'><span style='mso-spacerun:yes'>     
+  </span></span></b><span style='font-family:"Courier New"'># restore r16’s
+  original value<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>ldw r16, 0(sp)<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>addi sp, sp, 4<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span><o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><span
+  style='mso-spacerun:yes'>      </span>ret</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Notice that the prologue and epilogue sections are
+symmetric. One saves register values onto the stack and the other restore them.
+Restoring is typically done in the reverse order. For example, if we needed to
+save and restore registers r16, r17 and r18 we will use the following prologue
+and epilogue sections:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>prologue:<span style='mso-tab-count:1'> </span>addi
+sp, sp, 12<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:3'>               </span>stw r16, 0(sp)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:3'>               </span>stw r17, 4(sp)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:3'>               </span>stw r18, 8(sp)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>…<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>epilogue<span style='mso-tab-count:1'>  </span>ldw
+r18, 8(sp)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:3'>               </span>ldw r17, 4(sp)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:3'>               </span>ldw r18, 0(sp)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:3'>               </span>addi sp, sp, 12<o:p></o:p></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>There is a second class of registers in the calling
+convention. These are the <b style='mso-bidi-font-weight:normal'>caller-saved </b>registers.
+These are registers that are not guaranteed to maintain the value across a
+call. If the calling function needs these values to be preserved that it has to
+explicitly save them on the stack <i style='mso-bidi-font-style:normal'>prior </i>to
+the call (i.e., in the pre-call<i style='mso-bidi-font-style:normal'> </i>section),
+and then restore them from the stack <i style='mso-bidi-font-style:normal'>after
+</i>the call (i.e., in the post-call section). In NIOS II r8 through r15, and
+r2 through r7 are <i style='mso-bidi-font-style:normal'>caller-saved </i>registers.
+Notice that these include the return value and the argument passing registers
+since these are guaranteed to change whenever a function is called. </p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>In summary here are the register save/restore conventions
+for NIOS</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:480;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=327 valign=top style='width:245.45pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>CALLER-SAVED<o:p></o:p></b></p>
+  </td>
+  <td width=327 valign=top style='width:245.45pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>R8 through R15, R2 through R7</p>
+  </td>
+  <td width=327 valign=top style='width:245.45pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Save in pre-call / Restore in post-call</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td width=327 valign=top style='width:245.45pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>CALLEE-SAVED<o:p></o:p></b></p>
+  </td>
+  <td width=327 valign=top style='width:245.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>R16 through R23, R26 through R28</p>
+  </td>
+  <td width=327 valign=top style='width:245.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Save in prologue / Restore in epilogue</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>An example follows where we implement add6() by calling
+add2() three times. </p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>The equivalent C code for add6() is:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>int add6(int a, int
+b, int c, int d, int e, int f)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>{<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>int t;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>t = add2 (a, b);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span></span><span lang=DE style='font-family:
+"Courier New";mso-ansi-language:DE'>t += add2 (c, d);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=DE style='font-family:"Courier New";mso-ansi-language:
+DE'><span style='mso-tab-count:1'>     </span>t += add2 (e, f);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>return
+t;<br>
+}<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal>We will be using register r8 for “t”. R8 is a caller-saved
+register. Note that add6 () does not know whether add2()changes r8, hence it
+must preserved it value across the call.<span style='mso-spacerun:yes'> 
+</span>It must also save registers r6 and r7 which contain arguments “c” and
+“d”, since these may change during the first call to add2(). Here’s the
+assembly code for add6():</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Here’s how the stack frame looks before any instruction of
+add6() executes and after space is allocated in the prologue:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>When add6() is called
+but before any instruction executes in add6():<o:p></o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:480;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=70 valign=top style='width:52.2pt;border:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>sp </span><span
+  style='font-family:Wingdings;mso-ascii-font-family:"Courier New";mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";mso-char-type:symbol;
+  mso-symbol-font-family:Wingdings'><span style='mso-char-type:symbol;
+  mso-symbol-font-family:Wingdings'>&agrave;</span></span><span
+  style='font-family:"Courier New"'><o:p></o:p></span></p>
+  </td>
+  <td width=44 valign=top style='width:33.3pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>+0<o:p></o:p></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.5pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;background:#FFFF99;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New";color:black;
+  mso-color-alt:windowtext'>5<sup>th</sup> argument</span><span
+  style='font-family:"Courier New"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=70 valign=top style='width:52.2pt;border:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=44 valign=top style='width:33.3pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>+4<o:p></o:p></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;background:#FFFF99;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New";color:black;
+  mso-color-alt:windowtext'>6<sup>th</sup> argument</span><span
+  style='font-family:"Courier New"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;mso-yfti-lastrow:yes'>
+  <td width=70 valign=top style='width:52.2pt;border:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=44 valign=top style='width:33.3pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>+8<o:p></o:p></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;background:#FFFF99;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New";color:black;
+  mso-color-alt:windowtext'>Caller’s saved return address</span><span
+  style='font-family:"Courier New"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>After add6()
+allocates space on the stack:<o:p></o:p></b></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:480;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=70 valign=top style='width:52.2pt;border:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>sp </span><span
+  style='font-family:Wingdings;mso-ascii-font-family:"Courier New";mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";mso-char-type:symbol;
+  mso-symbol-font-family:Wingdings'><span style='mso-char-type:symbol;
+  mso-symbol-font-family:Wingdings'>&agrave;</span></span><span
+  style='font-family:"Courier New"'><o:p></o:p></span></p>
+  </td>
+  <td width=44 valign=top style='width:33.3pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>+0<o:p></o:p></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.5pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>to preserve r8<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=70 valign=top style='width:52.2pt;border:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=44 valign=top style='width:33.3pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>+4<o:p></o:p></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>to preserve r6<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=70 valign=top style='width:52.2pt;border:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=44 valign=top style='width:33.3pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>+8<o:p></o:p></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>To preserve r7<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=70 valign=top style='width:52.2pt;border:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=44 valign=top style='width:33.3pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>+12<o:p></o:p></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>add6’s return
+  address<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td width=70 valign=top style='width:52.2pt;border:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=44 valign=top style='width:33.3pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>+16<o:p></o:p></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;background:#FFFF99;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New";color:black;
+  mso-color-alt:windowtext'>5<sup>th</sup> argument</span><span
+  style='font-family:"Courier New"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td width=70 valign=top style='width:52.2pt;border:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=44 valign=top style='width:33.3pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>+20<o:p></o:p></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;background:#FFFF99;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New";color:black;
+  mso-color-alt:windowtext'>6<sup>th</sup> argument</span><span
+  style='font-family:"Courier New"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6;mso-yfti-lastrow:yes'>
+  <td width=70 valign=top style='width:52.2pt;border:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=44 valign=top style='width:33.3pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New"'>+24<o:p></o:p></span></p>
+  </td>
+  <td width=306 valign=top style='width:229.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;background:#FFFF99;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:"Courier New";color:black;
+  mso-color-alt:windowtext'>Caller’s saved return address</span><span
+  style='font-family:"Courier New"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>.text<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>add7:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># Prologue<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># allocate space for 4 words: we will be
+saving ra, r6, r7, and r8<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>addi sp, sp, 16<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># save ra<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>stw ra, 12(sp)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># pre-call section<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># save r7 and r6 prior to calling add2 for
+the first time<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>stw r7, 8(sp)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>stw r6, 4(sp)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># note that a and b are already in r4 and
+r5 so <o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>#
+that they can be used directly as the first and second arguments by add2<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>call add2<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># post-call section<span style='mso-tab-count:
+1'> </span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>ldw r6, 4(sp)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>ldw r7, 8(sp)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># t = return value of add2<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>add r8, r2, 0<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># pre-call section<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># save r8 on the stack<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>stw r8, 0(sp)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># pass c and d as the two parameters to
+add2 <o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>add r4, r6, r0<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>add r5, r7, r0<br style='mso-special-character:
+line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># we don’t need to preserve r6 and r7 since
+we don’t care for these values any more<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>call add2<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># post-call <o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># restore r8’s value<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>ldw r8, 0(sp)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>#
+t += return value<br>
+<span style='mso-tab-count:1'>     </span>add r8, r8, r2<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># pre-call section<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># save r8 on the stack<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>stw r8, 0(sp)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># pass e,f and g<span
+style='mso-spacerun:yes'>  </span>as the three parameters to add2 <o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># is now at offset +16, it was at offset +0
+before add6 allocated four words on the stack<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>ldw r4, 16(sp)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>ldw r5, 20(sp)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>call add2<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># post-call <o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># restore r8’s value<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>ldw r8, 0(sp)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>#
+add6’s return value = t + add2’s return value<br>
+<span style='mso-tab-count:1'>     </span>add r2, r8, r2<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># epilogue<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>ldw ra, 12(sp)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>addi sp, sp, 12<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span># done<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'><span
+style='mso-tab-count:1'>     </span>ret<o:p></o:p></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Local Variables? </b>Local
+variables can either be allocated in registers or on the stack immediately
+after the space allocated for preserving register values.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Stack Frame: </b>This
+term is used to refer to the stack space allocated per subroutine invocation.
+Based on our discussion the layout of a stack frame is as follows:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:480;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;height:32.8pt'>
+  <td width=299 valign=top style='width:223.95pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;
+  height:32.8pt'>
+  <p class=MsoNormal align=right style='text-align:right'>sp<span
+  style='font-family:Wingdings;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:
+  Wingdings'><span style='mso-char-type:symbol;mso-symbol-font-family:Wingdings'>&agrave;</span></span></p>
+  </td>
+  <td width=301 valign=top style='width:226.1pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:32.8pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:"Courier New"'>Local variables<o:p></o:p></span></p>
+  </td>
+  <td width=295 rowspan=3 valign=top style='width:221.25pt;border:none;
+  mso-border-left-alt:solid windowtext .5pt;background:#FFFF99;padding:0in 5.4pt 0in 5.4pt;
+  height:32.8pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:"Courier New";color:black;mso-color-alt:windowtext'>Allocated
+  by callee</span><span style='font-family:"Courier New"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;height:22.0pt'>
+  <td width=299 valign=top style='width:223.95pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;
+  height:22.0pt'>
+  <p class=MsoNormal align=right style='text-align:right'><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=301 valign=top style='width:226.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:22.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:"Courier New"'>Saved registers<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=299 valign=top style='width:223.95pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=right style='text-align:right'><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=301 valign=top style='width:226.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:"Courier New"'>Return address<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=299 valign=top style='width:223.95pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=right style='text-align:right'><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=301 valign=top style='width:226.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:"Courier New"'>Fifth Parameter<o:p></o:p></span></p>
+  </td>
+  <td width=295 rowspan=3 valign=top style='width:221.25pt;border:none;
+  mso-border-left-alt:solid windowtext .5pt;background:#CCFFCC;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:"Courier New";color:black;mso-color-alt:windowtext'>Allocated
+  by caller</span><span style='font-family:"Courier New"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td width=299 valign=top style='width:223.95pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=right style='text-align:right'><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=301 valign=top style='width:226.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:"Courier New"'>sixth Parameter<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5;mso-yfti-lastrow:yes;height:13.9pt'>
+  <td width=299 valign=top style='width:223.95pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;
+  height:13.9pt'>
+  <p class=MsoNormal align=right style='text-align:right'><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=301 valign=top style='width:226.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:13.9pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:"Courier New"'>…<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal align=right style='text-align:right'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=right style='text-align:right'><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>

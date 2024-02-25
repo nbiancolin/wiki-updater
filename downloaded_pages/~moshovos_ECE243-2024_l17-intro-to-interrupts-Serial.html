@@ -1,0 +1,2490 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1253">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 14">
+<meta name=Originator content="Microsoft Word 14">
+<link rel=File-List href="l17-intro-to-interrupts-Serial_files/filelist.xml">
+<title>Lecture 2</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="place"/>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="City"/>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Name</o:Author>
+  <o:LastAuthor>bongo</o:LastAuthor>
+  <o:Revision>194</o:Revision>
+  <o:TotalTime>591</o:TotalTime>
+  <o:LastPrinted>2010-02-10T20:51:00Z</o:LastPrinted>
+  <o:Created>2005-01-01T01:34:00Z</o:Created>
+  <o:LastSaved>2015-10-14T19:37:00Z</o:LastSaved>
+  <o:Pages>6</o:Pages>
+  <o:Words>4310</o:Words>
+  <o:Characters>20868</o:Characters>
+  <o:Company>Organization</o:Company>
+  <o:Lines>173</o:Lines>
+  <o:Paragraphs>50</o:Paragraphs>
+  <o:CharactersWithSpaces>25128</o:CharactersWithSpaces>
+  <o:Version>14.00</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<link rel=themeData href="l17-intro-to-interrupts-Serial_files/themedata.thmx">
+<link rel=colorSchemeMapping
+href="l17-intro-to-interrupts-Serial_files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>BestFit</w:Zoom>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:TrackMoves/>
+  <w:TrackFormatting/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:DontVertAlignCellWithSp/>
+   <w:DontBreakConstrainedForcedTables/>
+   <w:DontVertAlignInTxbx/>
+   <w:Word11KerningPairs/>
+   <w:CachedColBalance/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" LatentStyleCount="267">
+  <w:LsdException Locked="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="99" Name="No List"/>
+  <w:LsdException Locked="false" Priority="99" SemiHidden="true"
+   Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="99" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Batang;
+	panose-1:2 3 6 0 0 1 1 1 1 1;
+	mso-font-alt:Batang;
+	mso-font-charset:129;
+	mso-generic-font-family:auto;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:1 151388160 16 0 524288 0;}
+@font-face
+	{font-family:Batang;
+	panose-1:2 3 6 0 0 1 1 1 1 1;
+	mso-font-alt:Batang;
+	mso-font-charset:129;
+	mso-generic-font-family:auto;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:1 151388160 16 0 524288 0;}
+@font-face
+	{font-family:"\@Batang";
+	panose-1:2 3 6 0 0 1 1 1 1 1;
+	mso-font-charset:129;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-1342176593 1775729915 48 0 524447 0;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:-520092929 1073806591 9 0 415 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:Batang;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{mso-style-unhide:no;
+	mso-style-link:"Plain Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:Batang;}
+span.PlainTextChar
+	{mso-style-name:"Plain Text Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Plain Text";
+	mso-ansi-font-size:10.5pt;
+	mso-bidi-font-size:10.5pt;
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-fareast-font-family:Batang;
+	mso-hansi-font-family:Consolas;
+	mso-bidi-font-family:Consolas;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:10.0pt;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 65.95pt 1.0in 65.95pt;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:9071247;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1929250320 -471969160 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l0:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:50812066;
+	mso-list-type:hybrid;
+	mso-list-template-ids:403194906 -471969160 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l1:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2
+	{mso-list-id:92668893;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-854019194 -2100923078 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l2:level1
+	{mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;}
+@list l2:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3
+	{mso-list-id:457770837;
+	mso-list-type:hybrid;
+	mso-list-template-ids:879819590 1016510748 952824422 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l3:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4
+	{mso-list-id:1082990651;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-776307898 -5740834 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l4:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-weight:bold;}
+@list l4:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l5
+	{mso-list-id:1460611562;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1221885972 -471969160 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l5:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l5:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l5:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l5:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l5:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l5:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l5:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l5:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l5:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+table.MsoTableGrid
+	{mso-style-name:"Table Grid";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-unhide:no;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026">
+  <o:colormenu v:ext="edit" fillcolor="none" strokecolor="red"/>
+ </o:shapedefaults></xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US style='tab-interval:.5in'>
+
+<div class=WordSection1>
+
+<p class=MsoPlainText>Lecture 17</p>
+
+<p class=MsoPlainText>Andreas <span class=SpellE>Moshovos</span></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>Introduction to
+Interrupts/Exceptions: Using Interrupts with the JTAG UART<o:p></o:p></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText>In the previous lecture we saw a way to interface
+(programmatically) with the serial device. For this purpose we used “polling”, that
+is busy-waiting; any time we wanted to communicate with the serial device we
+had to first probe the status register to see if it is available (if we wanted
+to send a character) or whether a character has been received. We had to keep
+probing the status register until the desired condition was met. This is
+completely counter-productive as we consumed all our processing power just
+waiting. Moreover, while we have not seen a concrete example of this, it turns
+out that if we have to communicate with multiple devices, writing code that
+uses polling for all devices simultaneously is at the very least complicated
+and in some cases it will be virtually impossible. We use this discussion as a
+motivation for another way for communicating with devices called <b
+style='mso-bidi-font-weight:normal'>interrupts. </b>Interrupts are a very
+powerful mechanism that can be used to support multitasking, handling of
+exceptional conditions (i.e., unexpected results during calculation such as a
+division with zero or overflow), emulation of unimplemented (in hardware) instructions,
+single-step execution for debugging, and operating system calls/protection
+among others. So, while for the time we will focus on a very specific
+application of interrupts please keep in mind that this is just a stepping
+stone towards explaining the diverse applications of interrupts.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>(A note on terminology: the terms <b style='mso-bidi-font-weight:
+normal'>interrupt</b> and <b style='mso-bidi-font-weight:normal'>exception</b>
+are commonly used to refer to the same concept, often interrupts is used for
+external device induced requests whereas exception is used for interrupts that are
+caused by instruction execution. There is no common usage of these terms. Here,
+we will use the two terms interchangeably to refer to the same concept and we
+will not make an attempt to differentiate between external of program induced
+interrupts.)</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>As we have seen, polling is almost the equivalent of a
+real-life scenario where you hand-off to work to someone and then you keep
+bugging them all the time asking whether they are done. Interrupts on the other
+hand are quite different. When we hand-off some work to someone else we also
+ask them to let us know when they are done. This way we do not need to keep
+asking them all the time whether they are done. When the work is finished they
+will come back and notify us, and since we are talking about computers, we can
+rely on them: they will come back and tell us.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>Here’s a high-level view of the interrupt mechanism:</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]><span style='mso-fareast-font-family:
+"Courier New"'><span style='mso-list:Ignore'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]>Say the processor is executing instructions. </p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]><span style='mso-fareast-font-family:
+"Courier New"'><span style='mso-list:Ignore'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]>At some point in time, a device requests an
+interrupt.</p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]><span style='mso-fareast-font-family:
+"Courier New"'><span style='mso-list:Ignore'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]>Later on the processor decides to grant that request.
+This amounts to completing the execution of the current instruction and then <i
+style='mso-bidi-font-style:normal'>inducing </i>a call to a specialized routine
+that is called an interrupt handler. The call to the interrupt handler is also
+a special call in that it must save sufficient information so when eventually
+the interrupt handler finishes, the processor can resume executing instructions
+immediately after the instruction that finished prior to inducing the call to
+the interrupt handler. </p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>There are several requirements that must be met for
+interrupts to work.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo4;
+tab-stops:list .5in'><![if !supportLists]><span style='mso-fareast-font-family:
+"Courier New"'><span style='mso-list:Ignore'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]>We need a mechanism for devices to request
+interrupts.</p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo4;
+tab-stops:list .5in'><![if !supportLists]><span style='mso-fareast-font-family:
+"Courier New"'><span style='mso-list:Ignore'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]>We need a mechanism for inducing calls to the
+interrupt handler. </p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo4;
+tab-stops:list .5in'><![if !supportLists]><span style='mso-fareast-font-family:
+"Courier New"'><span style='mso-list:Ignore'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]>We need a mechanism to let the device know that
+its interrupt request was handled.</p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo4;
+tab-stops:list .5in'><![if !supportLists]><span style='mso-fareast-font-family:
+"Courier New"'><span style='mso-list:Ignore'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]>We need a way of determining where is the
+interrupt handler (that is where in memory its instructions reside).</p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo4;
+tab-stops:list .5in'><![if !supportLists]><span style='mso-fareast-font-family:
+"Courier New"'><span style='mso-list:Ignore'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]>We need a mechanism for saving and restoring all
+appropriate machine state (registers plus memory) that may be affected across
+an interrupt handler call.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>The solutions to all these requirements entail hardware
+units, software and several conventions that must be followed for everything to
+work as expected. In what follows we explain the NIOS II interrupt model. NIOS
+II’s interrupt model is simple and representative of that of many other
+load/store architectures that were designed after the mid-80’s (e.g., SPARC,
+MIPS, PowerPC). Other processor families have more elaborate models. Given time
+we may touch upon some of the more elaborate mechanisms.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>Let’s us first look at the requirements. </p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>REQUIREMENTS #1
+and #3: ASKING FOR AN INTERRUPT AND GRANTING THE REQUEST<o:p></o:p></b></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>The device asks for an interrupt, the processor grants
+that request at a convenient time and informs the device. One straightforward mechanism
+uses two wires at the physical level. One wire is directed from the device to
+the CPU (we can call it the Interrupt-Request - IRQ) whereas the second is
+directed from the CPU to the device (we can call it Interrupt-Granted or
+Interrupt-Acknowledge IACK). When the device wants to request an interrupt it
+asserts the interrupt-request signal. When the CPU grants the interrupt, it
+responds by asserting the Interrupt-Granted signal. This process of “asking”
+and “granting” is often called a <b style='mso-bidi-font-weight:normal'><u>hand-shake</u></b>.
+</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>REQUIREMENTS #2
+and #4: INDUCING A CALL TO THE INTERRUPT HANDLER – WHERE IS THE INTERRUPT
+HANDLER?<o:p></o:p></b></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>With these in place, we next consider covering
+requirement <span class=GramE>3, that</span> is how to induce a call to an
+interrupt handler. How do we know where in memory is the interrupt handler)?
+One straightforward solution to this would be to use a hardwired (i.e., decided
+at designed time and built into the CPU design) address. For example, we could
+have the interrupt handler to be at address 0x90000 for all interrupt requests.
+In fact, some CPUs, including NIOS II, do exactly that. So, all external
+devices share a common interrupt handler. The interrupt handler then probes all
+appropriate devices to figure out which device actually requested the
+interrupt. This probing is done in software. Inducing a call to the interrupt
+handler is straightforward: change the PC to the interrupt handler’s start
+address (0x90000 in our example) after we have saved somewhere (e.g., on the
+stack) the current value of the PC so that we can return back to it once the
+interrupt handler has finished.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>REQUIREMENT #5:
+SAVING/RESTORING STATE<o:p></o:p></b></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>As an interrupt appears to be just like a call we can
+always use the stack to save and restore state as needed. This can be done
+automatically by the hardware or we can simply rely on software. There may be
+odd bits of state that have to be stored depending on the implementation. These
+may require special hardware support. We’ll return to this discussion with the
+specific case of NIOS II.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>HOW NIOS II MEETS
+THE 5 REQUIREMENTS<o:p></o:p></b></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>With this high-level understanding of a straightforward
+solution for the aforementioned requirements we can now start discussing the
+way NIOS II handles these requirements. </p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l4 level1 lfo6;
+tab-stops:list .5in'><![if !supportLists]><b style='mso-bidi-font-weight:normal'><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><b
+style='mso-bidi-font-weight:normal'>How Devices Request Interrupts: </b>Instead
+of just one interrupt request wire, NIOS II provides 32, IRQ0 through IRQ31.
+These request lines are not prioritized in hardware and thus they all have
+equal priority.</p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l4 level1 lfo6;
+tab-stops:list .5in'><![if !supportLists]><b style='mso-bidi-font-weight:normal'><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><b
+style='mso-bidi-font-weight:normal'>How the CPU informs a device that its
+interrupt request has been granted:</b> NIOS II does not rely on hardware for
+this. Instead, it is left up to software to notify the device. That is, there
+is some register in the device that has to be accessed to notify the device
+that the interrupt has been granted. The exact process is device specific.</p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l4 level1 lfo6;
+tab-stops:list .5in'><![if !supportLists]><b style='mso-bidi-font-weight:normal'><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span></b><![endif]><b
+style='mso-bidi-font-weight:normal'>How the CPU determines where is the
+interrupt handler:</b> NIOS II uses a pre-configured address for this. All
+interrupt requests result into executing code starting at location <b
+style='mso-bidi-font-weight:normal'><span style='color:red'>0x0000020</span></b>.
+In assembly you can use the directive ‘.section exceptions, “ax”<span
+class=GramE>‘ to</span> assign code to that part of memory. The interrupt
+handler must then interrogate all devices to figure out which one was the one
+that caused the interrupt. If there is more than one device requesting an
+interrupt, it is up to the interrupt handler to determine in what order these
+requests will be handled.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>Before we can review how NIOS II handles interrupts we
+need to take a closer look at some of the control registers.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>CONTROL REGISTERS<o:p></o:p></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><u>Ctl0:</u></b>
+Control register 0 is the master interrupt enable switch. Bit 0 of this
+register controls whether NIOS II will respond to interrupt requests. If bit 0
+is 1 then interrupts will be serviced. Otherwise, NIOS II silently ignores all
+requests. </p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><u>Ctl1:</u></b>
+Control register 1 is used by NIOS II to preserve the current state of ctl0
+upon accepting an interrupt. <span class=GramE>More on this soon.</span></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><u><o:p><span
+ style='text-decoration:none'>&nbsp;</span></o:p></u></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><u>Ctl3:</u></b>
+Control register 3 is the equivalent of a switch board for each IRQ line. Each
+bit controls whether NIOS II will respond interrupt requests from the specific IRQ
+line. This register allows us to selectively enable interrupt handling per
+device. Interrupts are accepted for <span class=SpellE>IRQi</span> if bit I of
+ctl3 is 1 <u>and</u> bit 0 of ctl0 is 1.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>The only way to access control registers is through two
+specialized instructions:</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='margin-left:1.0in;text-indent:-.25in;mso-list:
+l1 level2 lfo2;tab-stops:list 1.0in'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]><st1:place
+w:st="on"><st1:City w:st="on">Reading</st1:City></st1:place> from a control
+register: <span class=SpellE>rdctl</span> <span class=SpellE>control_register</span>,
+<span class=SpellE>general_purpose_register</span>. Example: “<span
+class=SpellE>rdctl</span> ctl0, r8” reads the value of ctl0 and stores it in
+r8.</p>
+
+<p class=MsoPlainText style='margin-left:1.0in;text-indent:-.25in;mso-list:
+l1 level2 lfo2;tab-stops:list 1.0in'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]>Writing
+to a control register: <span class=SpellE>wrctl</span> <span class=SpellE>control_register</span>,
+<span class=SpellE>general_purpose</span> register. Example: “<span
+class=SpellE>wrctl</span> ctl0, r8” writes the value of r8 into control
+register ctl0.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>In addition to the registers, register r29 also
+participates in the interrupt sequence. It’s used to store the PC of the
+instruction following the one that was interrupted. R29 has an alias which is
+ea for exception address.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText>Now we can review <b style='mso-bidi-font-weight:normal'>the
+complete interrupt request/acknowledge/interrupt handler calling/return
+sequence:<o:p></o:p></b></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l5 level1 lfo8;
+tab-stops:list .5in'><![if !supportLists]><span style='mso-fareast-font-family:
+"Courier New"'><span style='mso-list:Ignore'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]>The device requests an interrupt by asserting
+one of the <span class=SpellE>IRQi</span> lines. Say, this is line IRQ1.</p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l5 level1 lfo8;
+tab-stops:list .5in'><![if !supportLists]><span style='mso-fareast-font-family:
+"Courier New"'><span style='mso-list:Ignore'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]>The processor completes execution of the current
+instruction.</p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l5 level1 lfo8;
+tab-stops:list .5in'><![if !supportLists]><span style='mso-fareast-font-family:
+"Courier New"'><span style='mso-list:Ignore'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]>The processor disables interrupts, but before
+doing so, it saves the current interrupt enable bit. Specifically, the
+processor saves the current value of control register 0 (ctl0) in control
+register 1 (ctl1) and then updates ctl0 disabling further responses to
+interrupts. In more detail:</p>
+
+<p class=MsoPlainText style='margin-left:1.0in;text-indent:-.25in;mso-list:
+l5 level2 lfo8;tab-stops:list 1.0in'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]>ctl1
+= ctl0</p>
+
+<p class=MsoPlainText style='margin-left:1.0in;text-indent:-.25in;mso-list:
+l5 level2 lfo8;tab-stops:list 1.0in'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]>bit
+0 of ctl0 = 0</p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l5 level1 lfo8;
+tab-stops:list .5in'><![if !supportLists]><span style='mso-fareast-font-family:
+"Courier New"'><span style='mso-list:Ignore'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]>r29 = PC + 4. This is the PC immediately
+following the instruction that would have executed.</p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l5 level1 lfo8;
+tab-stops:list .5in'><![if !supportLists]><span style='mso-fareast-font-family:
+"Courier New"'><span style='mso-list:Ignore'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]>PC = <b style='mso-bidi-font-weight:normal'>0x20</b>,
+so that execution now continues in the interrupt handler.</p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l5 level1 lfo8;
+tab-stops:list .5in'><![if !supportLists]><span style='mso-fareast-font-family:
+"Courier New"'><span style='mso-list:Ignore'>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]>The handler terminates by executing the special
+instruction <span class=SpellE><b style='mso-bidi-font-weight:normal'><u>eret</u></b></span>.
+This instruction restores ctl0 from ctl1 and PC from register r29 (ea). The net
+effect is that execution resumes by executing the instruction that was
+interrupted.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>USING INTERRUPTS
+WITH THE UART:<o:p></o:p></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText>Let’s us now discuss how we can use interrupts with the
+UART.</p>
+
+<p class=MsoPlainText>We will write a program that continuously sends a
+character through the UART using polling. The character is initially the space
+(32) but through interrupts this character should change to be whatever is
+received from the UART. The change of the character will happen asynchronously
+with respect to our polling sending program.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>Here’s the core of the character-send program that uses
+polling:</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>.<span class=SpellE>equ</span> JTAG_UART_BASE, 0xFF201000</p>
+
+<p class=MsoPlainText>.<span class=SpellE>equ</span> JTAG_UART_RR, 0</p>
+
+<p class=MsoPlainText>.<span class=SpellE>equ</span> JTAG_UART_TR, 0</p>
+
+<p class=MsoPlainText>.<span class=SpellE>equ</span> JTAG_UART_CSR, 4</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>.data</p>
+
+<p class=MsoPlainText><span class=SpellE>thechar</span>:<span style='mso-tab-count:
+1'>    </span>.byte<span style='mso-tab-count:1'> </span>‘ ‘<span
+style='mso-tab-count:3'>               </span># the character that will be
+sent. It is read by our program and overwritten by the interrupt handler.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>.text</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>.align 2</p>
+
+<p class=MsoPlainText>flood:</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>movia</span><span style='mso-tab-count:1'> </span>r8,
+JTAG_UART_BASE</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='tab-stops:60.75pt'><span
+style='mso-spacerun:yes'>      </span># WE’LL FILL THIS IN LATER</p>
+
+<p class=MsoPlainText style='tab-stops:60.75pt'><span
+style='mso-spacerun:yes'>      </span>INITIALIZATION CODE WILL GO IN HERE</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span></p>
+
+<p class=MsoPlainText>wait:</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>ldwio</span> r2, JTAG_UART_CSR(r8)<span style='mso-tab-count:1'>   </span>#
+read CSR in r2</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>srli</span></span><span style='mso-tab-count:
+1'>  </span>r2, r2, 16<span style='mso-tab-count:3'>              </span># keep
+only the upper 16 bits</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>beq</span><span style='mso-tab-count:1'>   </span>r2, r0, wait<span
+style='mso-tab-count:2'>            </span># as long as the upper 16 bits were
+zero keep trying</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>movia</span><span style='mso-tab-count:1'> </span>r5, <span
+class=SpellE>thechar</span><span style='mso-tab-count:3'>             </span>#
+read the character from memory</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>ldbuio</span> r4, 0(r5)<span style='mso-tab-count:2'>        </span></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>stwio</span><span style='mso-tab-count:1'> </span>r4,
+JTAG_UART_TR(r8)<span style='mso-tab-count:1'>    </span># place it in the
+output FIFO </p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>br</span><span style='mso-tab-count:1'>    </span>wait<span
+style='mso-tab-count:4'>                    </span># OK, once more</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>We can now write the interrupt handler (at the end we will
+write the initialization code which will cause this interrupt handler to be
+called when the UART receives a character – so for the time being assume that
+this has been done):</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>.section
+.exceptions, “ax”</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>.align 2</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>handler:<span style='mso-tab-count:1'>    </span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>movia</span></span><span style='mso-tab-count:
+1'> </span>r10, JTAG_UART_BASE</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>ldwio</span></span> r10, JTAG_UART_RR(r10)<span
+style='mso-tab-count:1'>  </span># read RR in r2</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:6'>                                    </span>#
+this also clears the IRQ1 request line</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>andi</span></span><span style='mso-tab-count:
+1'>  </span>r10, r10, 0xff<span style='mso-tab-count:2'>          </span># a
+character was received, copy the lower 8 bits to r9</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>movia</span></span> r9, <span class=SpellE>thechar</span><span
+style='mso-tab-count:3'>             </span># write it to memory</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>stbio</span></span> r10, 0(r9)</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>subi</span><span style='mso-tab-count:1'>  </span><span
+class=SpellE>ea</span>, <span class=SpellE>ea</span>, 4<span style='mso-tab-count:
+3'>               </span># make sure we execute the instruction that was
+interrupted. Ea/r29 points to the instruction after it</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>eret</span><span style='mso-tab-count:5'>                          </span>#
+return from interrupt</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:6'>                                    </span>#
+this restores ctl0 to it’s previous state that was saved in ctl1</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:6'>                                    </span>#
+and does pc = ea</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>To make sure that the handler gets placed at address
+0x1000020 use “.section .exceptions, “ax””.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>Initialization
+Code: Setting up NIOS II to accept interrupts and the JTAG UART to request
+them.<o:p></o:p></b></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span></p>
+
+<p class=MsoPlainText>Now we can write the initialization code. There are
+several things that we need to do and writing this code requires that we
+explain a bit more the UART control register.</p>
+
+<p class=MsoPlainText>In particular, the CSR register contents are as follows: </p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:480;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=24 valign=top style='width:.25in;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText>31</p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText>15</p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText>14</p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText>13</p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText>12</p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText>11</p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText>10</p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText>9</p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText>8</p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText>7</p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText>6</p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText>5</p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText>4</p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText>3</p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText>2</p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText>1</p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText>0</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  background:#CCFFCC;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;background:#CCFFCC;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;background:#CCFFCC;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;background:#CCFFCC;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;background:#CCFFCC;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;background:#CCFFCC;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;background:#CCFFCC;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;background:#CCFFCC;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;background:#CCFFCC;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;background:#CCFFCC;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;background:#CCFFCC;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;background:#CCFFCC;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;background:#CCFFCC;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;background:#CCFFCC;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;background:#CCFFCC;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;background:#CCFFCC;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;background:#CCFFCC;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText>WIP</p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText>RIP</p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText>EWI</p>
+  </td>
+  <td width=24 valign=top style='width:.25in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoPlainText>ERI</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>Bits 31 through 16 as we explained in the previous
+lecture report how many positions are free in the transmit buffer.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>ERI: Enable Read Interrupts. When this is 1 the UART will
+request interrupts when characters are available for the CPU to read (received
+characters). This is meant to be written by the CPU.</p>
+
+<p class=MsoPlainText>EWI: Enable Write Interrupts. When this is 1 the UART
+will request an interrupt when there is space in the output FIFO for characters
+to be transmitted. This is meant to be written by the CPU.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>RIP: Read Interrupt Pending: When this is 1 then the UART
+is currently requesting a Read Interrupt. The interrupt handler can read this
+bit to determine what caused an interrupt.</p>
+
+<p class=MsoPlainText>WIP: Write Interrupt Pending: When this is 1 then the
+UART is currently requesting a Write Interrupt.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>The JTAG UART is connected to <b style='mso-bidi-font-weight:
+normal'><span style='color:red'>IRQ8</span></b>. </p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>So, now we can write the initialization code. Here’s the
+complete code. The initialization code is shown in red.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>.<span class=SpellE>equ</span> JTAG_UART_BASE, 0x10001000</p>
+
+<p class=MsoPlainText>.<span class=SpellE>equ</span> JTAG_UART_RR, 0</p>
+
+<p class=MsoPlainText>.<span class=SpellE>equ</span> JTAG_UART_TR, 0</p>
+
+<p class=MsoPlainText>.<span class=SpellE>equ</span> JTAG_UART_CSR, 4</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>.data</p>
+
+<p class=MsoPlainText><span class=SpellE>thechar</span>:<span style='mso-tab-count:
+1'>    </span>.byte<span style='mso-tab-count:1'> </span>‘ ‘<span
+style='mso-tab-count:3'>               </span># the character that will be sent.
+It is read by our program and overwritten by the interrupt handler.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>.section
+.exceptions, “ax”</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>.align 2</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span class=GramE>handler</span>:<span style='mso-tab-count:
+1'>    </span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>movia</span></span><span style='mso-tab-count:
+1'> </span>r10, JTAG_UART_BASE</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>ldwio</span></span> r10, JTAG_UART_RR(r10)<span
+style='mso-tab-count:1'>  </span># read RR in r2</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:6'>                                    </span>#
+<span class=GramE>this</span> also clears the IRQ1 request line</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>andi</span></span><span style='mso-tab-count:
+1'>  </span>r10, r10, 0xff<span style='mso-tab-count:2'>          </span># a
+character was received, copy the lower 8 bits to r9</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>movia</span></span> r9, <span class=SpellE>thechar</span><span
+style='mso-tab-count:3'>             </span># write it to memory</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>stbio</span></span> r10, 0(r9)</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>subi</span></span><span style='mso-tab-count:
+1'>  </span><span class=SpellE>ea</span>, <span class=SpellE>ea</span>, 4<span
+style='mso-tab-count:3'>               </span># make sure we execute the
+instruction that was interrupted. Ea/r29 points to the instruction after it</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>eret</span></span><span style='mso-tab-count:
+5'>                          </span># return from interrupt</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:6'>                                    </span>#
+<span class=GramE>this</span> restores ctl0 to it’s previous state that was
+saved in ctl1</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:6'>                                    </span>#
+<span class=GramE>and</span> does pc = ea</p>
+
+<p class=MsoPlainText><span class=GramE>flood</span>:</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>movia</span><span style='mso-tab-count:1'> </span>r8,
+JTAG_UART_BASE</p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><span
+style='color:red'><span style='mso-tab-count:1'>      </span></span># Tell the
+UART to request interrupts when characters are received<o:p></o:p></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><span
+style='mso-tab-count:1'>      </span># set bit 0 (REI) of the CSR register to 1<o:p></o:p></b></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>addi</span></span><span style='mso-tab-count:
+1'>  </span>r9, r0, 0x1</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>stwio</span></span><span style='mso-tab-count:
+1'> </span>r9, JTAG_UART_CSR(r8)</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><span
+style='mso-tab-count:1'>      </span># Tell the CPU to accept interrupt
+requests from IRQ1 when interrupts are enabled<br>
+<span style='mso-tab-count:1'>      </span># <span style='color:red'>set bit 8
+of ctl3 to 1<o:p></o:p></span></b></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>addi</span></span><span style='mso-tab-count:
+1'>  </span>r9, r0, <b style='mso-bidi-font-weight:normal'><span
+style='color:red'>0x100</span></b><span style='mso-tab-count:1'>     </span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>wrctl</span></span> ctl3, r9</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><span
+style='mso-tab-count:1'>      </span># Tell the CPU to accept interrupts<o:p></o:p></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><span
+style='mso-tab-count:1'>      </span># set bit 0 of ctl0 to 1<o:p></o:p></b></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>addi</span></span> r9, r0, 0x1</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>wrctl</span></span> ctl0, r9</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span></p>
+
+<p class=MsoPlainText>wait:</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>ldwio</span> r2, JTAG_UART_CSR(r8)<span style='mso-tab-count:1'>   </span>#
+read CSR in r2</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>srli</span></span><span style='mso-tab-count:
+1'>  </span>r2, r2, 16<span style='mso-tab-count:3'>              </span># keep
+only the upper 16 bits</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>beq</span><span style='mso-tab-count:1'>   </span>r2, r0, wait<span
+style='mso-tab-count:2'>            </span># as long as the upper 16 bits were
+zero keep trying</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>movia</span><span style='mso-tab-count:1'> </span>r5, <span
+class=SpellE>thechar</span><span style='mso-tab-count:3'>             </span>#
+read the character from memory</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>ldbuio</span> r4, 0(r5)<span style='mso-tab-count:2'>        </span></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>stwio</span><span style='mso-tab-count:1'> </span>r4,
+JTAG_UART_TR(r8)<span style='mso-tab-count:1'>    </span># place it in the
+output FIFO </p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>br</span><span style='mso-tab-count:1'>    </span>wait<span
+style='mso-tab-count:4'>                    </span># OK, once more</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>Note that by reading a character from the UART, we are
+also indirectly notifying it that the interrupt was serviced. The UART in
+response clear the IRQ1 request.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>Completing the
+interrupt handler<o:p></o:p></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText>As it stands there are two issues with the interrupt
+handler:</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l3 level1 lfo10;
+tab-stops:list .5in'><![if !supportLists]><span style='mso-fareast-font-family:
+"Courier New"'><span style='mso-list:Ignore'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]>It uses registers that may be used by the program
+that is interrupted.</p>
+
+<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l3 level1 lfo10;
+tab-stops:list .5in'><![if !supportLists]><span style='mso-fareast-font-family:
+"Courier New"'><span style='mso-list:Ignore'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]>It assumes that the reason the interrupt
+occurred is because a character was received by the UART.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>Both of these are not problems for the example code
+because:</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='margin-left:1.0in;text-indent:-.25in;mso-list:
+l3 level2 lfo10;tab-stops:list 1.0in'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]>The
+example code does not use the registers used by the interrupt handler. The
+example code uses r2, r5, and r8, while the interrupt handler uses r9 and r10.</p>
+
+<p class=MsoPlainText style='margin-left:1.0in;text-indent:-.25in;mso-list:
+l3 level2 lfo10;tab-stops:list 1.0in'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]>The
+example only enables interrupts for when UART characters are received.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>Preserving
+registers in the interrupt handler<o:p></o:p></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText>Let’s first see how we avoid overwriting registers in the
+interrupt handler. Note that an interrupt may happen at any point of time.
+Hence, any register other ea can hold a value that might be of use by the
+interrupted program. So we must make sure that the interrupt handler does not
+change any register other than ea. Again, the solution is to make sure that any
+registers that are changed during the execution of the interrupt handler have
+their values saved and restored by the handler. We are going to use the stack
+for this purpose. This is why we can never assume that values that are outside
+the stack will remain unchanged: an interrupt handler may run, and use the
+stack temporarily to preserve register values.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>Here’s the interrupt handler. For illustration purposes
+we do use registers r2 and r5 as opposed to r9 and r10. Registers r2 and r5 are
+used by our program that is interrupted by the handler. The additions are shown
+in blue.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>.section
+.exceptions, “ax”</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>.align 2</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>handler:<span style='mso-tab-count:1'>    </span></p>
+
+<p class=MsoPlainText><span style='color:blue'><span style='mso-tab-count:1'>      </span>#
+PROLOGUE<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:blue'><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>subi</span></span><span style='mso-tab-count:
+1'>  </span><span class=SpellE>sp</span>, <span class=SpellE>sp</span>, 8<span
+style='mso-tab-count:3'>               </span># we will be saving two registers
+on the stack<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:blue'><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>stw</span></span><span style='mso-tab-count:
+1'>   </span>r2, 0(<span class=SpellE>sp</span>)<span style='mso-tab-count:
+3'>               </span># save r2 <o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:blue'><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>stw</span></span><span style='mso-tab-count:
+1'>   </span>r5, 4(<span class=SpellE>sp</span>)<span style='mso-tab-count:
+3'>               </span># save r5<o:p></o:p></span></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>movia</span><span style='mso-tab-count:1'> </span>r5,
+JTAG_UART_BASE</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>ldwio</span> r5, JTAG_UART_RR(r5)<span style='mso-tab-count:1'>    </span>#
+read RR in r2</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:6'>                                    </span>#
+this clears the IRQ1 request</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>andi</span><span style='mso-tab-count:1'>  </span>r5, r5, 0xff<span
+style='mso-tab-count:2'>            </span># a character was received, copy the
+lower 8 bits to r9</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>movia</span> r2, <span class=SpellE>thechar</span><span
+style='mso-tab-count:3'>             </span># write it to memory</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>stbio</span> r5, 0(r2)</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><u style='text-underline:words'><o:p><span
+ style='text-decoration:none'>&nbsp;</span></o:p></u></p>
+
+<p class=MsoPlainText><span style='color:blue'><span style='mso-tab-count:1'>      </span>#
+EPILOGUE<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:blue'><span style='mso-tab-count:1'>      </span><span
+class=SpellE>Ldw</span><span style='mso-spacerun:yes'>   </span>r5, 4(<span
+class=SpellE>sp</span>)<span style='mso-tab-count:3'>               </span>#
+restore r5<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:blue'><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>ldw</span></span><span style='mso-tab-count:
+1'>   </span>r2, 0(<span class=SpellE>sp</span>)<span style='mso-tab-count:
+3'>               </span># restore r2 <o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:blue'><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>addi</span></span><span style='mso-tab-count:
+1'>  </span><span class=SpellE>sp</span>, <span class=SpellE>sp</span>, 8<span
+style='mso-tab-count:3'>               </span># we will be saving two registers
+on the stack<o:p></o:p></span></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>subi</span><span style='mso-tab-count:1'>  </span><span
+class=SpellE>ea</span>, <span class=SpellE>ea</span>, 4<span style='mso-tab-count:
+3'>               </span># make sure we execute the instruction that was
+interrupted. Ea/r29 points to the instruction after it</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>eret</span><span style='mso-tab-count:5'>                          </span>#
+return from interrupt</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:6'>                                    </span>#
+this restores ctl0 to it’s previous state that was saved in ctl1</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:6'>                                    </span>#
+and does pc = ea</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>Determining the
+interrupt cause<o:p></o:p></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText>Let’s now augment our handler to check whether the
+interrupt was caused by a character received by the UART. To do so, we need to
+check whether bit RIP of the UART’s CSR register is 1 when the interrupt
+handler runs. Here’s the code – additions shown in red:</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>.section
+.exceptions, “ax”</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>.align 2</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>handler:<span style='mso-tab-count:1'>    </span></p>
+
+<p class=MsoPlainText><span style='color:blue'><span style='mso-tab-count:1'>      </span>#
+PROLOGUE<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:blue'><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>subi</span></span><span style='mso-tab-count:
+1'>  </span><span class=SpellE>sp</span>, <span class=SpellE>sp</span>, 8<span
+style='mso-tab-count:3'>               </span># we will be saving two registers
+on the stack<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:blue'><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>stw</span></span><span style='mso-tab-count:
+1'>   </span>r2, 0(<span class=SpellE>sp</span>)<span style='mso-tab-count:
+3'>               </span># save r2 <o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:blue'><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>stw</span></span><span
+style='mso-spacerun:yes'>   </span>r5, 4(<span class=SpellE>sp</span>)<span
+style='mso-tab-count:3'>               </span># save r5<o:p></o:p></span></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>movia</span><span style='mso-tab-count:1'> </span>r5,
+JTAG_UART_BASE</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='color:maroon'><span style='mso-tab-count:
+1'>      </span><span class=SpellE>ldwio</span><span style='mso-tab-count:1'> </span>r2,
+JTAG_UART_CSR(r5)<span style='mso-tab-count:1'>   </span># read the status
+register <o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:maroon'><span style='mso-tab-count:
+1'>      </span><span class=SpellE>andi</span><span style='mso-tab-count:1'>  </span>r2,
+r2, 0x100<span style='mso-tab-count:2'>           </span># is bit RIP 1?<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:maroon'><span style='mso-tab-count:
+1'>      </span>beq<span style='mso-tab-count:1'>   </span>r2, r0, <span
+class=SpellE>notRIP</span><span style='mso-tab-count:3'>                </span>#
+if not run code to check and handle what the interrupt is (not shown – depends
+on the device)<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:maroon'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText>RIP:</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>ldwio</span> r5, JTAG_UART_RR(r5)<span style='mso-tab-count:1'>    </span>#
+read RR in r2</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:6'>                                    </span>#
+this clears the IRQ1 request</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>andi</span><span style='mso-tab-count:1'>  </span>r5, r5, 0xff<span
+style='mso-tab-count:2'>            </span># a character was received, copy the
+lower 8 bits to r9</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>movia</span> r2, <span class=SpellE>thechar</span><span
+style='mso-tab-count:3'>             </span># write it to memory</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>stbio</span> r5, 0(r2)</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>br</span> epilogue:<span style='mso-tab-count:3'>                  </span>#
+done, go to the epilogue</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span class=SpellE>notRIP</span>:</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>CODE HERE FOR
+CHECKING OTHER INTERRUPT SOURCES</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>epilogue:</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='color:blue'><span style='mso-tab-count:1'>      </span>#
+EPILOGUE<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:blue'><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>ldw</span></span><span
+style='mso-spacerun:yes'>   </span>r5, 4(<span class=SpellE>sp</span>)<span
+style='mso-tab-count:3'>               </span># restore r5<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:blue'><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>ldw</span></span> <span style='mso-tab-count:
+1'>  </span>r2, 0(<span class=SpellE>sp</span>)<span style='mso-tab-count:3'>               </span>#
+restore r2 <o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:blue'><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>addi</span></span><span style='mso-tab-count:
+1'>  </span><span class=SpellE>sp</span>, <span class=SpellE>sp</span>, 8<span
+style='mso-tab-count:3'>               </span># we will be saving two registers
+on the stack<o:p></o:p></span></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>subi</span><span style='mso-tab-count:1'>  </span><span
+class=SpellE>ea</span>, <span class=SpellE>ea</span>, 4<span style='mso-tab-count:
+3'>               </span># make sure we execute the instruction that was
+interrupted. Ea/r29 points to the instruction after it</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>eret</span><span style='mso-tab-count:5'>                          </span>#
+return from interrupt</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:6'>                                    </span>#
+this restores ctl0 to it’s previous state that was saved in ctl1</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:6'>                                    </span>#
+and does pc = ea</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'>Nested Interrupts<o:p></o:p></b></p>
+
+<p class=MsoPlainText><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoPlainText>What happens when an interrupt request is received when a
+previous interrupt request is still handled by the interrupt handler?</p>
+
+<p class=MsoPlainText>In the example code we discussed thus far, interrupts
+remain disabled while the interrupt handler is running and are only re-enabled
+by the <span class=SpellE>eret</span> instruction when the interrupt handler
+exits. So there is no possibility of interrupting the handler to service
+another interrupt request. In some cases however, it is desirable to enable
+interrupts as soon as possible. This would be the case for example, when we are
+servicing an interrupt handler that takes a long time to complete. For example,
+copying data from a hard drive to memory or from a network interface to memory.
+In this case, we would like to enable interrupt even while we are still running
+the interrupt handler. To do this safely we must take the following actions:</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText style='margin-left:.75in;text-indent:-.25in;mso-list:
+l2 level1 lfo12;tab-stops:list .75in'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]>Save
+the value of ea on the stack</p>
+
+<p class=MsoPlainText style='margin-left:.75in;text-indent:-.25in;mso-list:
+l2 level1 lfo12;tab-stops:list .75in'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]>Save
+the value of ctl2 on the stack.</p>
+
+<p class=MsoPlainText style='margin-left:.75in;text-indent:-.25in;mso-list:
+l2 level1 lfo12;tab-stops:list .75in'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]>Make
+sure to tell the device that is currently being serviced to stop requesting
+interrupts.</p>
+
+<p class=MsoPlainText style='margin-left:.75in;text-indent:-.25in;mso-list:
+l2 level1 lfo12;tab-stops:list .75in'><![if !supportLists]><span
+style='mso-fareast-font-family:"Courier New"'><span style='mso-list:Ignore'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]>Re-enable
+interrupts in ctl0.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>Actions 1 and 2 are necessary because once we enable
+interrupts, one might occur immediately and these two registers will be
+automatically overwritten. If things are to work correctly, we must make sure
+that the current interrupt handler sees the right values for those two
+registers. Ea contains the address of the instruction this interrupt handler
+must resume execution at, and ctl1 contains the original state of ctl0 which
+must be restored.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>Action 3 is necessary so that we make sure that the
+interrupt handler will not be called for ever before it had a chance of
+servicing the current request. If we do not disable the request, the moment
+interrupts are enabled, the very same request will cause another invocation of
+the interrupt handler.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>Here’s the modified interrupt handler that enables
+interrupts immediately after reading a character from the UART. We have to
+enable interrupt after a character is read because this is how we tell the UART
+to stop requesting interrupts for this character. Additions are shown in green.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>handler:<span style='mso-tab-count:1'>    </span></p>
+
+<p class=MsoPlainText><span style='color:blue'><span style='mso-tab-count:1'>      </span>#
+PROLOGUE<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:blue'><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>subi</span></span><span style='mso-tab-count:
+1'>  </span><span class=SpellE>sp</span>, <span class=SpellE>sp</span>, 16<span
+style='mso-tab-count:3'>              </span># we will be saving four registers
+on the stack<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:blue'><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>stw</span></span><span style='mso-tab-count:
+1'>   </span>r2, 0(<span class=SpellE>sp</span>)<span style='mso-tab-count:
+3'>               </span># save r2 <o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:blue'><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>stw</span></span><span
+style='mso-spacerun:yes'>   </span>r5, 4(<span class=SpellE>sp</span>)<span
+style='mso-tab-count:3'>               </span># save r5<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:green'><span style='mso-tab-count:
+1'>      </span><span class=SpellE><span class=GramE>stw</span></span><span
+style='mso-spacerun:yes'>   </span><span class=SpellE>ea</span>, 8(<span
+class=SpellE>sp</span>)<span style='mso-tab-count:3'>               </span>#
+save ea<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:green'><span style='mso-tab-count:
+1'>      </span><span class=SpellE>rdctl</span> r2, ctl1<span style='mso-tab-count:
+3'>                </span># save ctl1<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:green'><span style='mso-tab-count:
+1'>      </span><span class=SpellE><span class=GramE>stw</span></span><span
+style='mso-spacerun:yes'>   </span>r2, 12(<span class=SpellE>sp</span>)<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:green'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span style='color:green'><span style='mso-tab-count:
+1'>      </span><span class=SpellE><span class=GramE>addi</span></span> <span
+style='mso-tab-count:1'> </span>r2, r2, 0x1<span style='mso-tab-count:3'>             </span>#
+enable interrupts<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:green'><span style='mso-tab-count:
+1'>      </span><span class=SpellE><span class=GramE>wrctl</span></span> ctl0,
+r2<o:p></o:p></span></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>movia</span></span><span style='mso-tab-count:
+1'> </span>r5, JTAG_UART_BASE</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='color:maroon'><span style='mso-tab-count:
+1'>      </span><span class=SpellE><span class=GramE>ldw</span></span> <span
+style='mso-tab-count:1'>  </span>r2, JTAG_UART_CSR(r5)<span style='mso-tab-count:
+1'>   </span># read the status register <o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:maroon'><span style='mso-tab-count:
+1'>      </span><span class=SpellE>andi</span><span style='mso-tab-count:1'>  </span>r2,
+r2, 0x100<span style='mso-tab-count:2'>           </span># is bit RIP 1?<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:maroon'><span style='mso-tab-count:
+1'>      </span><span class=SpellE><span class=GramE>beq</span></span><span
+style='mso-tab-count:1'>   </span>r2, r0, <span class=SpellE>notRIP</span><span
+style='mso-tab-count:3'>                </span># if not run code to check and
+handle what the interrupt is (not shown – depends on the device)<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:maroon'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText>RIP:</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>ldwio</span> r5, JTAG_UART_RR(r5)<span style='mso-tab-count:1'>    </span>#
+read RR in r2</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:6'>                                    </span>#
+this clears the IRQ1 request</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>andi</span></span><span style='mso-tab-count:
+1'>  </span>r5, r5, 0xff<span style='mso-tab-count:2'>            </span># a
+character was received, copy the lower 8 bits to r9</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>movia</span> r2, <span class=SpellE>thechar</span><span
+style='mso-tab-count:3'>             </span># write it to memory</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>stbio</span> r5, 0(r2)</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>br</span> epilogue:<span style='mso-tab-count:3'>                  </span>#
+done, go to the epilogue</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span class=SpellE>notRIP</span>:</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>CODE HERE FOR
+CHECKING OTHER INTERRUPT SOURCES</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>epilogue:</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='color:blue'><span style='mso-tab-count:1'>      </span>#
+EPILOGUE<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:green'><span style='mso-tab-count:
+1'>      </span><span class=SpellE><span class=GramE>ldw</span></span><span
+style='mso-spacerun:yes'>   </span>r2, 12(<span class=SpellE>sp</span>)<span
+style='mso-tab-count:3'>              </span># restore ctl1<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:green'><span style='mso-tab-count:
+1'>      </span><span class=SpellE><span class=GramE>wrctl</span></span> ctl1,
+r2<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:green'><span style='mso-tab-count:
+1'>      </span><span class=SpellE><span class=GramE>ldw</span></span><span
+style='mso-spacerun:yes'>   </span><span class=SpellE>ea</span>, 8(<span
+class=SpellE>sp</span>)<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:blue'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span style='color:blue'><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>ldw</span></span><span
+style='mso-spacerun:yes'>   </span>r5, 4(<span class=SpellE>sp</span>)<span
+style='mso-tab-count:3'>               </span># restore r5<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:blue'><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>ldw</span></span> <span style='mso-tab-count:
+1'>  </span>r2, 0(<span class=SpellE>sp</span>)<span style='mso-tab-count:3'>               </span>#
+restore r2 <o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:blue'><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>addi</span></span><span style='mso-tab-count:
+1'>  </span><span class=SpellE>sp</span>, <span class=SpellE>sp</span>, 16<span
+style='mso-tab-count:3'>              </span># we will be saving two registers
+on the stack<o:p></o:p></span></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>subi</span><span style='mso-tab-count:1'>  </span><span
+class=SpellE>ea</span>, <span class=SpellE>ea</span>, 4<span style='mso-tab-count:
+3'>               </span># make sure we execute the instruction that was
+interrupted. Ea/r29 points to the instruction after it</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE>eret</span><span style='mso-tab-count:5'>                          </span>#
+return from interrupt</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:6'>                                    </span>#
+this restores ctl0 to it’s previous state that was saved in ctl1</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:6'>                                    </span>#
+and does pc = ea</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>When this code executes on NIOS II, unfortunately, it
+enters an infinite loop allocating more and more space on the stack until the
+stack overwrites the code. What goes wrong? Well, our interrupt handler saves a
+few values on the stack and then immediately re-enables interrupts using these
+two instructions. The reason we are executing the interrupt handler in the
+first place is that a device requested the interrupt. However, unless the
+processor *explicitly* goes and notifies the device that it is handling the
+interrupt, the device will keep asking. In this case, as soon as the processor
+enables interrupts, the hardware finds the same interrupt request on the IRQ
+lines, and then triggers another interrupt call. To avoid having the same
+interrupt request continuously triggering interrupts, the processor must notify
+the device that its interrupt is being handled.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>For receiver interrupts from the UART this can only be
+done by reading the character *before* enabling interrupts:</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span class=GramE>handler</span>:<span style='mso-tab-count:
+1'>    </span></p>
+
+<p class=MsoPlainText><span style='color:blue'><span style='mso-tab-count:1'>      </span>#
+PROLOGUE<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:blue'><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>subi</span></span><span style='mso-tab-count:
+1'>  </span><span class=SpellE>sp</span>, <span class=SpellE>sp</span>, 16<span
+style='mso-tab-count:3'>              </span># we will be saving four registers
+on the stack<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:blue'><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>stw</span></span><span style='mso-tab-count:
+1'>   </span>r2, 0(<span class=SpellE>sp</span>)<span style='mso-tab-count:
+3'>               </span># save r2 <o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:blue'><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>stw</span></span><span
+style='mso-spacerun:yes'>   </span>r5, 4(<span class=SpellE>sp</span>)<span
+style='mso-tab-count:3'>               </span># save r5<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:green'><span style='mso-tab-count:
+1'>      </span><span class=SpellE><span class=GramE>stw</span></span><span
+style='mso-spacerun:yes'>   </span><span class=SpellE>ea</span>, 8(<span
+class=SpellE>sp</span>)<span style='mso-tab-count:3'>               </span>#
+save <span class=SpellE>ea</span><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:green'><span style='mso-tab-count:
+1'>      </span><span class=SpellE><span class=GramE>rdctl</span></span> r2,
+ctl1<span style='mso-tab-count:3'>                </span># save ctl1<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:green'><span style='mso-tab-count:
+1'>      </span><span class=SpellE><span class=GramE>stw</span></span><span
+style='mso-spacerun:yes'>   </span>r2, 12(<span class=SpellE>sp</span>)<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:green'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><s><span style='color:green'><span style='mso-tab-count:
+1'>      </span><span class=SpellE><span class=GramE>addi</span></span> <span
+style='mso-tab-count:1'> </span>r2, r2, 0x1<span style='mso-tab-count:3'>             </span>#
+enable interrupts<o:p></o:p></span></s></p>
+
+<p class=MsoPlainText><s><span style='color:green'><span style='mso-tab-count:
+1'>      </span><span class=SpellE><span class=GramE>wrctl</span></span> ctl0,
+r2<o:p></o:p></span></s></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>movia</span></span><span style='mso-tab-count:
+1'> </span>r5, JTAG_UART_BASE</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='color:maroon'><span style='mso-tab-count:
+1'>      </span><span class=SpellE><span class=GramE>ldw</span></span> <span
+style='mso-tab-count:1'>  </span>r2, JTAG_UART_CSR(r5)<span style='mso-tab-count:
+1'>   </span># read the status register <o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:maroon'><span style='mso-tab-count:
+1'>      </span><span class=SpellE><span class=GramE>andi</span></span><span
+style='mso-tab-count:1'>  </span>r2, r2, 0x100<span style='mso-tab-count:2'>           </span>#
+is bit RIP 1?<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:maroon'><span style='mso-tab-count:
+1'>      </span><span class=SpellE><span class=GramE>beq</span></span><span
+style='mso-tab-count:1'>   </span>r2, r0, <span class=SpellE>notRIP</span><span
+style='mso-tab-count:3'>                </span># if not run code to check and
+handle what the interrupt is (not shown – depends on the device)<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:maroon'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText>RIP:</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>ldwio</span></span> r5, JTAG_UART_RR(r5)<span
+style='mso-tab-count:1'>    </span># read RR in r2</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:6'>                                    </span>#
+<span class=GramE>this</span> clears the IRQ1 request</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='color:green'><span style='mso-tab-count:
+1'>      </span><span class=SpellE><span class=GramE>addi</span></span> <span
+style='mso-tab-count:1'> </span>r2, r2, 0x1<span style='mso-tab-count:3'>             </span>#
+enable interrupts<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:green'><span style='mso-tab-count:
+1'>      </span><span class=SpellE><span class=GramE>wrctl</span></span> ctl0,
+r2<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:green'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>andi</span></span><span style='mso-tab-count:
+1'>  </span>r5, r5, 0xff<span style='mso-tab-count:2'>            </span># a
+character was received, copy the lower 8 bits to r9</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>movia</span></span> r2, <span class=SpellE>thechar</span><span
+style='mso-tab-count:3'>             </span># write it to memory</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>stbio</span></span> r5, 0(r2)</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>br</span></span> epilogue:<span
+style='mso-tab-count:3'>                  </span># done, go to the epilogue</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span class=SpellE><span class=GramE>notRIP</span></span>:</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>CODE HERE FOR
+CHECKING OTHER INTERRUPT SOURCES</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span class=GramE>epilogue</span>:</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='color:blue'><span style='mso-tab-count:1'>      </span>#
+EPILOGUE<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:green'><span style='mso-tab-count:
+1'>      </span><span class=SpellE><span class=GramE>ldw</span></span><span
+style='mso-spacerun:yes'>   </span>r2, 12(<span class=SpellE>sp</span>)<span
+style='mso-tab-count:3'>              </span># restore ctl1<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:green'><span style='mso-tab-count:
+1'>      </span><span class=SpellE><span class=GramE>wrctl</span></span> ctl1,
+r2<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:green'><span style='mso-tab-count:
+1'>      </span><span class=SpellE><span class=GramE>ldw</span></span><span
+style='mso-spacerun:yes'>   </span><span class=SpellE>ea</span>, 8(<span
+class=SpellE>sp</span>)<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:blue'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span style='color:blue'><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>ldw</span></span><span
+style='mso-spacerun:yes'>   </span>r5, 4(<span class=SpellE>sp</span>)<span
+style='mso-tab-count:3'>               </span># restore r5<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:blue'><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>ldw</span></span> <span style='mso-tab-count:
+1'>  </span>r2, 0(<span class=SpellE>sp</span>)<span style='mso-tab-count:3'>               </span>#
+restore r2 <o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='color:blue'><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>addi</span></span><span style='mso-tab-count:
+1'>  </span><span class=SpellE>sp</span>, <span class=SpellE>sp</span>, 16<span
+style='mso-tab-count:3'>              </span># we will be saving two registers
+on the stack<o:p></o:p></span></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>subi</span></span><span style='mso-tab-count:
+1'>  </span><span class=SpellE>ea</span>, <span class=SpellE>ea</span>, 4<span
+style='mso-tab-count:3'>               </span># make sure we execute the
+instruction that was interrupted. <span class=SpellE>Ea</span>/r29 points to
+the instruction after it</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span><span
+class=SpellE><span class=GramE>eret</span></span><span style='mso-tab-count:
+5'>                          </span># return from interrupt</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:6'>                                    </span>#
+<span class=GramE>this</span> restores ctl0 to <span class=SpellE>it’s</span>
+previous state that was saved in ctl1</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:6'>                                    </span>#
+<span class=GramE>and</span> does pc = <span class=SpellE>ea</span></p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>

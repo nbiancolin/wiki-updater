@@ -1,6 +1,7 @@
 import parseGit
-import wikiUpdater
+import updateWiki
 import updateDisplay
+import parseWiki
 
 if __name__ == "__main__":
     print("Nick's Wiki Updater Program, V1.0")
@@ -27,7 +28,11 @@ if __name__ == "__main__":
     tasks = parseGit.updateTasks(tasks, commits)
 
     print("Updating display.md ...")
-    updateDisplay.updateTable("display.md", tasks)
+    updateDisplay.updateTable("display.md", tasks) #TODO: Does tasks return an array of strings or one big string? need it to be one big string for the dokuwiki
+
+    print("Connecting to wiki ...")
+    content = parseWiki.getPageContent() #checks connection to dokuwiki
+    content = updateDisplay.readTable("display.md") #TODO: Probably a way to improve this
 
     print("Closing SSH ...")
     parseGit.closeSSH()
