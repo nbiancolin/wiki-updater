@@ -4,7 +4,7 @@ from datetime import date
 
 def updateTable(fileName, tasks):
     #search text until '^' character is found
-    with open(fileName, 'r') as file:
+    with open(fileName, 'r', encoding='utf-8') as file:
         lines = file.readlines()
     
     place = 0
@@ -26,6 +26,8 @@ def updateTable(fileName, tasks):
 
     with open(fileName, 'w', encoding='utf-8') as file:
         file.writelines(lines)
+    
+    return lines
 
 
 def readTable(fileName):

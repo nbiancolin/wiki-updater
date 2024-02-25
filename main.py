@@ -39,13 +39,18 @@ if __name__ == "__main__":
     tasks = parseGit.updateTasks(tasks, commits)
 
     print("Updating display.md ...")
-    updateDisplay.updateTable("display.md", tasks) 
+    lines = updateDisplay.updateTable("display.md", tasks) 
+    
 
-    #print("Connecting to wiki ...")
-    #content = parseWiki.getPageContent() #checks connection to dokuwiki
+    print("Connecting to wiki ...")
+    content = parseWiki.getPageContent() #checks connection to dokuwiki
     #content = updateDisplay.readTable("display.md") #TODO: Probably a way to improve this
+    content = ""
+    for elem in lines:
+        content += elem
+        content += "\n"
 
-    #updateWiki.updatePageContent(content)
+    updateWiki.updatePageContent(content)
 
     print("Closing SSH ...")
     parseGit.closeSSH()
