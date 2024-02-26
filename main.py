@@ -18,25 +18,18 @@ if __name__ == "__main__":
     print("Nick's Wiki Updater Program, V1.0")
     print("Initializing ... ") #1
     parseGit.connectToSSH()
-    
-    #2
-    commits = parseGit.parseGitLog(testMode=True) #TODO change this before release
+    #load commits data structure
+    commits = parseGit.parseGitLog(testMode=True)
 
-    print("Loading Tasks ...")
+    #load tasks data structure
     tasks = parseGit.loadTasksFromFile('tasks.csv')
+    #writeTasksToFile(tasks, 'tasks.csv')
 
-    print("Processing Tasks ...")
+    #process updates from commits & tasks
     tasks = parseGit.updateTasks(tasks, commits)
 
-    #TODO - Do this twice??
-    #print("Saving tasks to file ...")
-    #parseGit.writeLogToFile(commits, 'commits.csv')
-    #parseGit.writeTasksToFile(tasks, 'tasks.csv')
-
-    print("Reloading data ...")
-    #commits = parseGit.parseGitLog(testMode=True) #TODO change this before release
-    #tasks = parseGit.loadTasksFromFile('tasks.csv')
-    #tasks = parseGit.updateTasks(tasks, commits)
+    parseGit.writeLogToFile(commits, 'commits.csv') #backup just in case, don't think this is ever used
+    parseGit.writeTasksToFile(tasks, 'tasks.csv')
 
     print("Updating display.md ...")
     lines = updateDisplay.updateTable("display.md", tasks) 

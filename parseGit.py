@@ -38,7 +38,6 @@ def getGitLog(hours = 300, testMode = False):
     res = []
     for line in stdout:
         res.append(line)
-    #print(res)
     return res
 
 def parseGitLog(hours = 300, testMode = False):
@@ -55,17 +54,12 @@ def parseGitLog(hours = 300, testMode = False):
             continue
         if len(elem) < 6: #don't ask why this is here, it breaks otherwise
             continue
-#        elem.strip()
         clean.append(elem.removesuffix('\n'))
-    #print(clean)
-        
-#    for elem in clean:
-#        print("a " + elem + "b")
-        #print('\n')
 
     i = 0
     res = [] #array of 'commit' objects
 
+    print("Found the following commits: ")
     while(i < len(clean)):
         if clean[i +1].startswith("Merge:"): #check if 1th or 2th element
             i += 5
@@ -86,9 +80,6 @@ def parseGitLog(hours = 300, testMode = False):
             taskID = -1
             progress = -1
 
-        #message = clean[i +3]
-        #taskID = 0
-        #progress = 0
         temp = commit.Commit(taskID, progress, author[0], date, message)
         print(temp)
         res.append(temp)
@@ -96,15 +87,15 @@ def parseGitLog(hours = 300, testMode = False):
 
     return res
 
-def writeLogToFile(log, fileName = "commits.csv"): #write log dictionary to csv file
-    print("Writing to file")
+def writeLogToFile(log, fileName = "commits.csv"): #write log dictionary to csv file (to see if code is working correctly)
+    print("Writing git log to " + fileName)
     with open(fileName, 'w') as file:
         file.write('taskID,progress,author,date,message\n')
         for elem in log:
             file.write(f'{elem.taskID},{elem.progress},{elem.author},{elem.date},{elem.message}\n')
 
 def loadTasksFromFile(fileName = "tasks.csv"):
-    print("Loading tasks from saved csv file")
+    print("Loading tasks from " + fileName)
     try:
         with open(fileName, 'r') as file:
             lines = file.readlines()
@@ -118,7 +109,7 @@ def loadTasksFromFile(fileName = "tasks.csv"):
             file.close()
             return tasks
     except:
-        print("No tasks.csv file found, will create one with info found")
+        print("No " + fileName + " found, will create one with info found")
         return {}
 
 def updateTasks(tasks, commits):
@@ -153,10 +144,9 @@ def writeTasksToFile(tasks, fileName = "tasks.csv"): #csv file is a good backup,
         for key in tasks:
             file.write(f'{tasks[key].taskID},{tasks[key].name},{tasks[key].progress},{tasks[key].assignee},{tasks[key].dueDate},{tasks[key].lastUpdate},{tasks[key].statusMsg}')
             file.write('\n')
-    print("Tasks.csv file successfully updated")
+    print(fileName + " file successfully updated")
 
 if __name__ == "__main__": #for testing purposes
-    #For some reason, running the file twice works. Don't ask me why
     connectToSSH()
     #load commits data structure
     commits = parseGitLog(testMode=True)
