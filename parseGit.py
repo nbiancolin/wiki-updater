@@ -67,23 +67,30 @@ def parseGitLog(hours = 300, testMode = False):
         author = clean[i +1].removeprefix("Author: ").split(" ", 1) 
         date = clean[i +2].removeprefix("Date:").strip() #TODO: make date a litle nicer
 
-        match = re.search(r'\d', clean[i+3])
-        if match:
-            try:
-                taskID, progress, message = clean[i +3][match.start():].split(",", 2) #parses git commit message
-            except ValueError:
-                message = clean[i +3] #could not parse message
+        tempMessage = clean[i+3]
+        try:
+            messages = tempMessage.split(";")
+        except ValueError:
+            messages = [tempMessage]
+
+        for commitMsg in messages:
+            match = re.search(r'\d', commitMsg)
+            if match:
+                try:
+                    taskID, progress, message = commitMsg[match.start():].split(",", 2) #parses git commit message
+                except ValueError:
+                    message = commitMsg #could not parse message
+                    taskID = -1
+                    progress = -1
+            else:
+                message = commitMsg #could not parse message
                 taskID = -1
                 progress = -1
-        else:
-            message = clean[i +3] #could not parse message
-            taskID = -1
-            progress = -1
 
-        temp = commit.Commit(taskID, progress, author[0], date, message)
-        print(temp)
-        res.append(temp)
-        i += 4
+            temp = commit.Commit(taskID, progress, author[0], date, message)
+            print(temp)
+            res.append(temp)
+            i += 4
 
     return res
 
