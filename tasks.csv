@@ -1,4 +1,7 @@
 taskID,name,progress,assignee,dueDate,lastUpdate,statusMsg
 1,,8,biancol6,,Sat Feb 17 21:20:41 2024 -0500, Almost done!
-65,,-1,biancol6,,Sat Feb 17 20:48:03 2024 -0500,    1 10 another one done!
+65,,-1,biancol6,,Sat Feb 17 20:48:03 2024 -0500,1 10 another one done!
 5,, 10,biancol6,,Sat Feb 17 20:40:41 2024 -0500, finished now!
+67,,-1,biancol6,,Sat Feb 17 20:48:03 2024 -0500,1 10 another one done!
+2,, 4,biancol6,,Mon Feb 26 14:03:42 2024 -0500, Halfway there with task 2
+69,,-1,biancol6,,Sat Feb 17 20:48:03 2024 -0500,    1 10 another one done!

@@ -29,14 +29,14 @@ if __name__ == "__main__":
     tasks = parseGit.updateTasks(tasks, commits)
 
     #TODO - Do this twice??
-    print("Saving tasks to file ...")
-    parseGit.writeLogToFile(commits, 'commits.csv')
-    parseGit.writeTasksToFile(tasks, 'tasks.csv')
+    #print("Saving tasks to file ...")
+    #parseGit.writeLogToFile(commits, 'commits.csv')
+    #parseGit.writeTasksToFile(tasks, 'tasks.csv')
 
     print("Reloading data ...")
-    commits = parseGit.parseGitLog(testMode=True) #TODO change this before release
-    tasks = parseGit.loadTasksFromFile('tasks.csv')
-    tasks = parseGit.updateTasks(tasks, commits)
+    #commits = parseGit.parseGitLog(testMode=True) #TODO change this before release
+    #tasks = parseGit.loadTasksFromFile('tasks.csv')
+    #tasks = parseGit.updateTasks(tasks, commits)
 
     print("Updating display.md ...")
     lines = updateDisplay.updateTable("display.md", tasks) 

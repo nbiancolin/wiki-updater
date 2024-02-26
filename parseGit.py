@@ -90,7 +90,7 @@ def parseGitLog(hours = 300, testMode = False):
         #taskID = 0
         #progress = 0
         temp = commit.Commit(taskID, progress, author[0], date, message)
-        #print(temp)
+        print(temp)
         res.append(temp)
         i += 4
 
@@ -113,7 +113,7 @@ def loadTasksFromFile(fileName = "tasks.csv"):
                 if line.startswith('taskID'):
                     continue
                 taskID, name, progress, assignee, dueDate, lastUpdate, statusMsg = line.split(',')
-                temp = commit.Task(taskID, name, progress, assignee, dueDate, lastUpdate, statusMsg)
+                temp = commit.Task(taskID, name, progress, assignee, dueDate, lastUpdate, statusMsg.strip())
                 tasks[int(taskID)] = temp
             file.close()
             return tasks
@@ -163,6 +163,7 @@ if __name__ == "__main__": #for testing purposes
 
     #load tasks data structure
     tasks = loadTasksFromFile('tasks.csv')
+    #writeTasksToFile(tasks, 'tasks.csv')
 
     #process updates from commits & tasks
     tasks = updateTasks(tasks, commits)
