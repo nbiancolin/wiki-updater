@@ -8,9 +8,28 @@ Due date: //23:59, Sat Mar 9th//
 Internal First Round Deadline: //Sun, Feb 25th//
 Internal Second Round Deadline: //Sun, March 3rd//
 
+TEAM INFO: Make sure to form your commits in the following form: 
+  (taskId), (progress Num), (status msg)
+
+For example:
+  2,5, Implemented findAngleBetweenSegments
+
+or you can use semicolons for multiple tasks:
+  6,10, Loadmap Completed; 2,7, Fixed another bug in findAngle
+
 <!-- TODO: Fix this so the deadlines take into account how close a task is to its deadline-->
 == LEGEND ==
 ^ Symbol ^ Progress (out of 10) ^ Meaning ^
+| :!!: | 0-1 | Not yet started! |
+| 🍎 | 1-3 | Started working on task |
+| 🍊 | 4-6 | Base of task created, still some bugs |
+| 🍋 | 7-9 | Minor bugs left to fix |
+| 🍏 | 10 | Task is completed |
+
+
+
+
+^ TaskID ^ Name ^ Progress ^ Assignee ^ Due Date ^ Date Updated ^ Status Message ^
 |1 | |🍋 (8) |biancol6 | |Sat Feb 17 21:20:41 2024 -0500 | Almost done! |
 |65 | |:!!: (-1) |biancol6 | |Sat Feb 17 20:48:03 2024 -0500 |1 10 another one done! |
 |5 | |🍏 ( 10) |biancol6 | |Sat Feb 17 20:40:41 2024 -0500 | finished now! |
