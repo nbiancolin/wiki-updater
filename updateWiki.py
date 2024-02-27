@@ -2,6 +2,7 @@ import requests
 from requests.auth import HTTPBasicAuth
 from datetime import date
 import passwords
+import html
 
 def updatePageContent(new_content, teamNum = "100", username = passwords.uname, password = passwords.dokupword, pageName = "testing", url = "https://ug251.eecg.utoronto.ca/wiki297s"):
     today = date.today()
@@ -17,6 +18,7 @@ def updatePageContent(new_content, teamNum = "100", username = passwords.uname, 
             prefix = response.text.split('name="prefix" value="', 1)[1].split('"', 1)[0]
             suffix = response.text.split('name="suffix" value="', 1)[1].split('"', 1)[0]
             changecheck = response.text.split('name="changecheck" value="', 1)[1].split('"',1)[0]
+            target = response.text.split('name="target" value="', 1)[1].split('"',1)[0]
             #print(changecheck)
             print("This is what the updated page will look like: ")
             print(new_content)
@@ -32,11 +34,11 @@ def updatePageContent(new_content, teamNum = "100", username = passwords.uname, 
                 "prefix": prefix,
                 "suffix": suffix,
                 "changecheck": changecheck,
-                "target": "section",
-                "wikitext": new_content,
+                "target": target,
+                "wikitext": html.escape(new_content),
                 "do[save]": "1",
                 #"do[preview]": "0",
-                "summary": "Updated via Nick's Wiki-Updater"
+                "summary": html.escape("Updated via Nick's Wiki-Updater")
             }
             for key in data:
                 print(key + " " + data[key])
