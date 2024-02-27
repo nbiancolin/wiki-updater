@@ -6,16 +6,13 @@ import globals
 
 # *** GLOBALS ***
 global client
-#Server - which ug machine you want to use
-server = 'ug144.eecg.utoronto.ca'
 
 def connectToSSH():
     global client
-    print("Connecting to SSH at " + server)
+    print("Connecting to SSH at " + globals.server)
     client = paramiko.SSHClient()
-    #client.load_system_host_keys()
     client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-    client.connect(server, username=globals.uname, password=globals.pword)
+    client.connect(globals.server, username=globals.uname, password=globals.pword)
     if client:
         print("Connected to SSH!")
     else:
@@ -28,7 +25,7 @@ def closeSSH():
     print("SSH successfully disconnected")
 
 
-def getGitLog(hours = 300, testMode = False):
+def getGitLog(hours = globals.timeSince, testMode = False):
     print("Querying Git Log")
     if testMode:
         stdin, stdout, stderr = client.exec_command(f'cd test ; git log --since="{hours} hours ago"')
@@ -39,7 +36,7 @@ def getGitLog(hours = 300, testMode = False):
         res.append(line)
     return res
 
-def parseGitLog(hours = 300, testMode = False):
+def parseGitLog(hours = globals.timeSince, testMode = False):
     clean = []
     log = getGitLog(hours, testMode)
     for elem in log: #get rid of whitespace
@@ -93,14 +90,14 @@ def parseGitLog(hours = 300, testMode = False):
 
     return res
 
-def writeLogToFile(log, fileName = "commits.csv"): #write log dictionary to csv file (to see if code is working correctly)
+def writeLogToFile(log, fileName = globals.commitsFile): #write log dictionary to csv file (to see if code is working correctly)
     print("Writing git log to " + fileName)
     with open(fileName, 'w') as file:
         file.write('taskID,progress,author,date,message\n')
         for elem in log:
             file.write(f'{elem.taskID},{elem.progress},{elem.author},{elem.date},{elem.message}\n')
 
-def loadTasksFromFile(fileName = "tasks.csv"):
+def loadTasksFromFile(fileName = globals.tasksFile):
     print("Loading tasks from " + fileName)
     try:
         with open(fileName, 'r') as file:
@@ -136,7 +133,7 @@ def updateTasks(tasks, commits):
             if elem.taskID == -1: #commit was not parsed properly, add to end of dict
                 #check if task is already in 
                 for key in tasks:
-                    if(tasks[key].statusMsg == elem.message):
+                    if(tasks[key].statusMsg == elem.message): #TODO This dosnt work, gotta fix it
                         #this task
                         flag = True
                         break
@@ -154,7 +151,7 @@ def updateTasks(tasks, commits):
 
     return tasks
 
-def writeTasksToFile(tasks, fileName = "tasks.csv"): #csv file is a good backup, + easily readable by computers & humans
+def writeTasksToFile(tasks, fileName = globals.tasksFile): #csv file is a good backup, + easily readable by computers & humans
     with open(fileName, 'w') as file:
         file.write('taskID,name,progress,assignee,dueDate,lastUpdate,statusMsg\n')
         for key in tasks:

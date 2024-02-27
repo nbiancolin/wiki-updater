@@ -3,7 +3,7 @@ from requests.auth import HTTPBasicAuth
 import globals
 from datetime import datetime
 
-def getPageContent(teamNum = "100", username = globals.uname, password = globals.dokupword, pageName = "testing", url = "https://ug251.eecg.utoronto.ca/wiki297s"):
+def getPageContent(teamNum = globals.teamNum, username = globals.uname, password = globals.dokupword, pageName = globals.pageName, url = globals.dokuwikiServer):
     full_url = f"{url}/doku.php?id=cd{teamNum}:{pageName}&do=export_raw"
     print("Getting content from: " + full_url)
     try:
@@ -18,7 +18,7 @@ def getPageContent(teamNum = "100", username = globals.uname, password = globals
         print(f"An error occurred: {e}")
         return None
 
-def updatePageContent(new_content, teamNum="100", cookies=None, pageName="testing", url="https://ug251.eecg.utoronto.ca/wiki297s"):
+def updatePageContent(new_content, teamNum=globals.teamNum, cookies=None, pageName=globals.pageName, url=globals.dokuwikiServer):
     today = datetime.now()
     edit_url = f"{url}/doku.php?id=cd{teamNum}:{pageName}&do=edit"
     try:
@@ -64,7 +64,7 @@ def updatePageContent(new_content, teamNum="100", cookies=None, pageName="testin
 def updateWiki(new_content):
     # Obtain cookies through authentication
     session = requests.Session()
-    login_url = "https://ug251.eecg.utoronto.ca/wiki297s/doku.php?id=cd100:testing"
+    login_url = globals.dokuwikiServer + f"/doku.php?id=cd{globals.teamNum}:{globals.pageName}"
     login_data = {
         "u": globals.uname,
         "p": globals.dokupword,
@@ -74,7 +74,7 @@ def updateWiki(new_content):
     if login_response.status_code == 200:
         # Pass cookies to the updatePageContent function
         cookies = login_response.cookies
-        if updatePageContent(new_content, pageName="testing", cookies=cookies):
+        if updatePageContent(new_content, pageName=globals.pageName, cookies=cookies):
             print("Content updated successfully.")
         else:
             print("Failed to update content.")

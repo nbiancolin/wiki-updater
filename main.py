@@ -1,10 +1,14 @@
 import parseGit
 import updateDisplay
 import parseWiki
+import globals
 
 '''
 Nick's Wiki Updater Program
-(c) 2024 Nicholas Biancolin - All Rights Reserved'''
+(c) 2024 Nicholas Biancolin - All Rights Reserved
+For questions/help, send me an email n.biancolin[at]mail.utoronto.ca
+Or a message on discord: jinkeys
+'''
 
 
 
@@ -16,17 +20,17 @@ if __name__ == "__main__":
     commits = parseGit.parseGitLog(testMode=True)
 
     #load tasks data structure
-    tasks = parseGit.loadTasksFromFile('tasks.csv')
+    tasks = parseGit.loadTasksFromFile()
     #writeTasksToFile(tasks, 'tasks.csv')
 
     #process updates from commits & tasks
     tasks = parseGit.updateTasks(tasks, commits)
 
-    parseGit.writeLogToFile(commits, 'commits.csv') #backup just in case, don't think this is ever used
-    parseGit.writeTasksToFile(tasks, 'tasks.csv')
+    parseGit.writeLogToFile(commits) #backup just in case, don't think this is ever used
+    parseGit.writeTasksToFile(tasks)
 
     print("Updating display.md ...")
-    lines = updateDisplay.updateTable("display.md", tasks) 
+    lines = updateDisplay.updateTable(tasks) 
     
 
     print("Connecting to wiki ...")
