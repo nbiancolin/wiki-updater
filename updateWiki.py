@@ -37,7 +37,6 @@ def updatePageContent(new_content, teamNum = "100", username = passwords.uname, 
                 "target": target,
                 "wikitext": html.escape(new_content),
                 "do[save]": "1",
-                #"do[preview]": "0",
                 "summary": html.escape("Updated via Nick's Wiki-Updater")
             }
             for key in data:

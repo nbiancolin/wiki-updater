@@ -2,5 +2,6 @@ taskID,name,progress,assignee,dueDate,lastUpdate,statusMsg
 2,,6,biancol6,,Mon Feb 26 17:20:01 2024 -0500, PROGRESS ON 2 
 7,,2,biancol6,,Mon Feb 26 17:20:01 2024 -0500, Just starting task 7
 1,,8,biancol6,,Sat Feb 17 21:20:41 2024 -0500, Almost done!
-67,,-1,biancol6,,Sat Feb 17 20:48:03 2024 -0500,    1 10 another one done!
+67,,-1,biancol6,,Sat Feb 17 20:48:03 2024 -0500,1 10 another one done!
 5,, 10,biancol6,,Sat Feb 17 20:40:41 2024 -0500, finished now!
+69,,-1,biancol6,,Sat Feb 17 20:48:03 2024 -0500,    1 10 another one done!
