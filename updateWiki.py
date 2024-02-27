@@ -12,6 +12,8 @@ def updatePageContent(new_content, teamNum = "100", username = passwords.uname, 
         response = requests.get(edit_url + "save", auth=HTTPBasicAuth(username, password))
         if response.status_code == 200:
             edit_token = response.text.split('name="sectok" value="', 1)[1].split('"', 1)[0]
+            print("This is what the updated page will look like: ")
+            print(new_content)
             # Prepare data for the POST request
             #print(edit_url)
             data = {

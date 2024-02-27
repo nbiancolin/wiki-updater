@@ -41,7 +41,7 @@ if __name__ == "__main__":
     content = ""
     for elem in lines:
         content += elem
-        content += "\n"
+        #content += "\n"
 
     updateWiki.updatePageContent(content)
 
