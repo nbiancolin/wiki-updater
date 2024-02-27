@@ -1,3 +1,4 @@
 passwords.py
 *.csv
 __pycache__
+globals.py

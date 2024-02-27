@@ -1,16 +1,10 @@
 import parseGit
-import updateWiki
 import updateDisplay
 import parseWiki
 
-
 '''
-What should happen when the program is auto run:
-1. Connect to SSH
-2. Parse Git log (establish task lists n stuff)
-3. Connect to web server
-4. Write contents to file and website
-5. Disconnect'''
+Nick's Wiki Updater Program
+(c) 2024 Nicholas Biancolin - All Rights Reserved'''
 
 
 
@@ -43,7 +37,7 @@ if __name__ == "__main__":
         content += elem
         #content += "\n"
 
-    updateWiki.updatePageContent(content)
+    parseWiki.updateWiki(content)
 
     print("Closing SSH ...")
     parseGit.closeSSH()

@@ -1,7 +1,7 @@
 import paramiko
 import commit
 import re
-import passwords
+import globals
 
 
 # *** GLOBALS ***
@@ -15,7 +15,7 @@ def connectToSSH():
     client = paramiko.SSHClient()
     #client.load_system_host_keys()
     client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-    client.connect(server, username=passwords.uname, password=passwords.pword)
+    client.connect(server, username=globals.uname, password=globals.pword)
     if client:
         print("Connected to SSH!")
     else:
