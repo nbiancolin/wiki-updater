@@ -37,3 +37,10 @@ pageName = "testing"
 
 #What do you mean you don't like how I designed it??
 
+#The icons to show on the display
+bigRed = ':!!:'
+red = '🍎'
+orange = '🍊'
+yellow = '🍋'
+green = '🍏'
+

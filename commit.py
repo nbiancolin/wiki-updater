@@ -1,3 +1,5 @@
+import globals
+
 class Commit:
     def __init__(self, taskID, progress, author, date, message):
         self.taskID = int(taskID)
@@ -26,14 +28,13 @@ class Task:
         #need to process todos
         #since progress is an int from 1 to 10
         if(int(self.progress) < 1):
-            prog = ":!!:"
+            prog = globals.bigRed
         elif(int(self.progress) < 3):
-            prog = "🍎"
+            prog = globals.red
         elif(int(self.progress) < 7):
-            prog = "🍊"
+            prog = globals.orange
         elif(int(self.progress) < 10):
-            prog = "🍋"
+            prog = globals.yellow
         else:
-            prog = "🍏"
-            #prog = "green"
+            prog = globals.green
         return f"|{self.taskID} |{self.name} |{prog} ({self.progress}) |{self.assignee} |{self.dueDate} |{self.lastUpdate} |{self.statusMsg} |"

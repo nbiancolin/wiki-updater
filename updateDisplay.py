@@ -1,5 +1,6 @@
 import commit
 from datetime import datetime
+import globals
 
 
 def updateTable(tasks, fileName = globals.wikiTextFile):
@@ -7,6 +8,22 @@ def updateTable(tasks, fileName = globals.wikiTextFile):
     with open(fileName, 'r', encoding='utf-8') as file:
         lines = file.readlines()
     
+    place = 0
+    for i in range (len(lines)):
+        if lines[i].startswith("^"):
+            place = i +1
+            break
+    
+    
+    lines[place]    = f"| {globals.bigRed} | 0-1 | Not yet started! |\n"
+    lines[place +1] = f"| {globals.red} | 1-3 | Started working on task |\n"
+    lines[place +2] = f"| {globals.orange} | 4-6 | Base of task created, still some bugs |\n"
+    lines[place +3] = f"| {globals.yellow} | 7-9 | Minor bugs left to fix |\n"
+    lines[place +4] = f"| {globals.green} | 10 | Task is completed |\n"
+
+
+
+
     place = 0
     temp = 0
     for i in range(len(lines)):
