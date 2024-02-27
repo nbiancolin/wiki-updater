@@ -9,7 +9,7 @@ def updatePageContent(new_content, teamNum = "100", username = passwords.uname, 
     try:
         # Retrieve the edit token
         print("Attempting to send content to url: " + edit_url)
-        response = requests.get(edit_url + "save", auth=HTTPBasicAuth(username, password))
+        response = requests.get(edit_url + "edit", auth=HTTPBasicAuth(username, password))
         if response.status_code == 200:
             edit_token = response.text.split('name="sectok" value="', 1)[1].split('"', 1)[0]
             print("This is what the updated page will look like: ")
@@ -17,15 +17,16 @@ def updatePageContent(new_content, teamNum = "100", username = passwords.uname, 
             # Prepare data for the POST request
             #print(edit_url)
             data = {
-                "do": "save",
+                #"do": "save",
                 "sectok": edit_token,
                 "rev": "",
                 "id": f"cd{teamNum}:{pageName}",
                 "wikitext": new_content,
+                "do[save]": "1",
                 "summary": "Updated via Nick's Wiki-Updater @ " + today.strftime('%y/%m/%d/%H/%M')
             }
             # Send POST request to update the page
-            response = requests.post(edit_url + "save", data=data, auth=HTTPBasicAuth(username, password))
+            response = requests.post(edit_url + "edit", data=data, auth=HTTPBasicAuth(username, password))
             if response.status_code == 200:
                 return True
             else:

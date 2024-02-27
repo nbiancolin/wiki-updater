@@ -127,11 +127,21 @@ def updateTasks(tasks, commits):
     #
     #Need to keep track of if a task has been updated already
     updatedTasks = []
+    flag = False
     #print(tasks)
     for elem in commits:
+        flag = False
         if elem.taskID not in updatedTasks:
             updatedTasks.append(elem.taskID)
             if elem.taskID == -1: #commit was not parsed properly, add to end of dict
+                #check if task is already in 
+                for key in tasks:
+                    if(tasks[key].statusMsg == elem.message):
+                        #this task
+                        flag = True
+                        break
+                if(flag): #task is already present
+                    continue
                 tasks[64 + len(tasks)] = commit.Task(64 + len(tasks), "", elem.progress ,elem.author , "", elem.date, elem.message)
                 continue
             if elem.taskID not in tasks:
