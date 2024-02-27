@@ -27,8 +27,6 @@ or you can use semicolons for multiple tasks:
 | 🍏 | 10 | Task is completed |
 
 
-
-
 ^ TaskID ^ Name ^ Progress ^ Assignee ^ Due Date ^ Date Updated ^ Status Message ^
 |1 | |🍋 (8) |biancol6 | |Sat Feb 17 21:20:41 2024 -0500 | Almost done! |
 |65 | |:!!: (-1) |biancol6 | |Sat Feb 17 20:48:03 2024 -0500 |1 10 another one done! |

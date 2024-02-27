@@ -2,7 +2,6 @@ import paramiko
 import commit
 import re
 import passwords
-import datetime
 
 
 # *** GLOBALS ***
