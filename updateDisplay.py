@@ -10,22 +10,36 @@ def updateTable(tasks, fileName = "_default.md"):
     
     for i in range (len(lines)):
         if lines[i].startswith("Total Tasks:"):
-            total = len(tasks)
-
             completed = 0
             onTrack = 0
+            total = 0
             for elem in tasks:
+                #if tasks[elem].dueDate == datetime.min or tasks[elem].lastUpdate == datetime.min:
+                #    continue
+                total += 1
                 if int(tasks[elem].progress) == 10:
                     completed += 1
                 tasks[elem].onTrackProg = 10 - max((tasks[elem].dueDate - tasks[elem].lastUpdate).days, 0)
                 if int(tasks[elem].progress) >= tasks[elem].onTrackProg:
                     onTrack += 1
 
-            lines[i] = "Total Tasks: " + total + "\\"
-            lines[i +1] = "Tasks Completed: " + completed + "\\"
-            lines[i +2] = "Tasks on track: " + onTrack + "\\"
+            lines[i] = "Total Tasks: " + str(total) + "\\\\ "
+            lines[i +1] = "Tasks Completed: " + str(completed) + "\\\\ "
+            lines[i +2] = "Tasks on track: " + str(onTrack) + "\\\\ "
 
-           # lines[i +4] = "Milestone on track? " + 
+            statusNum = (onTrack / total) * 100
+            if(statusNum < 1):
+                status = globals.bigRed
+            elif(statusNum < 3):
+                status = globals.red
+            elif(statusNum < 7):
+                status = globals.orange
+            elif(statusNum < 10):
+                status = globals.yellow
+            else:
+                status = globals.green
+            
+            lines[i +4] = "** MILESTONE STATUS:  " + status + " ** \\\\"
 
 
 

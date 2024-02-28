@@ -61,10 +61,12 @@ def parseGitLog(hours = globals.timeSince, testMode = False):
         if clean[i +1].startswith("Merge:"): #check if 1th or 2th element
             i += 5
             continue
-        author = clean[i +1].removeprefix("Author: ").split(" ", 1) 
-        date = clean[i +2].removeprefix("Date:").strip() #TODO: make date a litle nicer
-        date_format = "%a %b %d %H:%M:%S %Y %z"
-        date = datetime.strptime(date, date_format)
+        author = clean[i +1].removeprefix("Author: ").split(" ", 1)[0] 
+        dateStr = clean[i +2].removeprefix("Date:").split('-')[0].strip() 
+        #print(date)
+        gitDateFormat = "%a %b %d %H:%M:%S %Y"
+        date = datetime.strptime(dateStr, gitDateFormat)
+        #print(date)
         tempMessage = clean[i+3]
         try:
             messages = tempMessage.split(";")
@@ -85,7 +87,7 @@ def parseGitLog(hours = globals.timeSince, testMode = False):
                 taskID = -1
                 progress = -1
 
-            temp = commit.Commit(taskID, progress, author[0], date, message)
+            temp = commit.Commit(taskID, progress, author, date, message)
             print(temp)
             res.append(temp)
             i += 4
@@ -97,9 +99,9 @@ def writeLogToFile(log, fileName = globals.commitsFile): #write log dictionary t
     with open(fileName, 'w') as file:
         file.write('taskID,progress,author,date,message\n')
         for elem in log:
-            file.write(f'{elem.taskID},{elem.progress},{elem.author},{elem.date},{elem.message}\n')
+            file.write(f'{elem.taskID},{elem.progress},{elem.author},DATE,{elem.message}\n')
 
-def loadTasksFromFile(fileName = globals.tasksFile):
+def loadTasksFromFile(fileName = "tasks.csv"):
     print("Loading tasks from " + fileName)
     try:
         with open(fileName, 'r') as file:
@@ -108,11 +110,17 @@ def loadTasksFromFile(fileName = globals.tasksFile):
             for line in lines:
                 if line.startswith('taskID'):
                     continue
-                taskID, name, progress, assignee, dueDate, lastUpdate, statusMsg = line.split(',')
+                taskID, name, progress, assignee, dueDateStr, lastUpdateStr, statusMsg = line.split(',')
 
-                dateFormat = "%a %b %d %H:%M"
-                dueDate = datetime.strptime(dueDate, dateFormat)
-                lastUpdate = datetime.strptime(dueDate, dateFormat)
+                try:
+                    dueDate = datetime.strptime(dueDateStr, globals.dateFormat)
+                except:
+                    dueDate = datetime(2025, 10, 10, 10, 10, 10, 10)
+                try:
+                    lastUpdate = datetime.strptime(lastUpdateStr, globals.dateFormat) #should never happen but its good practice
+                except:
+                    lastUpdate = datetime(2025, 10, 10, 10, 10, 10, 10)
+                #print(dueDate + " - " + lastUpdate)
 
                 temp = commit.Task(taskID, name, progress, assignee, dueDate, lastUpdate, statusMsg.strip())
                 tasks[int(taskID)] = temp
@@ -146,10 +154,15 @@ def updateTasks(tasks, commits):
                         break
                 if(flag): #task is already present
                     continue
-                tasks[64 + len(tasks)] = commit.Task(64 + len(tasks), "", elem.progress ,elem.author , "", elem.date, elem.message)
+                
+                #date = datetime.strptime(elem.date, globals.dateFormat)
+                
+                tasks[64 + len(tasks)] = commit.Task(64 + len(tasks), "", elem.progress ,elem.author , datetime.max, elem.date, elem.message)
+
                 continue
             if elem.taskID not in tasks:
-                tasks[elem.taskID] = commit.Task(elem.taskID, "", elem.progress ,elem.author , "", elem.date, elem.message)
+                #date = datetime.strptime(elem.date, globals.dateFormat)
+                tasks[elem.taskID] = commit.Task(elem.taskID, "", elem.progress ,elem.author , datetime.max, elem.date, elem.message)
                 continue
 
             tasks[elem.taskID].progress = elem.progress
