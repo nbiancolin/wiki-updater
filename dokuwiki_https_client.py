@@ -25,7 +25,7 @@ class DokuWiki:
             print("DokuWiki Login failed.")
             exit()
         
-    def getPage(self, pageName):
+    def getPageText(self, pageName):
         full_url = f"{self.url}/doku.php?id=cd{globals.teamNum}:{pageName}&do=export_raw"
         print("Getting content from: " + full_url)
         try:
@@ -114,3 +114,11 @@ class DokuWiki:
                 print("Failed to update content.")
         else:
             print("Login failed.")
+    
+
+    def getPage(self, pageName):
+        content = self.getPageText(pageName)
+        lines = content.split("\n")
+        with open("webText.md", 'w', encoding='utf-8') as file:
+            file.writelines(lines)
+        return content

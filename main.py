@@ -1,9 +1,10 @@
 import parseGit
 import updateDisplay
-import parseWiki
 import globals
 
-import dokuwiki_https_client as doku
+import dokuwiki_https_client as doku #TODO make it so it doesnt need namespace
+                                        # EG - from doku import dokuwiki
+                                        #  same for globals
 
 '''
 Nick's Wiki Updater Program
