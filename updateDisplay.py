@@ -3,7 +3,7 @@ from datetime import datetime
 import globals
 
 
-def updateTable(tasks, fileName = "_defualt.md"):
+def updateTable(tasks, fileName = "_default.md"):
     #search text until '^' character is found (find table)
     with open(fileName, 'r', encoding='utf-8') as file:
         lines = file.readlines()

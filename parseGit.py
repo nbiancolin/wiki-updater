@@ -109,6 +109,11 @@ def loadTasksFromFile(fileName = globals.tasksFile):
                 if line.startswith('taskID'):
                     continue
                 taskID, name, progress, assignee, dueDate, lastUpdate, statusMsg = line.split(',')
+
+                dateFormat = "%a %b %d %H:%M"
+                dueDate = datetime.strptime(dueDate, dateFormat)
+                lastUpdate = datetime.strptime(dueDate, dateFormat)
+
                 temp = commit.Task(taskID, name, progress, assignee, dueDate, lastUpdate, statusMsg.strip())
                 tasks[int(taskID)] = temp
             file.close()
