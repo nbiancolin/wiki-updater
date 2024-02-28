@@ -7,13 +7,25 @@ def getPageContent(teamNum = globals.teamNum, username = globals.uname, password
     full_url = f"{url}/doku.php?id=cd{teamNum}:{pageName}&do=export_raw"
     print("Getting content from: " + full_url)
     try:
-        response = requests.get(full_url, auth=HTTPBasicAuth(username, password))
-        if response.status_code == 200:
-            print("Wiki Successfully accessed: Current page content: \n" + response.text)
-            return response.text
+        # Create a session object
+        session = requests.Session()
+
+        # Authenticate using cookies
+        auth_response = session.post(f"{url}/doku.php", data={'u': username, 'p': password, 'submit': 'login'})
+
+        # Check if authentication was successful
+        if auth_response.status_code == 200:
+            response = session.get(full_url)
+            if response.status_code == 200:
+                print("Wiki Successfully accessed: Current page content: \n" + response.text)
+                return response.text
+            else:
+                print(f"Failed to retrieve content. Status code: {response.status_code}")
+                return None
         else:
-            print(f"Failed to retrieve content. Status code: {response.status_code}")
+            print(f"Authentication failed. Status code: {auth_response.status_code}")
             return None
+
     except requests.RequestException as e:
         print(f"An error occurred: {e}")
         return None
