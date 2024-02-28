@@ -8,6 +8,11 @@ Due date: //23:59, Sat Mar 9th // \\
 Internal First Round Deadline: //Sun, Feb 25th// \\ 
 Internal Second Round Deadline: //Sun, March 3rd// \\ 
 
+===== AT A GLANCE =====
+Total Tasks: X
+Tasks Comleted: X
+On Track?: <!-- Find a way to calculate this metric -->
+
 TEAM INFO: Make sure to form your commits in the following form: 
   (taskId), (progress Num), (status msg)
 

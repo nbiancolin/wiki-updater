@@ -2,6 +2,7 @@ import paramiko
 import commit
 import re
 import globals
+from datetime import datetime
 
 
 # *** GLOBALS ***
@@ -62,7 +63,8 @@ def parseGitLog(hours = globals.timeSince, testMode = False):
             continue
         author = clean[i +1].removeprefix("Author: ").split(" ", 1) 
         date = clean[i +2].removeprefix("Date:").strip() #TODO: make date a litle nicer
-
+        date_format = "%a %b %d %H:%M:%S %Y %z"
+        date = datetime.strptime(date, date_format)
         tempMessage = clean[i+3]
         try:
             messages = tempMessage.split(";")

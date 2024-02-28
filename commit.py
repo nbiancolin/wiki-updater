@@ -1,4 +1,5 @@
 import globals
+from datetime import datetime
 
 class Commit:
     def __init__(self, taskID, progress, author, date, message):
@@ -37,4 +38,4 @@ class Task:
             prog = globals.yellow
         else:
             prog = globals.green
-        return f"|{self.taskID} |{self.name} |{prog} ({self.progress}) |{self.assignee} |{self.dueDate} |{self.lastUpdate} |{self.statusMsg} |"
+        return f"|{self.taskID} |{self.name} |{prog} ({self.progress}) |{self.assignee} |{self.dueDate} |{self.lastUpdate.strftime("%a %b %d %H:%M")} |{self.statusMsg} |"
