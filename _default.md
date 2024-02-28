@@ -9,9 +9,11 @@ Internal First Round Deadline: //Sun, Feb 25th// \\
 Internal Second Round Deadline: //Sun, March 3rd// \\ 
 
 ===== AT A GLANCE =====
-Total Tasks: X
-Tasks Comleted: X
-On Track?: <!-- Find a way to calculate this metric -->
+Total Tasks: X \\ 
+Tasks Comleted: X \\
+Tasks on Track: 
+
+Milestone on track?
 
 TEAM INFO: Make sure to form your commits in the following form: 
   (taskId), (progress Num), (status msg)
@@ -19,7 +21,7 @@ TEAM INFO: Make sure to form your commits in the following form:
 For example:
   2,5, Implemented findAngleBetweenSegments
 
-or you can use semicolons for multiple tasks:
+or you can use semicolons for multiple tasks:6
   6,10, Loadmap Completed; 2,7, Fixed another bug in findAngle
 
 <!-- TODO: Fix this so the deadlines take into account how close a task is to its deadline-->

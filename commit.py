@@ -21,9 +21,10 @@ class Task:
         self.dueDate = dueDate
         self.lastUpdate = lastUpdate
         self.statusMsg = statusMsg
+        self.onTrackProg = 0
 
     def __str__(self):
-        return f"id:{self.taskID}, name:{self.name}, prog:{self.progress}, assignee:{self.assignee}, dueDate:{self.dueDate}, lastUpdate:{self.lastUpdate} recentCommit:{self.statusMsg}"
+        return f"id:{self.taskID}, name:{self.name}, prog:{self.progress}, assignee:{self.assignee}, dueDate:{self.dueDate}, lastUpdate:{self.lastUpdate.strftime("%a %b %d %H:%M")} recentCommit:{self.statusMsg}"
     
     def tablify(self):
         #need to process todos

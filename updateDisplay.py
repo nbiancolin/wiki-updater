@@ -8,6 +8,27 @@ def updateTable(tasks, fileName = "_default.md"):
     with open(fileName, 'r', encoding='utf-8') as file:
         lines = file.readlines()
     
+    for i in range (len(lines)):
+        if lines[i].startswith("Total Tasks:"):
+            total = len(tasks)
+
+            completed = 0
+            onTrack = 0
+            for elem in tasks:
+                if int(tasks[elem].progress) == 10:
+                    completed += 1
+                tasks[elem].onTrackProg = 10 - max((tasks[elem].dueDate - tasks[elem].lastUpdate).days, 0)
+                if int(tasks[elem].progress) >= tasks[elem].onTrackProg:
+                    onTrack += 1
+
+            lines[i] = "Total Tasks: " + total + "\\"
+            lines[i +1] = "Tasks Completed: " + completed + "\\"
+            lines[i +2] = "Tasks on track: " + onTrack + "\\"
+
+           # lines[i +4] = "Milestone on track? " + 
+
+
+
     place = 0
     for i in range (len(lines)):
         if lines[i].startswith("^"):

@@ -162,7 +162,7 @@ def writeTasksToFile(tasks, fileName = globals.tasksFile): #csv file is a good b
     with open(fileName, 'w') as file:
         file.write('taskID,name,progress,assignee,dueDate,lastUpdate,statusMsg\n')
         for key in tasks:
-            file.write(f'{tasks[key].taskID},{tasks[key].name},{tasks[key].progress},{tasks[key].assignee},{tasks[key].dueDate},{tasks[key].lastUpdate},{tasks[key].statusMsg}')
+            file.write(f'{tasks[key].taskID},{tasks[key].name},{tasks[key].progress},{tasks[key].assignee},{tasks[key].dueDate.strftime("%a %b %d %H:%M")},{tasks[key].lastUpdate.strftime("%a %b %d %H:%M")},{tasks[key].statusMsg}')
             file.write('\n')
     print(fileName + " file successfully updated")
 
