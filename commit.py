@@ -51,4 +51,4 @@ class Task:
             prog = globals.yellow
         else:
             prog = globals.green
-        return f"|{self.taskID} |{self.name} |{prog} ({self.progress}) |{self.assignee} |{self.dueDate} |{self.lastUpdate.strftime("%a %b %d %H:%M")} |{self.statusMsg} |"
+        return f"|{self.taskID} |{self.name} |{prog} ({self.progress}) |{self.assignee} |{self.dueDate.strftime("%a %b %d")} |{self.lastUpdate.strftime("%a %b %d %H:%M")} |{self.statusMsg} |"

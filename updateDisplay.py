@@ -27,7 +27,7 @@ def updateTable(tasks):
             lines[i +1] = "Tasks Completed: " + str(completed) + "\\\\ "
             lines[i +2] = "Tasks on track: " + str(onTrack) + "\\\\ "
 
-            statusNum = (onTrack / total) * 100
+            statusNum = (onTrack / total) * 10
             if(statusNum < 1):
                 status = globals.bigRed
             elif(statusNum < 3):
@@ -39,7 +39,8 @@ def updateTable(tasks):
             else:
                 status = globals.green
             
-            lines[i +4] = "** MILESTONE STATUS:  " + status + " ** \\\\"
+            lines[i +4] = "** MILESTONE STATUS:  " + status + " **(" + str(round(statusNum, 3)) + "/10)  \\\\ "
+            #print("Status num: " + str(statusNum))
 
 
 

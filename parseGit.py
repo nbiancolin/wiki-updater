@@ -110,32 +110,36 @@ def writeLogToFile(log, fileName = globals.commitsFile): #write log dictionary t
 
 def loadTasksFromFile(fileName = "tasks.csv"):
     print("Loading tasks from " + fileName)
-    try:
-        with open(fileName, 'r') as file:
-            lines = file.readlines()
-            tasks = {}
-            for line in lines:
-                if line.startswith('taskID'):
-                    continue
+    #try:
+    with open(fileName, 'r') as file:
+        lines = file.readlines()
+        tasks = {}
+        for line in lines:
+            if line.startswith('taskID'):
+                continue
+
+            try:
                 taskID, name, progress, assignee, dueDateStr, lastUpdateStr, statusMsg = line.split(',')
+            except ValueError:
+                break
+            try:
+                dueDate = datetime.strptime(dueDateStr, globals.dateFormat)
+            except:
+                dueDate = datetime(2025, 10, 10, 10, 10, 10, 10)
+            try:
+                lastUpdate = datetime.strptime(lastUpdateStr, globals.dateFormat) #should never happen but its good practice
+            except:
+                lastUpdate = datetime(2025, 10, 10, 10, 10, 10, 10)
+            #print(dueDate + " - " + lastUpdate)
 
-                try:
-                    dueDate = datetime.strptime(dueDateStr, globals.dateFormat)
-                except:
-                    dueDate = datetime(2025, 10, 10, 10, 10, 10, 10)
-                try:
-                    lastUpdate = datetime.strptime(lastUpdateStr, globals.dateFormat) #should never happen but its good practice
-                except:
-                    lastUpdate = datetime(2025, 10, 10, 10, 10, 10, 10)
-                #print(dueDate + " - " + lastUpdate)
+            temp = commit.Task(taskID, name, progress, assignee, dueDate, lastUpdate, statusMsg.strip())
+            tasks[int(taskID)] = temp
 
-                temp = commit.Task(taskID, name, progress, assignee, dueDate, lastUpdate, statusMsg.strip())
-                tasks[int(taskID)] = temp
-            file.close()
-            return tasks
-    except:
-        print("No " + fileName + " found, will create one with info found")
-        return {}
+        file.close()
+        return tasks
+    #except:
+    #    print("No " + fileName + " found, will create one with info found (This is a very misleading error, soemthing else is wrong !!) =========================")
+    #    return {}
 
 def updateTasks(tasks, commits):
     #For each commit in commtis
@@ -164,7 +168,7 @@ def updateTasks(tasks, commits):
                 
                 #date = datetime.strptime(elem.date, globals.dateFormat)
                 
-                tasks[64 + len(tasks)] = commit.Task(64 + len(tasks), "", elem.progress ,elem.author , datetime.max, elem.date, elem.message)
+                #tasks[64 + len(tasks)] = commit.Task(64 + len(tasks), "", elem.progress ,elem.author , datetime.max, elem.date, elem.message)
 
                 continue
             if elem.taskID not in tasks:
