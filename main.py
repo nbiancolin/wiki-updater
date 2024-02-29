@@ -20,7 +20,7 @@ if __name__ == "__main__":
     print("Initializing ... ") #1
     parseGit.connectToSSH()
     #load commits data structure
-    commits = parseGit.parseGitLog(testMode=True)
+    commits = parseGit.parseGitLog()
 
     #load tasks data structure
     tasks = parseGit.loadTasksFromFile()
