@@ -29,11 +29,14 @@ def closeSSH():
 def getGitLog(hours = globals.timeSince, testMode = False):
     print("Querying Git Log")
     if testMode:
-        stdin, stdout, stderr = client.exec_command(f'cd test ; git pull -r ; git log --since="{hours} hours ago"')
+        client.exec_command(f'cd test ; git pull -r')
+        stdin, stdout, stderr = client.exec_command(f'cd test ; git log --since="{hours} hours ago"')
     else:
-        stdin, stdout, stderr = client.exec_command(f'cd ece297/work/mapper ; git pull -r ; git log --since="{hours} hours ago"')
+        client.exec_command(f'cd ece297/work/mapper ; git pull -r')
+        stdin, stdout, stderr = client.exec_command(f'cd ece297/work/mapper ; git log --since="{hours} hours ago"')
     res = []
     for line in stdout:
+        #print(line)
         res.append(line)
     return res
 
@@ -56,8 +59,12 @@ def parseGitLog(hours = globals.timeSince, testMode = False):
     i = 0
     res = [] #array of 'commit' objects
 
+
+
+
     print("Found the following commits: ")
     while(i < len(clean)):
+        print(clean)
         if clean[i +1].startswith("Merge:"): #check if 1th or 2th element
             i += 5
             continue
@@ -182,7 +189,7 @@ def writeTasksToFile(tasks, fileName = globals.tasksFile): #csv file is a good b
 if __name__ == "__main__": #for testing purposes
     connectToSSH()
     #load commits data structure
-    commits = parseGitLog(testMode=True)
+    commits = parseGitLog()
 
     #load tasks data structure
     tasks = loadTasksFromFile('tasks.csv')
