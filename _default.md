@@ -3,10 +3,10 @@ Welcome to the team 100 wiki! Here you'll find a detailed overview of our progre
 
 **CURRENT MILESTONE:** //Milestone 2: Visualizing an Interactive map //
 
-===== AT A GLANCE =====
-Total Tasks: 10\\ 
-Tasks Completed: 1\\ 
-Tasks on track: 7\\ 
+^ AT A GLANCE ^^
+| Total Tasks: | 10 |
+| Tasks Completed: | 1 | 
+| Tasks on track: | 7 |
 
 ** MILESTONE STATUS:  🍏 ** \\ 
 \\

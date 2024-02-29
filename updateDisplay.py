@@ -9,7 +9,7 @@ def updateTable(tasks):
         lines = file.readlines()
     
     for i in range (len(lines)):
-        if lines[i].startswith("Total Tasks:"):
+        if lines[i].startswith("| Total Tasks:"):
             completed = 0
             onTrack = 0
             total = 0
@@ -23,9 +23,9 @@ def updateTable(tasks):
                 if int(tasks[elem].progress) >= tasks[elem].onTrackProg:
                     onTrack += 1
 
-            lines[i] = "Total Tasks: " + str(total) + "\\\\ "
-            lines[i +1] = "Tasks Completed: " + str(completed) + "\\\\ "
-            lines[i +2] = "Tasks on track: " + str(onTrack) + "\\\\ "
+            lines[i] = "| Total Tasks: | " + str(total) + "| \n"
+            lines[i +1] = "| Tasks Completed: | " + str(completed) + "| \n"
+            lines[i +2] = "| Tasks on track: | " + str(onTrack) + "| \n"
 
             statusNum = (onTrack / total) * 10
             if(statusNum < 1):
@@ -46,7 +46,7 @@ def updateTable(tasks):
 
     place = 0
     for i in range (len(lines)):
-        if lines[i].startswith("^"):
+        if lines[i].startswith("^ Symbol"):
             place = i +1
             break
     
@@ -61,13 +61,11 @@ def updateTable(tasks):
 
 
     place = 0
-    temp = 0
     for i in range(len(lines)):
-        if lines[i].startswith('^'):
-            if(temp == 1):
-                place = i
-                break
-            temp = 1
+        if lines[i].startswith('^ TaskID'):
+            place = i
+            break
+
 
     #have found line, now need to write next set of lines
     place += 1 #moving forward to ignore table header
