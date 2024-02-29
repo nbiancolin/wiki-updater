@@ -36,7 +36,7 @@ class Task:
             raise ValueError("date must be a datetime object")
 
     def __str__(self):
-        return f"id:{self.taskID}, name:{self.name}, prog:{self.progress}, assignee:{self.assignee}, dueDate:{self.dueDate}, lastUpdate:{self.lastUpdate.strftime("%a %b %d %H:%M")} recentCommit:{self.statusMsg}"
+        return f'id:{self.taskID}, name:{self.name}, prog:{self.progress}, assignee:{self.assignee}, dueDate:{self.dueDate}, lastUpdate:{self.lastUpdate.strftime("%a %b %d %H:%M")} recentCommit:{self.statusMsg}'
     
     def tablify(self):
         #need to process todos
@@ -51,4 +51,4 @@ class Task:
             prog = globals.yellow
         else:
             prog = globals.green
-        return f"|{self.taskID} |{self.name} |{prog} ({self.progress}) |{self.assignee} |{self.dueDate.strftime("%a %b %d")} |{self.lastUpdate.strftime("%a %b %d %H:%M")} |{self.statusMsg} |"
+        return f'|{self.taskID} |{self.name} |{prog} ({self.progress}) |{self.assignee} |{self.dueDate.strftime("%a %b %d")} |{self.lastUpdate.strftime("%a %b %d %H:%M")} |{self.statusMsg} |'
