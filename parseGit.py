@@ -176,6 +176,7 @@ def updateTasks(tasks, commits):
                 tasks[elem.taskID] = commit.Task(elem.taskID, "", elem.progress ,elem.author , datetime.max, elem.date, elem.message)
                 continue
 
+            tasks[elem.taskID].assignee = elem.author
             tasks[elem.taskID].progress = elem.progress
             tasks[elem.taskID].statusMsg = elem.message
             tasks[elem.taskID].lastUpdate = elem.date
