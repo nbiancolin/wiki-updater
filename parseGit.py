@@ -112,6 +112,31 @@ def writeLogToFile(log, fileName = globals.commitsFile): #write log dictionary t
         for elem in log:
             file.write(f'{elem.taskID},{elem.progress},{elem.author},DATE,{elem.message}\n')
 
+
+def loadTasksFromWiki(currentPage):
+    lines = currentPage.split('\n')
+
+    for i in range(len(lines)):
+        if lines[i].startswith("^ TaskID"):
+            start = i
+            break
+    
+    for i in range(start, len(lines)):
+        if not lines[i].startswith("|"):
+            end = i
+
+    lines = lines[start:end]
+
+    for line in lines:
+        try:
+            taskID, name, progress, assignee, dueDatestr, lastUpdateStr, statusMsg = line.split('|')
+
+
+
+
+
+
+
 def loadTasksFromFile(fileName = "tasks.csv"):
     print("Loading tasks from " + fileName)
     #try:
