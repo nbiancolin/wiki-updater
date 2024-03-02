@@ -86,9 +86,13 @@ def parseGitLog(hours = globals.timeSince, testMode = False):
                 try:
                     taskID, progress, message = commitMsg[match.start():].split(",", 2) #parses git commit message
                 except ValueError:
-                    message = commitMsg #could not parse message
-                    taskID = -1
-                    progress = -1
+                    progress  -1
+                    try:
+                        taskID, message = commitMsg[match.start():].split(",", 1)
+                    except ValueError:
+                        taskID = -1
+                        message = commitMsg[match.start():]
+
             else:
                 message = commitMsg #could not parse message
                 taskID = -1
@@ -150,21 +154,12 @@ def updateTasks(tasks, commits):
     #
     #Need to keep track of if a task has been updated already
     updatedTasks = []
-    flag = False
     #print(tasks)
     for elem in commits:
-        flag = False
         if elem.taskID not in updatedTasks:
             updatedTasks.append(elem.taskID)
             if elem.taskID == -1: #commit was not parsed properly, add to end of dict
                 #check if task is already in 
-                for key in tasks:
-                    if(tasks[key].statusMsg == elem.message): #TODO This dosnt work, gotta fix it
-                        #this task
-                        flag = True
-                        break
-                if(flag): #task is already present
-                    continue
                 
                 #date = datetime.strptime(elem.date, globals.dateFormat)
                 
