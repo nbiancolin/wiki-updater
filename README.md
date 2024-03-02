@@ -1,15 +1,20 @@
-# wiki updater
- program that checks git log, and updates wiki
+# Dokuwiki Updater
+A (multiple) python scripts I created for use in the course ECE297 at the Universty of Toronto. \\ 
+This program parses a git log for a project, interprets its commits, and puts them nicely in a table on a team's DokuWiki page, organizing tasks and tracking progress and on time progress.
+Also interfaces with the wiki using an API I wrote myself to itneract with DokuWiki over HTTPS as opposed to XML-RPC (due to security risks)
 
-## Current Status:
-As of rght now, it gets as far as building the table. All that's left is to find a way to put that table into the wiki now.
 
+## Current Status: - Fully Functional!!!
+I currently run this script on an old Raspberry pi (model 2b if you can believe it haha), scheduled with crontab to run at 3am, 9am, 3pm, and 9pm.
 
-# USAGE
+## USAGE
 
-Eventually, This will run forever on my raspberry pi at home, so no need to do anything on that front. \\
-For now though, just run main.py to generate display.md. \\
-To use, make sure your commit messages are in the following form:
+I tried to make this as straightforward to use.
+the file ``globals.py`` has all the things you might want to change (and quite a few things you probably won't want to change haha)
+Also, the file ``_default.md`` is what will be rendered to your page (except modified based on the git log), so if you want it to look different in anyw ay, you can safely modify that (as long as you don't touch the 3 tables, its important those stay in their same order with the same headers for it to work properly)
+
+Finally, just make sure to label your commit messages in the proper form:
+
 <task number>, <progress>, <message>
 eg. 
 
