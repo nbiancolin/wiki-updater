@@ -39,7 +39,7 @@ def updateTable(tasks):
             else:
                 status = globals.green
             
-            lines[i +4] = "** MILESTONE STATUS:  " + status + " **(" + str(round(statusNum *10, 2)) + "% complete)  \\\\ "
+            lines[i +4] = "** MILESTONE STATUS:  " + status + " **(" + str(round(statusNum *10, 2)) + "% On Track)  \\\\ "
             #print("Status num: " + str(statusNum))
 
 
