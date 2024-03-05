@@ -23,7 +23,11 @@ if __name__ == "__main__":
     commits = parseGit.parseGitLog()
 
     #load tasks data structure
-    tasks = parseGit.loadTasksFromFile()
+    wiki = doku.DokuWiki(globals.dokuwikiServer, globals.uname, globals.dokupword)
+    wiki.login()
+    tasks = updateDisplay.loadTasksFromWiki(wiki.getPage(globals.pageName))
+
+    #tasks = parseGit.loadTasksFromFile()
     #writeTasksToFile(tasks, 'tasks.csv')
 
     #process updates from commits & tasks
@@ -37,8 +41,7 @@ if __name__ == "__main__":
     
 
     print("Connecting to wiki ...")
-    wiki = doku.DokuWiki(globals.dokuwikiServer, globals.uname, globals.dokupword)
-    wiki.login()
+
     print("Current page contents: ")
     print(wiki.getPage(globals.pageName))
 

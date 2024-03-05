@@ -74,6 +74,7 @@ def parseGitLog(hours = globals.timeSince, testMode = False):
         #print(date)
         gitDateFormat = "%a %b %d %H:%M:%S %Y"
         date = datetime.strptime(dateStr, gitDateFormat)
+        date = date.replace(year=2024)
         #print(date)
         tempMessage = clean[i+3]
         try:
@@ -113,7 +114,7 @@ def writeLogToFile(log, fileName = globals.commitsFile): #write log dictionary t
         for elem in log:
             file.write(f'{elem.taskID},{elem.progress},{elem.author},DATE,{elem.message}\n')
 
-def loadTasksFromFile(fileName = "tasks.csv"):
+def loadTasksFromFile(fileName = "tasks.csv"): #DEPRECATED
     print("Loading tasks from " + fileName)
     #try:
     with open(fileName, 'r') as file:
