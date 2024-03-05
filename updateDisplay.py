@@ -135,7 +135,7 @@ def loadTasksFromWiki(content): #content is the string page content
         #print(dueDate + " - " + lastUpdate)
         dueDate = dueDate.replace(year=2024) #sometimes year isnt parsed properly so...
         lastUpdate = dueDate.replace(year=2024)
-        temp = commit.Task(taskID, name, progress, assignee, dueDate, lastUpdate, statusMsg.strip())
+        temp = commit.Task(taskID, name, int(progress), assignee, dueDate, lastUpdate, statusMsg.strip())
         tasks[int(taskID)] = temp
 
     return tasks

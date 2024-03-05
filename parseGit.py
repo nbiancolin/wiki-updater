@@ -88,7 +88,7 @@ def parseGitLog(hours = globals.timeSince, testMode = False):
                 try:
                     taskID, progress, message = commitMsg[match.start():].split(",", 2) #parses git commit message
                 except ValueError:
-                    progress  -1
+                    progress = -1
                     try:
                         taskID, message = commitMsg[match.start():].split(",", 1)
                     except ValueError:
