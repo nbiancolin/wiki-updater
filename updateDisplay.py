@@ -124,14 +124,14 @@ def loadTasksFromWiki(content): #content is the string page content
         except ValueError:
             print("ERROR: Table not formatted correctly! (probably a missing | or something)")
             exit()
-        #try:
-        dueDate = datetime.strptime(dueDateStr.strip(), "%a %b %d")
-        #except:
-        #dueDate = datetime(2025, 10, 10, 10, 10, 10, 10) #Date wasn't parsed properly
-        #try:
-        lastUpdate = datetime.strptime(lastUpdateStr.strip(), globals.dateFormat) #should never happen but its good practice
-        #except:
-        #lastUpdate = datetime(2025, 10, 10, 10, 10, 10, 10)
+        try:
+            dueDate = datetime.strptime(dueDateStr.strip(), "%a %b %d")
+        except:
+            dueDate = datetime(2025, 10, 10, 10, 10, 10, 10) #Date wasn't parsed properly
+        try:
+            lastUpdate = datetime.strptime(lastUpdateStr.strip(), globals.dateFormat) #should never happen but its good practice
+        except:
+            lastUpdate = datetime(2025, 10, 10, 10, 10, 10, 10)
         #print(dueDate + " - " + lastUpdate)
         dueDate = dueDate.replace(year=2024) #sometimes year isnt parsed properly so...
         lastUpdate = dueDate.replace(year=2024)

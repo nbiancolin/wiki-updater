@@ -14,7 +14,7 @@ dokupword = passwords.dokupword
 '''SERVER STUFF'''
 
 #Your preferred UG machine
-server = "ug144.eecg.utoronto.ca"
+server = "ug145.eecg.utoronto.ca"
 dokuwikiServer = "https://ug251.eecg.utoronto.ca/wiki297s"
 
 #How often you'll have the script running (how far back you want the user to )
