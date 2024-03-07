@@ -24,8 +24,8 @@ Internal Second Round Deadline: //Sun, March 3rd// \\
 | 🍏 | 10 | Task is completed |
 
 
-^ TaskID ^ Name ^ Progress ^ # ^ Assignee ^ Due Date ^ Date Updated ^ Status Message ^
-|2 | |🍊| 6 |biancol6 |1900-12-31 23:59:00 |Mon Feb 26 17:20 | PROGRESS ON 2  |
+^ TaskID ^ Name ^ Progress ^ Assignee ^ Due Date ^ Date Updated ^ Status Message ^
+|2 | |🍊 (6) |biancol6 |1900-12-31 23:59:00 |Mon Feb 26 17:20 | PROGRESS ON 2  |
 
 
 
