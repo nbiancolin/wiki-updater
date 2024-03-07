@@ -16,7 +16,7 @@ Or a message on discord: jinkeys
 
 
 if __name__ == "__main__":
-    print("Nick's Wiki Updater Program, V1.5")
+    print("Nick's Wiki Updater Program, V1.0")
     print("Initializing ... ") #1
     parseGit.connectToSSH()
     #load commits data structure
