@@ -76,7 +76,7 @@ def updateTable(tasks):
     end = lines[temp:-3]
     lines = lines[0:place]
 
-    for key in tasks:
+    for key, value in sorted(tasks.items()):
         text = tasks[key].tablify() + "\n"
         lines.append(text)
 

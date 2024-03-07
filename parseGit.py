@@ -29,10 +29,10 @@ def closeSSH():
 def getGitLog(hours = globals.timeSince, testMode = False):
     print("Querying Git Log")
     if testMode:
-        client.exec_command(f'cd test ; git pull -r')
+        client.exec_command(f'cd test ; git fetch')
         stdin, stdout, stderr = client.exec_command(f'cd test ; git log --since="{hours} hours ago"')
     else:
-        client.exec_command(f'cd ece297/work/mapper ; git pull -r')
+        client.exec_command(f'cd ece297/work/mapper ; git fetch')
         stdin, stdout, stderr = client.exec_command(f'cd ece297/work/mapper ; git log --since="{hours} hours ago"')
     res = []
     for line in stdout:
@@ -63,6 +63,55 @@ def parseGitLog(hours = globals.timeSince, testMode = False):
 
 
     print("Found the following commits: ")
+
+    while(i < len(clean)):
+        if not clean[i].startswith("commit"):
+            i += 1
+            continue
+        if clean[i +1].startswith("Merge:"):
+            i += 1
+            continue
+
+        author = clean[i +1].removeprefix("Author: ").split(" ", 1)[0] 
+        dateStr = clean[i +2].removeprefix("Date:").split('-')[0].strip() 
+
+        gitDateFormat = "%a %b %d %H:%M:%S %Y"
+        date = datetime.strptime(dateStr, gitDateFormat)
+
+        tempMessage = clean[i+3]
+        try:
+            messages = tempMessage.split(";")
+        except ValueError:
+            messages = [tempMessage]
+
+        for commitMsg in messages:
+            match = re.search(r'\d', commitMsg)
+            if match:
+                try:
+                    taskID, progress, message = commitMsg[match.start():].split(",", 2) #parses git commit message
+                except ValueError:
+                    progress = -1
+                    try:
+                        taskID, message = commitMsg[match.start():].split(",", 1)
+                    except ValueError:
+                        taskID = -1
+                        message = commitMsg[match.start():]
+
+            else:
+                message = commitMsg #could not parse message
+                taskID = -1
+                progress = -1
+
+            temp = commit.Commit(taskID, progress, author, date, message)
+            print(temp)
+            res.append(temp)
+            i += 1
+            continue
+
+
+
+
+            '''
     while(i < len(clean)):
         print(clean)
         if clean[i +1].startswith("Merge:"): #check if 1th or 2th element
@@ -101,7 +150,7 @@ def parseGitLog(hours = globals.timeSince, testMode = False):
             temp = commit.Commit(taskID, progress, author, date, message)
             print(temp)
             res.append(temp)
-            i += 4
+            i += 4 '''
 
     return res
 
