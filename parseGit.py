@@ -29,11 +29,10 @@ def closeSSH():
 def getGitLog(hours = globals.timeSince, testMode = False):
     print("Querying Git Log")
     if testMode:
-        client.exec_command(f'cd test ; git fetch')
+        client.exec_command(f'cd test ; git pull -r')
         stdin, stdout, stderr = client.exec_command(f'cd test ; git log --since="{hours} hours ago"')
     else:
-        #client.exec_command(f'cd ece297/work/mapper ; git pull -r')
-        client.exec_command(f'cd ece297/work/mapper ; git fetch')
+        client.exec_command(f'cd ece297/work/mapper ; git pull -r')
         stdin, stdout, stderr = client.exec_command(f'cd ece297/work/mapper ; git log --since="{hours} hours ago"')
     res = []
     for line in stdout:
