@@ -26,8 +26,6 @@ if __name__ == "__main__":
     wiki = doku.DokuWiki(globals.dokuwikiServer, globals.uname, globals.dokupword)
     wiki.login()
     tasks = updateDisplay.loadTasksFromWiki(wiki.getPage(globals.pageName))
-    print(tasks)
-    print(commits)
 
     #tasks = parseGit.loadTasksFromFile()
     #writeTasksToFile(tasks, 'tasks.csv')
