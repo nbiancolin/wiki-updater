@@ -217,12 +217,27 @@ def updateTasks(tasks, commits):
                 continue
             if elem.taskID not in tasks:
                 #date = datetime.strptime(elem.date, globals.dateFormat)
-                tasks[elem.taskID] = commit.Task(elem.taskID, "", elem.progress ,elem.author , datetime.max, elem.date, elem.message)
+
+                try:
+                    msg, name = elem.message.split("-n ")[0:2]
+                except ValueError:
+                    msg = tasks[elem.taskID].statusMsg
+                    name = ""
+
+                tasks[elem.taskID] = commit.Task(elem.taskID, name, elem.progress ,elem.author , datetime.max, elem.date, msg)
                 continue
+
+            try:
+                msg, name = elem.message.split("-n ")[0:2]
+
+                tasks[elem.taskID].statusMsg = msg
+                tasks[elem.taskID].name = name
+            except ValueError:
+                tasks[elem.taskID].statusMsg = elem.message
+
 
             tasks[elem.taskID].assignee = elem.author
             tasks[elem.taskID].progress = elem.progress
-            tasks[elem.taskID].statusMsg = elem.message
             tasks[elem.taskID].lastUpdate = elem.date
 
     return tasks
