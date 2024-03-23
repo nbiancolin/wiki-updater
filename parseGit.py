@@ -202,43 +202,45 @@ def updateTasks(tasks, commits):
     #   update status with most recent commit message
     #
     #Need to keep track of if a task has been updated already
-    updatedTasks = []
+    #updatedTasks = []
     #print(tasks)
+    commits.reverse()
     for elem in commits:
-        if elem.taskID not in updatedTasks:
-            updatedTasks.append(elem.taskID)
-            if elem.taskID == -1: #commit was not parsed properly, add to end of dict
-                #check if task is already in 
-                
-                #date = datetime.strptime(elem.date, globals.dateFormat)
-                
-                #tasks[64 + len(tasks)] = commit.Task(64 + len(tasks), "", elem.progress ,elem.author , datetime.max, elem.date, elem.message)
+    #if elem.taskID not in updatedTasks:
+        #updatedTasks.append(elem.taskID)
+        if elem.taskID == -1: #commit was not parsed properly, add to end of dict
+            #check if task is already in 
+            
+            #date = datetime.strptime(elem.date, globals.dateFormat)
+            
+            #tasks[64 + len(tasks)] = commit.Task(64 + len(tasks), "", elem.progress ,elem.author , datetime.max, elem.date, elem.message)
 
-                continue
-            if elem.taskID not in tasks:
-                #date = datetime.strptime(elem.date, globals.dateFormat)
-
-                try:
-                    msg, name = elem.message.split("-n ")[0:2]
-                except ValueError:
-                    msg = tasks[elem.taskID].statusMsg
-                    name = ""
-
-                tasks[elem.taskID] = commit.Task(elem.taskID, name, elem.progress ,elem.author , datetime.max, elem.date, msg)
-                continue
+            continue
+        if elem.taskID not in tasks:
+            #date = datetime.strptime(elem.date, globals.dateFormat)
 
             try:
                 msg, name = elem.message.split("-n ")[0:2]
-
-                tasks[elem.taskID].statusMsg = msg
-                tasks[elem.taskID].name = name
             except ValueError:
-                tasks[elem.taskID].statusMsg = elem.message
+                msg = elem.message
+                name = ""
+
+            tasks[elem.taskID] = commit.Task(elem.taskID, name, elem.progress ,elem.author , datetime.max, elem.date, msg)
+            continue
+
+        try:
+            msg, name = elem.message.split("-n ")[0:2]
+
+            tasks[elem.taskID].statusMsg = msg
+            tasks[elem.taskID].name = name
+        except ValueError:
+            tasks[elem.taskID].statusMsg = elem.message
 
 
-            tasks[elem.taskID].assignee = elem.author
-            tasks[elem.taskID].progress = elem.progress
-            tasks[elem.taskID].lastUpdate = elem.date
+        tasks[elem.taskID].assignee = elem.author
+        tasks[elem.taskID].progress = elem.progress
+        tasks[elem.taskID].lastUpdate = elem.date
+
 
     return tasks
 

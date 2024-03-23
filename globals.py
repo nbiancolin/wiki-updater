@@ -29,7 +29,7 @@ wikiTextFile = "display.md"
 teamNum = "100"
 
 #The page of your wiki you want the user to be able to 
-pageName = "milestone2"
+pageName = "milestone3"
 
 dateFormat = "%a %b %d %H:%M"
 
