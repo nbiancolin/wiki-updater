@@ -17,17 +17,23 @@ def updateTable(tasks):
                 #if tasks[elem].dueDate == datetime.min or tasks[elem].lastUpdate == datetime.min:
                 #    continue
                 total += 1
-                if int(tasks[elem].progress) == 10:
-                    completed += 1
+                try:
+                    if int(tasks[elem].progress) >= 8:
+                        completed += 1
+                except:
+                    print("Caught a bug!")
                 tasks[elem].onTrackProg = 10 - max((tasks[elem].dueDate - tasks[elem].lastUpdate).days, 0)
-                if int(tasks[elem].progress) >= tasks[elem].onTrackProg:
-                    onTrack += 1
+                try:
+                    if int(tasks[elem].progress) >= tasks[elem].onTrackProg:
+                        onTrack += 1
+                except:
+                    print("Caught another bug!")
 
             lines[i] = "| Total Tasks: | " + str(total) + "| \n"
             lines[i +1] = "| Tasks Completed: | " + str(completed) + "| \n"
             lines[i +2] = "| Tasks on track: | " + str(onTrack) + "| \n"
 
-            statusNum = (onTrack / total) * 10
+            statusNum = (completed / total) * 10
             if(statusNum < 1):
                 status = globals.bigRed
             elif(statusNum < 3):

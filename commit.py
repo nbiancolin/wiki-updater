@@ -41,14 +41,17 @@ class Task:
     def tablify(self):
         #need to process todos
         #since progress is an int from 1 to 10
-        if(int(self.progress) < 1):
+        try:
+            if(int(self.progress) < 1):
+                prog = globals.bigRed
+            elif(int(self.progress) < 3):
+                prog = globals.red
+            elif(int(self.progress) < 7):
+                prog = globals.orange
+            elif(int(self.progress) < 10):
+                prog = globals.yellow
+            else:
+                prog = globals.green
+        except:
             prog = globals.bigRed
-        elif(int(self.progress) < 3):
-            prog = globals.red
-        elif(int(self.progress) < 7):
-            prog = globals.orange
-        elif(int(self.progress) < 10):
-            prog = globals.yellow
-        else:
-            prog = globals.green
         return f'|{self.taskID} |{self.name} |{prog} ({self.progress}) |{self.assignee} |{self.dueDate.strftime("%a %b %d")} |{self.lastUpdate.strftime("%a %b %d %H:%M")} |{self.statusMsg} |'
