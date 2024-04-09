@@ -194,7 +194,7 @@ def loadTasksFromFile(fileName = "tasks.csv"):
     #    print("No " + fileName + " found, will create one with info found (This is a very misleading error, soemthing else is wrong !!) =========================")
     #    return {}
 
-def updateTasks(tasks, commits):
+def updateTasks(tasks2, commits):
     #For each commit in commtis
     #   find taskId in tasks
     #       if cannot find taskid (and taskID is not -1), create new
@@ -202,6 +202,7 @@ def updateTasks(tasks, commits):
     #   update status with most recent commit message
     #
     #Need to keep track of if a task has been updated already
+    tasks = tasks2.copy()
     #updatedTasks = []
     #print(tasks)
     commits.reverse()

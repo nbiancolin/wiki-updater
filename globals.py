@@ -18,7 +18,7 @@ server = "ug144.eecg.utoronto.ca"
 dokuwikiServer = "https://ug251.eecg.utoronto.ca/wiki297s"
 
 #How often you'll have the script running (how far back you want the user to )
-timeSince = 500
+timeSince = 11
 
 #In the event you want to name these something else (you should never need to change these)
 commitsFile = "commits.csv"

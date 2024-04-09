@@ -34,24 +34,28 @@ if __name__ == "__main__":
 
     print("Updating display.md ...")
     lines = updateDisplay.updateTable(tasks) 
+    #for line in lines:
+    #    print(line)
     
 
     print("Connecting to wiki ...")
     wiki = doku.DokuWiki(globals.dokuwikiServer, globals.uname, globals.dokupword)
     wiki.login()
     print("Current page contents: ")
-    print(wiki.getPage(globals.pageName))
+    #print(wiki.getPage(globals.pageName))
 
 
     #content = parseWiki.getPageContent() #checks connection to dokuwiki
     #content = updateDisplay.readTable("display.md") #TODO: Probably a way to improve this
     content = ""
     for elem in lines:
+        #print(content)
         content += elem
         #content += "\n"
 
-    wiki.updateWiki(content)
-    #parseWiki.updateWiki(content)
+    #UNCOMMENT TO UPDATE WIKI
+    #wiki.updateWiki(content)
+
 
     print("Closing SSH ...")
     parseGit.closeSSH()
