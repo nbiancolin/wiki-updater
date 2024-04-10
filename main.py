@@ -54,7 +54,7 @@ if __name__ == "__main__":
         #content += "\n"
 
     #UNCOMMENT TO UPDATE WIKI
-    #wiki.updateWiki(content)
+    wiki.updateWiki(content)
 
 
     print("Closing SSH ...")
