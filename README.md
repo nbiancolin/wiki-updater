@@ -6,6 +6,12 @@ Also interfaces with the wiki using an API I wrote myself to itneract with DokuW
 
 ## Current Status: - Fully Functional!!!
 I currently run this script on an old Raspberry pi (model 2b if you can believe it haha), scheduled with crontab to run at 3am, 9am, 3pm, and 9pm.
+![image](https://github.com/nbiancolin/wiki-updater/assets/117390343/420babff-946e-4f51-abb2-f9ae771673fe)
+![image](https://github.com/nbiancolin/wiki-updater/assets/117390343/68a75b54-fc9f-4643-be0e-b1a83e118b7f)
+![image](https://github.com/nbiancolin/wiki-updater/assets/117390343/e91d093c-279d-4c37-a54a-ccfa80a56a76)
+
+
+
 
 ## USAGE
 
@@ -20,3 +26,4 @@ eg.
 
 `` 5, 10, implemented findAngle fn `` \\ or: \\
 `` git commit -m " 4, 5, almost finished this function! ``
+
