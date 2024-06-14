@@ -21,9 +21,9 @@ dokuwikiServer = "https://ug251.eecg.utoronto.ca/wiki297s"
 timeSince = 11
 
 #In the event you want to name these something else (you should never need to change these)
-commitsFile = "commits.csv"
-tasksFile = "tasks.csv"
-wikiTextFile = "display.md"
+commitsFile = "../data/commits.csv"
+tasksFile = "../data/tasks.csv"
+wikiTextFile = "../data/display.md"
 
 #your team's number (ONLY THE NUMBER)
 teamNum = "100"

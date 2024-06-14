@@ -5,7 +5,7 @@ import globals
 
 def updateTable(tasks):
     #search text until '^' character is found (find table)
-    with open("_default.md", 'r', encoding='utf-8') as file:
+    with open("../data/_default.md", 'r', encoding='utf-8') as file:
         lines = file.readlines()
     
     for i in range (len(lines)):

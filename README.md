@@ -21,7 +21,7 @@ Also, the file ``_default.md`` is what will be rendered to your page (except mod
 
 Finally, just make sure to label your commit messages in the proper form:
 
-<task number>, <progress>, <message>
+`<task number>, <progress>, <message>`
 eg. 
 
 `` 5, 10, implemented findAngle fn `` \\ or: \\
