@@ -159,18 +159,14 @@ def updateTasks(tasks2, commits):
     #
     #Need to keep track of if a task has been updated already
     tasks = tasks2.copy()
-    #updatedTasks = []
     #print(tasks)
     commits.reverse()
     for elem in commits:
-    #if elem.taskID not in updatedTasks:
-        #updatedTasks.append(elem.taskID)
         if elem.taskID == -1: #commit was not parsed properly, add to end of dict
             #check if task is already in 
 
             continue
         if elem.taskID not in tasks:
-            #date = datetime.strptime(elem.date, globals.dateFormat)
 
             try:
                 msg, name = elem.message.split("-n ")[0:2]
