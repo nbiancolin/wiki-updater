@@ -38,8 +38,8 @@ class Task:
     def __str__(self):
         return f'id:{self.taskID}, name:{self.name}, prog:{self.progress}, assignee:{self.assignee}, dueDate:{self.dueDate}, lastUpdate:{self.lastUpdate.strftime("%a %b %d %H:%M")} recentCommit:{self.statusMsg}'
     
-    def tablify(self):
-        #need to process todos
+    def tablify(self): #generate table entry for given task
+
         #since progress is an int from 1 to 10
         try:
             if(int(self.progress) < 1):

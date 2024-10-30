@@ -108,50 +108,6 @@ def parseGitLog(hours = globals.timeSince, testMode = False):
             i += 1
             continue
 
-
-
-
-            '''
-    while(i < len(clean)):
-        print(clean)
-        if clean[i +1].startswith("Merge:"): #check if 1th or 2th element
-            i += 5
-            continue
-        author = clean[i +1].removeprefix("Author: ").split(" ", 1)[0] 
-        dateStr = clean[i +2].removeprefix("Date:").split('-')[0].strip() 
-        #print(date)
-        gitDateFormat = "%a %b %d %H:%M:%S %Y"
-        date = datetime.strptime(dateStr, gitDateFormat)
-        #print(date)
-        tempMessage = clean[i+3]
-        try:
-            messages = tempMessage.split(";")
-        except ValueError:
-            messages = [tempMessage]
-
-        for commitMsg in messages:
-            match = re.search(r'\d', commitMsg)
-            if match:
-                try:
-                    taskID, progress, message = commitMsg[match.start():].split(",", 2) #parses git commit message
-                except ValueError:
-                    progress  -1
-                    try:
-                        taskID, message = commitMsg[match.start():].split(",", 1)
-                    except ValueError:
-                        taskID = -1
-                        message = commitMsg[match.start():]
-
-            else:
-                message = commitMsg #could not parse message
-                taskID = -1
-                progress = -1
-
-            temp = commit.Commit(taskID, progress, author, date, message)
-            print(temp)
-            res.append(temp)
-            i += 4 '''
-
     return res
 
 def writeLogToFile(log, fileName = globals.commitsFile): #write log dictionary to csv file (to see if code is working correctly)
@@ -211,10 +167,6 @@ def updateTasks(tasks2, commits):
         #updatedTasks.append(elem.taskID)
         if elem.taskID == -1: #commit was not parsed properly, add to end of dict
             #check if task is already in 
-            
-            #date = datetime.strptime(elem.date, globals.dateFormat)
-            
-            #tasks[64 + len(tasks)] = commit.Task(64 + len(tasks), "", elem.progress ,elem.author , datetime.max, elem.date, elem.message)
 
             continue
         if elem.taskID not in tasks:

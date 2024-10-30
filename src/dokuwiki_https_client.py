@@ -12,7 +12,7 @@ class DokuWiki:
     
     def login(self):
         session = requests.Session()
-        login_url = self.url + f"/doku.php?id=cd100:testing" #TODO do you need an ID here?
+        login_url = self.url + f"/doku.php?id=cd100:testing" 
         login_data = {
             "u": self.username,
             "p": self.password,
@@ -29,10 +29,8 @@ class DokuWiki:
         full_url = f"{self.url}/doku.php?id=cd{globals.teamNum}:{pageName}&do=export_raw"
         print("Getting content from: " + full_url)
         try:
-            # Create a session object
+            
             session = requests.Session()
-
-            # Authenticate using cookies
             auth_response = session.post(f"{self.url}/doku.php", data={'u': self.username, 'p': self.password, 'submit': 'login'})
 
             # Check if authentication was successful
